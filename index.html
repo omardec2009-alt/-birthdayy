@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كل سنة وإنتي طيبة ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Tahoma", "Arial", sans-serif;
+      background: linear-gradient(135deg, #160b18, #35152f, #5c244b);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      color: #ff8fbd;
+      font-size: 20px;
+      animation: float 8s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      20% { opacity: 0.7; }
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: min(900px, 92%);
+      margin: auto;
+      padding: 60px 0;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .cake {
+      font-size: 80px;
+      animation: bounce 2s infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    h1 {
+      font-size: clamp(38px, 8vw, 72px);
+      color: #ffb5d5;
+      text-shadow: 0 0 25px rgba(255, 120, 180, 0.5);
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: #f8dce9;
+      line-height: 1.8;
+    }
+
+    .scroll {
+      margin-top: 60px;
+      color: #ffb5d5;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      50% { opacity: 0.4; }
+    }
+
+    section {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      padding: 35px;
+      margin: 30px 0;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    }
+
+    section h2 {
+      color: #ffafd1;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .letter {
+      font-size: 19px;
+      line-height: 2.2;
+      color: #fff1f7;
+    }
+
+    .reasons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .reason {
+      background: rgba(255, 160, 200, 0.1);
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+      line-height: 1.8;
+      border: 1px solid rgba(255,180,210,0.12);
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .photo-placeholder {
+      height: 220px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #7c315d, #3e1b39);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #eabbd1;
+      border: 1px dashed #d477a4;
+    }
+
+    .voice {
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: 18px;
+      margin-top: 15px;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .final {
+      text-align: center;
+      padding: 70px 25px;
+    }
+
+    .final h2 {
+      font-size: 36px;
+    }
+
+    .final p {
+      font-size: 21px;
+      line-height: 2;
+      color: #ffe5f0;
+    }
+
+    .signature {
+      margin-top: 30px;
+      color: #ffafd1;
+      font-size: 24px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #d9a9c0;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="hearts">
+  <div class="heart" style="left:5%; animation-delay:0s;">♥</div>
+  <div class="heart" style="left:15%; animation-delay:2s;">♥</div>
+  <div class="heart" style="left:30%; animation-delay:4s;">♥</div>
+  <div class="heart" style="left:48%; animation-delay:1s;">♥</div>
+  <div class="heart" style="left:65%; animation-delay:3s;">♥</div>
+  <div class="heart" style="left:80%; animation-delay:5s;">♥</div>
+  <div class="heart" style="left:92%; animation-delay:1.5s;">♥</div>
+</div>
+
+<div class="container">
+
+  <div class="hero">
+    <div class="cake">🎂</div>
+
+    <h1>كل سنة وإنتي طيبة ❤️</h1>
+
+    <p class="subtitle">
+      النهارده مش يوم عادي...<br>
+      النهارده يوم ميلاد حد غالي عليا أوي.
+    </p>
+
+    <div class="scroll">
+      ↓ انزلي شوية ↓
+    </div>
+  </div>
+
+
+  <section>
+    <h2>💌 رسالة ليكي</h2>
+
+    <div class="letter">
+      كل سنة وإنتي طيبة يا أجمل حد ❤️
+
+      <br><br>
+
+      بجد مش عارف أبدأ منين، بس كان نفسي أعملك حاجة مخصوص ليكي
+      في يوم زي ده، حتى لو إحنا بعيد عن بعض.
+
+      <br><br>
+
+      يمكن الهدية دي مش حاجة تقدري تمسكيها بإيدك،
+      بس كل حاجة فيها معمولة مخصوص علشانك.
+
+      <br><br>
+
+      وجودك في حياتي فرق معايا أكتر مما تتخيلي،
+      وكل لحظة بنتكلم فيها وكل ضحكة وكل ذكرى بينا
+      ليها مكان خاص عندي.
+
+      <br><br>
+
+      أتمنى السنة الجديدة من عمرك تكون مليانة حاجات حلوة،
+      وتحققي فيها كل حاجة نفسك فيها،
+      وتفضلي دايمًا مبسوطة ومبتسمة.
+
+      <br><br>
+
+      <strong>
+        وكل سنة وإنتي في حياتي ❤️
+      </strong>
+    </div>
+  </section>
+
+
+  <section>
+    <h2>💗 حاجات بحبها فيكي</h2>
+
+    <div class="reasons">
+      <div class="reason">ابتسامتك اللي بتغير المود ❤️</div>
+      <div class="reason">طريقتك في الكلام معايا 🥹</div>
+      <div class="reason">إنك بتعرفي تخليني أضحك 😂</div>
+      <div class="reason">شخصيتك المميزة ✨</div>
+      <div class="reason">الراحة اللي بحسها وأنا بكلمك 🤍</div>
+      <div class="reason">وأكيد... حاجات كتير مش هتكفيها الصفحة دي ❤️</div>
+    </div>
+  </section>
+
+
+  <section>
+    <h2>📸 ذكرياتنا</h2>
+
+    <div class="photos">
+
+      <!--
+        بعدين هنحط صوركم هنا.
+        مثال:
+        <img src="photos/photo1.jpg" alt="ذكرى">
+      -->
+
+      <div class="photo-placeholder">
+        📷<br><br>
+        صورتكم هنا
+      </div>
+
+      <div class="photo-placeholder">
+        📷<br><br>
+        صورة تانية هنا
+      </div>
+
+      <div class="photo-placeholder">
+        📷<br><br>
+        وأهو كمان واحدة ❤️
+      </div>
+
+    </div>
+  </section>
+
+
+  <section>
+    <h2>🎙️ رسالة بصوتي</h2>
+
+    <div class="voice">
+      <div>رسالة مخصوص ليكي ❤️</div>
+
+      <!--
+        بعدين هنضيف تسجيلك هنا:
+        <audio controls src="audio/message.mp3"></audio>
+      -->
+
+      <p style="margin-top:15px;color:#d9a9c0;">
+        🎙️ التسجيل بتاعك هيكون هنا
+      </p>
+    </div>
+  </section>
+
+
+  <section class="final">
+
+    <h2>🌙 وأخيرًا...</h2>
+
+    <p>
+      أتمنى لما تفتحي الصفحة دي تبتسمي،
+      وتعرفي إن في حد قعد وعمل كل ده
+      علشان يشوفك مبسوطة.
+      ❤️
+    </p>
+
+    <div class="signature">
+      من شخص بيحبك أوي ❤️
+    </div>
+
+  </section>
+
+  <footer>
+    Made with ❤️ just for you
+  </footer>
+
+</div>
+
+</body>
+</html>
