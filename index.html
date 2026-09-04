@@ -25,177 +25,166 @@
 
     body {
       font-family: "Tahoma", "Arial", sans-serif;
-      color: #68354d;
+
+      color: #67324b;
+
       min-height: 100vh;
+
       overflow-x: hidden;
 
       background:
         radial-gradient(
-          circle at 15% 10%,
-          rgba(255,255,255,0.85),
+          circle at 12% 10%,
+          rgba(255,255,255,0.95),
           transparent 24%
         ),
         radial-gradient(
-          circle at 90% 15%,
-          rgba(255,210,230,0.72),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 10% 85%,
-          rgba(255,190,220,0.65),
+          circle at 88% 18%,
+          rgba(255,210,229,0.8),
           transparent 28%
         ),
         radial-gradient(
-          circle at 90% 90%,
-          rgba(255,235,244,0.8),
+          circle at 15% 82%,
+          rgba(255,195,220,0.75),
+          transparent 27%
+        ),
+        radial-gradient(
+          circle at 90% 88%,
+          rgba(255,230,240,0.9),
           transparent 30%
         ),
         linear-gradient(
           135deg,
           #ffeaf2 0%,
-          #ffd6e5 45%,
-          #f4b8d1 100%
+          #ffd2e2 45%,
+          #f7b9d2 100%
         );
-
-      position: relative;
     }
 
 
     /* =====================================================
-       SOFT GLOW LAYERS
+       SOFT BACKGROUND GLOW
     ===================================================== */
 
     body::before {
       content: "";
+
       position: fixed;
+
       inset: 0;
 
       pointer-events: none;
-      z-index: 0;
+
+      z-index: -5;
 
       background:
         radial-gradient(
           circle at 50% 35%,
-          rgba(255,255,255,0.30),
-          transparent 38%
+          rgba(255,255,255,0.28),
+          transparent 40%
         );
 
-      mix-blend-mode: screen;
+      animation: backgroundGlow 8s ease-in-out infinite;
+    }
+
+    @keyframes backgroundGlow {
+
+      0%,
+      100% {
+        opacity: 0.65;
+      }
+
+      50% {
+        opacity: 1;
+      }
     }
 
 
     /* =====================================================
-       MUSIC VIBE BACKGROUND
+       MUSIC VIBE
+       Decorative only — does not autoplay music
     ===================================================== */
 
-    .music-background {
+    .music-vibe {
       position: fixed;
+
       inset: 0;
 
-      pointer-events: none;
       overflow: hidden;
 
-      z-index: 0;
+      pointer-events: none;
 
-      opacity: 0.18;
+      z-index: 0;
     }
 
     .music-note {
       position: absolute;
 
-      color: #b84f79;
+      color: rgba(255,255,255,0.48);
 
-      font-size: 28px;
+      font-size: 25px;
+
+      filter:
+        drop-shadow(
+          0 4px 10px rgba(190,70,120,0.12)
+        );
 
       animation:
         musicFloat
-        linear
+        11s
+        ease-in-out
         infinite;
 
-      filter:
-        blur(0.2px)
-        drop-shadow(
-          0 3px 7px rgba(150,50,90,0.18)
-        );
+      opacity: 0;
     }
 
-    .music-note:nth-child(1) {
-      left: 7%;
-      animation-duration: 13s;
-      animation-delay: 0s;
+    .music-note:nth-child(2n) {
+      color: rgba(255,255,255,0.34);
+      font-size: 35px;
     }
 
-    .music-note:nth-child(2) {
-      left: 18%;
-      animation-duration: 17s;
-      animation-delay: 4s;
+    .music-note:nth-child(3n) {
+      color: rgba(218,104,150,0.25);
+      font-size: 20px;
     }
 
-    .music-note:nth-child(3) {
-      left: 31%;
-      animation-duration: 15s;
-      animation-delay: 2s;
-    }
-
-    .music-note:nth-child(4) {
-      left: 45%;
-      animation-duration: 19s;
-      animation-delay: 6s;
-    }
-
-    .music-note:nth-child(5) {
-      left: 59%;
-      animation-duration: 14s;
-      animation-delay: 1s;
-    }
-
-    .music-note:nth-child(6) {
-      left: 72%;
-      animation-duration: 18s;
-      animation-delay: 5s;
-    }
-
-    .music-note:nth-child(7) {
-      left: 84%;
-      animation-duration: 16s;
-      animation-delay: 3s;
-    }
-
-    .music-note:nth-child(8) {
-      left: 94%;
-      animation-duration: 20s;
-      animation-delay: 7s;
+    .music-note:nth-child(4n) {
+      color: rgba(255,255,255,0.55);
+      font-size: 42px;
     }
 
     @keyframes musicFloat {
 
       0% {
-        bottom: -80px;
-        opacity: 0;
         transform:
+          translateY(40px)
           translateX(0)
-          rotate(-15deg)
-          scale(0.75);
+          rotate(-8deg)
+          scale(0.8);
+
+        opacity: 0;
       }
 
-      12% {
-        opacity: 0.8;
+      15% {
+        opacity: 0.55;
       }
 
       50% {
         transform:
+          translateY(-45vh)
           translateX(35px)
-          rotate(12deg)
-          scale(1);
+          rotate(8deg)
+          scale(1.05);
       }
 
       100% {
-        bottom: 110%;
-        opacity: 0;
         transform:
-          translateX(-35px)
-          rotate(-12deg)
+          translateY(-115vh)
+          translateX(-30px)
+          rotate(-5deg)
           scale(0.85);
+
+        opacity: 0;
       }
     }
 
@@ -206,9 +195,11 @@
 
     .hearts {
       position: fixed;
+
       inset: 0;
 
       pointer-events: none;
+
       overflow: hidden;
 
       z-index: 0;
@@ -216,49 +207,39 @@
 
     .heart {
       position: absolute;
-      bottom: -60px;
 
-      color: #e477a0;
+      bottom: -50px;
+
+      color: rgba(220,88,137,0.55);
 
       font-size: 20px;
 
-      opacity: 0;
-
       animation:
-        floatHeart
+        heartFloat
         10s
         linear
         infinite;
 
-      filter:
-        drop-shadow(
-          0 3px 5px rgba(190,60,110,0.18)
-        );
+      opacity: 0;
     }
 
     .heart:nth-child(2n) {
-      color: #ff9fbe;
+      color: rgba(255,255,255,0.65);
       font-size: 27px;
     }
 
     .heart:nth-child(3n) {
-      color: #d95c8a;
+      color: rgba(214,83,133,0.35);
       font-size: 16px;
     }
 
-    .heart:nth-child(4n) {
-      color: #f5b4ca;
-      font-size: 33px;
-    }
-
-    @keyframes floatHeart {
+    @keyframes heartFloat {
 
       0% {
         transform:
           translateY(0)
-          translateX(0)
           rotate(0deg)
-          scale(0.75);
+          scale(0.8);
 
         opacity: 0;
       }
@@ -270,7 +251,7 @@
       50% {
         transform:
           translateY(-55vh)
-          translateX(35px)
+          translateX(30px)
           rotate(180deg)
           scale(1);
       }
@@ -294,19 +275,22 @@
     .birthday-arch {
       position: absolute;
 
-      top: -48px;
+      top: -40px;
       left: 50%;
 
       transform: translateX(-50%);
 
       width: 100%;
-      height: 170px;
+
+      height: 150px;
 
       display: flex;
+
       align-items: flex-end;
+
       justify-content: center;
 
-      padding-bottom: 22px;
+      padding-bottom: 20px;
 
       z-index: 3;
 
@@ -314,22 +298,26 @@
     }
 
     .birthday-text {
-      color: rgba(255,255,255,0.78);
+      color: rgba(255,255,255,0.7);
 
       font-size:
-        clamp(20px, 4vw, 38px);
+        clamp(
+          18px,
+          4vw,
+          35px
+        );
 
       font-weight: bold;
 
       letter-spacing: 3px;
 
       text-shadow:
-        0 2px 8px rgba(150,50,90,0.16),
-        0 0 20px rgba(255,255,255,0.5);
+        0 2px 10px rgba(160,60,100,0.15),
+        0 0 25px rgba(255,255,255,0.45);
 
       transform:
-        perspective(300px)
-        rotateX(20deg);
+        perspective(400px)
+        rotateX(15deg);
     }
 
 
@@ -342,11 +330,11 @@
 
       z-index: 2;
 
-      width: min(900px, 92%);
+      width: min(930px, 92%);
 
       margin: auto;
 
-      padding: 55px 0;
+      padding: 55px 0 35px;
     }
 
 
@@ -355,17 +343,19 @@
     ===================================================== */
 
     .hero {
-      min-height: 90vh;
+      min-height: 92vh;
 
       display: flex;
+
       flex-direction: column;
 
       justify-content: center;
+
       align-items: center;
 
       text-align: center;
 
-      padding-top: 75px;
+      padding-top: 65px;
     }
 
 
@@ -373,52 +363,99 @@
        REALISTIC CAKE
     ===================================================== */
 
-    .cake {
+    .cake-wrapper {
       position: relative;
 
-      width: 250px;
-      height: 245px;
+      width: 270px;
 
-      margin-bottom: 30px;
+      height: 275px;
+
+      margin-bottom: 25px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: flex-end;
 
       animation:
         cakeFloat
-        3.5s
+        4s
         ease-in-out
         infinite;
+    }
+
+    .cake-shadow {
+      position: absolute;
+
+      bottom: 20px;
+
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: 220px;
+
+      height: 27px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(125,45,80,0.18);
+
+      filter: blur(9px);
+
+      z-index: 0;
+    }
+
+    .cake {
+      position: relative;
+
+      width: 215px;
+
+      height: 205px;
+
+      z-index: 2;
 
       filter:
         drop-shadow(
-          0 20px 20px rgba(120,45,75,0.20)
+          0 18px 18px rgba(125,45,75,0.17)
         );
     }
 
-    /* plate */
+
+    /* -------------------------
+       PLATE
+    ------------------------- */
 
     .cake-plate {
       position: absolute;
 
+      bottom: 4px;
+
       left: 50%;
-      bottom: 18px;
 
       transform: translateX(-50%);
 
-      width: 230px;
-      height: 30px;
+      width: 220px;
+
+      height: 26px;
 
       border-radius: 50%;
 
       background:
         linear-gradient(
           to bottom,
-          #ffffff,
-          #f7dce8 55%,
-          #eac6d8
+          #ffffff 0%,
+          #fdf8fb 45%,
+          #e8ccd9 100%
         );
 
       box-shadow:
-        0 8px 15px rgba(120,45,75,0.16),
-        inset 0 3px 3px rgba(255,255,255,0.95);
+        0 7px 13px rgba(110,40,70,0.15),
+        inset 0 3px 4px rgba(255,255,255,0.95);
+
+      z-index: 1;
     }
 
     .cake-plate::after {
@@ -427,86 +464,91 @@
       position: absolute;
 
       left: 50%;
+
       top: 7px;
 
       transform: translateX(-50%);
 
-      width: 190px;
-      height: 8px;
+      width: 175px;
+
+      height: 10px;
 
       border-radius: 50%;
 
       background:
-        rgba(255,255,255,0.72);
+        rgba(255,205,225,0.55);
     }
 
 
-    /* bottom cake layer */
+    /* -------------------------
+       CAKE BASE
+    ------------------------- */
 
     .cake-bottom {
       position: absolute;
 
       left: 50%;
-      bottom: 35px;
+
+      bottom: 25px;
 
       transform: translateX(-50%);
 
-      width: 180px;
-      height: 75px;
+      width: 172px;
+
+      height: 72px;
 
       border-radius:
-        13px
-        13px
-        22px
-        22px;
+        12px
+        12px
+        20px
+        20px;
 
       background:
         linear-gradient(
           90deg,
-          #d99c8d 0%,
-          #f7d4c8 12%,
-          #fff1e9 30%,
-          #fff8f2 50%,
-          #ffe8df 70%,
-          #e7b4a7 90%,
-          #c98b81 100%
+          #d99c91 0%,
+          #f6cfc5 9%,
+          #fff2ed 25%,
+          #fffaf5 50%,
+          #ffe9e2 73%,
+          #e5ada2 93%,
+          #c98782 100%
         );
 
       border:
-        2px solid
-        rgba(255,255,255,0.85);
+        2px solid rgba(255,255,255,0.9);
 
       box-shadow:
-        inset 0 -13px 15px rgba(170,85,90,0.10),
-        inset 0 7px 12px rgba(255,255,255,0.85),
-        0 7px 12px rgba(120,45,70,0.15);
-    }
+        inset 0 -13px 13px rgba(160,70,70,0.09),
+        inset 0 8px 12px rgba(255,255,255,0.75),
+        0 7px 12px rgba(120,50,70,0.13);
 
-    /* cake layer details */
+      overflow: hidden;
+    }
 
     .cake-bottom::before {
       content: "";
 
       position: absolute;
 
-      left: 5px;
-      right: 5px;
-      top: 19px;
+      left: 0;
 
-      height: 9px;
+      top: 20px;
 
-      border-radius: 50%;
+      width: 100%;
+
+      height: 11px;
 
       background:
         linear-gradient(
           to right,
-          #fff4f6,
+          #fff8f8,
           #ffffff,
-          #ffe9f0
+          #fff5f7
         );
 
       box-shadow:
-        0 17px 0 rgba(210,125,135,0.10);
+        0 2px 5px rgba(170,80,100,0.08);
     }
 
     .cake-bottom::after {
@@ -514,220 +556,182 @@
 
       position: absolute;
 
-      left: 13px;
-      right: 13px;
-      bottom: 9px;
+      left: 10px;
+
+      right: 10px;
+
+      bottom: 10px;
 
       height: 12px;
 
       border-radius: 50%;
 
       background:
-        rgba(185,100,100,0.10);
+        rgba(255,255,255,0.18);
     }
 
 
-    /* middle cream */
-
-    .cake-cream {
-      position: absolute;
-
-      left: 50%;
-      bottom: 93px;
-
-      transform: translateX(-50%);
-
-      width: 190px;
-      height: 25px;
-
-      border-radius: 50%;
-
-      background:
-        linear-gradient(
-          to bottom,
-          #ffffff,
-          #fff1f6
-        );
-
-      box-shadow:
-        0 4px 7px rgba(150,55,90,0.12),
-        inset 0 3px 4px rgba(255,255,255,0.9);
-    }
-
-
-    /* top cake layer */
-
-    .cake-top-layer {
-      position: absolute;
-
-      left: 50%;
-      bottom: 105px;
-
-      transform: translateX(-50%);
-
-      width: 178px;
-      height: 58px;
-
-      border-radius:
-        14px
-        14px
-        18px
-        18px;
-
-      background:
-        linear-gradient(
-          90deg,
-          #dca193,
-          #f6d1c5 16%,
-          #fff0e9 35%,
-          #fff8f1 50%,
-          #ffe8df 70%,
-          #e9b7aa 88%,
-          #d19388
-        );
-
-      border:
-        2px solid
-        rgba(255,255,255,0.85);
-
-      box-shadow:
-        inset 0 6px 9px rgba(255,255,255,0.8),
-        inset 0 -7px 10px rgba(175,80,90,0.08),
-        0 5px 9px rgba(130,50,75,0.12);
-    }
-
-
-    /* pink frosting */
+    /* -------------------------
+       FROSTING LAYER
+    ------------------------- */
 
     .cake-frosting {
       position: absolute;
 
       left: 50%;
-      bottom: 149px;
+
+      bottom: 82px;
 
       transform: translateX(-50%);
 
-      width: 195px;
-      height: 40px;
+      width: 183px;
+
+      height: 45px;
 
       border-radius: 50%;
 
       background:
-        radial-gradient(
-          ellipse at 50% 20%,
-          #fffafd 0%,
-          #ffeef5 25%,
-          #ffc9dc 58%,
-          #ed88ad 100%
+        linear-gradient(
+          to bottom,
+          #fff6fa 0%,
+          #ffd9e8 35%,
+          #f7a8c5 68%,
+          #e878a4 100%
         );
 
       box-shadow:
-        inset 0 6px 9px rgba(255,255,255,0.9),
-        0 6px 10px rgba(160,50,90,0.16);
+        inset 0 7px 9px rgba(255,255,255,0.85),
+        inset 0 -6px 8px rgba(195,65,110,0.1),
+        0 6px 10px rgba(160,55,90,0.14);
+
+      z-index: 4;
     }
 
-    .cake-frosting::before {
-      content: "";
-
+    .frost-drip {
       position: absolute;
 
-      left: 12px;
-      right: 12px;
-      bottom: -19px;
+      bottom: -17px;
 
-      height: 28px;
+      width: 21px;
+
+      height: 25px;
+
+      border-radius:
+        0 0 14px 14px;
 
       background:
         linear-gradient(
           to bottom,
-          #ffbfd6,
-          #ee83aa
+          #f7a8c5,
+          #e878a4
         );
 
-      clip-path:
-        polygon(
-          0 0,
-          100% 0,
-          100% 35%,
-          92% 35%,
-          89% 100%,
-          78% 100%,
-          75% 43%,
-          63% 43%,
-          59% 82%,
-          48% 82%,
-          45% 40%,
-          33% 40%,
-          30% 100%,
-          19% 100%,
-          17% 38%,
-          7% 38%,
-          5% 72%,
-          0 72%
-        );
+      box-shadow:
+        inset 3px 0 4px rgba(255,255,255,0.25);
+    }
+
+    .drip1 {
+      left: 20px;
+    }
+
+    .drip2 {
+      left: 62px;
+
+      height: 31px;
+    }
+
+    .drip3 {
+      right: 57px;
+
+      height: 24px;
+    }
+
+    .drip4 {
+      right: 19px;
+
+      height: 29px;
     }
 
 
-    /* cake top */
+    /* -------------------------
+       CAKE TOP
+    ------------------------- */
 
     .cake-top {
       position: absolute;
 
       left: 50%;
-      bottom: 166px;
+
+      bottom: 105px;
 
       transform: translateX(-50%);
 
-      width: 190px;
-      height: 52px;
+      width: 176px;
+
+      height: 55px;
 
       border-radius: 50%;
 
       background:
         radial-gradient(
-          ellipse at center,
+          ellipse at 50% 48%,
           #ffffff 0%,
-          #fffafb 38%,
-          #ffeaf2 67%,
-          #f4b5cc 100%
+          #fffafd 35%,
+          #ffeef5 66%,
+          #f7bfd5 100%
         );
 
       box-shadow:
-        inset 0 5px 8px rgba(255,255,255,0.95),
-        0 5px 8px rgba(150,55,90,0.13);
+        inset 0 7px 10px rgba(255,255,255,0.95),
+        inset 0 -4px 8px rgba(210,100,140,0.08),
+        0 4px 8px rgba(140,50,85,0.1);
+
+      z-index: 3;
     }
 
-    .cake-top::after {
-      content: "";
 
+    /* -------------------------
+       CAKE DECORATIONS
+    ------------------------- */
+
+    .cake-decoration {
       position: absolute;
 
-      width: 145px;
-      height: 18px;
+      z-index: 6;
 
-      left: 50%;
-      top: 8px;
+      width: 10px;
 
-      transform: translateX(-50%);
+      height: 10px;
 
       border-radius: 50%;
 
       background:
-        rgba(255,255,255,0.55);
+        #ffffff;
+
+      box-shadow:
+        24px 3px 0 #f29cba,
+        48px -1px 0 #ffffff,
+        72px 4px 0 #ed8eb0,
+        96px 0 0 #ffffff;
+
+      left: 61px;
+
+      bottom: 115px;
     }
 
 
-    /* =====================================================
-       16 NUMBER
-    ===================================================== */
+    /* -------------------------
+       NUMBER 16
+    ------------------------- */
 
     .age {
       position: absolute;
 
-      z-index: 10;
+      z-index: 8;
 
       left: 50%;
-      bottom: 176px;
+
+      bottom: 111px;
 
       transform: translateX(-50%);
 
@@ -736,57 +740,58 @@
         "Times New Roman",
         serif;
 
-      font-size: 45px;
+      font-size: 35px;
 
       font-weight: bold;
 
-      color: #d34f82;
+      color: #d45788;
 
       text-shadow:
-        0 2px 4px rgba(140,45,80,0.18),
-        0 0 8px rgba(255,255,255,0.8);
+        0 2px 4px rgba(170,60,100,0.18),
+        0 0 10px rgba(255,255,255,0.8);
     }
 
 
-    /* =====================================================
+    /* -------------------------
        CANDLES
-    ===================================================== */
+    ------------------------- */
 
     .candle {
       position: absolute;
 
-      z-index: 12;
+      z-index: 10;
 
-      bottom: 205px;
+      bottom: 150px;
 
-      width: 17px;
-      height: 52px;
+      width: 13px;
+
+      height: 45px;
 
       border-radius: 5px;
 
       background:
         repeating-linear-gradient(
           -45deg,
-          #fffafa 0px,
-          #fffafa 7px,
-          #f29abb 7px,
-          #f29abb 13px
+          #fffafd 0px,
+          #fffafd 6px,
+          #f3a2bd 6px,
+          #f3a2bd 11px
         );
 
       border:
-        1px solid rgba(180,70,110,0.22);
+        1px solid rgba(190,80,120,0.25);
 
       box-shadow:
-        inset 2px 0 3px rgba(255,255,255,0.8),
-        2px 3px 6px rgba(120,40,70,0.16);
+        0 3px 7px rgba(130,50,80,0.16),
+        inset 2px 0 3px rgba(255,255,255,0.7);
     }
 
     .candle.one {
-      left: 93px;
+      left: 85px;
     }
 
     .candle.six {
-      left: 139px;
+      left: 116px;
     }
 
     .candle::before {
@@ -795,30 +800,35 @@
       position: absolute;
 
       top: -8px;
+
       left: 50%;
 
       transform: translateX(-50%);
 
-      width: 3px;
+      width: 2px;
+
       height: 9px;
 
-      background: #493535;
+      background: #463333;
 
       border-radius: 50%;
     }
 
 
-    /* flames */
+    /* -------------------------
+       FLAMES
+    ------------------------- */
 
     .flame {
       position: absolute;
 
-      z-index: 13;
+      z-index: 12;
 
-      bottom: 255px;
+      bottom: 193px;
 
-      width: 22px;
-      height: 29px;
+      width: 19px;
+
+      height: 25px;
 
       border-radius:
         50%
@@ -830,39 +840,41 @@
 
       background:
         radial-gradient(
-          circle at 60% 65%,
-          #fffedb 0%,
-          #ffe56d 32%,
-          #ffad5d 64%,
-          #ed6d92 100%
+          circle at 55% 65%,
+          #fffde8 0%,
+          #ffe879 32%,
+          #ffad69 62%,
+          #ed6f96 100%
         );
 
       filter:
         drop-shadow(
-          0 0 10px rgba(255,177,80,0.7)
+          0 0 9px rgba(255,180,90,0.65)
         );
 
       animation:
         flameFlicker
-        0.8s
+        0.75s
         ease-in-out
-        infinite alternate;
+        infinite
+        alternate;
     }
 
     .flame.one {
-      left: 91px;
+      left: 82px;
     }
 
     .flame.six {
-      left: 137px;
-      animation-delay: 0.25s;
+      left: 113px;
+
+      animation-delay: 0.2s;
     }
 
     @keyframes flameFlicker {
 
       from {
         transform:
-          rotate(42deg)
+          rotate(41deg)
           scale(0.9);
       }
 
@@ -873,46 +885,6 @@
       }
     }
 
-
-    /* tiny cake decorations */
-
-    .cake-dot {
-      position: absolute;
-
-      z-index: 8;
-
-      width: 7px;
-      height: 7px;
-
-      border-radius: 50%;
-
-      background: #d85b88;
-
-      box-shadow:
-        0 1px 3px rgba(130,45,80,0.2);
-    }
-
-    .dot1 {
-      left: 65px;
-      bottom: 72px;
-    }
-
-    .dot2 {
-      left: 93px;
-      bottom: 61px;
-    }
-
-    .dot3 {
-      left: 151px;
-      bottom: 71px;
-    }
-
-    .dot4 {
-      left: 174px;
-      bottom: 57px;
-    }
-
-
     @keyframes cakeFloat {
 
       0%,
@@ -921,7 +893,7 @@
       }
 
       50% {
-        transform: translateY(-8px);
+        transform: translateY(-9px);
       }
     }
 
@@ -938,10 +910,11 @@
           72px
         );
 
-      color: #c84f7f;
+      color: #c64f80;
 
       text-shadow:
-        0 0 25px rgba(255,120,180,0.32);
+        0 0 25px rgba(255,120,180,0.35),
+        0 3px 8px rgba(150,50,90,0.08);
 
       margin-bottom: 15px;
     }
@@ -951,29 +924,29 @@
 
       color: #713650;
 
-      line-height: 1.8;
-
-      max-width: 700px;
+      line-height: 1.9;
     }
 
     .scroll {
       margin-top: 55px;
 
-      color: #c84f7f;
+      color: #c64f80;
 
       font-weight: bold;
 
       animation:
-        softPulse
-        2.3s
+        scrollPulse
+        2s
         infinite;
     }
 
-    @keyframes softPulse {
+    @keyframes scrollPulse {
 
       50% {
-        opacity: 0.4;
-        transform: translateY(4px);
+        opacity: 0.35;
+
+        transform:
+          translateY(5px);
       }
     }
 
@@ -986,11 +959,15 @@
       position: relative;
 
       background:
-        rgba(255,255,255,0.34);
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,0.52),
+          rgba(255,255,255,0.27)
+        );
 
       border:
         1px solid
-        rgba(255,255,255,0.72);
+        rgba(255,255,255,0.78);
 
       backdrop-filter:
         blur(18px);
@@ -1005,8 +982,11 @@
       margin: 30px 0;
 
       box-shadow:
-        0 18px 55px rgba(180,70,120,0.12),
-        inset 0 1px 0 rgba(255,255,255,0.8);
+        0 18px 55px
+        rgba(170,65,110,0.13),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.85);
 
       overflow: hidden;
     }
@@ -1017,17 +997,17 @@
       position: absolute;
 
       width: 180px;
+
       height: 180px;
 
-      top: -90px;
-      right: -70px;
+      top: -100px;
+
+      right: -80px;
 
       border-radius: 50%;
 
       background:
-        rgba(255,255,255,0.20);
-
-      filter: blur(4px);
+        rgba(255,255,255,0.18);
 
       pointer-events: none;
     }
@@ -1035,13 +1015,14 @@
     section h2 {
       position: relative;
 
-      color: #c04c79;
+      color: #c24d7b;
 
-      margin-bottom: 22px;
+      margin-bottom: 20px;
 
       font-size: 28px;
 
-      z-index: 1;
+      text-shadow:
+        0 2px 8px rgba(180,60,100,0.08);
     }
 
 
@@ -1056,9 +1037,7 @@
 
       line-height: 2.2;
 
-      color: #663047;
-
-      z-index: 1;
+      color: #633047;
     }
 
     .letter strong {
@@ -1084,7 +1063,7 @@
 
     .reason {
       background:
-        rgba(255,170,205,0.23);
+        rgba(255,160,200,0.22);
 
       border:
         1px solid
@@ -1101,7 +1080,8 @@
       color: #743550;
 
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.55);
+        0 7px 20px
+        rgba(170,70,110,0.07);
 
       transition:
         transform 0.35s ease,
@@ -1111,14 +1091,14 @@
 
     .reason:hover {
       transform:
-        translateY(-5px)
-        scale(1.015);
+        translateY(-6px);
 
       background:
-        rgba(255,185,215,0.38);
+        rgba(255,185,215,0.36);
 
       box-shadow:
-        0 12px 28px rgba(190,70,120,0.13);
+        0 13px 28px
+        rgba(180,70,120,0.14);
     }
 
 
@@ -1127,92 +1107,54 @@
     ===================================================== */
 
     .photos {
-      display: flex;
+      display: grid;
 
-      flex-wrap: wrap;
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(190px, 1fr)
+        );
 
-      justify-content: center;
-
-      align-items: flex-start;
-
-      gap: 28px;
+      gap: 27px;
 
       width: 100%;
+
+      align-items: center;
     }
 
     .photo-card {
       position: relative;
-
-      width: fit-content;
-      height: fit-content;
 
       padding: 11px;
 
       background:
         linear-gradient(
           145deg,
-          rgba(255,255,255,0.92),
-          rgba(255,246,250,0.78)
+          rgba(255,255,255,0.96),
+          rgba(255,244,249,0.92)
         );
 
       border:
-        2px solid rgba(246,165,195,0.82);
+        2px solid
+        rgba(241,157,190,0.75);
 
-      border-radius: 19px;
+      border-radius: 20px;
 
       box-shadow:
-        0 8px 22px rgba(150,60,100,0.13),
-        0 0 0 4px rgba(255,255,255,0.40);
+        0 8px 24px
+        rgba(130,50,85,0.13),
+
+        0 0 0 4px
+        rgba(255,255,255,0.4);
 
       transition:
-        transform 0.4s cubic-bezier(.2,.8,.2,1),
-        box-shadow 0.4s ease;
-
-      overflow: visible;
+        transform 0.42s
+        cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.42s ease;
 
       cursor: pointer;
-    }
 
-    .photo-card::after {
-      content: "♥";
-
-      position: absolute;
-
-      right: -9px;
-      top: -12px;
-
-      width: 26px;
-      height: 26px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      background: rgba(255,255,255,0.92);
-
-      border-radius: 50%;
-
-      color: #e875a2;
-
-      font-size: 14px;
-
-      box-shadow:
-        0 3px 9px rgba(160,60,100,0.15);
-
-      z-index: 2;
-    }
-
-    .photo-card:hover {
-      transform:
-        translateY(-9px)
-        scale(1.035)
-        rotate(0deg);
-
-      box-shadow:
-        0 17px 34px rgba(150,60,100,0.20),
-        0 0 0 5px rgba(255,255,255,0.58),
-        0 0 24px rgba(245,130,175,0.22);
+      overflow: visible;
     }
 
     .photo-card:nth-child(odd) {
@@ -1223,31 +1165,90 @@
       transform: rotate(1.2deg);
     }
 
-    .photo-card:nth-child(odd):hover,
-    .photo-card:nth-child(even):hover {
+    .photo-card:hover {
       transform:
-        translateY(-9px)
+        translateY(-10px)
         scale(1.035)
         rotate(0deg);
+
+      box-shadow:
+        0 18px 38px
+        rgba(135,50,90,0.2),
+
+        0 0 0 5px
+        rgba(255,255,255,0.65),
+
+        0 0 25px
+        rgba(245,130,175,0.25);
+    }
+
+    .photo-card::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 5px;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.9);
+
+      border-radius: 15px;
+
+      pointer-events: none;
+
+      z-index: 1;
+    }
+
+    .photo-card::after {
+      content: "♥";
+
+      position: absolute;
+
+      right: -9px;
+
+      top: -13px;
+
+      width: 27px;
+
+      height: 27px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background:
+        #ffffff;
+
+      border-radius: 50%;
+
+      color: #e875a2;
+
+      font-size: 14px;
+
+      box-shadow:
+        0 4px 10px
+        rgba(150,60,100,0.15);
+
+      z-index: 3;
     }
 
     .photo-card img {
       display: block;
 
-      width: auto !important;
-      height: auto !important;
+      width: 100% !important;
 
-      max-width: 220px !important;
-      max-height: 280px !important;
+      height: 250px !important;
 
-      object-fit: contain;
+      object-fit: cover;
 
-      border-radius: 11px;
-
-      margin: 0;
+      border-radius: 12px;
 
       box-shadow:
-        0 3px 8px rgba(150,60,100,0.10);
+        0 4px 10px
+        rgba(130,50,80,0.12);
     }
 
 
@@ -1257,22 +1258,21 @@
 
     .voice {
       background:
-        rgba(255,255,255,0.27);
+        rgba(255,255,255,0.3);
 
       padding: 22px;
 
       border-radius: 20px;
 
-      margin-top: 15px;
-
       color: #743550;
 
       border:
         1px solid
-        rgba(255,190,215,0.42);
+        rgba(255,190,215,0.4);
 
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.6);
+        inset 0 1px 0
+        rgba(255,255,255,0.7);
     }
 
     .voice-title {
@@ -1282,31 +1282,81 @@
 
       gap: 10px;
 
-      font-weight: bold;
+      font-size: 18px;
 
-      color: #b94574;
+      font-weight: bold;
+    }
+
+    .sound-wave {
+      display: flex;
+
+      align-items: center;
+
+      gap: 4px;
+
+      margin-top: 14px;
+
+      height: 27px;
+    }
+
+    .sound-wave span {
+      width: 4px;
+
+      height: 10px;
+
+      border-radius: 10px;
+
+      background:
+        #dc709a;
+
+      animation:
+        soundWave
+        1s
+        ease-in-out
+        infinite;
+    }
+
+    .sound-wave span:nth-child(2) {
+      animation-delay: .1s;
+      height: 18px;
+    }
+
+    .sound-wave span:nth-child(3) {
+      animation-delay: .2s;
+      height: 25px;
+    }
+
+    .sound-wave span:nth-child(4) {
+      animation-delay: .3s;
+      height: 15px;
+    }
+
+    .sound-wave span:nth-child(5) {
+      animation-delay: .4s;
+      height: 21px;
+    }
+
+    .sound-wave span:nth-child(6) {
+      animation-delay: .5s;
+      height: 11px;
+    }
+
+    @keyframes soundWave {
+
+      50% {
+        transform:
+          scaleY(0.45);
+
+        opacity: 0.5;
+      }
     }
 
     audio {
-      display: block;
-
       width: 100%;
-
-      margin-top: 17px;
-
-      border-radius: 30px;
-
-      accent-color: #d95b8b;
-    }
-
-    .audio-error {
-      display: none;
 
       margin-top: 12px;
 
-      color: #9d4968;
-
-      font-size: 14px;
+      accent-color: #d95b8b;
     }
 
 
@@ -1317,11 +1367,17 @@
     .final {
       text-align: center;
 
-      padding: 70px 25px;
+      padding:
+        70px 25px;
     }
 
     .final h2 {
-      font-size: 36px;
+      font-size:
+        clamp(
+          27px,
+          5vw,
+          39px
+        );
 
       color: #bd4778;
 
@@ -1365,59 +1421,66 @@
     @media (max-width: 600px) {
 
       .container {
-        width: 90%;
-        padding: 30px 0;
+        width: 91%;
+
+        padding-top: 35px;
       }
 
       section {
-        padding: 27px 20px;
+        padding:
+          28px 20px;
+
+        border-radius: 23px;
       }
 
-      .letter {
-        font-size: 17px;
-        line-height: 2;
+      .hero {
+        padding-top: 80px;
+      }
+
+      .birthday-arch {
+        top: -45px;
+
+        height: 135px;
+      }
+
+      .birthday-text {
+        font-size: 18px;
+
+        letter-spacing: 1.5px;
       }
 
       .subtitle {
         font-size: 17px;
       }
 
-      .birthday-arch {
-        top: -52px;
-        height: 145px;
-        padding-bottom: 15px;
+      .letter {
+        font-size: 17px;
+
+        line-height: 2;
       }
 
-      .birthday-text {
-        font-size: 20px;
-        letter-spacing: 2px;
-      }
+      .cake-wrapper {
+        transform:
+          scale(0.88);
 
-      .hero {
-        padding-top: 90px;
-      }
-
-      .cake {
-        transform: scale(0.82);
         margin-bottom: 5px;
       }
 
-      .cake:hover {
-        transform: scale(0.84);
-      }
-
       .photos {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns:
+          1fr;
+
+        justify-items: center;
       }
 
       .photo-card {
-        max-width: 100%;
+        width: min(100%, 300px);
       }
 
       .photo-card img {
-        max-width: 220px !important;
-        max-height: 280px !important;
+        height: auto !important;
+
+        max-height: 360px;
       }
 
       .final h2 {
@@ -1426,6 +1489,24 @@
 
       .final p {
         font-size: 18px;
+      }
+    }
+
+
+    /* =====================================================
+       REDUCE MOTION FOR ACCESSIBILITY
+    ===================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
       }
     }
 
@@ -1438,32 +1519,22 @@
 
 
   <!-- =====================================================
-       MUSIC ATMOSPHERE
+       SEMI-TRANSPARENT MUSIC VIBE
   ===================================================== -->
 
-  <div class="music-background">
+  <div class="music-vibe">
 
-    <div class="music-note">♪</div>
-    <div class="music-note">♫</div>
-    <div class="music-note">♪</div>
-    <div class="music-note">♬</div>
-    <div class="music-note">♫</div>
-    <div class="music-note">♪</div>
-    <div class="music-note">♩</div>
-    <div class="music-note">♫</div>
-
-  </div>
-
-
-  <!-- =====================================================
-       HAPPY BIRTHDAY
-  ===================================================== -->
-
-  <div class="birthday-arch">
-
-    <div class="birthday-text">
-      HAPPY 16TH BIRTHDAY! ❤️
-    </div>
+    <div class="music-note" style="left:4%; animation-delay:0s;">♪</div>
+    <div class="music-note" style="left:10%; animation-delay:4s;">♫</div>
+    <div class="music-note" style="left:18%; animation-delay:1s;">♪</div>
+    <div class="music-note" style="left:27%; animation-delay:6s;">♩</div>
+    <div class="music-note" style="left:36%; animation-delay:2s;">♫</div>
+    <div class="music-note" style="left:46%; animation-delay:7s;">♪</div>
+    <div class="music-note" style="left:56%; animation-delay:3s;">♬</div>
+    <div class="music-note" style="left:66%; animation-delay:8s;">♪</div>
+    <div class="music-note" style="left:75%; animation-delay:2.5s;">♫</div>
+    <div class="music-note" style="left:84%; animation-delay:5s;">♩</div>
+    <div class="music-note" style="left:93%; animation-delay:7.5s;">♪</div>
 
   </div>
 
@@ -1475,20 +1546,28 @@
   <div class="hearts">
 
     <div class="heart" style="left:3%; animation-delay:0s;">♥</div>
-    <div class="heart" style="left:8%; animation-delay:4s;">♥</div>
-    <div class="heart" style="left:14%; animation-delay:1s;">♥</div>
-    <div class="heart" style="left:20%; animation-delay:6s;">♥</div>
-    <div class="heart" style="left:27%; animation-delay:2s;">♥</div>
-    <div class="heart" style="left:34%; animation-delay:7s;">♥</div>
-    <div class="heart" style="left:41%; animation-delay:3s;">♥</div>
-    <div class="heart" style="left:48%; animation-delay:8s;">♥</div>
-    <div class="heart" style="left:55%; animation-delay:1.5s;">♥</div>
-    <div class="heart" style="left:62%; animation-delay:5s;">♥</div>
-    <div class="heart" style="left:69%; animation-delay:2.5s;">♥</div>
-    <div class="heart" style="left:76%; animation-delay:6.5s;">♥</div>
-    <div class="heart" style="left:83%; animation-delay:3.5s;">♥</div>
-    <div class="heart" style="left:89%; animation-delay:7.5s;">♥</div>
-    <div class="heart" style="left:95%; animation-delay:4.5s;">♥</div>
+    <div class="heart" style="left:12%; animation-delay:4s;">♥</div>
+    <div class="heart" style="left:21%; animation-delay:1s;">♥</div>
+    <div class="heart" style="left:31%; animation-delay:6s;">♥</div>
+    <div class="heart" style="left:42%; animation-delay:2s;">♥</div>
+    <div class="heart" style="left:53%; animation-delay:7s;">♥</div>
+    <div class="heart" style="left:64%; animation-delay:3s;">♥</div>
+    <div class="heart" style="left:75%; animation-delay:8s;">♥</div>
+    <div class="heart" style="left:86%; animation-delay:5s;">♥</div>
+    <div class="heart" style="left:95%; animation-delay:2.5s;">♥</div>
+
+  </div>
+
+
+  <!-- =====================================================
+       HAPPY BIRTHDAY HEADER
+  ===================================================== -->
+
+  <div class="birthday-arch">
+
+    <div class="birthday-text">
+      HAPPY 16TH BIRTHDAY! ❤️
+    </div>
 
   </div>
 
@@ -1503,36 +1582,67 @@
     <div class="hero">
 
 
-      <!-- REALISTIC 16TH BIRTHDAY CAKE -->
+      <!-- REALISTIC CAKE -->
 
-      <div class="cake">
+      <div class="cake-wrapper">
 
-        <div class="flame one"></div>
-        <div class="flame six"></div>
+        <div class="cake-shadow"></div>
 
-        <div class="candle one"></div>
-        <div class="candle six"></div>
+        <div class="cake">
 
-        <div class="age">
-          16
+
+          <!-- FLAMES -->
+
+          <div class="flame one"></div>
+          <div class="flame six"></div>
+
+
+          <!-- CANDLES -->
+
+          <div class="candle one"></div>
+          <div class="candle six"></div>
+
+
+          <!-- CAKE NUMBER -->
+
+          <div class="age">
+            16
+          </div>
+
+
+          <!-- DECORATIONS -->
+
+          <div class="cake-decoration"></div>
+
+
+          <!-- TOP -->
+
+          <div class="cake-top"></div>
+
+
+          <!-- FROSTING -->
+
+          <div class="cake-frosting">
+
+            <div class="frost-drip drip1"></div>
+            <div class="frost-drip drip2"></div>
+            <div class="frost-drip drip3"></div>
+            <div class="frost-drip drip4"></div>
+
+          </div>
+
+
+          <!-- CAKE BODY -->
+
+          <div class="cake-bottom"></div>
+
+
+          <!-- PLATE -->
+
+          <div class="cake-plate"></div>
+
+
         </div>
-
-        <div class="cake-top"></div>
-
-        <div class="cake-frosting"></div>
-
-        <div class="cake-top-layer"></div>
-
-        <div class="cake-cream"></div>
-
-        <div class="cake-bottom"></div>
-
-        <div class="cake-dot dot1"></div>
-        <div class="cake-dot dot2"></div>
-        <div class="cake-dot dot3"></div>
-        <div class="cake-dot dot4"></div>
-
-        <div class="cake-plate"></div>
 
       </div>
 
@@ -1686,6 +1796,8 @@
       <div class="photos">
 
 
+        <!-- PHOTO 1 -->
+
         <div class="photo-card">
           <img
             src="photo1.jpeg"
@@ -1694,6 +1806,8 @@
           >
         </div>
 
+
+        <!-- PHOTO 2 -->
 
         <div class="photo-card">
           <img
@@ -1704,6 +1818,8 @@
         </div>
 
 
+        <!-- PHOTO 3 -->
+
         <div class="photo-card">
           <img
             src="photo3.jpeg"
@@ -1712,6 +1828,8 @@
           >
         </div>
 
+
+        <!-- PHOTO 4 -->
 
         <div class="photo-card">
           <img
@@ -1722,6 +1840,8 @@
         </div>
 
 
+        <!-- PHOTO 5 -->
+
         <div class="photo-card">
           <img
             src="photo5.jpeg"
@@ -1731,6 +1851,8 @@
         </div>
 
 
+        <!-- PHOTO 6 -->
+
         <div class="photo-card">
           <img
             src="photo6.jpeg"
@@ -1739,6 +1861,8 @@
           >
         </div>
 
+
+        <!-- PHOTO 7 -->
 
         <div class="photo-card">
           <img
@@ -1768,41 +1892,40 @@
       <div class="voice">
 
         <div class="voice-title">
-          🎵
-          <span>رسالة مخصوص ليكي ❤️</span>
+          🎧 رسالة مخصوص ليكي ❤️
         </div>
 
 
-        <audio
-          id="birthdayVoice"
-          controls
-          preload="metadata"
-        >
+        <!-- LITTLE MUSIC VISUAL -->
 
-          <!-- OGG/OGA -->
-          <source
-            src="voice3.oga"
-            type="audio/ogg"
-          >
+        <div class="sound-wave">
 
-          <!-- Recommended backup -->
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </div>
+
+
+        <!--
+          IMPORTANT:
+          The GitHub file is named Voice3.oga
+          with a CAPITAL V.
+        -->
+
+        <audio controls preload="metadata">
+
           <source
-            src="voice3.ogg"
+            src="Voice3.oga"
             type="audio/ogg"
           >
 
           Your browser does not support the audio element.
 
         </audio>
-
-
-        <div
-          id="audioError"
-          class="audio-error"
-        >
-          الصوت مش قادر يشتغل من الملف الحالي.
-          تأكد إنك رفعت voice3.ogg بجانب ملف index.html ❤️
-        </div>
 
       </div>
 
@@ -1842,6 +1965,10 @@
     </section>
 
 
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
     <footer>
 
       Made just for you my silly baby 🌸❤️
@@ -1850,42 +1977,6 @@
 
 
   </div>
-
-
-  <!-- =====================================================
-       AUDIO ERROR CHECK
-  ===================================================== -->
-
-  <script>
-
-    const birthdayVoice =
-      document.getElementById("birthdayVoice");
-
-    const audioError =
-      document.getElementById("audioError");
-
-
-    birthdayVoice.addEventListener(
-      "error",
-      function () {
-
-        audioError.style.display = "block";
-
-      }
-    );
-
-
-    birthdayVoice.addEventListener(
-      "canplay",
-      function () {
-
-        audioError.style.display = "none";
-
-      }
-    );
-
-  </script>
-
 
 </body>
 
