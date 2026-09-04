@@ -9,6 +9,10 @@
 
   <style>
 
+    /* =====================================================
+       RESET
+    ===================================================== */
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -21,59 +25,178 @@
 
     body {
       font-family: "Tahoma", "Arial", sans-serif;
-
-      background:
-        radial-gradient(circle at 10% 15%, rgba(255,255,255,0.9), transparent 22%),
-        radial-gradient(circle at 90% 20%, rgba(255,210,228,0.8), transparent 28%),
-        radial-gradient(circle at 20% 80%, rgba(255,195,220,0.75), transparent 25%),
-        radial-gradient(circle at 80% 90%, rgba(255,230,240,0.85), transparent 30%),
-        linear-gradient(135deg, #ffe9f1, #ffcddd, #f6b4cf);
-
-      color: #6d304d;
+      color: #68354d;
       min-height: 100vh;
       overflow-x: hidden;
+
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(255,255,255,0.85),
+          transparent 24%
+        ),
+        radial-gradient(
+          circle at 90% 15%,
+          rgba(255,210,230,0.72),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 10% 85%,
+          rgba(255,190,220,0.65),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 90%,
+          rgba(255,235,244,0.8),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #ffeaf2 0%,
+          #ffd6e5 45%,
+          #f4b8d1 100%
+        );
+
+      position: relative;
     }
 
 
     /* =====================================================
-       HAPPY BIRTHDAY HEADER
+       SOFT GLOW LAYERS
     ===================================================== */
 
-    .birthday-arch {
-      position: absolute;
-      top: -55px;
-      left: 50%;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
 
-      transform: translateX(-50%);
-
-      width: 100%;
-      height: 175px;
-
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-
-      padding-bottom: 20px;
-
-      z-index: 3;
       pointer-events: none;
+      z-index: 0;
+
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(255,255,255,0.30),
+          transparent 38%
+        );
+
+      mix-blend-mode: screen;
     }
 
-    .birthday-text {
-      color: rgba(255,255,255,0.58);
 
-      font-size: clamp(20px, 4vw, 38px);
+    /* =====================================================
+       MUSIC VIBE BACKGROUND
+    ===================================================== */
 
-      font-weight: bold;
-      letter-spacing: 3px;
+    .music-background {
+      position: fixed;
+      inset: 0;
 
-      text-shadow:
-        0 2px 8px rgba(170,60,100,0.15),
-        0 0 18px rgba(255,255,255,0.4);
+      pointer-events: none;
+      overflow: hidden;
 
-      transform:
-        perspective(300px)
-        rotateX(20deg);
+      z-index: 0;
+
+      opacity: 0.18;
+    }
+
+    .music-note {
+      position: absolute;
+
+      color: #b84f79;
+
+      font-size: 28px;
+
+      animation:
+        musicFloat
+        linear
+        infinite;
+
+      filter:
+        blur(0.2px)
+        drop-shadow(
+          0 3px 7px rgba(150,50,90,0.18)
+        );
+    }
+
+    .music-note:nth-child(1) {
+      left: 7%;
+      animation-duration: 13s;
+      animation-delay: 0s;
+    }
+
+    .music-note:nth-child(2) {
+      left: 18%;
+      animation-duration: 17s;
+      animation-delay: 4s;
+    }
+
+    .music-note:nth-child(3) {
+      left: 31%;
+      animation-duration: 15s;
+      animation-delay: 2s;
+    }
+
+    .music-note:nth-child(4) {
+      left: 45%;
+      animation-duration: 19s;
+      animation-delay: 6s;
+    }
+
+    .music-note:nth-child(5) {
+      left: 59%;
+      animation-duration: 14s;
+      animation-delay: 1s;
+    }
+
+    .music-note:nth-child(6) {
+      left: 72%;
+      animation-duration: 18s;
+      animation-delay: 5s;
+    }
+
+    .music-note:nth-child(7) {
+      left: 84%;
+      animation-duration: 16s;
+      animation-delay: 3s;
+    }
+
+    .music-note:nth-child(8) {
+      left: 94%;
+      animation-duration: 20s;
+      animation-delay: 7s;
+    }
+
+    @keyframes musicFloat {
+
+      0% {
+        bottom: -80px;
+        opacity: 0;
+        transform:
+          translateX(0)
+          rotate(-15deg)
+          scale(0.75);
+      }
+
+      12% {
+        opacity: 0.8;
+      }
+
+      50% {
+        transform:
+          translateX(35px)
+          rotate(12deg)
+          scale(1);
+      }
+
+      100% {
+        bottom: 110%;
+        opacity: 0;
+        transform:
+          translateX(-35px)
+          rotate(-12deg)
+          scale(0.85);
+      }
     }
 
 
@@ -95,48 +218,53 @@
       position: absolute;
       bottom: -60px;
 
-      color: #e96f9d;
-      font-size: 20px;
+      color: #e477a0;
 
-      animation: float 9s linear infinite;
+      font-size: 20px;
 
       opacity: 0;
 
+      animation:
+        floatHeart
+        10s
+        linear
+        infinite;
+
       filter:
         drop-shadow(
-          0 3px 5px rgba(190,60,110,0.2)
+          0 3px 5px rgba(190,60,110,0.18)
         );
     }
 
     .heart:nth-child(2n) {
-      color: #ff8fb8;
+      color: #ff9fbe;
       font-size: 27px;
     }
 
     .heart:nth-child(3n) {
-      color: #d95787;
+      color: #d95c8a;
       font-size: 16px;
     }
 
     .heart:nth-child(4n) {
-      color: #f6a6c3;
-      font-size: 34px;
+      color: #f5b4ca;
+      font-size: 33px;
     }
 
-    @keyframes float {
+    @keyframes floatHeart {
 
       0% {
         transform:
           translateY(0)
           translateX(0)
           rotate(0deg)
-          scale(0.8);
+          scale(0.75);
 
         opacity: 0;
       }
 
       15% {
-        opacity: 0.7;
+        opacity: 0.65;
       }
 
       50% {
@@ -150,7 +278,7 @@
       100% {
         transform:
           translateY(-115vh)
-          translateX(-35px)
+          translateX(-30px)
           rotate(360deg)
           scale(0.8);
 
@@ -160,256 +288,48 @@
 
 
     /* =====================================================
-       SOFT WHITE CARNATIONS WITH ROSE TIPS
+       TOP BIRTHDAY TEXT
     ===================================================== */
 
-    .carnations {
-      position: fixed;
-      inset: 0;
+    .birthday-arch {
+      position: absolute;
+
+      top: -48px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: 100%;
+      height: 170px;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+      padding-bottom: 22px;
+
+      z-index: 3;
 
       pointer-events: none;
-      z-index: 0;
-
-      overflow: hidden;
     }
 
-    .carnation {
-      position: absolute;
+    .birthday-text {
+      color: rgba(255,255,255,0.78);
 
-      width: 105px;
-      height: 145px;
+      font-size:
+        clamp(20px, 4vw, 38px);
 
-      opacity: 0.9;
+      font-weight: bold;
 
-      filter:
-        drop-shadow(
-          0 7px 10px rgba(130,40,75,0.13)
-        );
+      letter-spacing: 3px;
 
-      animation:
-        flowerSway
-        6s
-        ease-in-out
-        infinite;
+      text-shadow:
+        0 2px 8px rgba(150,50,90,0.16),
+        0 0 20px rgba(255,255,255,0.5);
 
-      transform-origin: center bottom;
-    }
-
-    /*
-      STEM
-    */
-
-    .carnation {
-      background:
-        linear-gradient(
-          70deg,
-          transparent 0 47%,
-          rgba(100,155,100,0.8) 48%,
-          rgba(140,190,130,0.7) 51%,
-          transparent 52%
-        );
-    }
-
-    /*
-      OUTER WHITE FLOWER
-    */
-
-    .carnation::before {
-      content: "";
-
-      position: absolute;
-
-      width: 78px;
-      height: 78px;
-
-      left: 14px;
-      top: 3px;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle at 50% 45%,
-          #ffffff 0%,
-          #fffdfd 40%,
-          #fff5f8 68%,
-          #ffd9e7 84%,
-          #e889aa 100%
-        );
-
-      clip-path: polygon(
-        50% 0%,
-        58% 8%,
-        68% 3%,
-        71% 14%,
-        84% 10%,
-        81% 23%,
-        96% 25%,
-        88% 36%,
-        100% 44%,
-        88% 51%,
-        97% 62%,
-        83% 64%,
-        88% 78%,
-        73% 74%,
-        66% 90%,
-        55% 80%,
-        47% 96%,
-        39% 81%,
-        25% 90%,
-        26% 74%,
-        12% 78%,
-        17% 64%,
-        2% 61%,
-        12% 50%,
-        0% 41%,
-        14% 34%,
-        7% 21%,
-        22% 23%,
-        20% 10%,
-        34% 15%,
-        41% 2%
-      );
-
-      box-shadow:
-        inset 0 0 14px rgba(255,255,255,0.9),
-        inset 0 -4px 8px rgba(240,120,160,0.15),
-        0 4px 9px rgba(150,50,90,0.13);
-
-      animation:
-        petalPulse
-        6s
-        ease-in-out
-        infinite;
-    }
-
-    /*
-      ROSE-PINK TIPPED INNER PETALS
-    */
-
-    .carnation::after {
-      content: "";
-
-      position: absolute;
-
-      width: 52px;
-      height: 52px;
-
-      left: 27px;
-      top: 14px;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          #fff 0%,
-          #fff 35%,
-          #ffe7ef 55%,
-          #f6b0c9 75%,
-          #d8668e 100%
-        );
-
-      clip-path: polygon(
-        50% 0%,
-        62% 10%,
-        76% 5%,
-        78% 19%,
-        94% 25%,
-        82% 37%,
-        98% 48%,
-        82% 56%,
-        91% 73%,
-        72% 69%,
-        63% 89%,
-        50% 75%,
-        37% 91%,
-        29% 73%,
-        10% 77%,
-        17% 59%,
-        2% 49%,
-        17% 38%,
-        7% 23%,
-        25% 20%,
-        25% 7%,
-        40% 12%
-      );
-
-      box-shadow:
-        inset 0 0 10px rgba(255,255,255,0.8);
-    }
-
-    /*
-      FLOWER POSITIONS
-    */
-
-    .carnation:nth-child(1) {
-      top: 0;
-      left: -22px;
-      transform: rotate(-18deg) scale(1.1);
-    }
-
-    .carnation:nth-child(2) {
-      top: 5%;
-      right: -25px;
-      transform: rotate(20deg) scale(1.18);
-      animation-delay: 1s;
-    }
-
-    .carnation:nth-child(3) {
-      bottom: 4%;
-      left: -25px;
-      transform: rotate(-17deg) scale(1.15);
-      animation-delay: 2s;
-    }
-
-    .carnation:nth-child(4) {
-      bottom: 0;
-      right: -25px;
-      transform: rotate(17deg) scale(1.1);
-      animation-delay: 3s;
-    }
-
-    .carnation:nth-child(5) {
-      top: 44%;
-      right: -32px;
-      transform: rotate(14deg) scale(0.72);
-      animation-delay: 1.5s;
-    }
-
-    .carnation:nth-child(6) {
-      top: 35%;
-      left: -32px;
-      transform: rotate(-14deg) scale(0.72);
-      animation-delay: 2.5s;
-    }
-
-    @keyframes flowerSway {
-
-      0%,
-      100% {
-        transform:
-          translateY(0)
-          rotate(-4deg);
-      }
-
-      50% {
-        transform:
-          translateY(-8px)
-          rotate(4deg);
-      }
-    }
-
-    @keyframes petalPulse {
-
-      0%,
-      100% {
-        transform: scale(0.97);
-      }
-
-      50% {
-        transform: scale(1.04);
-      }
+      transform:
+        perspective(300px)
+        rotateX(20deg);
     }
 
 
@@ -419,13 +339,14 @@
 
     .container {
       position: relative;
-      z-index: 1;
+
+      z-index: 2;
 
       width: min(900px, 92%);
 
       margin: auto;
 
-      padding: 60px 0;
+      padding: 55px 0;
     }
 
 
@@ -444,139 +365,265 @@
 
       text-align: center;
 
-      padding-top: 70px;
+      padding-top: 75px;
     }
 
 
     /* =====================================================
-       REALISTIC 16TH BIRTHDAY CAKE
+       REALISTIC CAKE
     ===================================================== */
 
     .cake {
       position: relative;
 
-      width: 175px;
-      height: 160px;
+      width: 250px;
+      height: 245px;
 
-      margin-bottom: 35px;
+      margin-bottom: 30px;
 
       animation:
-        cakeBounce
-        2.5s
+        cakeFloat
+        3.5s
         ease-in-out
         infinite;
 
       filter:
         drop-shadow(
-          0 14px 15px rgba(150,50,90,0.18)
+          0 20px 20px rgba(120,45,75,0.20)
         );
     }
+
+    /* plate */
 
     .cake-plate {
       position: absolute;
 
-      bottom: 3px;
       left: 50%;
+      bottom: 18px;
 
       transform: translateX(-50%);
 
-      width: 165px;
-      height: 18px;
+      width: 230px;
+      height: 30px;
+
+      border-radius: 50%;
 
       background:
         linear-gradient(
           to bottom,
           #ffffff,
-          #f5dce7
+          #f7dce8 55%,
+          #eac6d8
         );
+
+      box-shadow:
+        0 8px 15px rgba(120,45,75,0.16),
+        inset 0 3px 3px rgba(255,255,255,0.95);
+    }
+
+    .cake-plate::after {
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      top: 7px;
+
+      transform: translateX(-50%);
+
+      width: 190px;
+      height: 8px;
 
       border-radius: 50%;
 
-      box-shadow:
-        0 5px 9px rgba(120,40,70,0.16),
-        inset 0 2px 2px rgba(255,255,255,0.9);
+      background:
+        rgba(255,255,255,0.72);
     }
+
+
+    /* bottom cake layer */
 
     .cake-bottom {
       position: absolute;
 
-      bottom: 14px;
       left: 50%;
+      bottom: 35px;
 
       transform: translateX(-50%);
 
-      width: 125px;
-      height: 52px;
+      width: 180px;
+      height: 75px;
 
       border-radius:
-        10px
-        10px
-        15px
-        15px;
+        13px
+        13px
+        22px
+        22px;
 
       background:
         linear-gradient(
-          to right,
-          #efc3b1,
-          #ffe7dc 20%,
-          #fff4ec 50%,
-          #ffe1d7 80%,
-          #e8b3a3
+          90deg,
+          #d99c8d 0%,
+          #f7d4c8 12%,
+          #fff1e9 30%,
+          #fff8f2 50%,
+          #ffe8df 70%,
+          #e7b4a7 90%,
+          #c98b81 100%
         );
 
       border:
-        2px solid rgba(255,255,255,0.9);
+        2px solid
+        rgba(255,255,255,0.85);
 
       box-shadow:
-        inset 0 -8px 0 rgba(181,104,105,0.1),
-        inset 0 4px 7px rgba(255,255,255,0.8),
-        0 5px 8px rgba(130,50,70,0.12);
+        inset 0 -13px 15px rgba(170,85,90,0.10),
+        inset 0 7px 12px rgba(255,255,255,0.85),
+        0 7px 12px rgba(120,45,70,0.15);
     }
+
+    /* cake layer details */
 
     .cake-bottom::before {
       content: "";
 
       position: absolute;
 
-      left: 0;
-      top: 14px;
+      left: 5px;
+      right: 5px;
+      top: 19px;
 
-      width: 100%;
-      height: 8px;
+      height: 9px;
+
+      border-radius: 50%;
 
       background:
         linear-gradient(
           to right,
-          #fff7f8,
+          #fff4f6,
           #ffffff,
-          #fff1f4
+          #ffe9f0
         );
+
+      box-shadow:
+        0 17px 0 rgba(210,125,135,0.10);
     }
 
-    .cake-frosting {
+    .cake-bottom::after {
+      content: "";
+
       position: absolute;
 
-      bottom: 58px;
+      left: 13px;
+      right: 13px;
+      bottom: 9px;
+
+      height: 12px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(185,100,100,0.10);
+    }
+
+
+    /* middle cream */
+
+    .cake-cream {
+      position: absolute;
+
       left: 50%;
+      bottom: 93px;
 
       transform: translateX(-50%);
 
-      width: 135px;
-      height: 33px;
+      width: 190px;
+      height: 25px;
 
       border-radius: 50%;
 
       background:
         linear-gradient(
           to bottom,
-          #ffc9dc,
-          #fa9abc 55%,
-          #e96d99
+          #ffffff,
+          #fff1f6
         );
 
       box-shadow:
-        inset 0 4px 7px rgba(255,255,255,0.55),
-        0 5px 8px rgba(170,50,90,0.16);
+        0 4px 7px rgba(150,55,90,0.12),
+        inset 0 3px 4px rgba(255,255,255,0.9);
+    }
+
+
+    /* top cake layer */
+
+    .cake-top-layer {
+      position: absolute;
+
+      left: 50%;
+      bottom: 105px;
+
+      transform: translateX(-50%);
+
+      width: 178px;
+      height: 58px;
+
+      border-radius:
+        14px
+        14px
+        18px
+        18px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #dca193,
+          #f6d1c5 16%,
+          #fff0e9 35%,
+          #fff8f1 50%,
+          #ffe8df 70%,
+          #e9b7aa 88%,
+          #d19388
+        );
+
+      border:
+        2px solid
+        rgba(255,255,255,0.85);
+
+      box-shadow:
+        inset 0 6px 9px rgba(255,255,255,0.8),
+        inset 0 -7px 10px rgba(175,80,90,0.08),
+        0 5px 9px rgba(130,50,75,0.12);
+    }
+
+
+    /* pink frosting */
+
+    .cake-frosting {
+      position: absolute;
+
+      left: 50%;
+      bottom: 149px;
+
+      transform: translateX(-50%);
+
+      width: 195px;
+      height: 40px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          ellipse at 50% 20%,
+          #fffafd 0%,
+          #ffeef5 25%,
+          #ffc9dc 58%,
+          #ed88ad 100%
+        );
+
+      box-shadow:
+        inset 0 6px 9px rgba(255,255,255,0.9),
+        0 6px 10px rgba(160,50,90,0.16);
     }
 
     .cake-frosting::before {
@@ -584,37 +631,55 @@
 
       position: absolute;
 
-      left: 13px;
-      bottom: -16px;
+      left: 12px;
+      right: 12px;
+      bottom: -19px;
 
-      width: 18px;
-      height: 23px;
+      height: 28px;
 
       background:
         linear-gradient(
           to bottom,
-          #fa9abc,
-          #e96d99
+          #ffbfd6,
+          #ee83aa
         );
 
-      border-radius:
-        0 0 12px 12px;
-
-      box-shadow:
-        38px 4px 0 -1px #f284ac,
-        77px 0 0 -2px #ed769f;
+      clip-path:
+        polygon(
+          0 0,
+          100% 0,
+          100% 35%,
+          92% 35%,
+          89% 100%,
+          78% 100%,
+          75% 43%,
+          63% 43%,
+          59% 82%,
+          48% 82%,
+          45% 40%,
+          33% 40%,
+          30% 100%,
+          19% 100%,
+          17% 38%,
+          7% 38%,
+          5% 72%,
+          0 72%
+        );
     }
+
+
+    /* cake top */
 
     .cake-top {
       position: absolute;
 
       left: 50%;
-      bottom: 78px;
+      bottom: 166px;
 
       transform: translateX(-50%);
 
-      width: 128px;
-      height: 34px;
+      width: 190px;
+      height: 52px;
 
       border-radius: 50%;
 
@@ -622,77 +687,106 @@
         radial-gradient(
           ellipse at center,
           #ffffff 0%,
-          #fff0f6 55%,
-          #ffc9dc 100%
+          #fffafb 38%,
+          #ffeaf2 67%,
+          #f4b5cc 100%
         );
 
       box-shadow:
-        inset 0 4px 7px rgba(255,255,255,0.9),
-        0 4px 7px rgba(170,60,100,0.12);
+        inset 0 5px 8px rgba(255,255,255,0.95),
+        0 5px 8px rgba(150,55,90,0.13);
     }
 
-    /*
-      BIG 16
-    */
+    .cake-top::after {
+      content: "";
+
+      position: absolute;
+
+      width: 145px;
+      height: 18px;
+
+      left: 50%;
+      top: 8px;
+
+      transform: translateX(-50%);
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,0.55);
+    }
+
+
+    /* =====================================================
+       16 NUMBER
+    ===================================================== */
 
     .age {
       position: absolute;
 
-      z-index: 5;
+      z-index: 10;
 
       left: 50%;
-      bottom: 81px;
+      bottom: 176px;
 
       transform: translateX(-50%);
 
-      font-family: Georgia, serif;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-      font-size: 25px;
+      font-size: 45px;
 
       font-weight: bold;
 
-      color: #d65386;
+      color: #d34f82;
 
       text-shadow:
-        0 1px 3px rgba(180,60,100,0.15);
+        0 2px 4px rgba(140,45,80,0.18),
+        0 0 8px rgba(255,255,255,0.8);
     }
 
-    /*
-      TWO CANDLES
-    */
+
+    /* =====================================================
+       CANDLES
+    ===================================================== */
 
     .candle {
       position: absolute;
 
-      bottom: 101px;
+      z-index: 12;
 
-      width: 11px;
-      height: 34px;
+      bottom: 205px;
 
-      border-radius: 4px;
+      width: 17px;
+      height: 52px;
+
+      border-radius: 5px;
 
       background:
         repeating-linear-gradient(
           -45deg,
-          #fff9fb 0px,
-          #fff9fb 5px,
-          #f3a5bf 5px,
-          #f3a5bf 9px
+          #fffafa 0px,
+          #fffafa 7px,
+          #f29abb 7px,
+          #f29abb 13px
         );
 
       border:
-        1px solid rgba(190,80,120,0.2);
+        1px solid rgba(180,70,110,0.22);
 
       box-shadow:
-        0 2px 5px rgba(150,50,90,0.15);
+        inset 2px 0 3px rgba(255,255,255,0.8),
+        2px 3px 6px rgba(120,40,70,0.16);
     }
 
     .candle.one {
-      left: 69px;
+      left: 93px;
     }
 
     .candle.six {
-      left: 96px;
+      left: 139px;
     }
 
     .candle::before {
@@ -700,26 +794,31 @@
 
       position: absolute;
 
-      top: -6px;
+      top: -8px;
       left: 50%;
-
-      width: 2px;
-      height: 7px;
 
       transform: translateX(-50%);
 
-      background: #553b3b;
+      width: 3px;
+      height: 9px;
+
+      background: #493535;
 
       border-radius: 50%;
     }
 
+
+    /* flames */
+
     .flame {
       position: absolute;
 
-      bottom: 132px;
+      z-index: 13;
 
-      width: 17px;
-      height: 19px;
+      bottom: 255px;
+
+      width: 22px;
+      height: 29px;
 
       border-radius:
         50%
@@ -731,33 +830,32 @@
 
       background:
         radial-gradient(
-          circle at 60% 60%,
-          #fffbd0 0%,
-          #ffe06d 35%,
-          #ffad69 65%,
-          #f47b9f 100%
+          circle at 60% 65%,
+          #fffedb 0%,
+          #ffe56d 32%,
+          #ffad5d 64%,
+          #ed6d92 100%
+        );
+
+      filter:
+        drop-shadow(
+          0 0 10px rgba(255,177,80,0.7)
         );
 
       animation:
         flameFlicker
-        0.7s
+        0.8s
         ease-in-out
-        infinite
-        alternate;
-
-      filter:
-        drop-shadow(
-          0 0 9px rgba(255,180,90,0.75)
-        );
+        infinite alternate;
     }
 
     .flame.one {
-      left: 66px;
+      left: 91px;
     }
 
     .flame.six {
-      left: 93px;
-      animation-delay: 0.2s;
+      left: 137px;
+      animation-delay: 0.25s;
     }
 
     @keyframes flameFlicker {
@@ -770,12 +868,52 @@
 
       to {
         transform:
-          rotate(48deg)
+          rotate(49deg)
           scale(1.12);
       }
     }
 
-    @keyframes cakeBounce {
+
+    /* tiny cake decorations */
+
+    .cake-dot {
+      position: absolute;
+
+      z-index: 8;
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #d85b88;
+
+      box-shadow:
+        0 1px 3px rgba(130,45,80,0.2);
+    }
+
+    .dot1 {
+      left: 65px;
+      bottom: 72px;
+    }
+
+    .dot2 {
+      left: 93px;
+      bottom: 61px;
+    }
+
+    .dot3 {
+      left: 151px;
+      bottom: 71px;
+    }
+
+    .dot4 {
+      left: 174px;
+      bottom: 57px;
+    }
+
+
+    @keyframes cakeFloat {
 
       0%,
       100% {
@@ -783,13 +921,13 @@
       }
 
       50% {
-        transform: translateY(-10px);
+        transform: translateY(-8px);
       }
     }
 
 
     /* =====================================================
-       TITLE
+       HERO TEXT
     ===================================================== */
 
     h1 {
@@ -800,11 +938,10 @@
           72px
         );
 
-      color: #c94f80;
+      color: #c84f7f;
 
       text-shadow:
-        0 0 25px
-        rgba(255,120,180,0.35);
+        0 0 25px rgba(255,120,180,0.32);
 
       margin-bottom: 15px;
     }
@@ -815,65 +952,96 @@
       color: #713650;
 
       line-height: 1.8;
+
+      max-width: 700px;
     }
 
     .scroll {
-      margin-top: 60px;
+      margin-top: 55px;
 
-      color: #c94f80;
-
-      animation:
-        pulse 2s infinite;
+      color: #c84f7f;
 
       font-weight: bold;
+
+      animation:
+        softPulse
+        2.3s
+        infinite;
     }
 
-    @keyframes pulse {
+    @keyframes softPulse {
 
       50% {
         opacity: 0.4;
+        transform: translateY(4px);
       }
     }
 
 
     /* =====================================================
-       SECTIONS
+       GLASS SECTIONS
     ===================================================== */
 
     section {
+      position: relative;
+
       background:
-        rgba(255,255,255,0.45);
+        rgba(255,255,255,0.34);
 
       border:
         1px solid
-        rgba(255,255,255,0.8);
+        rgba(255,255,255,0.72);
 
       backdrop-filter:
-        blur(14px);
+        blur(18px);
 
       -webkit-backdrop-filter:
-        blur(14px);
+        blur(18px);
 
-      border-radius: 25px;
+      border-radius: 28px;
 
-      padding: 35px;
+      padding: 38px;
 
       margin: 30px 0;
 
       box-shadow:
-        0 15px 50px
-        rgba(180,70,120,0.13),
+        0 18px 55px rgba(180,70,120,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.8);
 
-        inset 0 1px 0
-        rgba(255,255,255,0.7);
+      overflow: hidden;
+    }
+
+    section::before {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      top: -90px;
+      right: -70px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,0.20);
+
+      filter: blur(4px);
+
+      pointer-events: none;
     }
 
     section h2 {
-      color: #c34f7d;
+      position: relative;
 
-      margin-bottom: 20px;
+      color: #c04c79;
+
+      margin-bottom: 22px;
 
       font-size: 28px;
+
+      z-index: 1;
     }
 
 
@@ -882,11 +1050,15 @@
     ===================================================== */
 
     .letter {
+      position: relative;
+
       font-size: 19px;
 
       line-height: 2.2;
 
       color: #663047;
+
+      z-index: 1;
     }
 
     .letter strong {
@@ -907,26 +1079,29 @@
           minmax(220px, 1fr)
         );
 
-      gap: 15px;
+      gap: 16px;
     }
 
     .reason {
       background:
-        rgba(255,160,200,0.25);
+        rgba(255,170,205,0.23);
 
-      border-radius: 18px;
+      border:
+        1px solid
+        rgba(255,255,255,0.65);
 
-      padding: 20px;
+      border-radius: 20px;
+
+      padding: 21px;
 
       text-align: center;
 
       line-height: 1.8;
 
-      border:
-        1px solid
-        rgba(255,180,210,0.45);
-
       color: #743550;
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55);
 
       transition:
         transform 0.35s ease,
@@ -935,14 +1110,15 @@
     }
 
     .reason:hover {
-      transform: translateY(-5px);
+      transform:
+        translateY(-5px)
+        scale(1.015);
 
       background:
-        rgba(255,170,205,0.4);
+        rgba(255,185,215,0.38);
 
       box-shadow:
-        0 10px 25px
-        rgba(190,70,120,0.15);
+        0 12px 28px rgba(190,70,120,0.13);
     }
 
 
@@ -964,33 +1140,29 @@
       width: 100%;
     }
 
-    /*
-      Cute photo frame
-    */
-
     .photo-card {
       position: relative;
 
       width: fit-content;
       height: fit-content;
 
-      padding: 10px;
+      padding: 11px;
 
       background:
         linear-gradient(
           145deg,
-          #ffffff,
-          #fff6fa
+          rgba(255,255,255,0.92),
+          rgba(255,246,250,0.78)
         );
 
       border:
-        2px solid #f4a5c2;
+        2px solid rgba(246,165,195,0.82);
 
-      border-radius: 18px;
+      border-radius: 19px;
 
       box-shadow:
-        0 7px 20px rgba(150,60,100,0.13),
-        0 0 0 4px rgba(255,255,255,0.55);
+        0 8px 22px rgba(150,60,100,0.13),
+        0 0 0 4px rgba(255,255,255,0.40);
 
       transition:
         transform 0.4s cubic-bezier(.2,.8,.2,1),
@@ -1001,10 +1173,6 @@
       cursor: pointer;
     }
 
-    /*
-      Little decorative heart on frame
-    */
-
     .photo-card::after {
       content: "♥";
 
@@ -1013,15 +1181,15 @@
       right: -9px;
       top: -12px;
 
-      width: 25px;
-      height: 25px;
+      width: 26px;
+      height: 26px;
 
       display: flex;
 
       align-items: center;
       justify-content: center;
 
-      background: #fff;
+      background: rgba(255,255,255,0.92);
 
       border-radius: 50%;
 
@@ -1030,14 +1198,10 @@
       font-size: 14px;
 
       box-shadow:
-        0 3px 8px rgba(160,60,100,0.14);
+        0 3px 9px rgba(160,60,100,0.15);
 
       z-index: 2;
     }
-
-    /*
-      Gentle pop when hovering
-    */
 
     .photo-card:hover {
       transform:
@@ -1046,9 +1210,9 @@
         rotate(0deg);
 
       box-shadow:
-        0 16px 32px rgba(150,60,100,0.2),
-        0 0 0 5px rgba(255,255,255,0.65),
-        0 0 20px rgba(245,130,175,0.22);
+        0 17px 34px rgba(150,60,100,0.20),
+        0 0 0 5px rgba(255,255,255,0.58),
+        0 0 24px rgba(245,130,175,0.22);
     }
 
     .photo-card:nth-child(odd) {
@@ -1078,13 +1242,12 @@
 
       object-fit: contain;
 
-      border-radius: 10px;
+      border-radius: 11px;
 
       margin: 0;
 
       box-shadow:
-        0 3px 8px
-        rgba(150,60,100,0.1);
+        0 3px 8px rgba(150,60,100,0.10);
     }
 
 
@@ -1094,11 +1257,11 @@
 
     .voice {
       background:
-        rgba(255,255,255,0.3);
+        rgba(255,255,255,0.27);
 
-      padding: 20px;
+      padding: 22px;
 
-      border-radius: 18px;
+      border-radius: 20px;
 
       margin-top: 15px;
 
@@ -1106,20 +1269,49 @@
 
       border:
         1px solid
-        rgba(255,190,215,0.35);
+        rgba(255,190,215,0.42);
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+
+    .voice-title {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      font-weight: bold;
+
+      color: #b94574;
     }
 
     audio {
+      display: block;
+
       width: 100%;
 
-      margin-top: 15px;
+      margin-top: 17px;
+
+      border-radius: 30px;
 
       accent-color: #d95b8b;
     }
 
+    .audio-error {
+      display: none;
+
+      margin-top: 12px;
+
+      color: #9d4968;
+
+      font-size: 14px;
+    }
+
 
     /* =====================================================
-       FINAL MESSAGE
+       FINAL
     ===================================================== */
 
     .final {
@@ -1132,6 +1324,8 @@
       font-size: 36px;
 
       color: #bd4778;
+
+      line-height: 1.5;
     }
 
     .final p {
@@ -1172,18 +1366,15 @@
 
       .container {
         width: 90%;
-
         padding: 30px 0;
       }
 
       section {
-        padding:
-          25px 20px;
+        padding: 27px 20px;
       }
 
       .letter {
         font-size: 17px;
-
         line-height: 2;
       }
 
@@ -1191,10 +1382,42 @@
         font-size: 17px;
       }
 
-      .carnation {
-        transform:
-          scale(0.72)
-          rotate(-5deg);
+      .birthday-arch {
+        top: -52px;
+        height: 145px;
+        padding-bottom: 15px;
+      }
+
+      .birthday-text {
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+
+      .hero {
+        padding-top: 90px;
+      }
+
+      .cake {
+        transform: scale(0.82);
+        margin-bottom: 5px;
+      }
+
+      .cake:hover {
+        transform: scale(0.84);
+      }
+
+      .photos {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .photo-card {
+        max-width: 100%;
+      }
+
+      .photo-card img {
+        max-width: 220px !important;
+        max-height: 280px !important;
       }
 
       .final h2 {
@@ -1204,50 +1427,6 @@
       .final p {
         font-size: 18px;
       }
-
-      .birthday-arch {
-        top: -55px;
-
-        height: 140px;
-
-        padding-bottom: 15px;
-      }
-
-      .birthday-text {
-        font-size: 20px;
-
-        letter-spacing: 2px;
-      }
-
-      .hero {
-        padding-top: 90px;
-      }
-
-      .photos {
-        flex-direction: column;
-
-        align-items: center;
-      }
-
-      .photo-card {
-        width: fit-content;
-
-        max-width: 100%;
-      }
-
-      .photo-card img {
-        width: auto !important;
-
-        height: auto !important;
-
-        max-width: 220px !important;
-
-        max-height: 280px !important;
-      }
-
-      .cake {
-        transform: scale(0.9);
-      }
     }
 
   </style>
@@ -1256,6 +1435,24 @@
 
 
 <body>
+
+
+  <!-- =====================================================
+       MUSIC ATMOSPHERE
+  ===================================================== -->
+
+  <div class="music-background">
+
+    <div class="music-note">♪</div>
+    <div class="music-note">♫</div>
+    <div class="music-note">♪</div>
+    <div class="music-note">♬</div>
+    <div class="music-note">♫</div>
+    <div class="music-note">♪</div>
+    <div class="music-note">♩</div>
+    <div class="music-note">♫</div>
+
+  </div>
 
 
   <!-- =====================================================
@@ -1296,22 +1493,6 @@
   </div>
 
 
-  <!-- =====================================================
-       CARNATIONS
-  ===================================================== -->
-
-  <div class="carnations">
-
-    <div class="carnation"></div>
-    <div class="carnation"></div>
-    <div class="carnation"></div>
-    <div class="carnation"></div>
-    <div class="carnation"></div>
-    <div class="carnation"></div>
-
-  </div>
-
-
   <div class="container">
 
 
@@ -1322,7 +1503,7 @@
     <div class="hero">
 
 
-      <!-- 16TH BIRTHDAY CAKE -->
+      <!-- REALISTIC 16TH BIRTHDAY CAKE -->
 
       <div class="cake">
 
@@ -1340,7 +1521,16 @@
 
         <div class="cake-frosting"></div>
 
+        <div class="cake-top-layer"></div>
+
+        <div class="cake-cream"></div>
+
         <div class="cake-bottom"></div>
+
+        <div class="cake-dot dot1"></div>
+        <div class="cake-dot dot2"></div>
+        <div class="cake-dot dot3"></div>
+        <div class="cake-dot dot4"></div>
 
         <div class="cake-plate"></div>
 
@@ -1496,8 +1686,6 @@
       <div class="photos">
 
 
-        <!-- PHOTO 1 -->
-
         <div class="photo-card">
           <img
             src="photo1.jpeg"
@@ -1506,8 +1694,6 @@
           >
         </div>
 
-
-        <!-- PHOTO 2 -->
 
         <div class="photo-card">
           <img
@@ -1518,8 +1704,6 @@
         </div>
 
 
-        <!-- PHOTO 3 -->
-
         <div class="photo-card">
           <img
             src="photo3.jpeg"
@@ -1528,8 +1712,6 @@
           >
         </div>
 
-
-        <!-- PHOTO 4 -->
 
         <div class="photo-card">
           <img
@@ -1540,8 +1722,6 @@
         </div>
 
 
-        <!-- PHOTO 5 -->
-
         <div class="photo-card">
           <img
             src="photo5.jpeg"
@@ -1551,8 +1731,6 @@
         </div>
 
 
-        <!-- PHOTO 6 -->
-
         <div class="photo-card">
           <img
             src="photo6.jpeg"
@@ -1561,8 +1739,6 @@
           >
         </div>
 
-
-        <!-- PHOTO 7 -->
 
         <div class="photo-card">
           <img
@@ -1591,20 +1767,42 @@
 
       <div class="voice">
 
-        <div>
-          رسالة مخصوص ليكي ❤️
+        <div class="voice-title">
+          🎵
+          <span>رسالة مخصوص ليكي ❤️</span>
         </div>
 
-        <audio controls preload="metadata">
 
+        <audio
+          id="birthdayVoice"
+          controls
+          preload="metadata"
+        >
+
+          <!-- OGG/OGA -->
           <source
             src="voice3.oga"
+            type="audio/ogg"
+          >
+
+          <!-- Recommended backup -->
+          <source
+            src="voice3.ogg"
             type="audio/ogg"
           >
 
           Your browser does not support the audio element.
 
         </audio>
+
+
+        <div
+          id="audioError"
+          class="audio-error"
+        >
+          الصوت مش قادر يشتغل من الملف الحالي.
+          تأكد إنك رفعت voice3.ogg بجانب ملف index.html ❤️
+        </div>
 
       </div>
 
@@ -1652,6 +1850,42 @@
 
 
   </div>
+
+
+  <!-- =====================================================
+       AUDIO ERROR CHECK
+  ===================================================== -->
+
+  <script>
+
+    const birthdayVoice =
+      document.getElementById("birthdayVoice");
+
+    const audioError =
+      document.getElementById("audioError");
+
+
+    birthdayVoice.addEventListener(
+      "error",
+      function () {
+
+        audioError.style.display = "block";
+
+      }
+    );
+
+
+    birthdayVoice.addEventListener(
+      "canplay",
+      function () {
+
+        audioError.style.display = "none";
+
+      }
+    );
+
+  </script>
+
 
 </body>
 
