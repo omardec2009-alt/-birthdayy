@@ -42,7 +42,7 @@
       z-index: -2;
 
       background:
-        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.22), transparent 20%),
+        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.3), transparent 20%),
         radial-gradient(circle at 70% 65%, rgba(255,140,190,0.12), transparent 25%);
 
       animation: ambientGlow 10s ease-in-out infinite alternate;
@@ -60,9 +60,9 @@
       }
     }
 
-    /* =========================================================
+    /* ================================
        CALM MUSIC VIBE
-    ========================================================= */
+    ================================= */
 
     .music-vibe {
       position: fixed;
@@ -70,172 +70,85 @@
       pointer-events: none;
       z-index: 0;
       overflow: hidden;
-      opacity: 0.30;
+      opacity: 0.32;
     }
 
     .music-note {
       position: absolute;
-      bottom: -80px;
-      color: rgba(255,255,255,0.8);
-      font-size: 24px;
-      text-shadow:
-        0 0 10px rgba(214,75,130,0.25),
-        0 0 25px rgba(255,255,255,0.6);
-
+      bottom: -60px;
+      color: rgba(255,255,255,0.72);
+      font-size: 25px;
+      text-shadow: 0 0 14px rgba(214,75,130,0.3);
       animation: musicFloat linear infinite;
     }
 
     .music-note:nth-child(1) {
-      left: 4%;
-      animation-duration: 17s;
-      animation-delay: -4s;
-      font-size: 19px;
+      left: 5%;
+      animation-duration: 14s;
+      animation-delay: 0s;
     }
 
     .music-note:nth-child(2) {
-      left: 13%;
-      animation-duration: 21s;
-      animation-delay: -11s;
-      font-size: 28px;
+      left: 17%;
+      animation-duration: 17s;
+      animation-delay: 4s;
     }
 
     .music-note:nth-child(3) {
-      left: 25%;
-      animation-duration: 19s;
-      animation-delay: -7s;
-      font-size: 17px;
+      left: 30%;
+      animation-duration: 13s;
+      animation-delay: 2s;
     }
 
     .music-note:nth-child(4) {
-      left: 38%;
-      animation-duration: 24s;
-      animation-delay: -15s;
-      font-size: 31px;
+      left: 44%;
+      animation-duration: 19s;
+      animation-delay: 7s;
     }
 
     .music-note:nth-child(5) {
-      left: 52%;
-      animation-duration: 18s;
-      animation-delay: -5s;
-      font-size: 21px;
+      left: 59%;
+      animation-duration: 15s;
+      animation-delay: 1s;
     }
 
     .music-note:nth-child(6) {
-      left: 67%;
-      animation-duration: 23s;
-      animation-delay: -13s;
-      font-size: 29px;
+      left: 74%;
+      animation-duration: 18s;
+      animation-delay: 5s;
     }
 
     .music-note:nth-child(7) {
-      left: 79%;
-      animation-duration: 20s;
-      animation-delay: -8s;
-      font-size: 18px;
-    }
-
-    .music-note:nth-child(8) {
-      left: 91%;
-      animation-duration: 25s;
-      animation-delay: -17s;
-      font-size: 27px;
+      left: 88%;
+      animation-duration: 14s;
+      animation-delay: 8s;
     }
 
     @keyframes musicFloat {
       0% {
-        transform:
-          translate3d(0, 0, 0)
-          rotate(-8deg)
-          scale(0.7);
+        bottom: -60px;
         opacity: 0;
+        transform: translateX(0) rotate(-10deg) scale(0.7);
       }
 
-      12% {
-        opacity: 0.55;
+      15% {
+        opacity: 0.65;
       }
 
-      35% {
-        transform:
-          translate3d(25px, -30vh, 0)
-          rotate(8deg)
-          scale(1);
-      }
-
-      65% {
-        transform:
-          translate3d(-25px, -65vh, 0)
-          rotate(-7deg)
-          scale(0.95);
+      50% {
+        transform: translateX(35px) rotate(10deg) scale(1);
       }
 
       100% {
-        transform:
-          translate3d(30px, -115vh, 0)
-          rotate(10deg)
-          scale(0.75);
+        bottom: 110%;
         opacity: 0;
+        transform: translateX(-35px) rotate(-10deg) scale(0.8);
       }
     }
 
-    /* =========================================================
-       SOFT ORBS BEHIND EVERYTHING
-    ========================================================= */
-
-    .ambient-orbs {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(35px);
-      opacity: 0.20;
-      animation: orbDrift 16s ease-in-out infinite alternate;
-    }
-
-    .orb1 {
-      width: 180px;
-      height: 180px;
-      left: 5%;
-      top: 25%;
-      background: #ffffff;
-    }
-
-    .orb2 {
-      width: 230px;
-      height: 230px;
-      right: 2%;
-      top: 45%;
-      background: #f58db6;
-      animation-delay: -5s;
-    }
-
-    .orb3 {
-      width: 150px;
-      height: 150px;
-      left: 38%;
-      bottom: 4%;
-      background: #ffffff;
-      animation-delay: -9s;
-    }
-
-    @keyframes orbDrift {
-      from {
-        transform: translate(0, 0) scale(0.9);
-      }
-
-      to {
-        transform: translate(30px, -25px) scale(1.12);
-      }
-    }
-
-    /* =========================================================
+    /* ================================
        FLOATING HEARTS
-    ========================================================= */
+    ================================= */
 
     .hearts {
       position: fixed;
@@ -265,11 +178,7 @@
 
     @keyframes floatHeart {
       0% {
-        transform:
-          translateY(0)
-          translateX(0)
-          rotate(0deg)
-          scale(0.7);
+        transform: translateY(0) translateX(0) rotate(0deg) scale(0.7);
         opacity: 0;
       }
 
@@ -278,26 +187,18 @@
       }
 
       50% {
-        transform:
-          translateY(-55vh)
-          translateX(35px)
-          rotate(180deg)
-          scale(1);
+        transform: translateY(-55vh) translateX(35px) rotate(180deg) scale(1);
       }
 
       100% {
-        transform:
-          translateY(-115vh)
-          translateX(-35px)
-          rotate(360deg)
-          scale(0.8);
+        transform: translateY(-115vh) translateX(-35px) rotate(360deg) scale(0.8);
         opacity: 0;
       }
     }
 
-    /* =========================================================
+    /* ================================
        TOP BIRTHDAY TEXT
-    ========================================================= */
+    ================================= */
 
     .birthday-arch {
       position: absolute;
@@ -306,30 +207,28 @@
       transform: translateX(-50%);
       width: 100%;
       height: 170px;
-
       display: flex;
       align-items: flex-end;
       justify-content: center;
-
       padding-bottom: 22px;
       z-index: 3;
       pointer-events: none;
     }
 
     .birthday-text {
-      color: rgba(255,255,255,0.72);
+      color: rgba(255,255,255,0.78);
       font-size: clamp(20px, 4vw, 38px);
       font-weight: bold;
       letter-spacing: 3px;
-
       text-shadow:
         0 2px 8px rgba(170,60,100,0.16),
         0 0 20px rgba(255,255,255,0.6);
+      text-align: center;
     }
 
-    /* =========================================================
-       MAIN CONTAINER
-    ========================================================= */
+    /* ================================
+       CONTAINER
+    ================================= */
 
     .container {
       position: relative;
@@ -339,38 +238,31 @@
       padding: 55px 0;
     }
 
-    /* =========================================================
+    /* ================================
        HERO
-    ========================================================= */
+    ================================= */
 
     .hero {
       min-height: 92vh;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
       text-align: center;
       padding-top: 65px;
     }
 
-    /* =========================================================
-       REALISTIC CAKE
-    ========================================================= */
+    /* ================================
+       CAKE
+    ================================= */
 
     .cake {
       position: relative;
       width: 230px;
       height: 215px;
       margin-bottom: 35px;
-
       animation: cakeFloat 3.2s ease-in-out infinite;
-
-      filter:
-        drop-shadow(
-          0 20px 18px rgba(120,40,75,0.2)
-        );
+      filter: drop-shadow(0 20px 18px rgba(120,40,75,0.2));
     }
 
     .cake-plate {
@@ -378,18 +270,12 @@
       bottom: 3px;
       left: 50%;
       transform: translateX(-50%);
-
       width: 215px;
       height: 25px;
       border-radius: 50%;
 
       background:
-        linear-gradient(
-          to bottom,
-          #ffffff,
-          #f7edf2 55%,
-          #e9cdd9
-        );
+        linear-gradient(to bottom, #ffffff, #f7edf2 55%, #e9cdd9);
 
       box-shadow:
         0 7px 12px rgba(100,40,70,0.18),
@@ -412,10 +298,8 @@
       bottom: 18px;
       left: 50%;
       transform: translateX(-50%);
-
       width: 165px;
       height: 68px;
-
       border-radius: 13px 13px 18px 18px;
 
       background:
@@ -448,12 +332,7 @@
       border-radius: 50%;
 
       background:
-        linear-gradient(
-          to right,
-          #fff9f8,
-          #ffffff,
-          #fff2f4
-        );
+        linear-gradient(to right, #fff9f8, #ffffff, #fff2f4);
 
       box-shadow:
         0 22px 0 rgba(255,255,255,0.48);
@@ -466,7 +345,6 @@
       height: 14px;
       left: 0;
       bottom: 0;
-
       border-radius: 0 0 16px 16px;
 
       background:
@@ -482,7 +360,6 @@
       bottom: 73px;
       left: 50%;
       transform: translateX(-50%);
-
       width: 177px;
       height: 43px;
       border-radius: 50%;
@@ -507,18 +384,12 @@
       position: absolute;
       left: 13px;
       bottom: -20px;
-
       width: 23px;
       height: 30px;
-
       border-radius: 0 0 14px 14px;
 
       background:
-        linear-gradient(
-          to bottom,
-          #ffd8e6,
-          #ee9fbd
-        );
+        linear-gradient(to bottom, #ffd8e6, #ee9fbd);
 
       box-shadow:
         39px 5px 0 -2px #f2aec8,
@@ -531,7 +402,6 @@
       left: 50%;
       bottom: 96px;
       transform: translateX(-50%);
-
       width: 171px;
       height: 48px;
       border-radius: 50%;
@@ -567,9 +437,7 @@
           #c94f80 100%
         );
 
-      box-shadow:
-        0 2px 4px rgba(130,40,75,0.2);
-
+      box-shadow: 0 2px 4px rgba(130,40,75,0.2);
       z-index: 5;
     }
 
@@ -596,15 +464,12 @@
     .age {
       position: absolute;
       z-index: 10;
-
       left: 50%;
       bottom: 104px;
       transform: translateX(-50%);
-
       font-family: Georgia, "Times New Roman", serif;
       font-size: 34px;
       font-weight: bold;
-
       color: #cf5787;
 
       text-shadow:
@@ -617,10 +482,8 @@
     .candle {
       position: absolute;
       bottom: 132px;
-
       width: 14px;
       height: 45px;
-
       border-radius: 5px;
 
       background:
@@ -654,12 +517,9 @@
       position: absolute;
       top: -7px;
       left: 50%;
-
       width: 3px;
       height: 8px;
-
       transform: translateX(-50%);
-
       background: #4d3636;
       border-radius: 50%;
     }
@@ -668,10 +528,8 @@
       position: absolute;
       z-index: 9;
       bottom: 174px;
-
       width: 19px;
       height: 25px;
-
       border-radius: 50% 50% 50% 0;
       transform: rotate(45deg);
 
@@ -684,17 +542,13 @@
           #f1789e 100%
         );
 
-      filter:
-        drop-shadow(
-          0 0 10px rgba(255,185,95,0.8)
-        );
+      filter: drop-shadow(0 0 10px rgba(255,185,95,0.8));
 
       animation:
         flameFlicker
         0.65s
         ease-in-out
-        infinite
-        alternate;
+        infinite alternate;
     }
 
     .flame.one {
@@ -708,15 +562,11 @@
 
     @keyframes flameFlicker {
       from {
-        transform:
-          rotate(40deg)
-          scale(0.9);
+        transform: rotate(40deg) scale(0.9);
       }
 
       to {
-        transform:
-          rotate(49deg)
-          scale(1.12);
+        transform: rotate(49deg) scale(1.12);
       }
     }
 
@@ -730,17 +580,10 @@
       }
     }
 
-    /* =========================================================
-       HERO TEXT
-    ========================================================= */
-
     h1 {
       font-size: clamp(38px, 8vw, 72px);
       color: #c94f80;
-
-      text-shadow:
-        0 0 25px rgba(255,120,180,0.3);
-
+      text-shadow: 0 0 25px rgba(255,120,180,0.3);
       margin-bottom: 15px;
     }
 
@@ -754,12 +597,7 @@
     .scroll {
       margin-top: 55px;
       color: #c94f80;
-
-      animation:
-        scrollPulse
-        2s
-        infinite;
-
+      animation: scrollPulse 2s infinite;
       font-weight: bold;
     }
 
@@ -770,9 +608,9 @@
       }
     }
 
-    /* =========================================================
+    /* ================================
        GLASS SECTIONS
-    ========================================================= */
+    ================================= */
 
     section {
       position: relative;
@@ -785,8 +623,7 @@
           rgba(255,240,247,0.34)
         );
 
-      border:
-        1px solid rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.8);
 
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
@@ -805,6 +642,8 @@
     }
 
     section:hover {
+      transform: translateY(-2px);
+
       box-shadow:
         0 22px 65px rgba(180,70,120,0.17),
         inset 0 1px 0 rgba(255,255,255,0.9);
@@ -813,17 +652,13 @@
     section::before {
       content: "";
       position: absolute;
-
       width: 180px;
       height: 180px;
-
       top: -100px;
       right: -80px;
-
       border-radius: 50%;
       background: rgba(255,255,255,0.2);
       filter: blur(4px);
-
       pointer-events: none;
     }
 
@@ -831,19 +666,17 @@
       color: #c34f7d;
       margin-bottom: 20px;
       font-size: 28px;
-
       position: relative;
       z-index: 1;
     }
 
-    /* =========================================================
-       LOVE LETTER
-    ========================================================= */
+    /* ================================
+       LETTER
+    ================================= */
 
     .letter {
       position: relative;
       z-index: 1;
-
       font-size: 19px;
       line-height: 2.2;
       color: #663047;
@@ -853,38 +686,25 @@
       color: #b83f70;
     }
 
-    /* =========================================================
+    /* ================================
        REASONS
-    ========================================================= */
+    ================================= */
 
     .reasons {
       display: grid;
-
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(220px, 1fr)
-        );
-
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 15px;
-
       position: relative;
       z-index: 1;
     }
 
     .reason {
-      background:
-        rgba(255,170,205,0.25);
-
+      background: rgba(255,170,205,0.25);
       border-radius: 20px;
       padding: 21px;
-
       text-align: center;
       line-height: 1.8;
-
-      border:
-        1px solid rgba(255,180,210,0.5);
-
+      border: 1px solid rgba(255,180,210,0.5);
       color: #743550;
 
       box-shadow:
@@ -897,40 +717,30 @@
     }
 
     .reason:hover {
-      transform:
-        translateY(-6px)
-        scale(1.015);
-
-      background:
-        rgba(255,180,215,0.38);
-
-      box-shadow:
-        0 12px 27px rgba(190,70,120,0.14);
+      transform: translateY(-6px) scale(1.015);
+      background: rgba(255,180,215,0.38);
+      box-shadow: 0 12px 27px rgba(190,70,120,0.14);
     }
 
-    /* =========================================================
+    /* ================================
        PHOTOS
-    ========================================================= */
+    ================================= */
 
     .photos {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: flex-start;
-
       gap: 30px;
       width: 100%;
-
       position: relative;
       z-index: 1;
     }
 
     .photo-card {
       position: relative;
-
       width: fit-content;
       height: fit-content;
-
       padding: 11px;
 
       background:
@@ -940,9 +750,7 @@
           rgba(255,246,250,0.92)
         );
 
-      border:
-        2px solid #f1abc6;
-
+      border: 2px solid #f1abc6;
       border-radius: 19px;
 
       box-shadow:
@@ -959,46 +767,30 @@
 
     .photo-card::before {
       content: "";
-
       position: absolute;
       inset: 5px;
-
-      border:
-        1px solid rgba(238,140,180,0.35);
-
+      border: 1px solid rgba(238,140,180,0.35);
       border-radius: 14px;
-
       pointer-events: none;
       z-index: 1;
     }
 
     .photo-card::after {
       content: "♥";
-
       position: absolute;
-
       right: -10px;
       top: -12px;
-
       width: 27px;
       height: 27px;
-
       display: flex;
       align-items: center;
       justify-content: center;
 
       background:
-        linear-gradient(
-          145deg,
-          #fff,
-          #fff2f7
-        );
+        linear-gradient(145deg, #fff, #fff2f7);
 
-      border:
-        1px solid #f0b2ca;
-
+      border: 1px solid #f0b2ca;
       border-radius: 50%;
-
       color: #e875a2;
       font-size: 14px;
 
@@ -1009,10 +801,7 @@
     }
 
     .photo-card:hover {
-      transform:
-        translateY(-10px)
-        scale(1.035)
-        rotate(0deg);
+      transform: translateY(-10px) scale(1.035) rotate(0deg);
 
       box-shadow:
         0 18px 38px rgba(150,60,100,0.2),
@@ -1030,23 +819,16 @@
 
     .photo-card:nth-child(odd):hover,
     .photo-card:nth-child(even):hover {
-      transform:
-        translateY(-10px)
-        scale(1.035)
-        rotate(0deg);
+      transform: translateY(-10px) scale(1.035) rotate(0deg);
     }
 
     .photo-card img {
       display: block;
-
       width: auto !important;
       height: auto !important;
-
       max-width: 230px !important;
       max-height: 290px !important;
-
       object-fit: contain;
-
       border-radius: 11px;
       margin: 0;
 
@@ -1054,25 +836,20 @@
         0 4px 10px rgba(150,60,100,0.12);
     }
 
-    /* =========================================================
+    /* ================================
        VOICE MESSAGE
-    ========================================================= */
+    ================================= */
 
     .voice {
       position: relative;
       z-index: 1;
-
-      background:
-        rgba(255,255,255,0.3);
-
+      background: rgba(255,255,255,0.3);
       padding: 23px;
       border-radius: 20px;
       margin-top: 15px;
-
       color: #743550;
 
-      border:
-        1px solid rgba(255,190,215,0.45);
+      border: 1px solid rgba(255,190,215,0.45);
 
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.7);
@@ -1086,11 +863,9 @@
 
     .audio-visual {
       height: 45px;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       gap: 4px;
       margin: 10px 0;
     }
@@ -1100,11 +875,7 @@
       border-radius: 5px;
 
       background:
-        linear-gradient(
-          to top,
-          #d85c8d,
-          #f3a7c2
-        );
+        linear-gradient(to top, #d85c8d, #f3a7c2);
 
       animation:
         audioWave
@@ -1143,31 +914,36 @@
       accent-color: #d95b8b;
     }
 
-    /* =========================================================
+    /* ================================
        LULU QUESTION
-    ========================================================= */
+    ================================= */
 
     .lulu-section {
       text-align: center;
-      padding: 55px 25px;
+      padding: 45px 25px;
     }
 
     .lulu-question {
-      font-size: clamp(25px, 5vw, 38px);
-      color: #bd4778;
-      margin-bottom: 12px;
+      position: relative;
+      z-index: 2;
     }
 
-    .lulu-subtitle {
-      color: #713650;
-      font-size: 17px;
+    .lulu-question h2 {
+      font-size: clamp(25px, 5vw, 38px);
+      margin-bottom: 10px;
+    }
+
+    .lulu-question p {
+      color: #7b3b57;
+      font-size: 18px;
       margin-bottom: 25px;
     }
 
     .lulu-buttons {
       display: flex;
       justify-content: center;
-      gap: 14px;
+      align-items: center;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
@@ -1175,27 +951,18 @@
       border: none;
       padding: 13px 28px;
       border-radius: 999px;
-
       font-size: 17px;
       font-weight: bold;
       font-family: inherit;
-
       cursor: pointer;
 
-      color: #743550;
+      color: #fff;
 
       background:
-        linear-gradient(
-          135deg,
-          #fff,
-          #ffe5ef
-        );
-
-      border:
-        1px solid rgba(220,120,160,0.35);
+        linear-gradient(135deg, #df6d9a, #c84f80);
 
       box-shadow:
-        0 8px 20px rgba(150,60,100,0.13);
+        0 8px 20px rgba(180,70,120,0.2);
 
       transition:
         transform 0.25s ease,
@@ -1203,41 +970,36 @@
     }
 
     .lulu-btn:hover {
-      transform: translateY(-3px) scale(1.03);
+      transform: translateY(-4px) scale(1.04);
 
       box-shadow:
-        0 12px 25px rgba(150,60,100,0.2);
-    }
-
-    .lulu-btn.yes {
-      color: white;
-
-      background:
-        linear-gradient(
-          135deg,
-          #e875a2,
-          #c94f80
-        );
+        0 12px 25px rgba(180,70,120,0.3);
     }
 
     .lulu-btn.no {
-      background: rgba(255,255,255,0.65);
+      color: #b45178;
+
+      background:
+        rgba(255,255,255,0.75);
+
+      border:
+        1px solid rgba(210,100,145,0.25);
     }
 
-    .lulu-response {
+    .lulu-reveal {
       display: none;
-      margin-top: 30px;
+      margin-top: 35px;
+      animation: luluAppear 0.8s ease forwards;
     }
 
-    .lulu-response.show {
+    .lulu-reveal.show {
       display: block;
-      animation: luluAppear 0.7s ease both;
     }
 
     @keyframes luluAppear {
       from {
         opacity: 0;
-        transform: translateY(20px) scale(0.95);
+        transform: translateY(25px) scale(0.8);
       }
 
       to {
@@ -1246,451 +1008,355 @@
       }
     }
 
-    /* =========================================================
+    /* ================================
        CUTE WHITE CAT
-    ========================================================= */
+    ================================= */
 
-    .cat-wrapper {
+    .lulu {
       position: relative;
-      width: 230px;
+      width: 220px;
       height: 205px;
       margin: 0 auto;
       cursor: pointer;
       user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .cat {
-      position: absolute;
-      left: 50%;
-      bottom: 5px;
-      width: 150px;
-      height: 130px;
-      transform: translateX(-50%);
 
       animation:
-        catBreath
+        luluFloat
         3s
         ease-in-out
         infinite;
     }
 
-    .cat-body {
+    .lulu:hover {
+      animation:
+        luluBounce
+        0.65s
+        ease-in-out;
+    }
+
+    @keyframes luluFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-7px);
+      }
+    }
+
+    @keyframes luluBounce {
+      0% {
+        transform: translateY(0) rotate(0);
+      }
+
+      30% {
+        transform: translateY(-18px) rotate(-4deg);
+      }
+
+      60% {
+        transform: translateY(-5px) rotate(4deg);
+      }
+
+      100% {
+        transform: translateY(0) rotate(0);
+      }
+    }
+
+    .cat-shadow {
       position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
-
-      width: 105px;
-      height: 90px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #ffffff 0%,
-          #fffafa 60%,
-          #f1e8ed 100%
-        );
-
-      border-radius: 52% 52% 45% 45%;
-
-      box-shadow:
-        inset -8px -8px 15px rgba(190,160,175,0.12),
-        0 13px 22px rgba(120,70,100,0.16);
-    }
-
-    .cat-head {
-      position: absolute;
-      left: 50%;
-      top: 5px;
-      transform: translateX(-50%);
-
-      width: 105px;
-      height: 92px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #ffffff 0%,
-          #fffdfd 65%,
-          #f0e8ec 100%
-        );
-
-      border-radius: 48% 48% 45% 45%;
-
-      box-shadow:
-        inset -7px -7px 13px rgba(190,160,175,0.12),
-        0 9px 17px rgba(120,70,100,0.13);
-
-      z-index: 4;
-    }
-
-    .cat-ear {
-      position: absolute;
-      top: -18px;
-
-      width: 48px;
-      height: 48px;
-
-      background: #ffffff;
-
-      border-radius: 8px 38px 8px 8px;
-
-      transform: rotate(25deg);
-
-      box-shadow:
-        inset -5px -5px 8px rgba(190,160,175,0.12);
-    }
-
-    .cat-ear::after {
-      content: "";
-      position: absolute;
-      inset: 10px;
-
-      background: #f6b8d0;
-
-      border-radius: 6px 25px 6px 6px;
-      opacity: 0.7;
-    }
-
-    .cat-ear.left {
-      left: 6px;
-      transform: rotate(25deg);
-    }
-
-    .cat-ear.right {
-      right: 6px;
-      transform: scaleX(-1) rotate(25deg);
-    }
-
-    .cat-eye {
-      position: absolute;
-      top: 40px;
-
-      width: 10px;
-      height: 14px;
-
-      background: #573a48;
-
-      border-radius: 50%;
-
-      box-shadow:
-        0 0 0 2px rgba(255,255,255,0.5);
-    }
-
-    .cat-eye::after {
-      content: "";
-      position: absolute;
-      width: 3px;
-      height: 4px;
-      background: white;
-      border-radius: 50%;
-      left: 2px;
-      top: 2px;
-    }
-
-    .cat-eye.left {
-      left: 28px;
-    }
-
-    .cat-eye.right {
-      right: 28px;
-    }
-
-    .cat-nose {
-      position: absolute;
-      left: 50%;
-      top: 58px;
-      transform: translateX(-50%);
-
-      width: 10px;
-      height: 8px;
-
-      background: #e889a9;
-      border-radius: 50% 50% 55% 55%;
-    }
-
-    .cat-mouth {
-      position: absolute;
-      left: 50%;
-      top: 64px;
-      transform: translateX(-50%);
-
-      width: 19px;
-      height: 10px;
-    }
-
-    .cat-mouth::before,
-    .cat-mouth::after {
-      content: "";
-      position: absolute;
-
-      width: 9px;
-      height: 7px;
-
-      border-bottom:
-        2px solid #8a536b;
-
-      border-radius: 50%;
-    }
-
-    .cat-mouth::before {
-      left: 0;
-      transform: rotate(15deg);
-    }
-
-    .cat-mouth::after {
-      right: 0;
-      transform: rotate(-15deg);
-    }
-
-    .cat-whisker {
-      position: absolute;
-      width: 35px;
-      height: 1px;
-      background: rgba(100,70,85,0.45);
-    }
-
-    .cat-whisker.w1 {
-      left: -20px;
-      top: 62px;
-      transform: rotate(7deg);
-    }
-
-    .cat-whisker.w2 {
-      left: -20px;
-      top: 72px;
-      transform: rotate(-7deg);
-    }
-
-    .cat-whisker.w3 {
-      right: -20px;
-      top: 62px;
-      transform: rotate(-7deg);
-    }
-
-    .cat-whisker.w4 {
-      right: -20px;
-      top: 72px;
-      transform: rotate(7deg);
-    }
-
-    .cat-paw {
-      position: absolute;
-
-      width: 32px;
-      height: 25px;
-
-      background: #ffffff;
-      border-radius: 50%;
-
       bottom: 5px;
-
-      box-shadow:
-        0 4px 8px rgba(120,70,100,0.12);
-
-      z-index: 6;
-    }
-
-    .cat-paw.left {
-      left: 28px;
-      transform: rotate(10deg);
-    }
-
-    .cat-paw.right {
-      right: 28px;
-      transform: rotate(-10deg);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 145px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(120,60,90,0.14);
+      filter: blur(7px);
     }
 
     .cat-tail {
       position: absolute;
-
-      right: 8px;
-      bottom: 35px;
-
-      width: 55px;
-      height: 70px;
+      width: 70px;
+      height: 85px;
+      right: 13px;
+      bottom: 42px;
 
       border:
-        13px solid #ffffff;
+        12px solid #fff;
 
       border-left-color: transparent;
       border-bottom-color: transparent;
 
       border-radius: 50%;
 
-      transform: rotate(20deg);
+      transform: rotate(25deg);
 
       filter:
-        drop-shadow(
-          0 4px 5px rgba(120,70,100,0.10)
-        );
+        drop-shadow(0 4px 4px rgba(120,70,90,0.13));
 
       z-index: 1;
     }
 
-    .cat-bow {
+    .cat-body {
       position: absolute;
       left: 50%;
-      top: 86px;
+      bottom: 25px;
       transform: translateX(-50%);
+      width: 125px;
+      height: 105px;
 
-      width: 40px;
-      height: 20px;
-      z-index: 8;
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff,
+          #fffafa 55%,
+          #f1e8ed
+        );
+
+      border-radius: 55% 55% 42% 42%;
+
+      box-shadow:
+        inset -8px -8px 15px rgba(205,180,193,0.22),
+        0 8px 18px rgba(120,70,90,0.14);
+
+      z-index: 2;
     }
 
-    .cat-bow::before,
-    .cat-bow::after {
+    .cat-head {
+      position: absolute;
+      left: 50%;
+      top: 35px;
+      transform: translateX(-50%);
+      width: 130px;
+      height: 115px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff,
+          #fffafa 60%,
+          #eee5ea
+        );
+
+      border-radius: 50% 50% 46% 46%;
+
+      box-shadow:
+        inset -7px -7px 14px rgba(205,180,193,0.2),
+        0 8px 18px rgba(120,70,90,0.14);
+
+      z-index: 5;
+    }
+
+    .cat-ear {
+      position: absolute;
+      top: 13px;
+      width: 49px;
+      height: 55px;
+      background: #fff;
+      border-radius: 70% 20% 50% 20%;
+      z-index: 4;
+
+      box-shadow:
+        0 4px 10px rgba(120,70,90,0.1);
+    }
+
+    .cat-ear.left {
+      left: 47px;
+      transform: rotate(-17deg);
+    }
+
+    .cat-ear.right {
+      right: 47px;
+      transform: rotate(107deg);
+    }
+
+    .cat-ear::after {
       content: "";
       position: absolute;
-
-      width: 22px;
-      height: 17px;
-
-      background: #e875a2;
-
-      top: 1px;
-      border-radius: 60% 40% 50% 50%;
+      inset: 10px;
+      border-radius: inherit;
+      background: #f7c4d6;
+      opacity: 0.8;
     }
 
-    .cat-bow::before {
-      left: 0;
-      transform: rotate(20deg);
-    }
-
-    .cat-bow::after {
-      right: 0;
-      transform: rotate(-20deg);
-    }
-
-    .cat-bow-center {
+    .cat-face {
       position: absolute;
-      left: 50%;
-      top: 6px;
-      transform: translateX(-50%);
+      inset: 0;
+    }
 
+    .cat-eye {
+      position: absolute;
+      top: 49px;
+      width: 14px;
+      height: 18px;
+      border-radius: 50%;
+      background: #46323b;
+      box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    }
+
+    .cat-eye::after {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 5px;
+      top: 3px;
+      left: 3px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .cat-eye.left {
+      left: 35px;
+    }
+
+    .cat-eye.right {
+      right: 35px;
+    }
+
+    .cat-nose {
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
       width: 11px;
       height: 11px;
+      border-radius: 3px 50% 50% 50%;
+      background: #e58aa8;
+    }
 
-      background: #c94f80;
+    .cat-mouth {
+      position: absolute;
+      top: 79px;
+      left: 50%;
+      width: 24px;
+      height: 13px;
+      transform: translateX(-50%);
+    }
+
+    .cat-mouth::before,
+    .cat-mouth::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 12px;
+      height: 8px;
+      border-bottom: 2px solid #6f4a59;
       border-radius: 50%;
-      z-index: 2;
+    }
+
+    .cat-mouth::before {
+      left: 0;
+      transform: rotate(10deg);
+    }
+
+    .cat-mouth::after {
+      right: 0;
+      transform: rotate(-10deg);
+    }
+
+    .whisker {
+      position: absolute;
+      top: 75px;
+      width: 42px;
+      height: 1px;
+      background: rgba(110,75,90,0.4);
+    }
+
+    .whisker.left1 {
+      left: -23px;
+      transform: rotate(-10deg);
+    }
+
+    .whisker.left2 {
+      left: -23px;
+      top: 84px;
+      transform: rotate(7deg);
+    }
+
+    .whisker.right1 {
+      right: -23px;
+      transform: rotate(10deg);
+    }
+
+    .whisker.right2 {
+      right: -23px;
+      top: 84px;
+      transform: rotate(-7deg);
+    }
+
+    .cat-paw {
+      position: absolute;
+      bottom: 17px;
+      width: 43px;
+      height: 37px;
+      border-radius: 50%;
+      background: #fff;
+      z-index: 4;
+
+      box-shadow:
+        0 5px 10px rgba(120,70,90,0.12);
+    }
+
+    .cat-paw.left {
+      left: 47px;
+      transform: rotate(10deg);
+    }
+
+    .cat-paw.right {
+      right: 47px;
+      transform: rotate(-10deg);
     }
 
     .cat-heart {
       position: absolute;
-
-      left: 50%;
-      top: -5px;
-
-      transform: translateX(-50%);
-
-      color: #f08ab0;
-      font-size: 18px;
-
-      animation:
-        tinyHeart 1.8s ease-in-out infinite;
+      top: -4px;
+      right: 16px;
+      color: #e979a2;
+      font-size: 27px;
+      z-index: 8;
+      animation: tinyHeart 1.8s ease-in-out infinite;
     }
 
     @keyframes tinyHeart {
-      0%, 100% {
-        transform: translateX(-50%) translateY(0) scale(0.9);
-        opacity: 0.7;
-      }
-
       50% {
-        transform: translateX(-50%) translateY(-7px) scale(1.1);
-        opacity: 1;
+        transform: translateY(-5px) scale(1.12);
       }
     }
 
-    @keyframes catBreath {
-      0%, 100% {
-        transform: translateX(-50%) translateY(0);
-      }
-
-      50% {
-        transform: translateX(-50%) translateY(-5px);
-      }
-    }
-
-    .cat-wrapper:hover .cat {
-      animation:
-        catHappy
-        0.6s
-        ease-in-out
-        infinite alternate;
-    }
-
-    @keyframes catHappy {
-      from {
-        transform: translateX(-50%) translateY(0) rotate(-2deg);
-      }
-
-      to {
-        transform: translateX(-50%) translateY(-7px) rotate(2deg);
-      }
-    }
-
-    .cat-message {
-      margin-top: 5px;
-      color: #b83f70;
+    .lulu-name {
+      margin-top: 8px;
+      color: #c44f7e;
+      font-size: 22px;
       font-weight: bold;
-      font-size: 18px;
     }
 
-    .cat-click {
-      margin-top: 5px;
-      color: #8e536c;
-      font-size: 14px;
-    }
-
-    .cat-wrapper.clicked .cat {
-      animation:
-        catDance
-        0.65s
-        ease-in-out
-        2;
-    }
-
-    @keyframes catDance {
-      0% {
-        transform: translateX(-50%) rotate(0);
-      }
-
-      25% {
-        transform: translateX(-50%) rotate(-8deg) translateY(-5px);
-      }
-
-      50% {
-        transform: translateX(-50%) rotate(8deg) translateY(-8px);
-      }
-
-      75% {
-        transform: translateX(-50%) rotate(-5deg) translateY(-4px);
-      }
-
-      100% {
-        transform: translateX(-50%) rotate(0) translateY(0);
-      }
-    }
-
-    .no-message {
-      display: none;
-      margin-top: 20px;
-      color: #a94e70;
+    .lulu-caption {
+      margin-top: 7px;
+      color: #75405a;
       font-size: 16px;
     }
 
-    .no-message.show {
-      display: block;
-      animation: luluAppear 0.5s ease both;
+    .cat-speech {
+      margin: 20px auto 0;
+      max-width: 420px;
+      padding: 14px 20px;
+      border-radius: 20px;
+
+      background:
+        rgba(255,255,255,0.7);
+
+      border:
+        1px solid rgba(255,190,215,0.6);
+
+      color: #713650;
+
+      box-shadow:
+        0 8px 20px rgba(180,70,120,0.1);
     }
 
-    /* =========================================================
-       FINAL MESSAGE
-    ========================================================= */
+    /* ================================
+       FINAL
+    ================================= */
 
     .final {
       text-align: center;
@@ -1714,19 +1380,15 @@
       font-size: 24px;
     }
 
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
     footer {
       text-align: center;
       padding: 30px;
       color: #9b5573;
     }
 
-    /* =========================================================
+    /* ================================
        MOBILE
-    ========================================================= */
+    ================================= */
 
     @media (max-width: 600px) {
       .container {
@@ -1790,15 +1452,11 @@
         max-height: 300px !important;
       }
 
-      .cat-wrapper {
+      .lulu {
         transform: scale(0.9);
-        margin-top: -5px;
+        margin-bottom: -10px;
       }
     }
-
-    /* =========================================================
-       REDUCED MOTION
-    ========================================================= */
 
     @media (prefers-reduced-motion: reduce) {
       *,
@@ -1815,15 +1473,7 @@
 
 <body>
 
-  <!-- =======================================================
-       CALM MUSIC VIBE
-  ======================================================= -->
-
-  <div class="ambient-orbs">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
-  </div>
+  <!-- CALM MUSIC VIBE -->
 
   <div class="music-vibe">
     <div class="music-note">♪</div>
@@ -1833,12 +1483,9 @@
     <div class="music-note">♫</div>
     <div class="music-note">♪</div>
     <div class="music-note">♩</div>
-    <div class="music-note">♫</div>
   </div>
 
-  <!-- =======================================================
-       FLOATING HEARTS
-  ======================================================= -->
+  <!-- FLOATING HEARTS -->
 
   <div class="hearts">
     <div class="heart" style="left:3%; animation-delay:0s;">♥</div>
@@ -1858,9 +1505,7 @@
     <div class="heart" style="left:95%; animation-delay:4.5s;">♥</div>
   </div>
 
-  <!-- =======================================================
-       BIRTHDAY HEADER
-  ======================================================= -->
+  <!-- BIRTHDAY HEADER -->
 
   <div class="birthday-arch">
     <div class="birthday-text">
@@ -1870,9 +1515,7 @@
 
   <div class="container">
 
-    <!-- =====================================================
-         HERO
-    ===================================================== -->
+    <!-- HERO -->
 
     <div class="hero">
 
@@ -1905,8 +1548,11 @@
       </h1>
 
       <p class="subtitle">
+
         I suppose today is the birthday of the love of my life :)<br>
+
         soooo...I just wanted to make it a little special hehe....
+
       </p>
 
       <div class="scroll">
@@ -1915,9 +1561,7 @@
 
     </div>
 
-    <!-- =====================================================
-         LOVE LETTER
-    ===================================================== -->
+    <!-- LOVE LETTER -->
 
     <section>
 
@@ -1974,17 +1618,18 @@
         <br><br>
 
         <strong>
+
           وكل سنة وإنتي في حياتي يا روحي ❤️
+
           I hope we stay together forever my little pumpkin u mean the world to me &lt;3
+
         </strong>
 
       </div>
 
     </section>
 
-    <!-- =====================================================
-         THINGS I LIKE
-    ===================================================== -->
+    <!-- THINGS I LIKE -->
 
     <section>
 
@@ -2022,9 +1667,7 @@
 
     </section>
 
-    <!-- =====================================================
-         MEMORIES
-    ===================================================== -->
+    <!-- MEMORIES -->
 
     <section>
 
@@ -2035,68 +1678,38 @@
       <div class="photos">
 
         <div class="photo-card">
-          <img
-            src="photo1.jpeg"
-            alt="Memory 1"
-            loading="lazy"
-          >
+          <img src="photo1.jpeg" alt="Memory 1" loading="lazy">
         </div>
 
         <div class="photo-card">
-          <img
-            src="photo2.jpeg"
-            alt="Memory 2"
-            loading="lazy"
-          >
+          <img src="photo2.jpeg" alt="Memory 2" loading="lazy">
         </div>
 
         <div class="photo-card">
-          <img
-            src="photo3.jpeg"
-            alt="Memory 3"
-            loading="lazy"
-          >
+          <img src="photo3.jpeg" alt="Memory 3" loading="lazy">
         </div>
 
         <div class="photo-card">
-          <img
-            src="photo4.jpeg"
-            alt="Memory 4"
-            loading="lazy"
-          >
+          <img src="photo4.jpeg" alt="Memory 4" loading="lazy">
         </div>
 
         <div class="photo-card">
-          <img
-            src="photo5.jpeg"
-            alt="Memory 5"
-            loading="lazy"
-          >
+          <img src="photo5.jpeg" alt="Memory 5" loading="lazy">
         </div>
 
         <div class="photo-card">
-          <img
-            src="photo6.jpeg"
-            alt="Memory 6"
-            loading="lazy"
-          >
+          <img src="photo6.jpeg" alt="Memory 6" loading="lazy">
         </div>
 
         <div class="photo-card">
-          <img
-            src="photo7.jpeg"
-            alt="Memory 7"
-            loading="lazy"
-          >
+          <img src="photo7.jpeg" alt="Memory 7" loading="lazy">
         </div>
 
       </div>
 
     </section>
 
-    <!-- =====================================================
-         VOICE MESSAGE
-    ===================================================== -->
+    <!-- VOICE MESSAGE -->
 
     <section>
 
@@ -2139,20 +1752,203 @@
 
     </section>
 
-    <!-- =====================================================
-         LULU QUESTION
-    ===================================================== -->
+    <!-- LULU INTERACTION -->
 
     <section class="lulu-section">
 
-      <h2 class="lulu-question">
-        do u miss lulu? 🐱
+      <div class="lulu-question">
+
+        <h2>
+          🐾 Do u miss Lulu?
+        </h2>
+
+        <p>
+          be honest silly... she might be listening 👀
+        </p>
+
+        <div class="lulu-buttons">
+
+          <button
+            class="lulu-btn"
+            type="button"
+            onclick="showLulu()">
+            YESSS I MISS LULU 🥺🤍
+          </button>
+
+          <button
+            class="lulu-btn no"
+            type="button"
+            onclick="noLulu()">
+            no... 🙄
+          </button>
+
+        </div>
+
+      </div>
+
+      <div
+        id="luluReveal"
+        class="lulu-reveal">
+
+        <div
+          class="lulu"
+          onclick="petLulu()"
+          title="Click Lulu!">
+
+          <div class="cat-shadow"></div>
+
+          <div class="cat-tail"></div>
+
+          <div class="cat-body"></div>
+
+          <div class="cat-ear left"></div>
+          <div class="cat-ear right"></div>
+
+          <div class="cat-head">
+
+            <div class="cat-face">
+
+              <div class="cat-eye left"></div>
+              <div class="cat-eye right"></div>
+
+              <div class="cat-nose"></div>
+
+              <div class="cat-mouth"></div>
+
+              <div class="whisker left1"></div>
+              <div class="whisker left2"></div>
+
+              <div class="whisker right1"></div>
+              <div class="whisker right2"></div>
+
+            </div>
+
+          </div>
+
+          <div class="cat-paw left"></div>
+          <div class="cat-paw right"></div>
+
+          <div class="cat-heart">
+            ♥
+          </div>
+
+        </div>
+
+        <div class="lulu-name">
+          LULU 🤍🐾
+        </div>
+
+        <div class="lulu-caption">
+          the silly little princess has arrived...
+        </div>
+
+        <div
+          id="catSpeech"
+          class="cat-speech">
+
+          MEOOOOWWW 🤍
+          I missed you too silly!
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FINAL MESSAGE -->
+
+    <section class="final">
+
+      <h2>
+
+        The moon looks pretty but not quite as attractive as u...
+        in my eyes u will always shine brighter than any moon 🌙
+
       </h2>
 
-      <p class="lulu-subtitle">
-        be honest silly... she might be watching 👀
+      <br>
+
+      <p>
+        ❤️ بحبك يا حوراء
       </p>
 
-      <div class="lulu-buttons">
+      <div class="signature">
 
-        <button
+        Forever and always:<br>
+
+        Omori ❤️ عمر
+
+      </div>
+
+    </section>
+
+    <footer>
+
+      Made just for you my silly baby 🌸❤️
+
+    </footer>
+
+  </div>
+
+  <script>
+    function showLulu() {
+      const lulu = document.getElementById("luluReveal");
+
+      lulu.classList.add("show");
+
+      setTimeout(function () {
+        lulu.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }, 150);
+    }
+
+    function noLulu() {
+      const speech = document.getElementById("catSpeech");
+
+      const lulu = document.getElementById("luluReveal");
+
+      lulu.classList.add("show");
+
+      speech.innerHTML =
+        "HUHHH 😾 you said NO?! Lulu is offended now... click YES properly silly 🤍";
+
+      setTimeout(function () {
+        lulu.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }, 150);
+    }
+
+    function petLulu() {
+      const speech = document.getElementById("catSpeech");
+
+      const messages = [
+        "hehehe MEOOWWW 🤍",
+        "Lulu likes the attention 🎀",
+        "pspspspsps 🐾",
+        "Lulu says she missed you too 🥺🤍",
+        "MEOOOOWWWWW! 😽",
+        "more pets pleaseeee 🐾",
+        "hehe silly human ❤️"
+      ];
+
+      const randomMessage =
+        messages[Math.floor(Math.random() * messages.length)];
+
+      speech.innerHTML = randomMessage;
+
+      const cat = document.querySelector(".lulu");
+
+      cat.style.animation = "none";
+
+      void cat.offsetWidth;
+
+      cat.style.animation = "luluBounce 0.65s ease-in-out";
+    }
+  </script>
+
+</body>
+</html>
