@@ -169,7 +169,8 @@
 
 
     /* =====================================================
-       REALISTIC CARNATIONS
+       REALISTIC WHITE CARNATIONS
+       WHITE PETALS + ROSE PINK TIPS
     ===================================================== */
 
     .carnations {
@@ -185,256 +186,474 @@
     .carnation {
       position: absolute;
 
-      width: 90px;
-      height: 120px;
+      width: 115px;
+      height: 150px;
 
-      opacity: 0.82;
+      opacity: 0.92;
+
+      transform-origin: center bottom;
 
       filter:
         drop-shadow(
-          0 7px 9px rgba(130, 40, 75, 0.18)
+          0 8px 10px rgba(120, 45, 75, 0.17)
         );
 
       animation:
-        flowerBloom
-        5s ease-in-out infinite;
-
-      transform-origin: center bottom;
+        carnationSway
+        6s
+        ease-in-out
+        infinite;
     }
 
-    /*
-      The flower head is made from several layers.
-      The irregular borders make the petals look
-      ruffled like real carnations.
-    */
 
-    .carnation::before {
-      content: "";
+    /* -----------------------------------------------------
+       STEM
+    ----------------------------------------------------- */
 
+    .carnation .stem {
       position: absolute;
 
-      width: 62px;
-      height: 62px;
+      left: 55px;
+      top: 60px;
 
-      left: 14px;
-      top: 3px;
+      width: 5px;
+      height: 90px;
 
-      border-radius: 48% 52% 45% 55%;
+      border-radius: 50%;
 
       background:
-        radial-gradient(
-          circle at 48% 45%,
-          #ffd9e7 0%,
-          #ffb3ce 22%,
-          #f887ad 45%,
-          #e96796 70%,
-          #c94d7b 100%
+        linear-gradient(
+          to right,
+          #39794d,
+          #72b87a,
+          #3e8250
         );
 
-      /*
-        Jagged petal edges
-      */
-      clip-path: polygon(
-        50% 0%,
-        57% 9%,
-        67% 3%,
-        70% 14%,
-        82% 10%,
-        80% 23%,
-        94% 24%,
-        87% 35%,
-        100% 43%,
-        88% 50%,
-        98% 61%,
-        83% 63%,
-        88% 77%,
-        73% 73%,
-        67% 88%,
-        56% 79%,
-        47% 94%,
-        39% 80%,
-        25% 88%,
-        26% 73%,
-        12% 77%,
-        17% 63%,
-        2% 60%,
-        12% 49%,
-        0% 40%,
-        14% 33%,
-        7% 20%,
-        22% 22%,
-        20% 9%,
-        34% 14%,
-        40% 2%
-      );
+      transform:
+        rotate(7deg);
 
       box-shadow:
-        inset 0 0 12px rgba(255,255,255,0.4),
-        0 3px 8px rgba(150,50,90,0.2);
-
-      animation:
-        petalBloom
-        5s ease-in-out infinite;
+        2px 0 4px rgba(30,80,45,0.18);
     }
 
-    /*
-      Inner rose-colored ruffled petals
-    */
 
-    .carnation::after {
+    /* -----------------------------------------------------
+       LEAVES
+    ----------------------------------------------------- */
+
+    .carnation .leaf {
+      position: absolute;
+
+      width: 40px;
+      height: 14px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #77bd7e,
+          #3e8750
+        );
+
+      border-radius:
+        100% 0 100% 0;
+
+      opacity: 0.9;
+    }
+
+    .carnation .leaf.one {
+      left: 28px;
+      top: 95px;
+
+      transform: rotate(25deg);
+    }
+
+    .carnation .leaf.two {
+      left: 60px;
+      top: 112px;
+
+      transform:
+        rotate(155deg)
+        scale(0.85);
+    }
+
+
+    /* =====================================================
+       FLOWER HEAD
+    ===================================================== */
+
+    .carnation .flower {
+      position: absolute;
+
+      left: 7px;
+      top: 0;
+
+      width: 100px;
+      height: 100px;
+
+      border-radius: 50%;
+
+      transform-origin: center center;
+
+      animation:
+        bloom
+        6s
+        ease-in-out
+        infinite;
+    }
+
+
+    /* -----------------------------------------------------
+       OUTER PETALS
+       Mostly white with strong rose-pink tips
+    ----------------------------------------------------- */
+
+    .carnation .flower::before {
       content: "";
 
       position: absolute;
 
-      width: 43px;
-      height: 43px;
+      inset: 0;
 
-      left: 24px;
-      top: 13px;
+      border-radius: 48% 52% 46% 54%;
+
+      background:
+
+        /* Rose pink petal tips */
+        radial-gradient(
+          ellipse at 50% 0%,
+          #d95787 0%,
+          #f18aae 7%,
+          transparent 18%
+        ),
+
+        radial-gradient(
+          ellipse at 100% 25%,
+          #d95787 0%,
+          #f18aae 7%,
+          transparent 18%
+        ),
+
+        radial-gradient(
+          ellipse at 95% 70%,
+          #d95787 0%,
+          #f18aae 7%,
+          transparent 18%
+        ),
+
+        radial-gradient(
+          ellipse at 50% 100%,
+          #d95787 0%,
+          #f18aae 7%,
+          transparent 18%
+        ),
+
+        radial-gradient(
+          ellipse at 5% 70%,
+          #d95787 0%,
+          #f18aae 7%,
+          transparent 18%
+        ),
+
+        radial-gradient(
+          ellipse at 0% 25%,
+          #d95787 0%,
+          #f18aae 7%,
+          transparent 18%
+        ),
+
+        /* Main white flower */
+        radial-gradient(
+          circle at 48% 45%,
+          #ffffff 0%,
+          #fffdfd 40%,
+          #fff7fa 70%,
+          #f7e5ec 100%
+        );
+
+      box-shadow:
+        inset 0 0 18px rgba(255,255,255,0.9),
+        0 5px 12px rgba(120,45,75,0.15);
+
+      /*
+        Highly irregular carnation-like edge
+      */
+
+      clip-path: polygon(
+        50% 0%,
+        56% 8%,
+        63% 2%,
+        68% 11%,
+        77% 4%,
+        79% 15%,
+        90% 12%,
+        87% 25%,
+        99% 28%,
+        91% 38%,
+        100% 47%,
+        90% 53%,
+        98% 64%,
+        86% 66%,
+        91% 79%,
+        78% 76%,
+        73% 91%,
+        62% 82%,
+        53% 98%,
+        45% 84%,
+        34% 94%,
+        29% 80%,
+        17% 86%,
+        20% 72%,
+        7% 75%,
+        12% 62%,
+        0% 57%,
+        10% 47%,
+        1% 38%,
+        13% 32%,
+        7% 19%,
+        21% 22%,
+        20% 9%,
+        34% 15%,
+        41% 2%
+      );
+    }
+
+
+    /* =====================================================
+       INNER RUFFLED PETALS
+    ===================================================== */
+
+    .carnation .flower::after {
+      content: "";
+
+      position: absolute;
+
+      left: 22px;
+      top: 20px;
+
+      width: 57px;
+      height: 57px;
+
+      border-radius: 50%;
+
+      background:
+
+        /* Pink tips around inner petals */
+
+        radial-gradient(
+          ellipse at 50% 0%,
+          #df5b8b 0%,
+          #f59ab9 8%,
+          transparent 20%
+        ),
+
+        radial-gradient(
+          ellipse at 100% 50%,
+          #df5b8b 0%,
+          #f59ab9 8%,
+          transparent 20%
+        ),
+
+        radial-gradient(
+          ellipse at 50% 100%,
+          #df5b8b 0%,
+          #f59ab9 8%,
+          transparent 20%
+        ),
+
+        radial-gradient(
+          ellipse at 0% 50%,
+          #df5b8b 0%,
+          #f59ab9 8%,
+          transparent 20%
+        ),
+
+        /* White center */
+
+        radial-gradient(
+          circle,
+          #ffffff 0%,
+          #fffdfd 60%,
+          #fcecf2 100%
+        );
+
+      box-shadow:
+        inset 0 0 10px rgba(255,255,255,0.9);
+
+      clip-path: polygon(
+        50% 0%,
+        61% 12%,
+        75% 4%,
+        78% 20%,
+        95% 25%,
+        82% 38%,
+        98% 50%,
+        82% 59%,
+        91% 76%,
+        73% 72%,
+        63% 91%,
+        50% 76%,
+        36% 94%,
+        28% 74%,
+        9% 78%,
+        17% 59%,
+        1% 49%,
+        17% 39%,
+        7% 23%,
+        25% 19%,
+        26% 4%,
+        40% 12%
+      );
+    }
+
+
+    /* =====================================================
+       EXTRA PETAL DETAIL
+    ===================================================== */
+
+    .carnation .petal-detail {
+      position: absolute;
+
+      left: 37px;
+      top: 35px;
+
+      width: 38px;
+      height: 38px;
 
       border-radius: 50%;
 
       background:
         repeating-radial-gradient(
           circle at center,
-          #ffb7cf 0px,
-          #ed719d 5px,
-          #f993b6 9px,
-          #d95485 13px
+          rgba(255,255,255,0.98) 0px,
+          rgba(255,255,255,0.98) 4px,
+          rgba(244,130,165,0.75) 5px,
+          rgba(255,255,255,0.98) 8px
         );
+
+      opacity: 0.8;
+
+      filter:
+        blur(0.2px);
 
       box-shadow:
-        inset 0 0 8px rgba(255,255,255,0.3);
-
-      clip-path: polygon(
-        50% 0%,
-        61% 10%,
-        76% 4%,
-        78% 19%,
-        94% 24%,
-        82% 36%,
-        98% 47%,
-        83% 55%,
-        90% 72%,
-        72% 68%,
-        63% 88%,
-        50% 74%,
-        37% 91%,
-        29% 72%,
-        10% 76%,
-        17% 58%,
-        2% 49%,
-        17% 38%,
-        7% 23%,
-        25% 20%,
-        25% 6%,
-        40% 12%
-      );
+        inset 0 0 8px rgba(215,80,125,0.12);
     }
 
-    /*
-      Green stem
-    */
 
-    .carnation {
-      background:
-        linear-gradient(
-          72deg,
-          transparent 0 44%,
-          #4d9b61 45%,
-          #6dbb78 51%,
-          transparent 52%
-        );
-
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-    }
-
-    /*
-      Small leaves are simulated with box-shadow
-    */
+    /* =====================================================
+       FLOWER POSITIONS
+    ===================================================== */
 
     .carnation:nth-child(1) {
-      top: 2%;
-      left: -10px;
+      top: 0;
+      left: -18px;
 
-      transform: rotate(-18deg) scale(1.05);
+      transform:
+        rotate(-18deg)
+        scale(1.05);
     }
 
     .carnation:nth-child(2) {
-      top: 7%;
-      right: -12px;
+      top: 6%;
+      right: -20px;
 
-      transform: rotate(20deg) scale(1.2);
+      transform:
+        rotate(19deg)
+        scale(1.2);
 
       animation-delay: 1s;
     }
 
     .carnation:nth-child(3) {
-      bottom: 6%;
-      left: -12px;
+      bottom: 5%;
+      left: -20px;
 
-      transform: rotate(-16deg) scale(1.15);
+      transform:
+        rotate(-17deg)
+        scale(1.15);
 
       animation-delay: 2s;
     }
 
     .carnation:nth-child(4) {
-      bottom: 1%;
-      right: -12px;
+      bottom: -2%;
+      right: -20px;
 
-      transform: rotate(16deg) scale(1.05);
+      transform:
+        rotate(18deg)
+        scale(1.05);
 
       animation-delay: 3s;
     }
 
     .carnation:nth-child(5) {
-      top: 47%;
-      right: -20px;
+      top: 46%;
+      right: -30px;
 
-      transform: rotate(12deg) scale(0.7);
+      transform:
+        rotate(14deg)
+        scale(0.72);
 
       animation-delay: 1.5s;
     }
 
     .carnation:nth-child(6) {
-      top: 37%;
-      left: -20px;
+      top: 36%;
+      left: -30px;
 
-      transform: rotate(-12deg) scale(0.65);
+      transform:
+        rotate(-13deg)
+        scale(0.68);
 
       animation-delay: 2.5s;
     }
 
-    @keyframes flowerBloom {
+
+    /* =====================================================
+       CARNATION ANIMATIONS
+    ===================================================== */
+
+    @keyframes carnationSway {
 
       0%,
       100% {
-        transform:
-          translateY(0)
-          rotate(-5deg)
-          scale(0.96);
+        margin-top: 0;
+
+        filter:
+          drop-shadow(
+            0 8px 10px rgba(120,45,75,0.17)
+          );
       }
 
       50% {
-        transform:
-          translateY(-9px)
-          rotate(5deg)
-          scale(1.05);
+        margin-top: -8px;
+
+        filter:
+          drop-shadow(
+            0 12px 13px rgba(120,45,75,0.21)
+          );
       }
     }
 
-    @keyframes petalBloom {
+    @keyframes bloom {
 
       0%,
       100% {
-        transform: scale(0.94);
-        filter: saturate(0.95);
+        transform:
+          rotate(-2deg)
+          scale(0.95);
       }
 
-      50% {
-        transform: scale(1.07);
-        filter: saturate(1.15);
+      45% {
+        transform:
+          rotate(2deg)
+          scale(1.04);
+      }
+
+      70% {
+        transform:
+          rotate(-1deg)
+          scale(1.07);
       }
     }
 
@@ -475,7 +694,7 @@
 
 
     /* =====================================================
-       MORE REALISTIC CAKE
+       REALISTIC CAKE
     ===================================================== */
 
     .cake {
@@ -497,10 +716,6 @@
           0 14px 15px rgba(150, 50, 90, 0.18)
         );
     }
-
-    /*
-      Plate
-    */
 
     .cake-plate {
       position: absolute;
@@ -526,10 +741,6 @@
         0 5px 9px rgba(120,40,70,0.16),
         inset 0 2px 2px rgba(255,255,255,0.9);
     }
-
-    /*
-      Bottom cake layer
-    */
 
     .cake-bottom {
       position: absolute;
@@ -567,10 +778,6 @@
         0 5px 8px rgba(130,50,70,0.12);
     }
 
-    /*
-      Cake texture / cream stripe
-    */
-
     .cake-bottom::before {
       content: "";
 
@@ -593,10 +800,6 @@
       box-shadow:
         0 1px 2px rgba(180,80,110,0.12);
     }
-
-    /*
-      Pink frosting
-    */
 
     .cake-frosting {
       position: absolute;
@@ -628,10 +831,6 @@
         0 5px 8px rgba(170,50,90,0.16);
     }
 
-    /*
-      Frosting drips
-    */
-
     .cake-frosting::before {
       content: "";
 
@@ -661,10 +860,6 @@
         72px 0 0 -2px #ed769f;
     }
 
-    /*
-      Top icing
-    */
-
     .cake-top {
       position: absolute;
 
@@ -691,10 +886,6 @@
         0 4px 7px rgba(170,60,100,0.12);
     }
 
-    /*
-      Cake decoration dots
-    */
-
     .cake-top::before {
       content: "•  •  •  •  •";
 
@@ -712,10 +903,6 @@
 
       letter-spacing: 3px;
     }
-
-    /*
-      Candle
-    */
 
     .candle {
       position: absolute;
@@ -746,10 +933,6 @@
         0 2px 5px rgba(150,50,90,0.15);
     }
 
-    /*
-      Candle wick
-    */
-
     .candle::before {
       content: "";
 
@@ -767,10 +950,6 @@
 
       border-radius: 50%;
     }
-
-    /*
-      Flame
-    */
 
     .flame {
       position: absolute;
@@ -1012,37 +1191,130 @@
 
       align-items: flex-start;
 
-      gap: 20px;
+      gap: 24px;
 
       width: 100%;
     }
 
+    /*
+      Soft romantic photo frame
+    */
+
     .photo-card {
+      position: relative;
+
       display: block;
 
       width: fit-content;
       height: fit-content;
 
-      padding: 0;
+      padding: 9px;
+
       margin: 0;
 
-      background: transparent;
+      background:
+        linear-gradient(
+          145deg,
+          #ffffff,
+          #fff5f9 45%,
+          #f8d8e5
+        );
 
-      border: none;
+      border:
+        1px solid
+        rgba(255,255,255,0.95);
 
-      border-radius: 0;
+      border-radius: 17px;
 
-      box-shadow: none;
+      box-shadow:
+
+        0 8px 22px
+        rgba(150,60,100,0.16),
+
+        0 0 0 3px
+        rgba(255,255,255,0.38),
+
+        inset 0 1px 2px
+        rgba(255,255,255,0.95);
 
       overflow: visible;
 
-      transition: 0.3s ease;
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+    }
+
+    /*
+      Tiny rose-pink inner border
+    */
+
+    .photo-card::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 5px;
+
+      border:
+        1px solid
+        rgba(224,105,145,0.28);
+
+      border-radius: 12px;
+
+      pointer-events: none;
+    }
+
+    /*
+      Small decorative corner hearts
+    */
+
+    .photo-card::after {
+      content: "♥";
+
+      position: absolute;
+
+      right: -7px;
+      top: -10px;
+
+      width: 22px;
+      height: 22px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffb3ce,
+          #e86d9a
+        );
+
+      color: white;
+
+      font-size: 11px;
+
+      box-shadow:
+        0 3px 8px rgba(170,60,100,0.2);
     }
 
     .photo-card:hover {
-      transform: translateY(-5px);
+      transform:
+        translateY(-7px)
+        rotate(-1deg);
 
-      box-shadow: none;
+      box-shadow:
+
+        0 15px 30px
+        rgba(150,60,100,0.22),
+
+        0 0 0 3px
+        rgba(255,255,255,0.5),
+
+        inset 0 1px 2px
+        rgba(255,255,255,0.95);
     }
 
     .photo-card img {
@@ -1056,13 +1328,13 @@
 
       object-fit: contain;
 
-      border-radius: 12px;
+      border-radius: 10px;
 
       margin: 0;
 
       box-shadow:
-        0 8px 22px
-        rgba(150,60,100,0.13);
+        0 2px 7px
+        rgba(120,40,70,0.13);
     }
 
 
@@ -1205,6 +1477,8 @@
         width: fit-content;
 
         max-width: 100%;
+
+        padding: 9px;
       }
 
       .photo-card img {
@@ -1269,17 +1543,64 @@
 
 
   <!-- =====================================================
-       CARNATIONS
+       WHITE CARNATIONS WITH ROSE TIPS
   ===================================================== -->
 
   <div class="carnations">
 
-    <div class="carnation"></div>
-    <div class="carnation"></div>
-    <div class="carnation"></div>
-    <div class="carnation"></div>
-    <div class="carnation"></div>
-    <div class="carnation"></div>
+    <div class="carnation">
+      <div class="flower">
+        <div class="petal-detail"></div>
+      </div>
+      <div class="stem"></div>
+      <div class="leaf one"></div>
+      <div class="leaf two"></div>
+    </div>
+
+    <div class="carnation">
+      <div class="flower">
+        <div class="petal-detail"></div>
+      </div>
+      <div class="stem"></div>
+      <div class="leaf one"></div>
+      <div class="leaf two"></div>
+    </div>
+
+    <div class="carnation">
+      <div class="flower">
+        <div class="petal-detail"></div>
+      </div>
+      <div class="stem"></div>
+      <div class="leaf one"></div>
+      <div class="leaf two"></div>
+    </div>
+
+    <div class="carnation">
+      <div class="flower">
+        <div class="petal-detail"></div>
+      </div>
+      <div class="stem"></div>
+      <div class="leaf one"></div>
+      <div class="leaf two"></div>
+    </div>
+
+    <div class="carnation">
+      <div class="flower">
+        <div class="petal-detail"></div>
+      </div>
+      <div class="stem"></div>
+      <div class="leaf one"></div>
+      <div class="leaf two"></div>
+    </div>
+
+    <div class="carnation">
+      <div class="flower">
+        <div class="petal-detail"></div>
+      </div>
+      <div class="stem"></div>
+      <div class="leaf one"></div>
+      <div class="leaf two"></div>
+    </div>
 
   </div>
 
@@ -1292,9 +1613,6 @@
     ===================================================== -->
 
     <div class="hero">
-
-
-      <!-- REALISTIC CAKE -->
 
       <div class="cake">
 
@@ -1388,242 +1706,4 @@
         and all I could do was work on this in secret until ur birthday!!! u thought I forgot that msg
         hehehe well it was gonna be only a msg I really tried alot- and threw them all... my handwriting
         sucks my designs wont ever be as good as u and wont be as special so I wanted to do it in a way I can do
-        sighhh am such a yapper...... BUT U LOVE THAT ABT ME DONT U- ANYWAYS CONTINUE THE DAMN MSG I WORKED HARD FOR THIS
-        HMPH.
-
-        <br><br>
-
-        <strong>
-
-          وكل سنة وإنتي في حياتي يا روحي ❤️
-
-          I hope we stay together forever my little pumpkin u mean the world to me &lt;3
-
-        </strong>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         THINGS I LIKE
-    ===================================================== -->
-
-    <section>
-
-      <h2>
-        Things I like abt u hmmmmmmmmmmm
-      </h2>
-
-
-      <div class="reasons">
-
-        <div class="reason">
-          UR CUTIE GIGGLE WHEN UR SHY❤️
-        </div>
-
-        <div class="reason">
-          Ur accent duhh 🥹
-        </div>
-
-        <div class="reason">
-          fulffy...........
-        </div>
-
-        <div class="reason">
-          of course ur prettyness cuteness adorabolness and loyalty✨
-        </div>
-
-        <div class="reason">
-          UR GIFTSSSS 🤍
-        </div>
-
-        <div class="reason">
-          AND DEF MUCH MUCH MORE BUT IT WILL BE PAIN IF I WRITE A CODE FOR EACH ONE SICHHHH ❤️
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         MEMORIES
-    ===================================================== -->
-
-    <section>
-
-      <h2>
-        📸 Some of my fav memories with u :D
-      </h2>
-
-
-      <div class="photos">
-
-
-        <!-- PHOTO 1 -->
-
-        <div class="photo-card">
-
-          <img
-            src="photo1.jpeg"
-            alt="Memory 1"
-          >
-
-        </div>
-
-
-        <!-- PHOTO 2 -->
-
-        <div class="photo-card">
-
-          <img
-            src="photo2.jpeg"
-            alt="Memory 2"
-          >
-
-        </div>
-
-
-        <!-- PHOTO 3 -->
-
-        <div class="photo-card">
-
-          <img
-            src="photo3.jpeg"
-            alt="Memory 3"
-          >
-
-        </div>
-
-
-        <!-- PHOTO 4 -->
-
-        <div class="photo-card">
-
-          <img
-            src="photo4.jpeg"
-            alt="Memory 4"
-          >
-
-        </div>
-
-
-        <!-- PHOTO 5 -->
-
-        <div class="photo-card">
-
-          <img
-            src="photo5.jpeg"
-            alt="Memory 5"
-          >
-
-        </div>
-
-
-        <!-- PHOTO 6 -->
-
-        <div class="photo-card">
-
-          <img
-            src="photo6.jpeg"
-            alt="Memory 6"
-          >
-
-        </div>
-
-
-        <!-- PHOTO 7 -->
-
-        <div class="photo-card">
-
-          <img
-            src="photo7.jpeg"
-            alt="Memory 7"
-          >
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         VOICE MESSAGE
-    ===================================================== -->
-
-    <section>
-
-      <h2>
-        🎙️ رسالة بصوتي
-      </h2>
-
-
-      <div class="voice">
-
-        <div>
-          رسالة مخصوص ليكي ❤️
-        </div>
-
-        <p
-          style="
-            margin-top:15px;
-            color:#9b5573;
-          "
-        >
-          🎙️ التسجيل بتاعك هيكون هنا
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FINAL MESSAGE
-    ===================================================== -->
-
-    <section class="final">
-
-      <h2>
-
-        The moon looks pretty but not quite as attractive as u...
-        in my eyes u will always shine brighter than any moon 🌙
-
-      </h2>
-
-
-      <br>
-
-
-      <p>
-        ❤️ بحبك يا حوراء
-      </p>
-
-
-      <div class="signature">
-
-        Forever and always:<br>
-
-        Omori ❤️ عمر
-
-      </div>
-
-    </section>
-
-
-    <footer>
-
-      Made just for you my silly baby 🌸❤️
-
-    </footer>
-
-
-  </div>
-
-</body>
-
-</html>
+        sighhh am such a yapper...... BUT U LOVE THAT ABT ME DONT U
