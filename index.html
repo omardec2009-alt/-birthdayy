@@ -82,16 +82,15 @@
 
       position: absolute;
 
-      top: -75px;
+      top: -65px;
 
       left: 50%;
 
-      transform:
-        translateX(-50%);
+      transform: translateX(-50%);
 
       width: 100%;
 
-      height: 180px;
+      height: 190px;
 
       background: transparent;
 
@@ -114,12 +113,6 @@
 
 
     .birthday-text {
-
-      background: transparent;
-
-      border: none;
-
-      box-shadow: none;
 
       color:
         rgba(
@@ -150,6 +143,16 @@
         );
 
       opacity: 0.8;
+
+      background: transparent;
+
+      border: none;
+
+      box-shadow: none;
+
+      transform:
+        perspective(300px)
+        rotateX(20deg);
     }
 
 
@@ -200,25 +203,19 @@
 
 
     .heart:nth-child(2n) {
-
       color: #ff8fb8;
-
       font-size: 27px;
     }
 
 
     .heart:nth-child(3n) {
-
       color: #d95787;
-
       font-size: 16px;
     }
 
 
     .heart:nth-child(4n) {
-
       color: #f6a6c3;
-
       font-size: 34px;
     }
 
@@ -309,7 +306,6 @@
     .carnation:nth-child(1) {
 
       top: 3%;
-
       left: 1%;
 
       transform:
@@ -320,7 +316,6 @@
     .carnation:nth-child(2) {
 
       top: 10%;
-
       right: 1%;
 
       font-size: 80px;
@@ -335,7 +330,6 @@
     .carnation:nth-child(3) {
 
       bottom: 10%;
-
       left: 0;
 
       font-size: 75px;
@@ -350,7 +344,6 @@
     .carnation:nth-child(4) {
 
       bottom: 3%;
-
       right: 1%;
 
       font-size: 65px;
@@ -365,7 +358,6 @@
     .carnation:nth-child(5) {
 
       top: 48%;
-
       right: -5px;
 
       font-size: 45px;
@@ -377,7 +369,6 @@
     .carnation:nth-child(6) {
 
       top: 38%;
-
       left: -8px;
 
       font-size: 42px;
@@ -407,7 +398,7 @@
 
 
     /* =====================================
-       CONTAINER
+       MAIN CONTAINER
     ===================================== */
 
     .container {
@@ -446,7 +437,7 @@
 
       text-align: center;
 
-      padding-top: 60px;
+      padding-top: 70px;
     }
 
 
@@ -957,12 +948,6 @@
 
     /* =====================================
        PHOTOS
-       
-       SMALLER THIS TIME
-       
-       ORIGINAL PROPORTIONS
-       NO CROPPING
-       NO ROTATION
     ===================================== */
 
     .photos {
@@ -1018,13 +1003,9 @@
 
 
     /*
-      IMPORTANT:
-      THE PHOTOS ARE NOW ACTUALLY SMALL.
-
-      MAX WIDTH = 220px
-      MAX HEIGHT = 280px
-
-      aspect ratio stays original.
+      ALL PHOTOS ARE SMALLER
+      WITHOUT CHANGING THEIR
+      ORIGINAL PROPORTIONS.
     */
 
     .photo-card img {
@@ -1044,83 +1025,11 @@
       border-radius: 12px;
 
       margin: 0;
-
     }
 
 
     /* =====================================
-       THIRD PHOTO
-    ===================================== */
-
-    .photo-placeholder {
-
-      width: 180px;
-
-      min-height: 180px;
-
-      padding: 25px;
-
-      border-radius: 18px;
-
-      background:
-
-        linear-gradient(
-          135deg,
-          rgba(
-            255,
-            180,
-            210,
-            0.65
-          ),
-          rgba(
-            255,
-            220,
-            235,
-            0.7
-          )
-        );
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      text-align: center;
-
-      color: #a34b70;
-
-      border:
-        2px dashed
-        rgba(
-          195,
-          79,
-          125,
-          0.4
-        );
-
-      transition:
-        0.3s ease;
-    }
-
-
-    .photo-placeholder:hover {
-
-      transform:
-        scale(1.02);
-
-      background:
-        rgba(
-          255,
-          210,
-          225,
-          0.85
-        );
-    }
-
-
-    /* =====================================
-       VOICE
+       VOICE MESSAGE
     ===================================== */
 
     .voice {
@@ -1152,7 +1061,7 @@
 
 
     /* =====================================
-       FINAL
+       FINAL MESSAGE
     ===================================== */
 
     .final {
@@ -1283,11 +1192,6 @@
       }
 
 
-      /*
-        PHOTOS EVENLY FIT ON MOBILE
-        WITHOUT CROPPING
-      */
-
       .photos {
 
         flex-direction: column;
@@ -1315,14 +1219,6 @@
         max-height: 280px !important;
       }
 
-
-      .photo-placeholder {
-
-        width: 180px;
-
-        min-height: 180px;
-      }
-
     }
 
   </style>
@@ -1335,7 +1231,7 @@
 
   <!-- =====================================
        HAPPY BIRTHDAY
-    ===================================== -->
+  ===================================== -->
 
   <div class="birthday-arch">
 
@@ -1350,7 +1246,7 @@
 
   <!-- =====================================
        FLOATING HEARTS
-    ===================================== -->
+  ===================================== -->
 
   <div class="hearts">
 
@@ -1434,7 +1330,7 @@
 
   <!-- =====================================
        CARNATIONS
-    ===================================== -->
+  ===================================== -->
 
   <div class="carnations">
 
@@ -1458,7 +1354,7 @@
 
     <!-- =====================================
          HERO
-      ===================================== -->
+    ===================================== -->
 
     <div class="hero">
 
@@ -1507,7 +1403,7 @@
 
     <!-- =====================================
          LOVE LETTER
-      ===================================== -->
+    ===================================== -->
 
     <section>
 
@@ -1582,7 +1478,7 @@
 
     <!-- =====================================
          THINGS I LIKE
-      ===================================== -->
+    ===================================== -->
 
     <section>
 
@@ -1648,7 +1544,7 @@
 
     <!-- =====================================
          MEMORIES
-      ===================================== -->
+    ===================================== -->
 
     <section>
 
@@ -1668,7 +1564,7 @@
 
           <img
             src="photo1.jpeg"
-            alt="Our first memory"
+            alt="Memory 1"
           >
 
         </div>
@@ -1680,21 +1576,32 @@
 
           <img
             src="photo2.jpeg"
-            alt="Another memory"
+            alt="Memory 2"
           >
 
         </div>
 
 
-        <!-- THIRD PHOTO -->
+        <!-- PHOTO 3 -->
 
-        <div class="photo-placeholder">
+        <div class="photo-card">
 
-          📷
+          <img
+            src="photo3.jpeg"
+            alt="Memory 3"
+          >
 
-          <br><br>
+        </div>
 
-          Third memory coming soon ❤️
+
+        <!-- PHOTO 4 -->
+
+        <div class="photo-card">
+
+          <img
+            src="photo4.jpeg"
+            alt="Memory 4"
+          >
 
         </div>
 
@@ -1706,7 +1613,7 @@
 
     <!-- =====================================
          VOICE MESSAGE
-      ===================================== -->
+    ===================================== -->
 
     <section>
 
@@ -1744,7 +1651,7 @@
 
     <!-- =====================================
          FINAL MESSAGE
-      ===================================== -->
+    ===================================== -->
 
     <section class="final">
 
