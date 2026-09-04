@@ -8,6 +8,7 @@
   <title>كل سنة وإنتي طيبة يا حوراء ❤️</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -23,49 +24,58 @@
 
       background:
         radial-gradient(circle at 10% 15%, rgba(255,255,255,0.9), transparent 22%),
-        radial-gradient(circle at 90% 20%, rgba(255,205,225,0.75), transparent 28%),
-        radial-gradient(circle at 20% 80%, rgba(255,190,215,0.7), transparent 25%),
-        radial-gradient(circle at 80% 90%, rgba(255,225,235,0.8), transparent 30%),
-        linear-gradient(135deg, #ffe5ef, #ffc9dd, #f8b3cf);
+        radial-gradient(circle at 90% 20%, rgba(255,210,228,0.8), transparent 28%),
+        radial-gradient(circle at 20% 80%, rgba(255,195,220,0.75), transparent 25%),
+        radial-gradient(circle at 80% 90%, rgba(255,230,240,0.85), transparent 30%),
+        linear-gradient(135deg, #ffe9f1, #ffcddd, #f6b4cf);
 
       color: #6d304d;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
+
     /* =====================================================
-       TOP BIRTHDAY TEXT
+       HAPPY BIRTHDAY HEADER
     ===================================================== */
 
     .birthday-arch {
       position: absolute;
-      top: -45px;
+      top: -55px;
       left: 50%;
+
       transform: translateX(-50%);
 
       width: 100%;
-      height: 170px;
+      height: 175px;
 
       display: flex;
       align-items: flex-end;
       justify-content: center;
 
-      padding-bottom: 18px;
+      padding-bottom: 20px;
 
       z-index: 3;
       pointer-events: none;
     }
 
     .birthday-text {
-      color: rgba(255,255,255,0.52);
+      color: rgba(255,255,255,0.58);
 
       font-size: clamp(20px, 4vw, 38px);
+
       font-weight: bold;
       letter-spacing: 3px;
 
       text-shadow:
-        0 2px 8px rgba(170,60,100,0.15);
+        0 2px 8px rgba(170,60,100,0.15),
+        0 0 18px rgba(255,255,255,0.4);
+
+      transform:
+        perspective(300px)
+        rotateX(20deg);
     }
+
 
     /* =====================================================
        FLOATING HEARTS
@@ -114,12 +124,14 @@
     }
 
     @keyframes float {
+
       0% {
         transform:
           translateY(0)
           translateX(0)
           rotate(0deg)
           scale(0.8);
+
         opacity: 0;
       }
 
@@ -141,13 +153,14 @@
           translateX(-35px)
           rotate(360deg)
           scale(0.8);
+
         opacity: 0;
       }
     }
 
+
     /* =====================================================
-       CARNATIONS
-       WHITE WITH ROSE-PINK TIPS
+       SOFT WHITE CARNATIONS WITH ROSE TIPS
     ===================================================== */
 
     .carnations {
@@ -155,256 +168,253 @@
       inset: 0;
 
       pointer-events: none;
-      overflow: hidden;
-
       z-index: 0;
+
+      overflow: hidden;
     }
 
     .carnation {
       position: absolute;
 
-      width: 125px;
-      height: 170px;
+      width: 105px;
+      height: 145px;
 
-      transform-origin: bottom center;
+      opacity: 0.9;
 
       filter:
         drop-shadow(
-          0 8px 12px rgba(120,45,75,0.18)
+          0 7px 10px rgba(130,40,75,0.13)
         );
 
       animation:
         flowerSway
-        6s ease-in-out infinite;
+        6s
+        ease-in-out
+        infinite;
+
+      transform-origin: center bottom;
     }
+
+    /*
+      STEM
+    */
+
+    .carnation {
+      background:
+        linear-gradient(
+          70deg,
+          transparent 0 47%,
+          rgba(100,155,100,0.8) 48%,
+          rgba(140,190,130,0.7) 51%,
+          transparent 52%
+        );
+    }
+
+    /*
+      OUTER WHITE FLOWER
+    */
 
     .carnation::before {
       content: "";
 
       position: absolute;
 
-      width: 8px;
-      height: 125px;
+      width: 78px;
+      height: 78px;
 
-      left: 59px;
-      top: 48px;
+      left: 14px;
+      top: 3px;
 
       border-radius: 50%;
 
       background:
-        linear-gradient(
-          90deg,
-          #356d43,
-          #75b478,
-          #3f794a
+        radial-gradient(
+          circle at 50% 45%,
+          #ffffff 0%,
+          #fffdfd 40%,
+          #fff5f8 68%,
+          #ffd9e7 84%,
+          #e889aa 100%
         );
 
-      transform: rotate(7deg);
+      clip-path: polygon(
+        50% 0%,
+        58% 8%,
+        68% 3%,
+        71% 14%,
+        84% 10%,
+        81% 23%,
+        96% 25%,
+        88% 36%,
+        100% 44%,
+        88% 51%,
+        97% 62%,
+        83% 64%,
+        88% 78%,
+        73% 74%,
+        66% 90%,
+        55% 80%,
+        47% 96%,
+        39% 81%,
+        25% 90%,
+        26% 74%,
+        12% 78%,
+        17% 64%,
+        2% 61%,
+        12% 50%,
+        0% 41%,
+        14% 34%,
+        7% 21%,
+        22% 23%,
+        20% 10%,
+        34% 15%,
+        41% 2%
+      );
+
+      box-shadow:
+        inset 0 0 14px rgba(255,255,255,0.9),
+        inset 0 -4px 8px rgba(240,120,160,0.15),
+        0 4px 9px rgba(150,50,90,0.13);
+
+      animation:
+        petalPulse
+        6s
+        ease-in-out
+        infinite;
     }
+
+    /*
+      ROSE-PINK TIPPED INNER PETALS
+    */
 
     .carnation::after {
       content: "";
 
       position: absolute;
 
-      width: 105px;
-      height: 98px;
+      width: 52px;
+      height: 52px;
 
-      left: 10px;
-      top: 0;
+      left: 27px;
+      top: 14px;
 
-      background:
-        radial-gradient(
-          ellipse at center,
-          #ffffff 0%,
-          #fffefe 38%,
-          #fffafa 55%,
-          #fff0f4 70%,
-          #f5b1c7 83%,
-          #d8668d 94%,
-          #bc496f 100%
-        );
-
-      clip-path: polygon(
-        50% 0%,
-        57% 8%,
-        65% 2%,
-        69% 13%,
-        79% 7%,
-        80% 20%,
-        92% 16%,
-        89% 29%,
-        100% 32%,
-        92% 43%,
-        100% 52%,
-        89% 58%,
-        96% 70%,
-        83% 71%,
-        84% 85%,
-        70% 79%,
-        63% 95%,
-        52% 83%,
-        42% 98%,
-        35% 83%,
-        21% 91%,
-        23% 77%,
-        8% 81%,
-        14% 68%,
-        1% 63%,
-        11% 52%,
-        0% 43%,
-        12% 34%,
-        5% 22%,
-        19% 23%,
-        18% 10%,
-        32% 16%,
-        39% 4%
-      );
-
-      box-shadow:
-        inset 0 0 18px rgba(255,255,255,0.95),
-        inset 0 -5px 14px rgba(220,100,140,0.18),
-        0 6px 14px rgba(140,50,85,0.18);
-    }
-
-    .carnation-inner {
-      position: absolute;
-
-      width: 65px;
-      height: 65px;
-
-      left: 31px;
-      top: 17px;
-
-      z-index: 3;
+      border-radius: 50%;
 
       background:
         radial-gradient(
           circle,
-          #ffffff 0%,
-          #fffafa 25%,
-          #ffeaf1 40%,
-          #f5b4c9 57%,
-          #df708f 76%,
-          #b9466d 100%
+          #fff 0%,
+          #fff 35%,
+          #ffe7ef 55%,
+          #f6b0c9 75%,
+          #d8668e 100%
         );
 
       clip-path: polygon(
         50% 0%,
-        60% 11%,
-        73% 3%,
-        76% 18%,
-        93% 20%,
-        83% 33%,
-        99% 43%,
-        84% 52%,
-        94% 65%,
-        77% 67%,
-        72% 84%,
-        58% 74%,
-        48% 92%,
-        38% 76%,
-        23% 84%,
-        25% 67%,
-        8% 65%,
-        17% 52%,
-        2% 43%,
-        18% 33%,
-        8% 19%,
-        25% 18%,
-        28% 4%,
-        41% 11%
+        62% 10%,
+        76% 5%,
+        78% 19%,
+        94% 25%,
+        82% 37%,
+        98% 48%,
+        82% 56%,
+        91% 73%,
+        72% 69%,
+        63% 89%,
+        50% 75%,
+        37% 91%,
+        29% 73%,
+        10% 77%,
+        17% 59%,
+        2% 49%,
+        17% 38%,
+        7% 23%,
+        25% 20%,
+        25% 7%,
+        40% 12%
       );
 
       box-shadow:
-        inset 0 0 12px rgba(255,255,255,0.9);
+        inset 0 0 10px rgba(255,255,255,0.8);
     }
 
-    .carnation-leaf {
-      position: absolute;
+    /*
+      FLOWER POSITIONS
+    */
 
-      width: 44px;
-      height: 17px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #356d40,
-          #78b878,
-          #477c4b
-        );
-
-      border-radius:
-        100% 0 100% 0;
-
-      z-index: 4;
+    .carnation:nth-child(1) {
+      top: 0;
+      left: -22px;
+      transform: rotate(-18deg) scale(1.1);
     }
 
-    .leaf-left {
-      left: 20px;
-      top: 92px;
-      transform: rotate(-28deg);
-    }
-
-    .leaf-right {
-      left: 67px;
-      top: 113px;
-      transform: rotate(25deg) scaleX(-1);
-    }
-
-    .carnation-1 {
-      top: -10px;
-      left: -30px;
-      transform: rotate(-20deg) scale(1.15);
-    }
-
-    .carnation-2 {
-      top: 10px;
-      right: -32px;
-      transform: rotate(20deg) scale(1.15);
+    .carnation:nth-child(2) {
+      top: 5%;
+      right: -25px;
+      transform: rotate(20deg) scale(1.18);
       animation-delay: 1s;
     }
 
-    .carnation-3 {
-      bottom: -20px;
-      left: -30px;
-      transform: rotate(-18deg) scale(1.2);
+    .carnation:nth-child(3) {
+      bottom: 4%;
+      left: -25px;
+      transform: rotate(-17deg) scale(1.15);
       animation-delay: 2s;
     }
 
-    .carnation-4 {
-      bottom: -20px;
-      right: -30px;
-      transform: rotate(18deg) scale(1.2);
+    .carnation:nth-child(4) {
+      bottom: 0;
+      right: -25px;
+      transform: rotate(17deg) scale(1.1);
       animation-delay: 3s;
     }
 
-    .carnation-5 {
-      top: 43%;
-      left: -55px;
-      transform: rotate(-15deg) scale(0.75);
+    .carnation:nth-child(5) {
+      top: 44%;
+      right: -32px;
+      transform: rotate(14deg) scale(0.72);
       animation-delay: 1.5s;
     }
 
-    .carnation-6 {
-      top: 48%;
-      right: -55px;
-      transform: rotate(15deg) scale(0.75);
+    .carnation:nth-child(6) {
+      top: 35%;
+      left: -32px;
+      transform: rotate(-14deg) scale(0.72);
       animation-delay: 2.5s;
     }
 
     @keyframes flowerSway {
-      0%, 100% {
-        margin-top: 0;
+
+      0%,
+      100% {
+        transform:
+          translateY(0)
+          rotate(-4deg);
       }
 
       50% {
-        margin-top: -7px;
+        transform:
+          translateY(-8px)
+          rotate(4deg);
       }
     }
 
+    @keyframes petalPulse {
+
+      0%,
+      100% {
+        transform: scale(0.97);
+      }
+
+      50% {
+        transform: scale(1.04);
+      }
+    }
+
+
     /* =====================================================
-       MAIN
+       MAIN CONTAINER
     ===================================================== */
 
     .container {
@@ -417,6 +427,7 @@
 
       padding: 60px 0;
     }
+
 
     /* =====================================================
        HERO
@@ -436,87 +447,90 @@
       padding-top: 70px;
     }
 
+
     /* =====================================================
-       CAKE
+       REALISTIC 16TH BIRTHDAY CAKE
     ===================================================== */
 
     .cake {
       position: relative;
 
-      width: 205px;
-      height: 205px;
+      width: 175px;
+      height: 160px;
 
-      margin-bottom: 30px;
+      margin-bottom: 35px;
 
       animation:
         cakeBounce
         2.5s
-        ease-in-out infinite;
+        ease-in-out
+        infinite;
 
       filter:
         drop-shadow(
-          0 18px 18px rgba(150,50,90,0.22)
+          0 14px 15px rgba(150,50,90,0.18)
         );
     }
 
     .cake-plate {
       position: absolute;
 
-      bottom: 2px;
+      bottom: 3px;
       left: 50%;
 
       transform: translateX(-50%);
 
-      width: 185px;
-      height: 23px;
+      width: 165px;
+      height: 18px;
 
       background:
         linear-gradient(
           to bottom,
           #ffffff,
-          #f4dbe6
+          #f5dce7
         );
 
       border-radius: 50%;
 
       box-shadow:
-        0 7px 13px rgba(120,40,70,0.18),
+        0 5px 9px rgba(120,40,70,0.16),
         inset 0 2px 2px rgba(255,255,255,0.9);
     }
 
     .cake-bottom {
       position: absolute;
 
-      bottom: 18px;
+      bottom: 14px;
       left: 50%;
 
       transform: translateX(-50%);
 
-      width: 145px;
-      height: 66px;
+      width: 125px;
+      height: 52px;
 
       border-radius:
-        12px 12px 18px 18px;
+        10px
+        10px
+        15px
+        15px;
 
       background:
         linear-gradient(
           to right,
-          #d79b87,
-          #f5c9b7 12%,
-          #fff0e7 32%,
-          #ffe5dc 50%,
-          #fff1e8 68%,
-          #eec0ad 88%,
-          #cf8d7e
+          #efc3b1,
+          #ffe7dc 20%,
+          #fff4ec 50%,
+          #ffe1d7 80%,
+          #e8b3a3
         );
 
       border:
         2px solid rgba(255,255,255,0.9);
 
       box-shadow:
-        inset 0 -12px 0 rgba(181,104,105,0.12),
-        inset 0 6px 9px rgba(255,255,255,0.85),
-        0 7px 11px rgba(130,50,70,0.15);
+        inset 0 -8px 0 rgba(181,104,105,0.1),
+        inset 0 4px 7px rgba(255,255,255,0.8),
+        0 5px 8px rgba(130,50,70,0.12);
     }
 
     .cake-bottom::before {
@@ -525,10 +539,10 @@
       position: absolute;
 
       left: 0;
-      top: 20px;
+      top: 14px;
 
       width: 100%;
-      height: 9px;
+      height: 8px;
 
       background:
         linear-gradient(
@@ -539,49 +553,30 @@
         );
     }
 
-    .cake-bottom::after {
-      content: "♥  •  ♥  •  ♥";
-
-      position: absolute;
-
-      left: 0;
-      bottom: 8px;
-
-      width: 100%;
-
-      text-align: center;
-
-      color: #d35c87;
-
-      font-size: 13px;
-
-      letter-spacing: 4px;
-    }
-
     .cake-frosting {
       position: absolute;
 
-      bottom: 71px;
+      bottom: 58px;
       left: 50%;
 
       transform: translateX(-50%);
 
-      width: 154px;
-      height: 39px;
+      width: 135px;
+      height: 33px;
 
       border-radius: 50%;
 
       background:
         linear-gradient(
           to bottom,
-          #ffc8dc,
-          #f89bbb 50%,
-          #df638f
+          #ffc9dc,
+          #fa9abc 55%,
+          #e96d99
         );
 
       box-shadow:
-        inset 0 5px 8px rgba(255,255,255,0.55),
-        0 6px 9px rgba(170,50,90,0.17);
+        inset 0 4px 7px rgba(255,255,255,0.55),
+        0 5px 8px rgba(170,50,90,0.16);
     }
 
     .cake-frosting::before {
@@ -589,38 +584,37 @@
 
       position: absolute;
 
-      left: 14px;
-      bottom: -18px;
+      left: 13px;
+      bottom: -16px;
 
-      width: 19px;
-      height: 26px;
+      width: 18px;
+      height: 23px;
 
       background:
         linear-gradient(
           to bottom,
-          #fa91b7,
-          #dc638f
+          #fa9abc,
+          #e96d99
         );
 
       border-radius:
-        0 0 13px 13px;
+        0 0 12px 12px;
 
       box-shadow:
-        31px 5px 0 -1px #f184ac,
-        66px -1px 0 -2px #eb759f,
-        105px 4px 0 -2px #e67aa2;
+        38px 4px 0 -1px #f284ac,
+        77px 0 0 -2px #ed769f;
     }
 
     .cake-top {
       position: absolute;
 
       left: 50%;
-      bottom: 96px;
+      bottom: 78px;
 
       transform: translateX(-50%);
 
-      width: 145px;
-      height: 40px;
+      width: 128px;
+      height: 34px;
 
       border-radius: 50%;
 
@@ -628,121 +622,52 @@
         radial-gradient(
           ellipse at center,
           #ffffff 0%,
-          #fffaff 35%,
-          #ffeaf3 68%,
-          #ffc8dc 100%
+          #fff0f6 55%,
+          #ffc9dc 100%
         );
 
       box-shadow:
-        inset 0 5px 8px rgba(255,255,255,0.95),
-        0 5px 8px rgba(170,60,100,0.13);
+        inset 0 4px 7px rgba(255,255,255,0.9),
+        0 4px 7px rgba(170,60,100,0.12);
     }
 
-    .cake-top::before {
-      content: "♥  •  ♥  •  ♥";
+    /*
+      BIG 16
+    */
 
+    .age {
       position: absolute;
 
-      width: 100%;
-
-      text-align: center;
-
-      top: 8px;
-
-      color: #df638f;
-
-      font-size: 14px;
-
-      letter-spacing: 4px;
-    }
-
-    /* =====================================================
-       16 TOPPER
-    ===================================================== */
-
-    .sixteen {
-      position: absolute;
-
-      z-index: 20;
+      z-index: 5;
 
       left: 50%;
-      top: 0;
+      bottom: 81px;
 
       transform: translateX(-50%);
 
-      color: #fff;
+      font-family: Georgia, serif;
 
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: 62px;
+      font-size: 25px;
 
       font-weight: bold;
 
-      line-height: 1;
+      color: #d65386;
 
       text-shadow:
-        0 2px 0 #d45b88,
-        0 4px 8px rgba(130,40,80,0.28);
-
-      animation:
-        topperGlow
-        2s ease-in-out infinite;
+        0 1px 3px rgba(180,60,100,0.15);
     }
 
-    .sixteen::after {
-      content: "";
-
-      position: absolute;
-
-      left: 50%;
-      top: 57px;
-
-      transform: translateX(-50%);
-
-      width: 5px;
-      height: 43px;
-
-      background:
-        linear-gradient(
-          to right,
-          #c98aa1,
-          #e6b1c4,
-          #b87991
-        );
-
-      border-radius: 4px;
-    }
-
-    @keyframes topperGlow {
-      0%, 100% {
-        filter:
-          drop-shadow(
-            0 3px 5px rgba(180,50,100,0.2)
-          );
-      }
-
-      50% {
-        filter:
-          drop-shadow(
-            0 0 13px rgba(255,255,255,0.85)
-          );
-      }
-    }
-
-    /* =====================================================
-       CANDLES
-    ===================================================== */
+    /*
+      TWO CANDLES
+    */
 
     .candle {
       position: absolute;
 
-      bottom: 111px;
+      bottom: 101px;
 
       width: 11px;
-      height: 30px;
+      height: 34px;
 
       border-radius: 4px;
 
@@ -751,22 +676,23 @@
           -45deg,
           #fff9fb 0px,
           #fff9fb 5px,
-          #efa1bc 5px,
-          #efa1bc 9px
+          #f3a5bf 5px,
+          #f3a5bf 9px
         );
 
       border:
         1px solid rgba(190,80,120,0.2);
+
+      box-shadow:
+        0 2px 5px rgba(150,50,90,0.15);
     }
 
-    .candle-left {
-      left: 47px;
-      transform: rotate(-5deg);
+    .candle.one {
+      left: 69px;
     }
 
-    .candle-right {
-      right: 47px;
-      transform: rotate(5deg);
+    .candle.six {
+      left: 96px;
     }
 
     .candle::before {
@@ -783,18 +709,25 @@
       transform: translateX(-50%);
 
       background: #553b3b;
+
+      border-radius: 50%;
     }
 
     .flame {
       position: absolute;
 
-      bottom: 137px;
+      bottom: 132px;
 
-      width: 18px;
-      height: 18px;
+      width: 17px;
+      height: 19px;
 
       border-radius:
-        50% 50% 50% 0;
+        50%
+        50%
+        50%
+        0;
+
+      transform: rotate(45deg);
 
       background:
         radial-gradient(
@@ -805,38 +738,47 @@
           #f47b9f 100%
         );
 
+      animation:
+        flameFlicker
+        0.7s
+        ease-in-out
+        infinite
+        alternate;
+
       filter:
         drop-shadow(
           0 0 9px rgba(255,180,90,0.75)
         );
-
-      animation:
-        flameFlicker
-        0.7s ease-in-out infinite alternate;
     }
 
-    .flame-left {
-      left: 44px;
-      transform: rotate(45deg);
+    .flame.one {
+      left: 66px;
     }
 
-    .flame-right {
-      right: 44px;
-      transform: rotate(45deg);
+    .flame.six {
+      left: 93px;
+      animation-delay: 0.2s;
     }
 
     @keyframes flameFlicker {
+
       from {
-        scale: 0.9;
+        transform:
+          rotate(42deg)
+          scale(0.9);
       }
 
       to {
-        scale: 1.12;
+        transform:
+          rotate(48deg)
+          scale(1.12);
       }
     }
 
     @keyframes cakeBounce {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: translateY(0);
       }
 
@@ -845,8 +787,9 @@
       }
     }
 
+
     /* =====================================================
-       HERO TEXT
+       TITLE
     ===================================================== */
 
     h1 {
@@ -860,25 +803,10 @@
       color: #c94f80;
 
       text-shadow:
-        0 0 25px rgba(255,120,180,0.35);
+        0 0 25px
+        rgba(255,120,180,0.35);
 
-      margin-bottom: 12px;
-    }
-
-    .sweet-sixteen {
-      margin-bottom: 10px;
-
-      color: #bd4778;
-
-      font-family:
-        Georgia,
-        serif;
-
-      font-size: 25px;
-
-      font-weight: bold;
-
-      letter-spacing: 3px;
+      margin-bottom: 15px;
     }
 
     .subtitle {
@@ -901,10 +829,12 @@
     }
 
     @keyframes pulse {
+
       50% {
         opacity: 0.4;
       }
     }
+
 
     /* =====================================================
        SECTIONS
@@ -915,7 +845,8 @@
         rgba(255,255,255,0.45);
 
       border:
-        1px solid rgba(255,255,255,0.75);
+        1px solid
+        rgba(255,255,255,0.8);
 
       backdrop-filter:
         blur(14px);
@@ -930,8 +861,11 @@
       margin: 30px 0;
 
       box-shadow:
-        0 15px 50px rgba(180,70,120,0.13),
-        inset 0 1px 0 rgba(255,255,255,0.6);
+        0 15px 50px
+        rgba(180,70,120,0.13),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.7);
     }
 
     section h2 {
@@ -942,8 +876,9 @@
       font-size: 28px;
     }
 
+
     /* =====================================================
-       LETTER
+       LOVE LETTER
     ===================================================== */
 
     .letter {
@@ -952,13 +887,12 @@
       line-height: 2.2;
 
       color: #663047;
-
-      overflow-wrap: break-word;
     }
 
     .letter strong {
       color: #b83f70;
     }
+
 
     /* =====================================================
        REASONS
@@ -990,11 +924,14 @@
 
       border:
         1px solid
-        rgba(255,180,210,0.35);
+        rgba(255,180,210,0.45);
 
       color: #743550;
 
-      transition: 0.3s ease;
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
     }
 
     .reason:hover {
@@ -1008,72 +945,65 @@
         rgba(190,70,120,0.15);
     }
 
+
     /* =====================================================
-       PHOTO GALLERY
+       PHOTOS
     ===================================================== */
 
     .photos {
-      display: grid;
+      display: flex;
 
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(200px, 1fr)
-        );
+      flex-wrap: wrap;
 
-      gap: 30px;
+      justify-content: center;
+
+      align-items: flex-start;
+
+      gap: 28px;
 
       width: 100%;
     }
 
+    /*
+      Cute photo frame
+    */
+
     .photo-card {
       position: relative;
 
-      display: flex;
+      width: fit-content;
+      height: fit-content;
 
-      justify-content: center;
-      align-items: center;
-
-      padding: 12px;
-
-      min-height: 160px;
+      padding: 10px;
 
       background:
         linear-gradient(
           145deg,
           #ffffff,
-          #fff5f9
+          #fff6fa
         );
 
       border:
-        1px solid
-        rgba(204,110,145,0.3);
+        2px solid #f4a5c2;
 
-      border-radius: 5px;
+      border-radius: 18px;
 
       box-shadow:
-        0 8px 15px rgba(130,50,85,0.12),
-        0 20px 35px rgba(130,50,85,0.10),
-        inset 0 0 0 2px rgba(255,255,255,0.9);
+        0 7px 20px rgba(150,60,100,0.13),
+        0 0 0 4px rgba(255,255,255,0.55);
 
       transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
+        transform 0.4s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.4s ease;
+
+      overflow: visible;
+
+      cursor: pointer;
     }
 
-    .photo-card::before {
-      content: "";
-
-      position: absolute;
-
-      inset: 5px;
-
-      border:
-        1px solid
-        rgba(220,130,160,0.4);
-
-      pointer-events: none;
-    }
+    /*
+      Little decorative heart on frame
+    */
 
     .photo-card::after {
       content: "♥";
@@ -1081,35 +1011,60 @@
       position: absolute;
 
       right: -9px;
-      top: -13px;
+      top: -12px;
 
-      width: 30px;
-      height: 30px;
+      width: 25px;
+      height: 25px;
 
       display: flex;
 
       align-items: center;
       justify-content: center;
 
-      color: #d95b89;
-
-      background: #fff4f8;
+      background: #fff;
 
       border-radius: 50%;
 
+      color: #e875a2;
+
+      font-size: 14px;
+
       box-shadow:
-        0 3px 8px rgba(130,50,85,0.15);
+        0 3px 8px rgba(160,60,100,0.14);
+
+      z-index: 2;
     }
+
+    /*
+      Gentle pop when hovering
+    */
 
     .photo-card:hover {
       transform:
         translateY(-9px)
-        rotate(0deg)
-        scale(1.025);
+        scale(1.035)
+        rotate(0deg);
 
       box-shadow:
-        0 15px 25px rgba(130,50,85,0.16),
-        0 25px 45px rgba(130,50,85,0.12);
+        0 16px 32px rgba(150,60,100,0.2),
+        0 0 0 5px rgba(255,255,255,0.65),
+        0 0 20px rgba(245,130,175,0.22);
+    }
+
+    .photo-card:nth-child(odd) {
+      transform: rotate(-1.2deg);
+    }
+
+    .photo-card:nth-child(even) {
+      transform: rotate(1.2deg);
+    }
+
+    .photo-card:nth-child(odd):hover,
+    .photo-card:nth-child(even):hover {
+      transform:
+        translateY(-9px)
+        scale(1.035)
+        rotate(0deg);
     }
 
     .photo-card img {
@@ -1118,44 +1073,20 @@
       width: auto !important;
       height: auto !important;
 
-      max-width: 100% !important;
-      max-height: 285px !important;
+      max-width: 220px !important;
+      max-height: 280px !important;
 
       object-fit: contain;
 
-      border-radius: 2px;
+      border-radius: 10px;
+
+      margin: 0;
 
       box-shadow:
-        0 2px 5px rgba(100,40,70,0.15);
+        0 3px 8px
+        rgba(150,60,100,0.1);
     }
 
-    .photo-card:nth-child(1) {
-      transform: rotate(-2deg);
-    }
-
-    .photo-card:nth-child(2) {
-      transform: rotate(2deg);
-    }
-
-    .photo-card:nth-child(3) {
-      transform: rotate(-1.5deg);
-    }
-
-    .photo-card:nth-child(4) {
-      transform: rotate(2.5deg);
-    }
-
-    .photo-card:nth-child(5) {
-      transform: rotate(-2.5deg);
-    }
-
-    .photo-card:nth-child(6) {
-      transform: rotate(1.5deg);
-    }
-
-    .photo-card:nth-child(7) {
-      transform: rotate(-1deg);
-    }
 
     /* =====================================================
        VOICE MESSAGE
@@ -1163,9 +1094,9 @@
 
     .voice {
       background:
-        rgba(255,255,255,0.32);
+        rgba(255,255,255,0.3);
 
-      padding: 22px;
+      padding: 20px;
 
       border-radius: 18px;
 
@@ -1173,29 +1104,22 @@
 
       color: #743550;
 
-      text-align: center;
-    }
-
-    .voice-title {
-      font-size: 20px;
-
-      color: #bd4778;
-
-      font-weight: bold;
-
-      margin-bottom: 10px;
+      border:
+        1px solid
+        rgba(255,190,215,0.35);
     }
 
     audio {
-      display: block;
-
       width: 100%;
 
       margin-top: 15px;
+
+      accent-color: #d95b8b;
     }
 
+
     /* =====================================================
-       FINAL
+       FINAL MESSAGE
     ===================================================== */
 
     .final {
@@ -1226,6 +1150,11 @@
       font-size: 24px;
     }
 
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
     footer {
       text-align: center;
 
@@ -1233,6 +1162,7 @@
 
       color: #9b5573;
     }
+
 
     /* =====================================================
        MOBILE
@@ -1247,7 +1177,8 @@
       }
 
       section {
-        padding: 25px 20px;
+        padding:
+          25px 20px;
       }
 
       .letter {
@@ -1260,8 +1191,18 @@
         font-size: 17px;
       }
 
-      .sweet-sixteen {
-        font-size: 20px;
+      .carnation {
+        transform:
+          scale(0.72)
+          rotate(-5deg);
+      }
+
+      .final h2 {
+        font-size: 28px;
+      }
+
+      .final p {
+        font-size: 18px;
       }
 
       .birthday-arch {
@@ -1283,11 +1224,9 @@
       }
 
       .photos {
-        grid-template-columns: 1fr;
+        flex-direction: column;
 
-        justify-items: center;
-
-        gap: 30px;
+        align-items: center;
       }
 
       .photo-card {
@@ -1297,41 +1236,38 @@
       }
 
       .photo-card img {
-        max-width: 230px !important;
+        width: auto !important;
 
-        max-height: 300px !important;
-      }
+        height: auto !important;
 
-      .carnation {
-        transform: scale(0.65);
-      }
+        max-width: 220px !important;
 
-      .final h2 {
-        font-size: 28px;
-      }
-
-      .final p {
-        font-size: 18px;
+        max-height: 280px !important;
       }
 
       .cake {
         transform: scale(0.9);
       }
     }
+
   </style>
 
 </head>
 
+
 <body>
+
 
   <!-- =====================================================
        HAPPY BIRTHDAY
   ===================================================== -->
 
   <div class="birthday-arch">
+
     <div class="birthday-text">
-      HAPPY BIRTHDAY! ❤️
+      HAPPY 16TH BIRTHDAY! ❤️
     </div>
+
   </div>
 
 
@@ -1366,41 +1302,12 @@
 
   <div class="carnations">
 
-    <div class="carnation carnation-1">
-      <div class="carnation-inner"></div>
-      <div class="carnation-leaf leaf-left"></div>
-      <div class="carnation-leaf leaf-right"></div>
-    </div>
-
-    <div class="carnation carnation-2">
-      <div class="carnation-inner"></div>
-      <div class="carnation-leaf leaf-left"></div>
-      <div class="carnation-leaf leaf-right"></div>
-    </div>
-
-    <div class="carnation carnation-3">
-      <div class="carnation-inner"></div>
-      <div class="carnation-leaf leaf-left"></div>
-      <div class="carnation-leaf leaf-right"></div>
-    </div>
-
-    <div class="carnation carnation-4">
-      <div class="carnation-inner"></div>
-      <div class="carnation-leaf leaf-left"></div>
-      <div class="carnation-leaf leaf-right"></div>
-    </div>
-
-    <div class="carnation carnation-5">
-      <div class="carnation-inner"></div>
-      <div class="carnation-leaf leaf-left"></div>
-      <div class="carnation-leaf leaf-right"></div>
-    </div>
-
-    <div class="carnation carnation-6">
-      <div class="carnation-inner"></div>
-      <div class="carnation-leaf leaf-left"></div>
-      <div class="carnation-leaf leaf-right"></div>
-    </div>
+    <div class="carnation"></div>
+    <div class="carnation"></div>
+    <div class="carnation"></div>
+    <div class="carnation"></div>
+    <div class="carnation"></div>
+    <div class="carnation"></div>
 
   </div>
 
@@ -1414,17 +1321,20 @@
 
     <div class="hero">
 
+
+      <!-- 16TH BIRTHDAY CAKE -->
+
       <div class="cake">
 
-        <div class="sixteen">
+        <div class="flame one"></div>
+        <div class="flame six"></div>
+
+        <div class="candle one"></div>
+        <div class="candle six"></div>
+
+        <div class="age">
           16
         </div>
-
-        <div class="flame flame-left"></div>
-        <div class="flame flame-right"></div>
-
-        <div class="candle candle-left"></div>
-        <div class="candle candle-right"></div>
 
         <div class="cake-top"></div>
 
@@ -1440,11 +1350,6 @@
       <h1>
         كل سنة وإنتي طيبة يا حوراء ❤️
       </h1>
-
-
-      <div class="sweet-sixteen">
-        ✨ SWEET SIXTEEN ✨
-      </div>
 
 
       <p class="subtitle">
@@ -1590,61 +1495,83 @@
 
       <div class="photos">
 
+
+        <!-- PHOTO 1 -->
+
         <div class="photo-card">
           <img
-            src="./photo1.jpeg"
+            src="photo1.jpeg"
             alt="Memory 1"
             loading="lazy"
           >
         </div>
 
+
+        <!-- PHOTO 2 -->
+
         <div class="photo-card">
           <img
-            src="./photo2.jpeg"
+            src="photo2.jpeg"
             alt="Memory 2"
             loading="lazy"
           >
         </div>
 
+
+        <!-- PHOTO 3 -->
+
         <div class="photo-card">
           <img
-            src="./photo3.jpeg"
+            src="photo3.jpeg"
             alt="Memory 3"
             loading="lazy"
           >
         </div>
 
+
+        <!-- PHOTO 4 -->
+
         <div class="photo-card">
           <img
-            src="./photo4.jpeg"
+            src="photo4.jpeg"
             alt="Memory 4"
             loading="lazy"
           >
         </div>
 
+
+        <!-- PHOTO 5 -->
+
         <div class="photo-card">
           <img
-            src="./photo5.jpeg"
+            src="photo5.jpeg"
             alt="Memory 5"
             loading="lazy"
           >
         </div>
 
+
+        <!-- PHOTO 6 -->
+
         <div class="photo-card">
           <img
-            src="./photo6.jpeg"
+            src="photo6.jpeg"
             alt="Memory 6"
             loading="lazy"
           >
         </div>
 
+
+        <!-- PHOTO 7 -->
+
         <div class="photo-card">
           <img
-            src="./photo7.jpeg"
+            src="photo7.jpeg"
             alt="Memory 7"
             loading="lazy"
           >
         </div>
+
 
       </div>
 
@@ -1664,17 +1591,19 @@
 
       <div class="voice">
 
-        <div class="voice-title">
+        <div>
           رسالة مخصوص ليكي ❤️
         </div>
 
-        <div>
-          اضغطي تشغيل واسمعي الرسالة يا حوراء 🎀
-        </div>
-
         <audio controls preload="metadata">
-          <source src="./Voice3.oga" type="audio/ogg">
-          Your browser does not support audio playback.
+
+          <source
+            src="voice3.oga"
+            type="audio/ogg"
+          >
+
+          Your browser does not support the audio element.
+
         </audio>
 
       </div>
