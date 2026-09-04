@@ -87,7 +87,7 @@
     }
 
     /* =========================
-       FLOWERS
+       CARNATION FLOWERS
     ========================= */
 
     .carnations {
@@ -298,28 +298,35 @@
 
     .photos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      align-items: stretch;
     }
 
-    .photos img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 18px;
-      border: 2px solid rgba(255, 255, 255, 0.7);
-      box-shadow: 0 8px 20px rgba(180, 70, 120, 0.15);
+    .photo-card {
+      background: rgba(255, 255, 255, 0.55);
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(180, 70, 120, 0.15);
       transition: 0.3s ease;
     }
 
-    .photos img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 12px 30px rgba(180, 70, 120, 0.25);
+    .photo-card:hover {
+      transform: translateY(-6px) rotate(1deg);
+      box-shadow: 0 15px 35px rgba(180, 70, 120, 0.22);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      border-radius: 15px;
     }
 
     .photo-placeholder {
-      height: 220px;
-      border-radius: 18px;
+      height: 300px;
+      border-radius: 15px;
       background:
         linear-gradient(
           135deg,
@@ -429,9 +436,9 @@
         font-size: 18px;
       }
 
-      .photos img,
+      .photo-card img,
       .photo-placeholder {
-        height: 240px;
+        height: 260px;
       }
     }
   </style>
@@ -465,7 +472,7 @@
 
 
 <!-- =========================
-     FLOWERS
+     CARNATIONS
 ========================= -->
 
 <div class="carnations">
@@ -620,10 +627,14 @@
     <div class="photos">
 
       <!-- PHOTO 1 -->
-      <img src="photos/photo1.jpeg" alt="Our first memory">
+      <div class="photo-card">
+        <img src="photo1.jpeg" alt="Our first memory">
+      </div>
 
       <!-- PHOTO 2 -->
-      <img src="photos/photo2.jpeg" alt="Another memory">
+      <div class="photo-card">
+        <img src="photo2.jpeg" alt="Another memory">
+      </div>
 
       <!-- PHOTO 3 - ADD LATER -->
       <div class="photo-placeholder">
