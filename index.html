@@ -8,7 +8,6 @@
   <title>كل سنة وإنتي طيبة يا حوراء ❤️</title>
 
   <style>
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -26,10 +25,10 @@
       color: #6d304d;
 
       background:
-        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.95), transparent 24%),
-        radial-gradient(circle at 90% 15%, rgba(255,220,235,0.75), transparent 28%),
-        radial-gradient(circle at 15% 85%, rgba(255,195,220,0.65), transparent 28%),
-        radial-gradient(circle at 85% 80%, rgba(255,240,246,0.85), transparent 30%),
+        radial-gradient(circle at 12% 10%, rgba(255,255,255,0.95), transparent 25%),
+        radial-gradient(circle at 90% 18%, rgba(255,220,235,0.9), transparent 30%),
+        radial-gradient(circle at 15% 85%, rgba(255,195,220,0.8), transparent 28%),
+        radial-gradient(circle at 85% 88%, rgba(255,240,246,0.9), transparent 30%),
         linear-gradient(135deg, #ffeaf2 0%, #ffd4e3 45%, #f6b8d0 100%);
 
       background-attachment: fixed;
@@ -43,8 +42,8 @@
       z-index: -2;
 
       background:
-        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.28), transparent 20%),
-        radial-gradient(circle at 70% 65%, rgba(255,140,190,0.13), transparent 25%);
+        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.22), transparent 20%),
+        radial-gradient(circle at 70% 65%, rgba(255,140,190,0.12), transparent 25%);
 
       animation: ambientGlow 10s ease-in-out infinite alternate;
     }
@@ -61,10 +60,8 @@
       }
     }
 
-
     /* =========================================================
-       CALM MUSIC-LIKE BACKGROUND
-       No actual music — only gentle visual movement.
+       CALM MUSIC VIBE
     ========================================================= */
 
     .music-vibe {
@@ -73,113 +70,122 @@
       pointer-events: none;
       z-index: 0;
       overflow: hidden;
-      opacity: 0.34;
+      opacity: 0.30;
     }
 
     .music-note {
       position: absolute;
-      bottom: -60px;
-
-      color: rgba(255,255,255,0.72);
-
-      font-size: 25px;
-
+      bottom: -80px;
+      color: rgba(255,255,255,0.8);
+      font-size: 24px;
       text-shadow:
-        0 0 12px rgba(214,75,130,0.22),
-        0 0 25px rgba(255,255,255,0.5);
+        0 0 10px rgba(214,75,130,0.25),
+        0 0 25px rgba(255,255,255,0.6);
 
       animation: musicFloat linear infinite;
     }
 
     .music-note:nth-child(1) {
-      left: 5%;
-      animation-duration: 15s;
-      animation-delay: -2s;
-    }
-
-    .music-note:nth-child(2) {
-      left: 18%;
-      animation-duration: 18s;
-      animation-delay: -7s;
+      left: 4%;
+      animation-duration: 17s;
+      animation-delay: -4s;
       font-size: 19px;
     }
 
+    .music-note:nth-child(2) {
+      left: 13%;
+      animation-duration: 21s;
+      animation-delay: -11s;
+      font-size: 28px;
+    }
+
     .music-note:nth-child(3) {
-      left: 31%;
-      animation-duration: 14s;
-      animation-delay: -4s;
-      font-size: 29px;
+      left: 25%;
+      animation-duration: 19s;
+      animation-delay: -7s;
+      font-size: 17px;
     }
 
     .music-note:nth-child(4) {
-      left: 46%;
-      animation-duration: 20s;
-      animation-delay: -11s;
-      font-size: 21px;
+      left: 38%;
+      animation-duration: 24s;
+      animation-delay: -15s;
+      font-size: 31px;
     }
 
     .music-note:nth-child(5) {
-      left: 62%;
-      animation-duration: 16s;
+      left: 52%;
+      animation-duration: 18s;
       animation-delay: -5s;
-      font-size: 27px;
+      font-size: 21px;
     }
 
     .music-note:nth-child(6) {
-      left: 76%;
-      animation-duration: 19s;
-      animation-delay: -9s;
-      font-size: 20px;
+      left: 67%;
+      animation-duration: 23s;
+      animation-delay: -13s;
+      font-size: 29px;
     }
 
     .music-note:nth-child(7) {
-      left: 90%;
-      animation-duration: 15s;
-      animation-delay: -13s;
-      font-size: 28px;
+      left: 79%;
+      animation-duration: 20s;
+      animation-delay: -8s;
+      font-size: 18px;
+    }
+
+    .music-note:nth-child(8) {
+      left: 91%;
+      animation-duration: 25s;
+      animation-delay: -17s;
+      font-size: 27px;
     }
 
     @keyframes musicFloat {
       0% {
-        bottom: -70px;
-        opacity: 0;
         transform:
-          translateX(0)
-          rotate(-10deg)
+          translate3d(0, 0, 0)
+          rotate(-8deg)
           scale(0.7);
+        opacity: 0;
       }
 
-      15% {
+      12% {
         opacity: 0.55;
       }
 
-      50% {
+      35% {
         transform:
-          translateX(35px)
-          rotate(10deg)
+          translate3d(25px, -30vh, 0)
+          rotate(8deg)
           scale(1);
       }
 
-      100% {
-        bottom: 110%;
-        opacity: 0;
+      65% {
         transform:
-          translateX(-35px)
-          rotate(-10deg)
-          scale(0.8);
+          translate3d(-25px, -65vh, 0)
+          rotate(-7deg)
+          scale(0.95);
+      }
+
+      100% {
+        transform:
+          translate3d(30px, -115vh, 0)
+          rotate(10deg)
+          scale(0.75);
+        opacity: 0;
       }
     }
 
-
     /* =========================================================
-       SOFT ORBS / VIBE
+       SOFT ORBS BEHIND EVERYTHING
     ========================================================= */
 
     .ambient-orbs {
       position: fixed;
       inset: 0;
-      overflow: hidden;
       pointer-events: none;
+      overflow: hidden;
       z-index: 0;
     }
 
@@ -187,46 +193,45 @@
       position: absolute;
       border-radius: 50%;
       filter: blur(35px);
-      opacity: 0.25;
-      animation: orbMove 14s ease-in-out infinite alternate;
+      opacity: 0.20;
+      animation: orbDrift 16s ease-in-out infinite alternate;
     }
 
-    .orb.one {
+    .orb1 {
       width: 180px;
       height: 180px;
-      background: #ffffff;
       left: 5%;
-      top: 30%;
+      top: 25%;
+      background: #ffffff;
     }
 
-    .orb.two {
-      width: 240px;
-      height: 240px;
-      background: #f49fc3;
+    .orb2 {
+      width: 230px;
+      height: 230px;
       right: 2%;
-      top: 55%;
+      top: 45%;
+      background: #f58db6;
       animation-delay: -5s;
     }
 
-    .orb.three {
+    .orb3 {
       width: 150px;
       height: 150px;
-      background: #fff8fb;
-      left: 45%;
-      bottom: 5%;
-      animation-delay: -8s;
+      left: 38%;
+      bottom: 4%;
+      background: #ffffff;
+      animation-delay: -9s;
     }
 
-    @keyframes orbMove {
+    @keyframes orbDrift {
       from {
-        transform: translate(0, 0) scale(1);
+        transform: translate(0, 0) scale(0.9);
       }
 
       to {
-        transform: translate(35px, -25px) scale(1.15);
+        transform: translate(30px, -25px) scale(1.12);
       }
     }
-
 
     /* =========================================================
        FLOATING HEARTS
@@ -243,25 +248,14 @@
     .heart {
       position: absolute;
       bottom: -60px;
-
-      color: rgba(220,80,130,0.25);
-
+      color: rgba(220,80,130,0.35);
       font-size: 20px;
-
-      animation:
-        floatHeart
-        10s
-        linear
-        infinite;
-
-      filter:
-        drop-shadow(
-          0 3px 6px rgba(190,60,110,0.12)
-        );
+      animation: floatHeart 10s linear infinite;
+      filter: drop-shadow(0 3px 6px rgba(190,60,110,0.12));
     }
 
     .heart:nth-child(2n) {
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.55);
       font-size: 27px;
     }
 
@@ -276,12 +270,11 @@
           translateX(0)
           rotate(0deg)
           scale(0.7);
-
         opacity: 0;
       }
 
       15% {
-        opacity: 0.55;
+        opacity: 0.65;
       }
 
       50% {
@@ -298,11 +291,9 @@
           translateX(-35px)
           rotate(360deg)
           scale(0.8);
-
         opacity: 0;
       }
     }
-
 
     /* =========================================================
        TOP BIRTHDAY TEXT
@@ -310,12 +301,9 @@
 
     .birthday-arch {
       position: absolute;
-
       top: -45px;
       left: 50%;
-
       transform: translateX(-50%);
-
       width: 100%;
       height: 170px;
 
@@ -324,42 +312,20 @@
       justify-content: center;
 
       padding-bottom: 22px;
-
       z-index: 3;
-
       pointer-events: none;
     }
 
     .birthday-text {
-      color: rgba(255,255,255,0.86);
-
+      color: rgba(255,255,255,0.72);
       font-size: clamp(20px, 4vw, 38px);
-
       font-weight: bold;
-
       letter-spacing: 3px;
 
       text-shadow:
         0 2px 8px rgba(170,60,100,0.16),
         0 0 20px rgba(255,255,255,0.6);
-
-      animation: birthdayGlow 3s ease-in-out infinite alternate;
     }
-
-    @keyframes birthdayGlow {
-      from {
-        text-shadow:
-          0 2px 8px rgba(170,60,100,0.16),
-          0 0 15px rgba(255,255,255,0.4);
-      }
-
-      to {
-        text-shadow:
-          0 2px 12px rgba(170,60,100,0.2),
-          0 0 28px rgba(255,255,255,0.9);
-      }
-    }
-
 
     /* =========================================================
        MAIN CONTAINER
@@ -368,14 +334,10 @@
     .container {
       position: relative;
       z-index: 1;
-
       width: min(950px, 92%);
-
       margin: auto;
-
       padding: 55px 0;
     }
-
 
     /* =========================================================
        HERO
@@ -385,36 +347,25 @@
       min-height: 92vh;
 
       display: flex;
-
       flex-direction: column;
-
       justify-content: center;
-
       align-items: center;
 
       text-align: center;
-
       padding-top: 65px;
     }
 
-
     /* =========================================================
-       CAKE
+       REALISTIC CAKE
     ========================================================= */
 
     .cake {
       position: relative;
-
       width: 230px;
       height: 215px;
-
       margin-bottom: 35px;
 
-      animation:
-        cakeFloat
-        3.2s
-        ease-in-out
-        infinite;
+      animation: cakeFloat 3.2s ease-in-out infinite;
 
       filter:
         drop-shadow(
@@ -424,15 +375,12 @@
 
     .cake-plate {
       position: absolute;
-
       bottom: 3px;
       left: 50%;
-
       transform: translateX(-50%);
 
       width: 215px;
       height: 25px;
-
       border-radius: 50%;
 
       background:
@@ -450,38 +398,25 @@
 
     .cake-plate::after {
       content: "";
-
       position: absolute;
-
       left: 15px;
       right: 15px;
-
       bottom: 4px;
-
       height: 6px;
-
       border-radius: 50%;
-
-      background:
-        rgba(205,135,165,0.2);
+      background: rgba(205,135,165,0.2);
     }
 
     .cake-bottom {
       position: absolute;
-
       bottom: 18px;
       left: 50%;
-
       transform: translateX(-50%);
 
       width: 165px;
       height: 68px;
 
-      border-radius:
-        13px
-        13px
-        18px
-        18px;
+      border-radius: 13px 13px 18px 18px;
 
       background:
         linear-gradient(
@@ -495,8 +430,7 @@
           #d28e7b 100%
         );
 
-      border:
-        2px solid rgba(255,255,255,0.85);
+      border: 2px solid rgba(255,255,255,0.85);
 
       box-shadow:
         inset 0 -12px 10px rgba(160,75,75,0.12),
@@ -506,16 +440,11 @@
 
     .cake-bottom::before {
       content: "";
-
       position: absolute;
-
       left: 5px;
       right: 5px;
-
       top: 16px;
-
       height: 8px;
-
       border-radius: 50%;
 
       background:
@@ -532,12 +461,9 @@
 
     .cake-bottom::after {
       content: "";
-
       position: absolute;
-
       width: 100%;
       height: 14px;
-
       left: 0;
       bottom: 0;
 
@@ -553,15 +479,12 @@
 
     .cake-frosting {
       position: absolute;
-
       bottom: 73px;
       left: 50%;
-
       transform: translateX(-50%);
 
       width: 177px;
       height: 43px;
-
       border-radius: 50%;
 
       background:
@@ -581,20 +504,14 @@
 
     .cake-frosting::before {
       content: "";
-
       position: absolute;
-
       left: 13px;
       bottom: -20px;
 
       width: 23px;
       height: 30px;
 
-      border-radius:
-        0
-        0
-        14px
-        14px;
+      border-radius: 0 0 14px 14px;
 
       background:
         linear-gradient(
@@ -611,15 +528,12 @@
 
     .cake-top {
       position: absolute;
-
       left: 50%;
       bottom: 96px;
-
       transform: translateX(-50%);
 
       width: 171px;
       height: 48px;
-
       border-radius: 50%;
 
       background:
@@ -631,8 +545,7 @@
           #ffc8db 100%
         );
 
-      border:
-        1px solid rgba(255,255,255,0.9);
+      border: 1px solid rgba(255,255,255,0.9);
 
       box-shadow:
         inset 0 5px 9px rgba(255,255,255,0.95),
@@ -642,10 +555,8 @@
 
     .berry {
       position: absolute;
-
       width: 8px;
       height: 8px;
-
       border-radius: 50%;
 
       background:
@@ -684,18 +595,14 @@
 
     .age {
       position: absolute;
-
       z-index: 10;
 
       left: 50%;
       bottom: 104px;
-
       transform: translateX(-50%);
 
       font-family: Georgia, "Times New Roman", serif;
-
       font-size: 34px;
-
       font-weight: bold;
 
       color: #cf5787;
@@ -709,7 +616,6 @@
 
     .candle {
       position: absolute;
-
       bottom: 132px;
 
       width: 14px;
@@ -726,8 +632,7 @@
           #f0a2bf 11px
         );
 
-      border:
-        1px solid rgba(170,70,110,0.2);
+      border: 1px solid rgba(170,70,110,0.2);
 
       box-shadow:
         inset 2px 0 3px rgba(255,255,255,0.8),
@@ -746,9 +651,7 @@
 
     .candle::before {
       content: "";
-
       position: absolute;
-
       top: -7px;
       left: 50%;
 
@@ -758,26 +661,18 @@
       transform: translateX(-50%);
 
       background: #4d3636;
-
       border-radius: 50%;
     }
 
     .flame {
       position: absolute;
-
       z-index: 9;
-
       bottom: 174px;
 
       width: 19px;
       height: 25px;
 
-      border-radius:
-        50%
-        50%
-        50%
-        0;
-
+      border-radius: 50% 50% 50% 0;
       transform: rotate(45deg);
 
       background:
@@ -826,8 +721,7 @@
     }
 
     @keyframes cakeFloat {
-      0%,
-      100% {
+      0%, 100% {
         transform: translateY(0);
       }
 
@@ -836,19 +730,12 @@
       }
     }
 
-
     /* =========================================================
        HERO TEXT
     ========================================================= */
 
     h1 {
-      font-size:
-        clamp(
-          38px,
-          8vw,
-          72px
-        );
-
+      font-size: clamp(38px, 8vw, 72px);
       color: #c94f80;
 
       text-shadow:
@@ -859,17 +746,13 @@
 
     .subtitle {
       font-size: 20px;
-
       color: #713650;
-
       line-height: 1.8;
-
       max-width: 750px;
     }
 
     .scroll {
       margin-top: 55px;
-
       color: #c94f80;
 
       animation:
@@ -887,36 +770,29 @@
       }
     }
 
-
     /* =========================================================
        GLASS SECTIONS
     ========================================================= */
 
     section {
       position: relative;
-
       overflow: hidden;
 
       background:
         linear-gradient(
           135deg,
-          rgba(255,255,255,0.54),
-          rgba(255,240,247,0.30)
+          rgba(255,255,255,0.56),
+          rgba(255,240,247,0.34)
         );
 
       border:
         1px solid rgba(255,255,255,0.8);
 
-      backdrop-filter:
-        blur(18px);
-
-      -webkit-backdrop-filter:
-        blur(18px);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
 
       border-radius: 28px;
-
       padding: 38px;
-
       margin: 30px 0;
 
       box-shadow:
@@ -936,7 +812,6 @@
 
     section::before {
       content: "";
-
       position: absolute;
 
       width: 180px;
@@ -946,10 +821,7 @@
       right: -80px;
 
       border-radius: 50%;
-
-      background:
-        rgba(255,255,255,0.2);
-
+      background: rgba(255,255,255,0.2);
       filter: blur(4px);
 
       pointer-events: none;
@@ -957,15 +829,12 @@
 
     section h2 {
       color: #c34f7d;
-
       margin-bottom: 20px;
-
       font-size: 28px;
 
       position: relative;
       z-index: 1;
     }
-
 
     /* =========================================================
        LOVE LETTER
@@ -976,16 +845,13 @@
       z-index: 1;
 
       font-size: 19px;
-
       line-height: 2.2;
-
       color: #663047;
     }
 
     .letter strong {
       color: #b83f70;
     }
-
 
     /* =========================================================
        REASONS
@@ -1011,11 +877,9 @@
         rgba(255,170,205,0.25);
 
       border-radius: 20px;
-
       padding: 21px;
 
       text-align: center;
-
       line-height: 1.8;
 
       border:
@@ -1044,22 +908,17 @@
         0 12px 27px rgba(190,70,120,0.14);
     }
 
-
     /* =========================================================
        PHOTOS
     ========================================================= */
 
     .photos {
       display: flex;
-
       flex-wrap: wrap;
-
       justify-content: center;
-
       align-items: flex-start;
 
       gap: 30px;
-
       width: 100%;
 
       position: relative;
@@ -1095,7 +954,6 @@
         box-shadow 0.45s ease;
 
       overflow: visible;
-
       cursor: pointer;
     }
 
@@ -1103,7 +961,6 @@
       content: "";
 
       position: absolute;
-
       inset: 5px;
 
       border:
@@ -1112,7 +969,6 @@
       border-radius: 14px;
 
       pointer-events: none;
-
       z-index: 1;
     }
 
@@ -1128,7 +984,6 @@
       height: 27px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
@@ -1145,7 +1000,6 @@
       border-radius: 50%;
 
       color: #e875a2;
-
       font-size: 14px;
 
       box-shadow:
@@ -1194,13 +1048,11 @@
       object-fit: contain;
 
       border-radius: 11px;
-
       margin: 0;
 
       box-shadow:
         0 4px 10px rgba(150,60,100,0.12);
     }
-
 
     /* =========================================================
        VOICE MESSAGE
@@ -1214,9 +1066,7 @@
         rgba(255,255,255,0.3);
 
       padding: 23px;
-
       border-radius: 20px;
-
       margin-top: 15px;
 
       color: #743550;
@@ -1230,9 +1080,7 @@
 
     .voice-title {
       font-weight: bold;
-
       font-size: 18px;
-
       margin-bottom: 8px;
     }
 
@@ -1240,19 +1088,15 @@
       height: 45px;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       gap: 4px;
-
       margin: 10px 0;
     }
 
     .audio-bar {
       width: 4px;
-
       border-radius: 5px;
 
       background:
@@ -1295,12 +1139,9 @@
 
     audio {
       width: 100%;
-
       margin-top: 8px;
-
       accent-color: #d95b8b;
     }
-
 
     /* =========================================================
        LULU QUESTION
@@ -1308,55 +1149,53 @@
 
     .lulu-section {
       text-align: center;
-      padding: 48px 25px;
+      padding: 55px 25px;
     }
 
     .lulu-question {
-      position: relative;
-      z-index: 2;
-    }
-
-    .lulu-question h2 {
-      font-size: clamp(25px, 5vw, 36px);
+      font-size: clamp(25px, 5vw, 38px);
+      color: #bd4778;
       margin-bottom: 12px;
     }
 
-    .lulu-question p {
-      color: #7a3b57;
-      font-size: 18px;
+    .lulu-subtitle {
+      color: #713650;
+      font-size: 17px;
       margin-bottom: 25px;
     }
 
     .lulu-buttons {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
     .lulu-btn {
       border: none;
-      padding: 13px 30px;
-
+      padding: 13px 28px;
       border-radius: 999px;
 
       font-size: 17px;
-      font-family: inherit;
       font-weight: bold;
+      font-family: inherit;
 
       cursor: pointer;
 
-      color: white;
+      color: #743550;
 
       background:
         linear-gradient(
           135deg,
-          #e979a5,
-          #c94f80
+          #fff,
+          #ffe5ef
         );
 
+      border:
+        1px solid rgba(220,120,160,0.35);
+
       box-shadow:
-        0 8px 20px rgba(190,70,120,0.2);
+        0 8px 20px rgba(150,60,100,0.13);
 
       transition:
         transform 0.25s ease,
@@ -1364,43 +1203,41 @@
     }
 
     .lulu-btn:hover {
-      transform: translateY(-4px) scale(1.04);
+      transform: translateY(-3px) scale(1.03);
 
       box-shadow:
-        0 12px 27px rgba(190,70,120,0.28);
+        0 12px 25px rgba(150,60,100,0.2);
+    }
+
+    .lulu-btn.yes {
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e875a2,
+          #c94f80
+        );
     }
 
     .lulu-btn.no {
-      background:
-        rgba(255,255,255,0.65);
-
-      color: #bd5a80;
-
-      border:
-        1px solid rgba(220,130,165,0.45);
+      background: rgba(255,255,255,0.65);
     }
 
-
-    /* =========================================================
-       LULU CAT
-    ========================================================= */
-
-    .lulu-reveal {
+    .lulu-response {
       display: none;
-      position: relative;
-      z-index: 2;
-      margin-top: 35px;
-      animation: luluAppear 1s cubic-bezier(.2,.8,.2,1) forwards;
+      margin-top: 30px;
     }
 
-    .lulu-reveal.show {
+    .lulu-response.show {
       display: block;
+      animation: luluAppear 0.7s ease both;
     }
 
     @keyframes luluAppear {
       from {
         opacity: 0;
-        transform: translateY(25px) scale(0.85);
+        transform: translateY(20px) scale(0.95);
       }
 
       to {
@@ -1409,427 +1246,447 @@
       }
     }
 
-    .lulu-message {
-      color: #b54674;
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+    /* =========================================================
+       CUTE WHITE CAT
+    ========================================================= */
 
-    .cat-wrap {
+    .cat-wrapper {
       position: relative;
-
       width: 230px;
-      height: 220px;
-
+      height: 205px;
       margin: 0 auto;
-
       cursor: pointer;
-
-      transition:
-        transform 0.3s ease;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .cat-wrap:hover {
-      transform: translateY(-7px);
-    }
-
-    .cat-wrap.pet {
-      animation: catPet 0.55s ease;
-    }
-
-    @keyframes catPet {
-      0%, 100% {
-        transform: translateY(-7px) rotate(0deg);
-      }
-
-      30% {
-        transform: translateY(-10px) rotate(-4deg);
-      }
-
-      70% {
-        transform: translateY(-10px) rotate(4deg);
-      }
-    }
-
-    .cat-shadow {
+    .cat {
       position: absolute;
-
-      width: 145px;
-      height: 25px;
-
-      bottom: 3px;
       left: 50%;
-
+      bottom: 5px;
+      width: 150px;
+      height: 130px;
       transform: translateX(-50%);
 
-      border-radius: 50%;
-
-      background: rgba(125,70,95,0.13);
-
-      filter: blur(5px);
+      animation:
+        catBreath
+        3s
+        ease-in-out
+        infinite;
     }
 
     .cat-body {
       position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
 
       width: 105px;
-      height: 105px;
-
-      left: 50%;
-      bottom: 25px;
-
-      transform: translateX(-50%);
+      height: 90px;
 
       background:
         linear-gradient(
           135deg,
           #ffffff 0%,
-          #fffafa 55%,
-          #eee7eb 100%
+          #fffafa 60%,
+          #f1e8ed 100%
         );
 
-      border-radius:
-        50%
-        50%
-        42%
-        42%;
+      border-radius: 52% 52% 45% 45%;
 
       box-shadow:
-        inset -10px -8px 15px rgba(160,130,145,0.13),
-        0 10px 20px rgba(110,65,90,0.12);
+        inset -8px -8px 15px rgba(190,160,175,0.12),
+        0 13px 22px rgba(120,70,100,0.16);
     }
 
     .cat-head {
       position: absolute;
-
-      width: 115px;
-      height: 105px;
-
       left: 50%;
-      top: 30px;
-
+      top: 5px;
       transform: translateX(-50%);
+
+      width: 105px;
+      height: 92px;
 
       background:
         linear-gradient(
           135deg,
           #ffffff 0%,
-          #fffafa 58%,
-          #eee9ed 100%
+          #fffdfd 65%,
+          #f0e8ec 100%
         );
 
-      border-radius: 50% 50% 47% 47%;
+      border-radius: 48% 48% 45% 45%;
 
       box-shadow:
-        inset -8px -7px 12px rgba(160,130,145,0.12),
-        0 8px 16px rgba(110,65,90,0.12);
+        inset -7px -7px 13px rgba(190,160,175,0.12),
+        0 9px 17px rgba(120,70,100,0.13);
+
+      z-index: 4;
     }
 
-    .ear {
+    .cat-ear {
       position: absolute;
+      top: -18px;
 
-      width: 43px;
+      width: 48px;
       height: 48px;
 
-      top: 13px;
+      background: #ffffff;
 
-      background: #fff;
+      border-radius: 8px 38px 8px 8px;
+
+      transform: rotate(25deg);
 
       box-shadow:
-        inset -4px -4px 7px rgba(160,130,145,0.12);
+        inset -5px -5px 8px rgba(190,160,175,0.12);
     }
 
-    .ear.left {
-      left: 45px;
-
-      transform: rotate(-28deg);
-
-      border-radius: 5px 30px 8px 28px;
-    }
-
-    .ear.right {
-      right: 45px;
-
-      transform: rotate(28deg);
-
-      border-radius: 30px 5px 28px 8px;
-    }
-
-    .ear::after {
+    .cat-ear::after {
       content: "";
-
       position: absolute;
+      inset: 10px;
 
-      inset: 9px;
+      background: #f6b8d0;
 
-      background: #f7b6cd;
-
-      opacity: 0.55;
+      border-radius: 6px 25px 6px 6px;
+      opacity: 0.7;
     }
 
-    .ear.left::after {
-      border-radius: 5px 20px 5px 18px;
+    .cat-ear.left {
+      left: 6px;
+      transform: rotate(25deg);
     }
 
-    .ear.right::after {
-      border-radius: 20px 5px 18px 5px;
+    .cat-ear.right {
+      right: 6px;
+      transform: scaleX(-1) rotate(25deg);
     }
 
     .cat-eye {
       position: absolute;
+      top: 40px;
 
-      top: 66px;
+      width: 10px;
+      height: 14px;
 
-      width: 11px;
-      height: 15px;
+      background: #573a48;
 
       border-radius: 50%;
 
-      background: #493442;
-
       box-shadow:
-        0 0 0 3px rgba(255,255,255,0.4);
+        0 0 0 2px rgba(255,255,255,0.5);
     }
 
     .cat-eye::after {
       content: "";
-
       position: absolute;
-
-      width: 4px;
-      height: 5px;
-
-      top: 2px;
-      left: 2px;
-
-      border-radius: 50%;
-
+      width: 3px;
+      height: 4px;
       background: white;
+      border-radius: 50%;
+      left: 2px;
+      top: 2px;
     }
 
     .cat-eye.left {
-      left: 35px;
+      left: 28px;
     }
 
     .cat-eye.right {
-      right: 35px;
+      right: 28px;
     }
 
     .cat-nose {
       position: absolute;
-
-      top: 84px;
       left: 50%;
-
+      top: 58px;
       transform: translateX(-50%);
 
       width: 10px;
-      height: 7px;
+      height: 8px;
 
-      background: #e68aaa;
-
+      background: #e889a9;
       border-radius: 50% 50% 55% 55%;
     }
 
     .cat-mouth {
       position: absolute;
-
-      top: 91px;
       left: 50%;
-
+      top: 64px;
       transform: translateX(-50%);
 
-      color: #65404e;
-
-      font-size: 14px;
+      width: 19px;
+      height: 10px;
     }
 
-    .whiskers {
-      position: absolute;
-
-      top: 87px;
-
-      width: 45px;
-      height: 25px;
-    }
-
-    .whiskers.left {
-      left: -5px;
-    }
-
-    .whiskers.right {
-      right: -5px;
-      transform: scaleX(-1);
-    }
-
-    .whiskers::before,
-    .whiskers::after {
+    .cat-mouth::before,
+    .cat-mouth::after {
       content: "";
-
       position: absolute;
 
+      width: 9px;
+      height: 7px;
+
+      border-bottom:
+        2px solid #8a536b;
+
+      border-radius: 50%;
+    }
+
+    .cat-mouth::before {
       left: 0;
+      transform: rotate(15deg);
+    }
 
-      width: 42px;
+    .cat-mouth::after {
+      right: 0;
+      transform: rotate(-15deg);
+    }
+
+    .cat-whisker {
+      position: absolute;
+      width: 35px;
       height: 1px;
-
-      background: rgba(90,60,70,0.35);
-
-      transform-origin: left;
+      background: rgba(100,70,85,0.45);
     }
 
-    .whiskers::before {
-      top: 5px;
-      transform: rotate(-8deg);
+    .cat-whisker.w1 {
+      left: -20px;
+      top: 62px;
+      transform: rotate(7deg);
     }
 
-    .whiskers::after {
-      top: 14px;
-      transform: rotate(8deg);
+    .cat-whisker.w2 {
+      left: -20px;
+      top: 72px;
+      transform: rotate(-7deg);
+    }
+
+    .cat-whisker.w3 {
+      right: -20px;
+      top: 62px;
+      transform: rotate(-7deg);
+    }
+
+    .cat-whisker.w4 {
+      right: -20px;
+      top: 72px;
+      transform: rotate(7deg);
     }
 
     .cat-paw {
       position: absolute;
 
-      width: 43px;
-      height: 45px;
+      width: 32px;
+      height: 25px;
 
-      bottom: 27px;
-
-      background: #fff;
-
+      background: #ffffff;
       border-radius: 50%;
 
+      bottom: 5px;
+
       box-shadow:
-        inset -5px -4px 8px rgba(160,130,145,0.12);
+        0 4px 8px rgba(120,70,100,0.12);
+
+      z-index: 6;
     }
 
     .cat-paw.left {
-      left: 51px;
-      transform: rotate(18deg);
+      left: 28px;
+      transform: rotate(10deg);
     }
 
     .cat-paw.right {
-      right: 51px;
-      transform: rotate(-18deg);
+      right: 28px;
+      transform: rotate(-10deg);
     }
 
     .cat-tail {
       position: absolute;
 
-      width: 72px;
-      height: 82px;
+      right: 8px;
+      bottom: 35px;
 
-      right: 37px;
-      bottom: 48px;
+      width: 55px;
+      height: 70px;
 
       border:
-        14px solid #f8f5f7;
+        13px solid #ffffff;
 
       border-left-color: transparent;
       border-bottom-color: transparent;
 
       border-radius: 50%;
 
-      transform: rotate(35deg);
+      transform: rotate(20deg);
 
       filter:
         drop-shadow(
-          3px 4px 4px rgba(100,60,80,0.12)
+          0 4px 5px rgba(120,70,100,0.10)
         );
+
+      z-index: 1;
     }
 
     .cat-bow {
       position: absolute;
-
-      bottom: 55px;
       left: 50%;
-
+      top: 86px;
       transform: translateX(-50%);
 
-      z-index: 5;
+      width: 40px;
+      height: 20px;
+      z-index: 8;
     }
 
-    .bow-piece {
-      display: inline-block;
+    .cat-bow::before,
+    .cat-bow::after {
+      content: "";
+      position: absolute;
 
-      width: 25px;
-      height: 19px;
+      width: 22px;
+      height: 17px;
 
-      background: #e779a5;
+      background: #e875a2;
 
-      box-shadow:
-        inset 3px 2px 4px rgba(255,255,255,0.4);
-
+      top: 1px;
+      border-radius: 60% 40% 50% 50%;
     }
 
-    .bow-piece.left {
-      border-radius: 15px 3px 12px 12px;
-      transform: rotate(18deg);
+    .cat-bow::before {
+      left: 0;
+      transform: rotate(20deg);
     }
 
-    .bow-piece.right {
-      border-radius: 3px 15px 12px 12px;
-      transform: rotate(-18deg);
+    .cat-bow::after {
+      right: 0;
+      transform: rotate(-20deg);
     }
 
-    .bow-center {
-      display: inline-block;
+    .cat-bow-center {
+      position: absolute;
+      left: 50%;
+      top: 6px;
+      transform: translateX(-50%);
 
       width: 11px;
       height: 11px;
 
+      background: #c94f80;
       border-radius: 50%;
-
-      background: #c84f7d;
-
-      margin: 0 -2px;
+      z-index: 2;
     }
 
     .cat-heart {
       position: absolute;
 
-      color: #e779a5;
+      left: 50%;
+      top: -5px;
 
-      font-size: 20px;
+      transform: translateX(-50%);
 
-      animation: tinyHeart 1.8s ease-in-out infinite;
-    }
+      color: #f08ab0;
+      font-size: 18px;
 
-    .cat-heart.one {
-      left: 25px;
-      top: 45px;
-    }
-
-    .cat-heart.two {
-      right: 20px;
-      top: 25px;
-      animation-delay: .6s;
+      animation:
+        tinyHeart 1.8s ease-in-out infinite;
     }
 
     @keyframes tinyHeart {
       0%, 100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.55;
+        transform: translateX(-50%) translateY(0) scale(0.9);
+        opacity: 0.7;
       }
 
       50% {
-        transform: translateY(-8px) scale(1.15);
+        transform: translateX(-50%) translateY(-7px) scale(1.1);
         opacity: 1;
       }
     }
 
-    .cat-reaction {
-      min-height: 28px;
+    @keyframes catBreath {
+      0%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
 
-      color: #8e4863;
-
-      font-size: 17px;
-
-      margin-top: 8px;
+      50% {
+        transform: translateX(-50%) translateY(-5px);
+      }
     }
 
+    .cat-wrapper:hover .cat {
+      animation:
+        catHappy
+        0.6s
+        ease-in-out
+        infinite alternate;
+    }
+
+    @keyframes catHappy {
+      from {
+        transform: translateX(-50%) translateY(0) rotate(-2deg);
+      }
+
+      to {
+        transform: translateX(-50%) translateY(-7px) rotate(2deg);
+      }
+    }
+
+    .cat-message {
+      margin-top: 5px;
+      color: #b83f70;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .cat-click {
+      margin-top: 5px;
+      color: #8e536c;
+      font-size: 14px;
+    }
+
+    .cat-wrapper.clicked .cat {
+      animation:
+        catDance
+        0.65s
+        ease-in-out
+        2;
+    }
+
+    @keyframes catDance {
+      0% {
+        transform: translateX(-50%) rotate(0);
+      }
+
+      25% {
+        transform: translateX(-50%) rotate(-8deg) translateY(-5px);
+      }
+
+      50% {
+        transform: translateX(-50%) rotate(8deg) translateY(-8px);
+      }
+
+      75% {
+        transform: translateX(-50%) rotate(-5deg) translateY(-4px);
+      }
+
+      100% {
+        transform: translateX(-50%) rotate(0) translateY(0);
+      }
+    }
+
+    .no-message {
+      display: none;
+      margin-top: 20px;
+      color: #a94e70;
+      font-size: 16px;
+    }
+
+    .no-message.show {
+      display: block;
+      animation: luluAppear 0.5s ease both;
+    }
 
     /* =========================================================
        FINAL MESSAGE
@@ -1837,32 +1694,25 @@
 
     .final {
       text-align: center;
-
       padding: 70px 25px;
     }
 
     .final h2 {
       font-size: 36px;
-
       color: #bd4778;
     }
 
     .final p {
       font-size: 21px;
-
       line-height: 2;
-
       color: #713650;
     }
 
     .signature {
       margin-top: 30px;
-
       color: #c34f7d;
-
       font-size: 24px;
     }
-
 
     /* =========================================================
        FOOTER
@@ -1870,19 +1720,15 @@
 
     footer {
       text-align: center;
-
       padding: 30px;
-
       color: #9b5573;
     }
-
 
     /* =========================================================
        MOBILE
     ========================================================= */
 
     @media (max-width: 600px) {
-
       .container {
         width: 91%;
         padding: 30px 0;
@@ -1944,23 +1790,17 @@
         max-height: 300px !important;
       }
 
-      .cat-wrap {
+      .cat-wrapper {
         transform: scale(0.9);
         margin-top: -5px;
       }
-
-      .cat-wrap:hover {
-        transform: scale(0.9) translateY(-7px);
-      }
     }
-
 
     /* =========================================================
        REDUCED MOTION
     ========================================================= */
 
     @media (prefers-reduced-motion: reduce) {
-
       *,
       *::before,
       *::after {
@@ -1970,22 +1810,22 @@
         transition-duration: 0.01ms !important;
       }
     }
-
   </style>
-
 </head>
-
 
 <body>
 
-
   <!-- =======================================================
-       CALM VISUAL MUSIC VIBE
-       No actual music.
+       CALM MUSIC VIBE
   ======================================================= -->
 
-  <div class="music-vibe">
+  <div class="ambient-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
 
+  <div class="music-vibe">
     <div class="music-note">♪</div>
     <div class="music-note">♫</div>
     <div class="music-note">♪</div>
@@ -1993,23 +1833,14 @@
     <div class="music-note">♫</div>
     <div class="music-note">♪</div>
     <div class="music-note">♩</div>
-
+    <div class="music-note">♫</div>
   </div>
-
-
-  <div class="ambient-orbs">
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-    <div class="orb three"></div>
-  </div>
-
 
   <!-- =======================================================
        FLOATING HEARTS
   ======================================================= -->
 
   <div class="hearts">
-
     <div class="heart" style="left:3%; animation-delay:0s;">♥</div>
     <div class="heart" style="left:8%; animation-delay:4s;">♥</div>
     <div class="heart" style="left:14%; animation-delay:1s;">♥</div>
@@ -2025,32 +1856,25 @@
     <div class="heart" style="left:83%; animation-delay:3.5s;">♥</div>
     <div class="heart" style="left:89%; animation-delay:7.5s;">♥</div>
     <div class="heart" style="left:95%; animation-delay:4.5s;">♥</div>
-
   </div>
-
 
   <!-- =======================================================
        BIRTHDAY HEADER
   ======================================================= -->
 
   <div class="birthday-arch">
-
     <div class="birthday-text">
       HAPPY 16TH BIRTHDAY! ❤️
     </div>
-
   </div>
 
-
   <div class="container">
-
 
     <!-- =====================================================
          HERO
     ===================================================== -->
 
     <div class="hero">
-
 
       <div class="cake">
 
@@ -2070,36 +1894,26 @@
         </div>
 
         <div class="cake-top"></div>
-
         <div class="cake-frosting"></div>
-
         <div class="cake-bottom"></div>
-
         <div class="cake-plate"></div>
 
       </div>
-
 
       <h1>
         كل سنة وإنتي طيبة يا حوراء ❤️
       </h1>
 
-
       <p class="subtitle">
-
         I suppose today is the birthday of the love of my life :)<br>
-
         soooo...I just wanted to make it a little special hehe....
-
       </p>
-
 
       <div class="scroll">
         ↓ SCROLL DOWN SILLY ↓
       </div>
 
     </div>
-
 
     <!-- =====================================================
          LOVE LETTER
@@ -2110,7 +1924,6 @@
       <h2>
         💌 hehe a little msg for my prettiest baby
       </h2>
-
 
       <div class="letter">
 
@@ -2161,17 +1974,13 @@
         <br><br>
 
         <strong>
-
           وكل سنة وإنتي في حياتي يا روحي ❤️
-
           I hope we stay together forever my little pumpkin u mean the world to me &lt;3
-
         </strong>
 
       </div>
 
     </section>
-
 
     <!-- =====================================================
          THINGS I LIKE
@@ -2182,7 +1991,6 @@
       <h2>
         Things I like abt u hmmmmmmmmmmm
       </h2>
-
 
       <div class="reasons">
 
@@ -2214,7 +2022,6 @@
 
     </section>
 
-
     <!-- =====================================================
          MEMORIES
     ===================================================== -->
@@ -2225,9 +2032,7 @@
         📸 Some of my fav memories with u :D
       </h2>
 
-
       <div class="photos">
-
 
         <div class="photo-card">
           <img
@@ -2237,7 +2042,6 @@
           >
         </div>
 
-
         <div class="photo-card">
           <img
             src="photo2.jpeg"
@@ -2245,7 +2049,6 @@
             loading="lazy"
           >
         </div>
-
 
         <div class="photo-card">
           <img
@@ -2255,7 +2058,6 @@
           >
         </div>
 
-
         <div class="photo-card">
           <img
             src="photo4.jpeg"
@@ -2263,7 +2065,6 @@
             loading="lazy"
           >
         </div>
-
 
         <div class="photo-card">
           <img
@@ -2273,7 +2074,6 @@
           >
         </div>
 
-
         <div class="photo-card">
           <img
             src="photo6.jpeg"
@@ -2281,7 +2081,6 @@
             loading="lazy"
           >
         </div>
-
 
         <div class="photo-card">
           <img
@@ -2291,11 +2090,9 @@
           >
         </div>
 
-
       </div>
 
     </section>
-
 
     <!-- =====================================================
          VOICE MESSAGE
@@ -2307,7 +2104,6 @@
         🎙️ رسالة بصوتي
       </h2>
 
-
       <div class="voice">
 
         <div class="voice-title">
@@ -2317,7 +2113,6 @@
         <div>
           اضغطي تشغيل واسمعيها يا silly 🎀
         </div>
-
 
         <div class="audio-visual">
 
@@ -2335,298 +2130,29 @@
 
         </div>
 
-
         <audio controls preload="metadata">
-
-          <source
-            src="./Voice3.oga"
-            type="audio/ogg"
-          >
-
+          <source src="./Voice3.oga" type="audio/ogg">
           Your browser does not support the audio element.
-
         </audio>
 
       </div>
 
     </section>
 
-
     <!-- =====================================================
-         LULU
+         LULU QUESTION
     ===================================================== -->
 
     <section class="lulu-section">
 
-      <div class="lulu-question">
-
-        <h2>
-          🐾 Do u miss Lulu?
-        </h2>
-
-        <p>
-          "her cat basically" 🎀
-        </p>
-
-        <div class="lulu-buttons">
-
-          <button
-            class="lulu-btn"
-            id="yesBtn"
-            type="button"
-          >
-            YESSS 🥹❤️
-          </button>
-
-          <button
-            class="lulu-btn no"
-            id="noBtn"
-            type="button"
-          >
-            no... 🙄
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <div
-        class="lulu-reveal"
-        id="luluReveal"
-      >
-
-        <div class="lulu-message">
-          I KNEW ITTT 😭❤️ LULU MISSED U TOO!!
-        </div>
-
-
-        <div
-          class="cat-wrap"
-          id="luluCat"
-          title="Click Lulu 🐾"
-        >
-
-          <div class="cat-heart one">♥</div>
-          <div class="cat-heart two">♥</div>
-
-          <div class="cat-shadow"></div>
-
-          <div class="cat-tail"></div>
-
-          <div class="cat-body"></div>
-
-          <div class="cat-head">
-
-            <div class="ear left"></div>
-            <div class="ear right"></div>
-
-            <div class="cat-eye left"></div>
-            <div class="cat-eye right"></div>
-
-            <div class="cat-nose"></div>
-
-            <div class="cat-mouth">⌣</div>
-
-            <div class="whiskers left"></div>
-            <div class="whiskers right"></div>
-
-          </div>
-
-          <div class="cat-paw left"></div>
-          <div class="cat-paw right"></div>
-
-          <div class="cat-bow">
-            <span class="bow-piece left"></span>
-            <span class="bow-center"></span>
-            <span class="bow-piece right"></span>
-          </div>
-
-        </div>
-
-
-        <div
-          class="cat-reaction"
-          id="catReaction"
-        >
-          click Lulu 🐾
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FINAL MESSAGE
-    ===================================================== -->
-
-    <section class="final">
-
-      <h2>
-
-        The moon looks pretty but not quite as attractive as u...
-        in my eyes u will always shine brighter than any moon 🌙
-
+      <h2 class="lulu-question">
+        do u miss lulu? 🐱
       </h2>
 
-
-      <br>
-
-
-      <p>
-        ❤️ بحبك يا حوراء
+      <p class="lulu-subtitle">
+        be honest silly... she might be watching 👀
       </p>
 
+      <div class="lulu-buttons">
 
-      <div class="signature">
-
-        Forever and always:<br>
-
-        Omori ❤️ عمر
-
-      </div>
-
-    </section>
-
-
-    <footer>
-
-      Made just for you my silly baby 🌸❤️
-
-    </footer>
-
-
-  </div>
-
-
-  <!-- =======================================================
-       LULU INTERACTION
-  ======================================================= -->
-
-  <script>
-
-    const yesBtn = document.getElementById("yesBtn");
-    const noBtn = document.getElementById("noBtn");
-    const luluReveal = document.getElementById("luluReveal");
-    const luluCat = document.getElementById("luluCat");
-    const catReaction = document.getElementById("catReaction");
-
-    yesBtn.addEventListener("click", function () {
-
-      luluReveal.classList.add("show");
-
-      yesBtn.textContent = "YAYYYYY 🥹❤️";
-
-      setTimeout(function () {
-        luluReveal.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-      }, 150);
-
-    });
-
-
-    noBtn.addEventListener("click", function () {
-
-      const messages = [
-        "LIARRRR 🙄",
-        "u sure about that? 👀",
-        "LULU IS SAD NOW 😭",
-        "THINK AGAIN SILLY 😭",
-        "that answer is suspicious... 🤨",
-        "I KNOW U MISS HER HMPH"
-      ];
-
-      const randomMessage =
-        messages[Math.floor(Math.random() * messages.length)];
-
-      noBtn.textContent = randomMessage;
-
-      noBtn.style.transform =
-        "translate(" +
-        (Math.random() * 30 - 15) +
-        "px, " +
-        (Math.random() * 20 - 10) +
-        "px)";
-
-    });
-
-
-    luluCat.addEventListener("click", function () {
-
-      luluCat.classList.remove("pet");
-
-      void luluCat.offsetWidth;
-
-      luluCat.classList.add("pet");
-
-      const reactions = [
-        "Lulu is purringgg 🥹🤍",
-        "she missed u so muchhh 🐾❤️",
-        "LULU HAS BEEN PETTED 🎀",
-        "she's happy now hehe 🥹",
-        "tiny white floof approved ❤️",
-        "Lulu says hiiii silly 🐱"
-      ];
-
-      catReaction.textContent =
-        reactions[Math.floor(Math.random() * reactions.length)];
-
-      createCatHeart();
-
-    });
-
-
-    function createCatHeart() {
-
-      const heart = document.createElement("div");
-
-      heart.textContent = "♥";
-
-      heart.style.position = "fixed";
-      heart.style.left =
-        (window.innerWidth / 2 + Math.random() * 100 - 50) + "px";
-      heart.style.top =
-        (window.innerHeight / 2 + 50) + "px";
-
-      heart.style.color = "#e779a5";
-      heart.style.fontSize = "20px";
-      heart.style.pointerEvents = "none";
-      heart.style.zIndex = "9999";
-
-      document.body.appendChild(heart);
-
-      heart.animate(
-        [
-          {
-            transform: "translateY(0) scale(0.7)",
-            opacity: 0
-          },
-          {
-            transform: "translateY(-70px) scale(1.2)",
-            opacity: 1
-          },
-          {
-            transform: "translateY(-130px) scale(0.8)",
-            opacity: 0
-          }
-        ],
-        {
-          duration: 1400,
-          easing: "ease-out"
-        }
-      );
-
-      setTimeout(function () {
-        heart.remove();
-      }, 1450);
-
-    }
-
-  </script>
-
-</body>
-
-</html>
+        <button
