@@ -297,10 +297,12 @@
     ========================= */
 
     .photos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      align-items: start;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 25px;
+      width: 100%;
     }
 
     .photo-card {
@@ -309,7 +311,10 @@
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(180, 70, 120, 0.15);
       transition: 0.3s ease;
-      overflow: hidden;
+
+      /* The frame follows the image */
+      width: fit-content;
+      max-width: 100%;
     }
 
     .photo-card:hover {
@@ -318,46 +323,51 @@
     }
 
     .photo-card img {
-      width: 100%;
-      height: auto;
       display: block;
+
+      /* Preserve the original aspect ratio */
+      width: auto;
+      height: auto;
+
+      /* Prevent overflow on smaller screens */
+      max-width: 100%;
+
       border-radius: 15px;
 
-      /* Keeps images looking as sharp as the source allows */
+      /* Let the browser use normal high-quality scaling */
       image-rendering: auto;
+
+      /* Smoother rendering */
       -webkit-font-smoothing: antialiased;
       backface-visibility: hidden;
     }
 
     /* =========================
-       PHOTO 1
-       Extra sharp display
-    ========================= */
-
-    .photo-one img {
-      image-rendering: auto;
-      transform: translateZ(0);
-    }
-
-    /* =========================
-       PHOTO PLACEHOLDER
+       THIRD PHOTO PLACEHOLDER
     ========================= */
 
     .photo-placeholder {
+      min-width: 220px;
       min-height: 220px;
-      border-radius: 18px;
+      padding: 30px;
+      border-radius: 20px;
+
       background:
         linear-gradient(
           135deg,
           rgba(255, 180, 210, 0.65),
           rgba(255, 220, 235, 0.7)
         );
+
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+
       color: #a34b70;
+
       border: 2px dashed rgba(195, 79, 125, 0.4);
+
       transition: 0.3s ease;
     }
 
@@ -455,17 +465,25 @@
         font-size: 18px;
       }
 
+      /* Stack photos on phones */
       .photos {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
       }
 
       .photo-card {
-        width: 100%;
+        width: fit-content;
+        max-width: 100%;
       }
 
       .photo-card img {
-        width: 100%;
+        max-width: 100%;
+        width: auto;
         height: auto;
+      }
+
+      .photo-placeholder {
+        width: 100%;
       }
     }
   </style>
@@ -654,13 +672,19 @@
     <div class="photos">
 
       <!-- PHOTO 1 -->
-      <div class="photo-card photo-one">
-        <img src="photo1.jpeg" alt="Our first memory">
+      <div class="photo-card">
+        <img
+          src="photo1.jpeg"
+          alt="Our first memory"
+        >
       </div>
 
       <!-- PHOTO 2 -->
       <div class="photo-card">
-        <img src="photo2.jpeg" alt="Another memory">
+        <img
+          src="photo2.jpeg"
+          alt="Another memory"
+        >
       </div>
 
       <!-- PHOTO 3 - ADD LATER -->
