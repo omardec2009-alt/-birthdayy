@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>كل سنة وإنتي طيبة يا حوراء ❤️</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    كل سنة وإنتي طيبة يا حوراء ❤️
+  </title>
+
 
   <style>
+
+    /* =====================================
+       RESET
+    ===================================== */
 
     * {
       box-sizing: border-box;
@@ -18,30 +31,44 @@
       scroll-behavior: smooth;
     }
 
+
+    /* =====================================
+       BODY
+    ===================================== */
+
     body {
-      font-family: "Tahoma", "Arial", sans-serif;
+
+      font-family:
+        "Tahoma",
+        "Arial",
+        sans-serif;
 
       background:
+
         radial-gradient(
           circle at 10% 15%,
           rgba(255,255,255,0.8),
           transparent 22%
         ),
+
         radial-gradient(
           circle at 90% 20%,
           rgba(255,205,225,0.75),
           transparent 28%
         ),
+
         radial-gradient(
           circle at 20% 80%,
           rgba(255,190,215,0.7),
           transparent 25%
         ),
+
         radial-gradient(
           circle at 80% 90%,
           rgba(255,225,235,0.8),
           transparent 30%
         ),
+
         linear-gradient(
           135deg,
           #ffe5ef,
@@ -50,34 +77,41 @@
         );
 
       color: #6d304d;
+
       min-height: 100vh;
+
       overflow-x: hidden;
     }
 
 
     /* =====================================
        HAPPY BIRTHDAY TEXT
+       
+       NO BOX
+       NO ARCH
+       NO BACKGROUND
     ===================================== */
 
     .birthday-arch {
+
       position: absolute;
 
-      top: -90px;
+      top: -75px;
+
       left: 50%;
 
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%);
 
-      width: min(700px, 90vw);
-      height: 210px;
+      width: 100%;
 
-      /* No background */
+      height: 180px;
+
       background: transparent;
 
       border: none;
 
       box-shadow: none;
-
-      z-index: 2;
 
       display: flex;
 
@@ -85,25 +119,51 @@
 
       justify-content: center;
 
-      padding-bottom: 22px;
+      padding-bottom: 20px;
+
+      z-index: 2;
 
       pointer-events: none;
     }
 
+
     .birthday-text {
-      color: rgba(255, 255, 255, 0.42);
+
+      background: transparent;
+
+      border: none;
+
+      box-shadow: none;
+
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.42
+        );
 
       font-size:
-        clamp(20px, 4vw, 38px);
+        clamp(
+          20px,
+          4vw,
+          38px
+        );
 
       font-weight: bold;
 
       letter-spacing: 3px;
 
       text-shadow:
-        0 2px 8px rgba(170, 60, 100, 0.12);
+        0 2px 8px
+        rgba(
+          170,
+          60,
+          100,
+          0.12
+        );
 
-      opacity: 0.75;
+      opacity: 0.8;
     }
 
 
@@ -112,6 +172,7 @@
     ===================================== */
 
     .hearts {
+
       position: fixed;
 
       inset: 0;
@@ -123,7 +184,9 @@
       z-index: 0;
     }
 
+
     .heart {
+
       position: absolute;
 
       bottom: -60px;
@@ -140,28 +203,44 @@
       filter:
         drop-shadow(
           0 3px 5px
-          rgba(190, 60, 110, 0.2)
+          rgba(
+            190,
+            60,
+            110,
+            0.2
+          )
         );
     }
 
+
     .heart:nth-child(2n) {
+
       color: #ff8fb8;
+
       font-size: 27px;
     }
 
+
     .heart:nth-child(3n) {
+
       color: #d95787;
+
       font-size: 16px;
     }
 
+
     .heart:nth-child(4n) {
+
       color: #f6a6c3;
+
       font-size: 34px;
     }
+
 
     @keyframes float {
 
       0% {
+
         transform:
           translateY(0)
           translateX(0)
@@ -171,11 +250,15 @@
         opacity: 0;
       }
 
+
       15% {
+
         opacity: 0.7;
       }
 
+
       50% {
+
         transform:
           translateY(-55vh)
           translateX(35px)
@@ -183,7 +266,9 @@
           scale(1);
       }
 
+
       100% {
+
         transform:
           translateY(-115vh)
           translateX(-35px)
@@ -192,6 +277,7 @@
 
         opacity: 0;
       }
+
     }
 
 
@@ -200,6 +286,7 @@
     ===================================== */
 
     .carnations {
+
       position: fixed;
 
       inset: 0;
@@ -211,7 +298,9 @@
       overflow: hidden;
     }
 
+
     .carnation {
+
       position: absolute;
 
       font-size: 65px;
@@ -221,55 +310,80 @@
       filter:
         drop-shadow(
           0 5px 8px
-          rgba(160, 50, 90, 0.15)
+          rgba(
+            160,
+            50,
+            90,
+            0.15
+          )
         );
 
       animation:
-        flowerFloat 5s ease-in-out infinite;
+        flowerFloat
+        5s ease-in-out infinite;
     }
+
 
     .carnation:nth-child(1) {
+
       top: 3%;
+
       left: 1%;
 
-      transform: rotate(-20deg);
+      transform:
+        rotate(-20deg);
     }
 
+
     .carnation:nth-child(2) {
+
       top: 10%;
+
       right: 1%;
 
       font-size: 80px;
 
       animation-delay: 1s;
 
-      transform: rotate(20deg);
+      transform:
+        rotate(20deg);
     }
 
+
     .carnation:nth-child(3) {
+
       bottom: 10%;
+
       left: 0;
 
       font-size: 75px;
 
       animation-delay: 2s;
 
-      transform: rotate(-15deg);
+      transform:
+        rotate(-15deg);
     }
 
+
     .carnation:nth-child(4) {
+
       bottom: 3%;
+
       right: 1%;
 
       font-size: 65px;
 
       animation-delay: 3s;
 
-      transform: rotate(15deg);
+      transform:
+        rotate(15deg);
     }
 
+
     .carnation:nth-child(5) {
+
       top: 48%;
+
       right: -5px;
 
       font-size: 45px;
@@ -277,8 +391,11 @@
       animation-delay: 1.5s;
     }
 
+
     .carnation:nth-child(6) {
+
       top: 38%;
+
       left: -8px;
 
       font-size: 42px;
@@ -286,19 +403,25 @@
       animation-delay: 2.5s;
     }
 
+
     @keyframes flowerFloat {
 
-      0%, 100% {
+      0%,
+      100% {
+
         transform:
           translateY(0)
           rotate(-10deg);
       }
 
+
       50% {
+
         transform:
           translateY(-10px)
           rotate(5deg);
       }
+
     }
 
 
@@ -307,11 +430,16 @@
     ===================================== */
 
     .container {
+
       position: relative;
 
       z-index: 1;
 
-      width: min(900px, 92%);
+      width:
+        min(
+          900px,
+          92%
+        );
 
       margin: auto;
 
@@ -324,6 +452,7 @@
     ===================================== */
 
     .hero {
+
       min-height: 90vh;
 
       display: flex;
@@ -336,18 +465,23 @@
 
       text-align: center;
 
-      padding-top: 80px;
+      padding-top: 60px;
     }
 
 
     /* =====================================
-       WHITE CAKE WITH PINK TOPPING
+       CAKE
+       
+       WHITE CAKE
+       PINK FROSTING
     ===================================== */
 
     .cake {
+
       position: relative;
 
       width: 90px;
+
       height: 85px;
 
       margin-bottom: 30px;
@@ -358,13 +492,20 @@
       filter:
         drop-shadow(
           0 8px 12px
-          rgba(170, 60, 100, 0.15)
+          rgba(
+            170,
+            60,
+            100,
+            0.15
+          )
         );
     }
 
-    /* White plate */
+
+    /* Plate */
 
     .cake-plate {
+
       position: absolute;
 
       bottom: 0;
@@ -384,13 +525,19 @@
 
       box-shadow:
         0 4px 8px
-        rgba(170,60,100,0.15);
+        rgba(
+          170,
+          60,
+          100,
+          0.15
+        );
     }
 
 
-    /* White cake */
+    /* White cake body */
 
     .cake-bottom {
+
       position: absolute;
 
       bottom: 9px;
@@ -405,6 +552,7 @@
       height: 38px;
 
       background:
+
         linear-gradient(
           to bottom,
           #ffffff,
@@ -412,21 +560,36 @@
         );
 
       border-radius:
-        8px 8px 12px 12px;
+        8px
+        8px
+        12px
+        12px;
 
       border:
         2px solid
-        rgba(255,255,255,0.95);
+        rgba(
+          255,
+          255,
+          255,
+          0.95
+        );
 
       box-shadow:
+
         inset 0 -6px 0
-        rgba(235,190,210,0.20);
+        rgba(
+          235,
+          190,
+          210,
+          0.20
+        );
     }
 
 
     /* Pink frosting */
 
     .cake-frosting {
+
       position: absolute;
 
       bottom: 38px;
@@ -441,6 +604,7 @@
       height: 22px;
 
       background:
+
         linear-gradient(
           to bottom,
           #ff9fc3,
@@ -451,13 +615,19 @@
 
       box-shadow:
         0 4px 6px
-        rgba(190,70,120,0.15);
+        rgba(
+          190,
+          70,
+          120,
+          0.15
+        );
     }
 
 
-    /* Pink frosting drip */
+    /* Frosting drip */
 
     .cake-frosting::after {
+
       content: "";
 
       position: absolute;
@@ -473,13 +643,17 @@
       background: #f47fa9;
 
       border-radius:
-        0 0 10px 10px;
+        0
+        0
+        10px
+        10px;
     }
 
 
     /* Candle */
 
     .candle {
+
       position: absolute;
 
       left: 50%;
@@ -494,6 +668,7 @@
       height: 25px;
 
       background:
+
         linear-gradient(
           to right,
           #ffffff,
@@ -508,6 +683,7 @@
     /* Flame */
 
     .flame {
+
       position: absolute;
 
       left: 50%;
@@ -522,6 +698,7 @@
       height: 18px;
 
       background:
+
         radial-gradient(
           ellipse at center bottom,
           #fff7b0 0%,
@@ -532,43 +709,62 @@
       border-radius: 50%;
 
       animation:
-        flame 0.8s ease-in-out
-        infinite alternate;
+        flame
+        0.8s
+        ease-in-out
+        infinite
+        alternate;
 
       filter:
         drop-shadow(
           0 0 8px
-          rgba(255,190,100,0.7)
+          rgba(
+            255,
+            190,
+            100,
+            0.7
+          )
         );
     }
+
 
     @keyframes flame {
 
       from {
+
         transform:
           translateX(-50%)
           scale(1);
       }
 
+
       to {
+
         transform:
           translateX(-50%)
           scale(1.15)
           rotate(3deg);
       }
+
     }
+
 
     @keyframes bounce {
 
-      0%, 100% {
+      0%,
+      100% {
+
         transform:
           translateY(0);
       }
 
+
       50% {
+
         transform:
           translateY(-12px);
       }
+
     }
 
 
@@ -577,19 +773,31 @@
     ===================================== */
 
     h1 {
+
       font-size:
-        clamp(38px, 8vw, 72px);
+        clamp(
+          38px,
+          8vw,
+          72px
+        );
 
       color: #c94f80;
 
       text-shadow:
         0 0 25px
-        rgba(255, 120, 180, 0.35);
+        rgba(
+          255,
+          120,
+          180,
+          0.35
+        );
 
       margin-bottom: 15px;
     }
 
+
     .subtitle {
+
       font-size: 20px;
 
       color: #713650;
@@ -597,7 +805,9 @@
       line-height: 1.8;
     }
 
+
     .scroll {
+
       margin-top: 60px;
 
       color: #c94f80;
@@ -608,11 +818,14 @@
       font-weight: bold;
     }
 
+
     @keyframes pulse {
 
       50% {
+
         opacity: 0.4;
       }
+
     }
 
 
@@ -621,12 +834,23 @@
     ===================================== */
 
     section {
+
       background:
-        rgba(255, 255, 255, 0.42);
+        rgba(
+          255,
+          255,
+          255,
+          0.42
+        );
 
       border:
         1px solid
-        rgba(255, 255, 255, 0.7);
+        rgba(
+          255,
+          255,
+          255,
+          0.7
+        );
 
       backdrop-filter:
         blur(14px);
@@ -641,14 +865,27 @@
       margin: 30px 0;
 
       box-shadow:
+
         0 15px 50px
-        rgba(180, 70, 120, 0.13),
+        rgba(
+          180,
+          70,
+          120,
+          0.13
+        ),
 
         inset 0 1px 0
-        rgba(255,255,255,0.6);
+        rgba(
+          255,
+          255,
+          255,
+          0.6
+        );
     }
 
+
     section h2 {
+
       color: #c34f7d;
 
       margin-bottom: 20px;
@@ -662,6 +899,7 @@
     ===================================== */
 
     .letter {
+
       font-size: 19px;
 
       line-height: 2.2;
@@ -669,7 +907,9 @@
       color: #663047;
     }
 
+
     .letter strong {
+
       color: #b83f70;
     }
 
@@ -679,20 +919,31 @@
     ===================================== */
 
     .reasons {
+
       display: grid;
 
       grid-template-columns:
         repeat(
           auto-fit,
-          minmax(220px, 1fr)
+          minmax(
+            220px,
+            1fr
+          )
         );
 
       gap: 15px;
     }
 
+
     .reason {
+
       background:
-        rgba(255, 160, 200, 0.25);
+        rgba(
+          255,
+          160,
+          200,
+          0.25
+        );
 
       border-radius: 18px;
 
@@ -704,31 +955,54 @@
 
       border:
         1px solid
-        rgba(255, 180, 210, 0.35);
+        rgba(
+          255,
+          180,
+          210,
+          0.35
+        );
 
       color: #743550;
 
-      transition: 0.3s ease;
+      transition:
+        0.3s ease;
     }
 
+
     .reason:hover {
+
       transform:
         translateY(-5px);
 
       background:
-        rgba(255, 170, 205, 0.4);
+        rgba(
+          255,
+          170,
+          205,
+          0.4
+        );
 
       box-shadow:
         0 10px 25px
-        rgba(190, 70, 120, 0.15);
+        rgba(
+          190,
+          70,
+          120,
+          0.15
+        );
     }
 
 
     /* =====================================
        PHOTOS
+       
+       ORIGINAL PROPORTIONS
+       NO ARTIFICIAL FRAME
+       NO CROPPING
     ===================================== */
 
     .photos {
+
       display: flex;
 
       flex-wrap: wrap;
@@ -743,40 +1017,52 @@
     }
 
 
-    /* Each photo keeps its own natural shape */
-
     .photo-card {
-      background:
-        rgba(255, 255, 255, 0.55);
 
-      padding: 8px;
-
-      border-radius: 18px;
-
-      box-shadow:
-        0 10px 25px
-        rgba(180, 70, 120, 0.15);
-
-      transition: 0.3s ease;
+      display: block;
 
       width: fit-content;
 
-      max-width: 100%;
+      height: fit-content;
+
+      padding: 0;
+
+      margin: 0;
+
+      background: transparent;
+
+      border: none;
+
+      border-radius: 0;
+
+      box-shadow: none;
+
+      overflow: visible;
+
+      transition:
+        0.3s ease;
     }
 
+
     .photo-card:hover {
+
       transform:
         translateY(-5px);
 
-      box-shadow:
-        0 15px 35px
-        rgba(180, 70, 120, 0.22);
+      box-shadow: none;
     }
 
 
-    /* Natural image dimensions */
+    /*
+      The image decides its own dimensions.
+
+      Nothing forces it to be square.
+      Nothing crops it.
+      Nothing rotates it.
+    */
 
     .photo-card img {
+
       display: block;
 
       width: auto;
@@ -785,14 +1071,21 @@
 
       max-width: 100%;
 
+      object-fit: contain;
+
       border-radius: 12px;
+
+      margin: 0;
     }
 
 
-    /* Third photo placeholder */
+    /* =====================================
+       THIRD PHOTO PLACEHOLDER
+    ===================================== */
 
     .photo-placeholder {
-      min-width: 220px;
+
+      width: 220px;
 
       min-height: 220px;
 
@@ -801,10 +1094,21 @@
       border-radius: 18px;
 
       background:
+
         linear-gradient(
           135deg,
-          rgba(255, 180, 210, 0.65),
-          rgba(255, 220, 235, 0.7)
+          rgba(
+            255,
+            180,
+            210,
+            0.65
+          ),
+          rgba(
+            255,
+            220,
+            235,
+            0.7
+          )
         );
 
       display: flex;
@@ -819,17 +1123,30 @@
 
       border:
         2px dashed
-        rgba(195, 79, 125, 0.4);
+        rgba(
+          195,
+          79,
+          125,
+          0.4
+        );
 
-      transition: 0.3s ease;
+      transition:
+        0.3s ease;
     }
 
+
     .photo-placeholder:hover {
+
       transform:
         scale(1.02);
 
       background:
-        rgba(255, 210, 225, 0.85);
+        rgba(
+          255,
+          210,
+          225,
+          0.85
+        );
     }
 
 
@@ -838,8 +1155,14 @@
     ===================================== */
 
     .voice {
+
       background:
-        rgba(255, 255, 255, 0.3);
+        rgba(
+          255,
+          255,
+          255,
+          0.3
+        );
 
       padding: 20px;
 
@@ -850,7 +1173,9 @@
       color: #743550;
     }
 
+
     audio {
+
       width: 100%;
 
       margin-top: 12px;
@@ -862,18 +1187,23 @@
     ===================================== */
 
     .final {
+
       text-align: center;
 
       padding: 70px 25px;
     }
 
+
     .final h2 {
+
       font-size: 36px;
 
       color: #bd4778;
     }
 
+
     .final p {
+
       font-size: 21px;
 
       line-height: 2;
@@ -881,7 +1211,9 @@
       color: #713650;
     }
 
+
     .signature {
+
       margin-top: 30px;
 
       color: #c34f7d;
@@ -895,6 +1227,7 @@
     ===================================== */
 
     footer {
+
       text-align: center;
 
       padding: 30px;
@@ -910,36 +1243,49 @@
     @media (max-width: 600px) {
 
       .container {
+
         width: 90%;
 
         padding: 30px 0;
       }
 
+
       section {
+
         padding:
           25px 20px;
       }
 
+
       .letter {
+
         font-size: 17px;
 
         line-height: 2;
       }
 
+
       .subtitle {
+
         font-size: 17px;
       }
 
+
       .carnation {
+
         font-size:
           45px !important;
       }
 
+
       .final h2 {
+
         font-size: 28px;
       }
 
+
       .final p {
+
         font-size: 18px;
       }
 
@@ -947,16 +1293,17 @@
       /* Birthday text */
 
       .birthday-arch {
-        width: 105vw;
 
-        height: 160px;
+        top: -55px;
 
-        top: -75px;
+        height: 140px;
 
-        padding-bottom: 18px;
+        padding-bottom: 15px;
       }
 
+
       .birthday-text {
+
         font-size: 20px;
 
         letter-spacing: 2px;
@@ -966,25 +1313,31 @@
       /* Hero */
 
       .hero {
-        padding-top: 100px;
+
+        padding-top: 90px;
       }
 
 
       /* Photos */
 
       .photos {
+
         flex-direction: column;
 
         align-items: center;
       }
 
+
       .photo-card {
+
         width: fit-content;
 
         max-width: 100%;
       }
 
+
       .photo-card img {
+
         width: auto;
 
         height: auto;
@@ -992,138 +1345,33 @@
         max-width: 100%;
       }
 
+
       .photo-placeholder {
+
         width: 100%;
       }
 
     }
 
   </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =====================================
-     HAPPY BIRTHDAY TEXT
-===================================== -->
-
-<div class="birthday-arch">
-
-  <div class="birthday-text">
-    HAPPY BIRTHDAY! ❤️
-  </div>
-
-</div>
-
-
-<!-- =====================================
-     FLOATING HEARTS
-===================================== -->
-
-<div class="hearts">
-
-  <div class="heart" style="left:3%; animation-delay:0s;">♥</div>
-
-  <div class="heart" style="left:8%; animation-delay:4s;">♥</div>
-
-  <div class="heart" style="left:14%; animation-delay:1s;">♥</div>
-
-  <div class="heart" style="left:20%; animation-delay:6s;">♥</div>
-
-  <div class="heart" style="left:27%; animation-delay:2s;">♥</div>
-
-  <div class="heart" style="left:34%; animation-delay:7s;">♥</div>
-
-  <div class="heart" style="left:41%; animation-delay:3s;">♥</div>
-
-  <div class="heart" style="left:48%; animation-delay:8s;">♥</div>
-
-  <div class="heart" style="left:55%; animation-delay:1.5s;">♥</div>
-
-  <div class="heart" style="left:62%; animation-delay:5s;">♥</div>
-
-  <div class="heart" style="left:69%; animation-delay:2.5s;">♥</div>
-
-  <div class="heart" style="left:76%; animation-delay:6.5s;">♥</div>
-
-  <div class="heart" style="left:83%; animation-delay:3.5s;">♥</div>
-
-  <div class="heart" style="left:89%; animation-delay:7.5s;">♥</div>
-
-  <div class="heart" style="left:95%; animation-delay:4.5s;">♥</div>
-
-</div>
-
-
-<!-- =====================================
-     CARNATIONS
-===================================== -->
-
-<div class="carnations">
-
-  <div class="carnation">🌸</div>
-
-  <div class="carnation">🌸</div>
-
-  <div class="carnation">🌸</div>
-
-  <div class="carnation">🌸</div>
-
-  <div class="carnation">🌸</div>
-
-  <div class="carnation">🌸</div>
-
-</div>
-
-
-<div class="container">
-
-
   <!-- =====================================
-       HERO
+       HAPPY BIRTHDAY
+       
+       NO BOX / NO BACKGROUND
   ===================================== -->
 
-  <div class="hero">
+  <div class="birthday-arch">
 
+    <div class="birthday-text">
 
-    <!-- WHITE CAKE -->
-
-    <div class="cake">
-
-      <div class="flame"></div>
-
-      <div class="candle"></div>
-
-      <div class="cake-frosting"></div>
-
-      <div class="cake-bottom"></div>
-
-      <div class="cake-plate"></div>
-
-    </div>
-
-
-    <h1>
-      كل سنة وإنتي طيبة يا حوراء ❤️
-    </h1>
-
-
-    <p class="subtitle">
-
-      I suppose today is the birthday
-      of the love of my life :)<br>
-
-      soooo...I just wanted to make
-      it a little special hehe....
-
-    </p>
-
-
-    <div class="scroll">
-
-      ↓ SCROLL DOWN SILLY ↓
+      HAPPY BIRTHDAY! ❤️
 
     </div>
 
@@ -1131,255 +1379,482 @@
 
 
   <!-- =====================================
-       LOVE LETTER
+       FLOATING HEARTS
   ===================================== -->
 
-  <section>
+  <div class="hearts">
 
-    <h2>
-      💌 hehe a little msg for my prettiest baby
-    </h2>
-
-
-    <div class="letter">
-
-      كل سنة وإنتي طيبة يا أجمل حد في حياتي❤️
-
-      <br><br>
-
-      بجد مش عارف أبدأ منين بس كان نفسي أعملك حاجة مخصوص
-      حتى لو إحنا بعيد عن بعض.
-
-      <br><br>
-
-      يا حوراء انا بحبك و بعشقك و بموت فيكي يا حبيبتي انت اغلى حد ليا
-
-      <br><br>
-
-      وجودك في حياتي فرق معايا أكتر مما تتخيلي
-      وكل لحظة بنتكلم فيها وكل ذكرى بينا
-      ليها مكان خاص عندي.
-
-      <br><br>
-
-      أتمنى السنة الجديدة من عمرك تكون مليانة حاجات حلوة،
-      وتحققي فيها كل حاجة نفسك فيها
-      وتفضلي دايمًا مبسوطة ونكمل سوى ان شاء الله.
-
-      <br><br>
-
-      Enough Arabic for u dont u think? 🙄 ANYWAYSSS Ehe sorry for not being able
-      to buy u something irl but I hope this is enough for now- maybe it didnt come
-      up to ur expectations but I tried my best and was also kinda stuck between this
-      and studying and spending time with u sighhh...had to give u less attention sometimes....
-      checking pinterest less not texting first much..but js know every second of this I really
-      was thinking of u I am sorry for the little beefs sorry if I didnt repay u as much for
-      everything u did to me but I promise I loved love and will always love u more than anything
-      else and treat u as good as I can- I loved ur lil giggle when we called for the first time
-      ur shy tone when u sent ur first voice message and didnt know what to say "Nothing nothing🎀"
-      and ur silly reaction when u noticed ur improvement and tried on these glasses hehehehehe
-      wont forget ur reation when u saw spice for the first time 👀
-      and most importantly wont ever forget how u were always loyal to me and always tried to
-      please me when even u were at ur worst- ugh every night I think of what to do to please u
-      and all I could do was work on this in secret until ur birthday!!! u thought I forgot that msg
-      hehehe well it was gonna be only a msg I really tried alot- and threw them all... my handwriting
-      sucks my designs wont ever be as good as u and wont be as special so I wanted to do it in a way I can do
-      sighhh am such a yapper...... BUT U LOVE THAT ABT ME DONT U- ANYWAYS CONTINUE THE DAMN MSG I WORKED HARD FOR THIS
-      HMPH.
-
-      <br><br>
-
-      <strong>
-
-        وكل سنة وإنتي في حياتي يا روحي ❤️
-
-        I hope we stay together forever
-        my little pumpkin u mean the world to me &lt;3
-
-      </strong>
-
+    <div
+      class="heart"
+      style="left:3%; animation-delay:0s;"
+    >
+      ♥
     </div>
 
-  </section>
+    <div
+      class="heart"
+      style="left:8%; animation-delay:4s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:14%; animation-delay:1s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:20%; animation-delay:6s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:27%; animation-delay:2s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:34%; animation-delay:7s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:41%; animation-delay:3s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:48%; animation-delay:8s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:55%; animation-delay:1.5s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:62%; animation-delay:5s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:69%; animation-delay:2.5s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:76%; animation-delay:6.5s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:83%; animation-delay:3.5s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:89%; animation-delay:7.5s;"
+    >
+      ♥
+    </div>
+
+    <div
+      class="heart"
+      style="left:95%; animation-delay:4.5s;"
+    >
+      ♥
+    </div>
+
+  </div>
 
 
   <!-- =====================================
-       THINGS I LIKE
+       CARNATIONS
   ===================================== -->
 
-  <section>
+  <div class="carnations">
 
-    <h2>
-      Things I like abt u hmmmmmmmmmmm
-    </h2>
+    <div class="carnation">🌸</div>
+
+    <div class="carnation">🌸</div>
+
+    <div class="carnation">🌸</div>
+
+    <div class="carnation">🌸</div>
+
+    <div class="carnation">🌸</div>
+
+    <div class="carnation">🌸</div>
+
+  </div>
 
 
-    <div class="reasons">
+  <div class="container">
 
-      <div class="reason">
-        UR CUTIE GIGGLE WHEN UR SHY❤️
+
+    <!-- =====================================
+         HERO
+    ===================================== -->
+
+    <div class="hero">
+
+
+      <!-- WHITE CAKE WITH PINK FROSTING -->
+
+      <div class="cake">
+
+        <div class="flame"></div>
+
+        <div class="candle"></div>
+
+        <div class="cake-frosting"></div>
+
+        <div class="cake-bottom"></div>
+
+        <div class="cake-plate"></div>
+
       </div>
 
-      <div class="reason">
-        Ur accent duhh 🥹
-      </div>
 
-      <div class="reason">
-        fulffy...........
-      </div>
+      <h1>
 
-      <div class="reason">
-        of course ur prettyness cuteness
-        adorabolness and loyalty✨
-      </div>
+        كل سنة وإنتي طيبة يا حوراء ❤️
 
-      <div class="reason">
-        UR GIFTSSSS 🤍
-      </div>
+      </h1>
 
-      <div class="reason">
-        AND DEF MUCH MUCH MORE BUT IT WILL
-        BE PAIN IF I WRITE A CODE FOR EACH ONE
-        SICHHHH ❤️
+
+      <p class="subtitle">
+
+        I suppose today is the birthday
+        of the love of my life :)<br>
+
+        soooo...I just wanted to make
+        it a little special hehe....
+
+      </p>
+
+
+      <div class="scroll">
+
+        ↓ SCROLL DOWN SILLY ↓
+
       </div>
 
     </div>
 
-  </section>
+
+    <!-- =====================================
+         LOVE LETTER
+    ===================================== -->
+
+    <section>
+
+      <h2>
+
+        💌 hehe a little msg for my prettiest baby
+
+      </h2>
 
 
-  <!-- =====================================
-       MEMORIES
-  ===================================== -->
+      <div class="letter">
 
-  <section>
-
-    <h2>
-      📸 Some of my fav memories with u :D
-    </h2>
-
-
-    <div class="photos">
-
-
-      <!-- PHOTO 1 -->
-
-      <div class="photo-card">
-
-        <img
-          src="photo1.jpeg"
-          alt="Our first memory"
-        >
-
-      </div>
-
-
-      <!-- PHOTO 2 -->
-
-      <div class="photo-card">
-
-        <img
-          src="photo2.jpeg"
-          alt="Another memory"
-        >
-
-      </div>
-
-
-      <!-- PHOTO 3 -->
-
-      <div class="photo-placeholder">
-
-        📷
+        كل سنة وإنتي طيبة يا أجمل حد في حياتي❤️
 
         <br><br>
 
-        Third memory coming soon ❤️
+        بجد مش عارف أبدأ منين بس كان نفسي أعملك حاجة مخصوص
+        حتى لو إحنا بعيد عن بعض.
+
+        <br><br>
+
+        يا حوراء انا بحبك و بعشقك و بموت فيكي يا حبيبتي انت اغلى حد ليا
+
+        <br><br>
+
+        وجودك في حياتي فرق معايا أكتر مما تتخيلي
+        وكل لحظة بنتكلم فيها وكل ذكرى بينا
+        ليها مكان خاص عندي.
+
+        <br><br>
+
+        أتمنى السنة الجديدة من عمرك تكون مليانة حاجات حلوة،
+        وتحققي فيها كل حاجة نفسك فيها
+        وتفضلي دايمًا مبسوطة ونكمل سوى ان شاء الله.
+
+        <br><br>
+
+        Enough Arabic for u dont u think? 🙄 ANYWAYSSS Ehe sorry for not being able
+        to buy u something irl but I hope this is enough for now- maybe it didnt come
+        up to ur expectations but I tried my best and was also kinda stuck between this
+        and studying and spending time with u sighhh...had to give u less attention sometimes....
+        checking pinterest less not texting first much..but js know every second of this I really
+        was thinking of u I am sorry for the little beefs sorry if I didnt repay u as much for
+        everything u did to me but I promise I loved love and will always love u more than anything
+        else and treat u as good as I can- I loved ur lil giggle when we called for the first time
+        ur shy tone when u sent ur first voice message and didnt know what to say "Nothing nothing🎀"
+        and ur silly reaction when u noticed ur improvement and tried on these glasses hehehehehe
+        wont forget ur reation when u saw spice for the first time 👀
+        and most importantly wont ever forget how u were always loyal to me and always tried to
+        please me when even u were at ur worst- ugh every night I think of what to do to please u
+        and all I could do was work on this in secret until ur birthday!!! u thought I forgot that msg
+        hehehe well it was gonna be only a msg I really tried alot- and threw them all... my handwriting
+        sucks my designs wont ever be as good as u and wont be as special so I wanted to do it in a way I can do
+        sighhh am such a yapper...... BUT U LOVE THAT ABT ME DONT U- ANYWAYS CONTINUE THE DAMN MSG I WORKED HARD FOR THIS
+        HMPH.
+
+        <br><br>
+
+        <strong>
+
+          وكل سنة وإنتي في حياتي يا روحي ❤️
+
+          I hope we stay together forever
+          my little pumpkin u mean the world to me &lt;3
+
+        </strong>
 
       </div>
 
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- =====================================
-       VOICE MESSAGE
-  ===================================== -->
+    <!-- =====================================
+         THINGS I LIKE
+    ===================================== -->
 
-  <section>
+    <section>
 
-    <h2>
-      🎙️ رسالة بصوتي
-    </h2>
+      <h2>
+
+        Things I like abt u hmmmmmmmmmmm
+
+      </h2>
 
 
-    <div class="voice">
+      <div class="reasons">
 
-      <div>
-        رسالة مخصوص ليكي ❤️
+
+        <div class="reason">
+
+          UR CUTIE GIGGLE WHEN UR SHY❤️
+
+        </div>
+
+
+        <div class="reason">
+
+          Ur accent duhh 🥹
+
+        </div>
+
+
+        <div class="reason">
+
+          fulffy...........
+
+        </div>
+
+
+        <div class="reason">
+
+          of course ur prettyness cuteness
+          adorabolness and loyalty✨
+
+        </div>
+
+
+        <div class="reason">
+
+          UR GIFTSSSS 🤍
+
+        </div>
+
+
+        <div class="reason">
+
+          AND DEF MUCH MUCH MORE BUT IT WILL
+          BE PAIN IF I WRITE A CODE FOR EACH ONE
+          SICHHHH ❤️
+
+        </div>
+
+
       </div>
 
+    </section>
 
-      <p
-        style="
-          margin-top:15px;
-          color:#9b5573;
-        "
-      >
-        🎙️ التسجيل بتاعك هيكون هنا
+
+    <!-- =====================================
+         MEMORIES / PHOTOS
+    ===================================== -->
+
+    <section>
+
+      <h2>
+
+        📸 Some of my fav memories with u :D
+
+      </h2>
+
+
+      <div class="photos">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="photo-card">
+
+          <img
+            src="photo1.jpeg"
+            alt="Our first memory"
+          >
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="photo-card">
+
+          <img
+            src="photo2.jpeg"
+            alt="Another memory"
+          >
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="photo-placeholder">
+
+          📷
+
+          <br><br>
+
+          Third memory coming soon ❤️
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         VOICE MESSAGE
+    ===================================== -->
+
+    <section>
+
+      <h2>
+
+        🎙️ رسالة بصوتي
+
+      </h2>
+
+
+      <div class="voice">
+
+        <div>
+
+          رسالة مخصوص ليكي ❤️
+
+        </div>
+
+
+        <p
+          style="
+            margin-top:15px;
+            color:#9b5573;
+          "
+        >
+
+          🎙️ التسجيل بتاعك هيكون هنا
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FINAL MESSAGE
+    ===================================== -->
+
+    <section class="final">
+
+      <h2>
+
+        The moon looks pretty but not quite
+        as attractive as u...
+        in my eyes u will always shine
+        brighter than any moon 🌙
+
+      </h2>
+
+
+      <br>
+
+
+      <p>
+
+        ❤️ بحبك يا حوراء
+
       </p>
 
-    </div>
 
-  </section>
+      <div class="signature">
 
+        Forever and always:<br>
 
-  <!-- =====================================
-       FINAL MESSAGE
-  ===================================== -->
+        Omori ❤️ عمر
 
-  <section class="final">
+      </div>
 
-    <h2>
-
-      The moon looks pretty but not quite
-      as attractive as u...
-
-      in my eyes u will always shine
-      brighter than any moon 🌙
-
-    </h2>
+    </section>
 
 
-    <br>
+    <!-- =====================================
+         FOOTER
+    ===================================== -->
+
+    <footer>
+
+      Made just for you my silly baby 🌸❤️
+
+    </footer>
 
 
-    <p>
-      ❤️ بحبك يا حوراء
-    </p>
+  </div>
 
-
-    <div class="signature">
-
-      Forever and always:<br>
-
-      Omori ❤️ عمر
-
-    </div>
-
-  </section>
-
-
-  <footer>
-
-    Made just for you my silly baby 🌸❤️
-
-  </footer>
-
-
-</div>
 
 </body>
+
 </html>
