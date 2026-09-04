@@ -14,12 +14,7 @@
     كل سنة وإنتي طيبة يا حوراء ❤️
   </title>
 
-
   <style>
-
-    /* =====================================
-       RESET
-    ===================================== */
 
     * {
       box-sizing: border-box;
@@ -30,11 +25,6 @@
     html {
       scroll-behavior: smooth;
     }
-
-
-    /* =====================================
-       BODY
-    ===================================== */
 
     body {
 
@@ -85,11 +75,7 @@
 
 
     /* =====================================
-       HAPPY BIRTHDAY TEXT
-       
-       NO BOX
-       NO ARCH
-       NO BACKGROUND
+       HAPPY BIRTHDAY
     ===================================== */
 
     .birthday-arch {
@@ -250,12 +236,9 @@
         opacity: 0;
       }
 
-
       15% {
-
         opacity: 0.7;
       }
-
 
       50% {
 
@@ -265,7 +248,6 @@
           rotate(180deg)
           scale(1);
       }
-
 
       100% {
 
@@ -282,7 +264,7 @@
 
 
     /* =====================================
-       CARNATION FLOWERS
+       CARNATIONS
     ===================================== */
 
     .carnations {
@@ -414,7 +396,6 @@
           rotate(-10deg);
       }
 
-
       50% {
 
         transform:
@@ -426,7 +407,7 @@
 
 
     /* =====================================
-       MAIN CONTAINER
+       CONTAINER
     ===================================== */
 
     .container {
@@ -470,9 +451,7 @@
 
 
     /* =====================================
-       CAKE
-       
-       WHITE CAKE WITH PINK FROSTING
+       WHITE CAKE WITH PINK TOPPING
     ===================================== */
 
     .cake {
@@ -547,7 +526,6 @@
       height: 38px;
 
       background:
-
         linear-gradient(
           to bottom,
           #ffffff,
@@ -724,7 +702,6 @@
           scale(1);
       }
 
-
       to {
 
         transform:
@@ -744,7 +721,6 @@
         transform:
           translateY(0);
       }
-
 
       50% {
 
@@ -809,7 +785,6 @@
     @keyframes pulse {
 
       50% {
-
         opacity: 0.4;
       }
 
@@ -983,8 +958,9 @@
     /* =====================================
        PHOTOS
        
+       SMALLER THIS TIME
+       
        ORIGINAL PROPORTIONS
-       DOWNSIZED ONLY
        NO CROPPING
        NO ROTATION
     ===================================== */
@@ -1041,45 +1017,48 @@
     }
 
 
-    /* =====================================
-       PHOTO SIZE
-       
-       ONLY CHANGE IS HERE:
-       MAX 350px WIDE
-       MAX 400px HIGH
-    ===================================== */
+    /*
+      IMPORTANT:
+      THE PHOTOS ARE NOW ACTUALLY SMALL.
+
+      MAX WIDTH = 220px
+      MAX HEIGHT = 280px
+
+      aspect ratio stays original.
+    */
 
     .photo-card img {
 
       display: block;
 
-      width: auto;
+      width: auto !important;
 
-      height: auto;
+      height: auto !important;
 
-      max-width: 350px;
+      max-width: 220px !important;
 
-      max-height: 400px;
+      max-height: 280px !important;
 
       object-fit: contain;
 
       border-radius: 12px;
 
       margin: 0;
+
     }
 
 
     /* =====================================
-       THIRD PHOTO PLACEHOLDER
+       THIRD PHOTO
     ===================================== */
 
     .photo-placeholder {
 
-      width: 220px;
+      width: 180px;
 
-      min-height: 220px;
+      min-height: 180px;
 
-      padding: 30px;
+      padding: 25px;
 
       border-radius: 18px;
 
@@ -1141,7 +1120,7 @@
 
 
     /* =====================================
-       VOICE MESSAGE
+       VOICE
     ===================================== */
 
     .voice {
@@ -1173,7 +1152,7 @@
 
 
     /* =====================================
-       FINAL MESSAGE
+       FINAL
     ===================================== */
 
     .final {
@@ -1280,8 +1259,6 @@
       }
 
 
-      /* Birthday text */
-
       .birthday-arch {
 
         top: -55px;
@@ -1300,15 +1277,16 @@
       }
 
 
-      /* Hero */
-
       .hero {
 
         padding-top: 90px;
       }
 
 
-      /* Photos */
+      /*
+        PHOTOS EVENLY FIT ON MOBILE
+        WITHOUT CROPPING
+      */
 
       .photos {
 
@@ -1328,19 +1306,21 @@
 
       .photo-card img {
 
-        width: auto;
+        width: auto !important;
 
-        height: auto;
+        height: auto !important;
 
-        max-width: 350px;
+        max-width: 220px !important;
 
-        max-height: 400px;
+        max-height: 280px !important;
       }
 
 
       .photo-placeholder {
 
-        width: 100%;
+        width: 180px;
+
+        min-height: 180px;
       }
 
     }
@@ -1355,9 +1335,7 @@
 
   <!-- =====================================
        HAPPY BIRTHDAY
-       
-       NO BOX / NO BACKGROUND
-  ===================================== -->
+    ===================================== -->
 
   <div class="birthday-arch">
 
@@ -1372,121 +1350,91 @@
 
   <!-- =====================================
        FLOATING HEARTS
-  ===================================== -->
+    ===================================== -->
 
   <div class="hearts">
 
     <div
       class="heart"
       style="left:3%; animation-delay:0s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:8%; animation-delay:4s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:14%; animation-delay:1s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:20%; animation-delay:6s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:27%; animation-delay:2s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:34%; animation-delay:7s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:41%; animation-delay:3s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:48%; animation-delay:8s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:55%; animation-delay:1.5s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:62%; animation-delay:5s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:69%; animation-delay:2.5s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:76%; animation-delay:6.5s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:83%; animation-delay:3.5s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:89%; animation-delay:7.5s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
     <div
       class="heart"
       style="left:95%; animation-delay:4.5s;"
-    >
-      ♥
-    </div>
+    >♥</div>
 
   </div>
 
 
   <!-- =====================================
        CARNATIONS
-  ===================================== -->
+    ===================================== -->
 
   <div class="carnations">
 
@@ -1510,12 +1458,10 @@
 
     <!-- =====================================
          HERO
-    ===================================== -->
+      ===================================== -->
 
     <div class="hero">
 
-
-      <!-- WHITE CAKE WITH PINK FROSTING -->
 
       <div class="cake">
 
@@ -1561,7 +1507,7 @@
 
     <!-- =====================================
          LOVE LETTER
-    ===================================== -->
+      ===================================== -->
 
     <section>
 
@@ -1636,7 +1582,7 @@
 
     <!-- =====================================
          THINGS I LIKE
-    ===================================== -->
+      ===================================== -->
 
     <section>
 
@@ -1701,8 +1647,8 @@
 
 
     <!-- =====================================
-         MEMORIES / PHOTOS
-    ===================================== -->
+         MEMORIES
+      ===================================== -->
 
     <section>
 
@@ -1740,7 +1686,7 @@
         </div>
 
 
-        <!-- PHOTO 3 -->
+        <!-- THIRD PHOTO -->
 
         <div class="photo-placeholder">
 
@@ -1760,7 +1706,7 @@
 
     <!-- =====================================
          VOICE MESSAGE
-    ===================================== -->
+      ===================================== -->
 
     <section>
 
@@ -1798,7 +1744,7 @@
 
     <!-- =====================================
          FINAL MESSAGE
-    ===================================== -->
+      ===================================== -->
 
     <section class="final">
 
@@ -1833,10 +1779,6 @@
     </section>
 
 
-    <!-- =====================================
-         FOOTER
-    ===================================== -->
-
     <footer>
 
       Made just for you my silly baby 🌸❤️
@@ -1845,7 +1787,6 @@
 
 
   </div>
-
 
 </body>
 
