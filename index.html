@@ -87,7 +87,7 @@
     }
 
     /* =========================
-       CARNATION FLOWERS
+       FLOWERS
     ========================= */
 
     .carnations {
@@ -302,6 +302,21 @@
       gap: 15px;
     }
 
+    .photos img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 8px 20px rgba(180, 70, 120, 0.15);
+      transition: 0.3s ease;
+    }
+
+    .photos img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 30px rgba(180, 70, 120, 0.25);
+    }
+
     .photo-placeholder {
       height: 220px;
       border-radius: 18px;
@@ -383,6 +398,7 @@
     ========================= */
 
     @media (max-width: 600px) {
+
       .container {
         width: 90%;
         padding: 30px 0;
@@ -412,6 +428,11 @@
       .final p {
         font-size: 18px;
       }
+
+      .photos img,
+      .photo-placeholder {
+        height: 240px;
+      }
     }
   </style>
 </head>
@@ -423,6 +444,7 @@
 ========================= -->
 
 <div class="hearts">
+
   <div class="heart" style="left:3%; animation-delay:0s;">♥</div>
   <div class="heart" style="left:8%; animation-delay:4s;">♥</div>
   <div class="heart" style="left:14%; animation-delay:1s;">♥</div>
@@ -438,20 +460,23 @@
   <div class="heart" style="left:83%; animation-delay:3.5s;">♥</div>
   <div class="heart" style="left:89%; animation-delay:7.5s;">♥</div>
   <div class="heart" style="left:95%; animation-delay:4.5s;">♥</div>
+
 </div>
 
 
 <!-- =========================
-     CARNATIONS
+     FLOWERS
 ========================= -->
 
 <div class="carnations">
+
   <div class="carnation">🌸</div>
   <div class="carnation">🌸</div>
   <div class="carnation">🌸</div>
   <div class="carnation">🌸</div>
   <div class="carnation">🌸</div>
   <div class="carnation">🌸</div>
+
 </div>
 
 
@@ -594,25 +619,16 @@
 
     <div class="photos">
 
-      <!--
-        بعدين هنحط صوركم هنا.
-        مثال:
-        <img src="photos/photo1.jpg" alt="ذكرى">
-      -->
+      <!-- PHOTO 1 -->
+      <img src="photos/photo1.jpeg" alt="Our first memory">
 
+      <!-- PHOTO 2 -->
+      <img src="photos/photo2.jpeg" alt="Another memory">
+
+      <!-- PHOTO 3 - ADD LATER -->
       <div class="photo-placeholder">
         📷<br><br>
-        صورتكم هنا
-      </div>
-
-      <div class="photo-placeholder">
-        📷<br><br>
-        صورة تانية هنا
-      </div>
-
-      <div class="photo-placeholder">
-        📷<br><br>
-        وأهو كمان واحدة ❤️
+        Third memory coming soon ❤️
       </div>
 
     </div>
