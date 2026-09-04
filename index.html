@@ -36,7 +36,7 @@
 
 
     /* =========================
-       HAPPY BIRTHDAY ARCH
+       HAPPY BIRTHDAY
     ========================= */
 
     .birthday-arch {
@@ -201,7 +201,6 @@
     .carnation:nth-child(1) {
       top: 3%;
       left: 1%;
-
       transform: rotate(-20deg);
     }
 
@@ -309,7 +308,7 @@
 
 
     /* =========================
-       WHITE CAKE
+       WHITE CAKE WITH PINK TOPPING
     ========================= */
 
     .cake {
@@ -704,14 +703,9 @@
 
     .photo-card:hover {
       transform: translateY(-5px);
-    }
 
-    /*
-      SMALLER PHOTOS
-      ORIGINAL PROPORTIONS
-      NO ROTATION
-      NO CROPPING
-    */
+      box-shadow: none;
+    }
 
     .photo-card img {
       display: block;
@@ -731,7 +725,7 @@
 
 
     /* =========================
-       VOICE
+       VOICE MESSAGE
     ========================= */
 
     .voice {
@@ -862,6 +856,12 @@
         flex-direction: column;
 
         align-items: center;
+      }
+
+      .photo-card {
+        width: fit-content;
+
+        max-width: 100%;
       }
 
       .photo-card img {
@@ -1006,8 +1006,6 @@
     <div class="hero">
 
 
-      <!-- WHITE CAKE -->
-
       <div class="cake">
 
         <div class="flame"></div>
@@ -1042,7 +1040,6 @@
       <div class="scroll">
         ↓ SCROLL DOWN SILLY ↓
       </div>
-
 
     </div>
 
@@ -1234,6 +1231,18 @@
         </div>
 
 
+        <!-- PHOTO 5 -->
+
+        <div class="photo-card">
+
+          <img
+            src="photo5.jpeg"
+            alt="Memory 5"
+          >
+
+        </div>
+
+
       </div>
 
     </section>
@@ -1263,9 +1272,7 @@
             color:#9b5573;
           "
         >
-
           🎙️ التسجيل بتاعك هيكون هنا
-
         </p>
 
       </div>
@@ -1309,7 +1316,9 @@
 
 
     <footer>
+
       Made just for you my silly baby 🌸❤️
+
     </footer>
 
 
