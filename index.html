@@ -9,9 +9,9 @@
 
   <style>
 
-    /* =====================================================
+    /* =========================================================
        RESET
-    ===================================================== */
+    ========================================================= */
 
     * {
       box-sizing: border-box;
@@ -25,177 +25,196 @@
 
     body {
       font-family: "Tahoma", "Arial", sans-serif;
-
-      color: #67324b;
-
       min-height: 100vh;
-
       overflow-x: hidden;
+
+      color: #6d304d;
 
       background:
         radial-gradient(
           circle at 12% 10%,
           rgba(255,255,255,0.95),
-          transparent 24%
+          transparent 25%
         ),
         radial-gradient(
-          circle at 88% 18%,
-          rgba(255,210,229,0.8),
+          circle at 90% 18%,
+          rgba(255,220,235,0.9),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 15% 85%,
+          rgba(255,195,220,0.8),
           transparent 28%
         ),
         radial-gradient(
-          circle at 15% 82%,
-          rgba(255,195,220,0.75),
-          transparent 27%
-        ),
-        radial-gradient(
-          circle at 90% 88%,
-          rgba(255,230,240,0.9),
+          circle at 85% 88%,
+          rgba(255,240,246,0.9),
           transparent 30%
         ),
         linear-gradient(
           135deg,
           #ffeaf2 0%,
-          #ffd2e2 45%,
-          #f7b9d2 100%
+          #ffd4e3 45%,
+          #f6b8d0 100%
         );
+
+      background-attachment: fixed;
     }
 
 
-    /* =====================================================
-       SOFT BACKGROUND GLOW
-    ===================================================== */
+    /* =========================================================
+       SOFT LIGHT EFFECTS
+    ========================================================= */
 
     body::before {
       content: "";
-
       position: fixed;
-
-      inset: 0;
-
+      inset: -20%;
       pointer-events: none;
-
-      z-index: -5;
+      z-index: -2;
 
       background:
         radial-gradient(
-          circle at 50% 35%,
-          rgba(255,255,255,0.28),
-          transparent 40%
+          circle at 30% 40%,
+          rgba(255,255,255,0.22),
+          transparent 20%
+        ),
+        radial-gradient(
+          circle at 70% 65%,
+          rgba(255,140,190,0.12),
+          transparent 25%
         );
 
-      animation: backgroundGlow 8s ease-in-out infinite;
+      animation: ambientGlow 10s ease-in-out infinite alternate;
     }
 
-    @keyframes backgroundGlow {
-
-      0%,
-      100% {
-        opacity: 0.65;
+    @keyframes ambientGlow {
+      from {
+        transform: scale(1);
+        opacity: 0.7;
       }
 
-      50% {
+      to {
+        transform: scale(1.08);
         opacity: 1;
       }
     }
 
 
-    /* =====================================================
-       MUSIC VIBE
-       Decorative only — does not autoplay music
-    ===================================================== */
+    /* =========================================================
+       MUSIC VIBE BACKGROUND
+    ========================================================= */
 
     .music-vibe {
       position: fixed;
-
       inset: 0;
-
-      overflow: hidden;
 
       pointer-events: none;
 
       z-index: 0;
+
+      overflow: hidden;
+
+      opacity: 0.38;
     }
 
     .music-note {
       position: absolute;
 
-      color: rgba(255,255,255,0.48);
+      color: rgba(255,255,255,0.65);
 
-      font-size: 25px;
+      font-size: 24px;
 
-      filter:
-        drop-shadow(
-          0 4px 10px rgba(190,70,120,0.12)
-        );
+      text-shadow:
+        0 0 12px rgba(214,75,130,0.3);
 
       animation:
         musicFloat
-        11s
-        ease-in-out
+        linear
         infinite;
-
-      opacity: 0;
     }
 
-    .music-note:nth-child(2n) {
-      color: rgba(255,255,255,0.34);
-      font-size: 35px;
+    .music-note:nth-child(1) {
+      left: 5%;
+      animation-duration: 12s;
+      animation-delay: 0s;
     }
 
-    .music-note:nth-child(3n) {
-      color: rgba(218,104,150,0.25);
-      font-size: 20px;
+    .music-note:nth-child(2) {
+      left: 18%;
+      animation-duration: 15s;
+      animation-delay: 4s;
     }
 
-    .music-note:nth-child(4n) {
-      color: rgba(255,255,255,0.55);
-      font-size: 42px;
+    .music-note:nth-child(3) {
+      left: 31%;
+      animation-duration: 11s;
+      animation-delay: 2s;
+    }
+
+    .music-note:nth-child(4) {
+      left: 46%;
+      animation-duration: 17s;
+      animation-delay: 7s;
+    }
+
+    .music-note:nth-child(5) {
+      left: 62%;
+      animation-duration: 13s;
+      animation-delay: 1s;
+    }
+
+    .music-note:nth-child(6) {
+      left: 76%;
+      animation-duration: 16s;
+      animation-delay: 5s;
+    }
+
+    .music-note:nth-child(7) {
+      left: 90%;
+      animation-duration: 12s;
+      animation-delay: 8s;
     }
 
     @keyframes musicFloat {
 
       0% {
-        transform:
-          translateY(40px)
-          translateX(0)
-          rotate(-8deg)
-          scale(0.8);
-
+        bottom: -50px;
         opacity: 0;
+        transform:
+          translateX(0)
+          rotate(-10deg)
+          scale(0.7);
       }
 
       15% {
-        opacity: 0.55;
+        opacity: 0.7;
       }
 
       50% {
         transform:
-          translateY(-45vh)
           translateX(35px)
-          rotate(8deg)
-          scale(1.05);
+          rotate(10deg)
+          scale(1);
       }
 
       100% {
-        transform:
-          translateY(-115vh)
-          translateX(-30px)
-          rotate(-5deg)
-          scale(0.85);
-
+        bottom: 110%;
         opacity: 0;
+        transform:
+          translateX(-35px)
+          rotate(-10deg)
+          scale(0.8);
       }
     }
 
 
-    /* =====================================================
+    /* =========================================================
        FLOATING HEARTS
-    ===================================================== */
+    ========================================================= */
 
     .hearts {
       position: fixed;
-
       inset: 0;
 
       pointer-events: none;
@@ -207,39 +226,41 @@
 
     .heart {
       position: absolute;
+      bottom: -60px;
 
-      bottom: -50px;
-
-      color: rgba(220,88,137,0.55);
+      color: rgba(220,80,130,0.35);
 
       font-size: 20px;
 
       animation:
-        heartFloat
+        floatHeart
         10s
         linear
         infinite;
 
-      opacity: 0;
+      filter:
+        drop-shadow(
+          0 3px 6px rgba(190,60,110,0.12)
+        );
     }
 
     .heart:nth-child(2n) {
-      color: rgba(255,255,255,0.65);
+      color: rgba(255,255,255,0.55);
       font-size: 27px;
     }
 
     .heart:nth-child(3n) {
-      color: rgba(214,83,133,0.35);
       font-size: 16px;
     }
 
-    @keyframes heartFloat {
+    @keyframes floatHeart {
 
       0% {
         transform:
           translateY(0)
+          translateX(0)
           rotate(0deg)
-          scale(0.8);
+          scale(0.7);
 
         opacity: 0;
       }
@@ -251,7 +272,7 @@
       50% {
         transform:
           translateY(-55vh)
-          translateX(30px)
+          translateX(35px)
           rotate(180deg)
           scale(1);
       }
@@ -259,7 +280,7 @@
       100% {
         transform:
           translateY(-115vh)
-          translateX(-30px)
+          translateX(-35px)
           rotate(360deg)
           scale(0.8);
 
@@ -268,29 +289,26 @@
     }
 
 
-    /* =====================================================
+    /* =========================================================
        TOP BIRTHDAY TEXT
-    ===================================================== */
+    ========================================================= */
 
     .birthday-arch {
       position: absolute;
 
-      top: -40px;
+      top: -45px;
       left: 50%;
 
       transform: translateX(-50%);
 
       width: 100%;
-
-      height: 150px;
+      height: 170px;
 
       display: flex;
-
       align-items: flex-end;
-
       justify-content: center;
 
-      padding-bottom: 20px;
+      padding-bottom: 22px;
 
       z-index: 3;
 
@@ -298,49 +316,40 @@
     }
 
     .birthday-text {
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.72);
 
-      font-size:
-        clamp(
-          18px,
-          4vw,
-          35px
-        );
+      font-size: clamp(20px, 4vw, 38px);
 
       font-weight: bold;
 
       letter-spacing: 3px;
 
       text-shadow:
-        0 2px 10px rgba(160,60,100,0.15),
-        0 0 25px rgba(255,255,255,0.45);
-
-      transform:
-        perspective(400px)
-        rotateX(15deg);
+        0 2px 8px rgba(170,60,100,0.16),
+        0 0 20px rgba(255,255,255,0.6);
     }
 
 
-    /* =====================================================
+    /* =========================================================
        MAIN CONTAINER
-    ===================================================== */
+    ========================================================= */
 
     .container {
       position: relative;
 
-      z-index: 2;
+      z-index: 1;
 
-      width: min(930px, 92%);
+      width: min(950px, 92%);
 
       margin: auto;
 
-      padding: 55px 0 35px;
+      padding: 55px 0;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        HERO
-    ===================================================== */
+    ========================================================= */
 
     .hero {
       min-height: 92vh;
@@ -359,103 +368,56 @@
     }
 
 
-    /* =====================================================
+    /* =========================================================
        REALISTIC CAKE
-    ===================================================== */
-
-    .cake-wrapper {
-      position: relative;
-
-      width: 270px;
-
-      height: 275px;
-
-      margin-bottom: 25px;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: flex-end;
-
-      animation:
-        cakeFloat
-        4s
-        ease-in-out
-        infinite;
-    }
-
-    .cake-shadow {
-      position: absolute;
-
-      bottom: 20px;
-
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      width: 220px;
-
-      height: 27px;
-
-      border-radius: 50%;
-
-      background:
-        rgba(125,45,80,0.18);
-
-      filter: blur(9px);
-
-      z-index: 0;
-    }
+    ========================================================= */
 
     .cake {
       position: relative;
 
-      width: 215px;
+      width: 230px;
+      height: 215px;
 
-      height: 205px;
+      margin-bottom: 35px;
 
-      z-index: 2;
+      animation:
+        cakeFloat
+        3.2s
+        ease-in-out
+        infinite;
 
       filter:
         drop-shadow(
-          0 18px 18px rgba(125,45,75,0.17)
+          0 20px 18px rgba(120,40,75,0.2)
         );
     }
 
-
-    /* -------------------------
-       PLATE
-    ------------------------- */
+    /* plate */
 
     .cake-plate {
       position: absolute;
 
-      bottom: 4px;
-
+      bottom: 3px;
       left: 50%;
 
       transform: translateX(-50%);
 
-      width: 220px;
-
-      height: 26px;
+      width: 215px;
+      height: 25px;
 
       border-radius: 50%;
 
       background:
         linear-gradient(
           to bottom,
-          #ffffff 0%,
-          #fdf8fb 45%,
-          #e8ccd9 100%
+          #ffffff,
+          #f7edf2 55%,
+          #e9cdd9
         );
 
       box-shadow:
-        0 7px 13px rgba(110,40,70,0.15),
-        inset 0 3px 4px rgba(255,255,255,0.95);
-
-      z-index: 1;
+        0 7px 12px rgba(100,40,70,0.18),
+        inset 0 3px 3px rgba(255,255,255,0.95);
     }
 
     .cake-plate::after {
@@ -463,92 +425,86 @@
 
       position: absolute;
 
-      left: 50%;
+      left: 15px;
+      right: 15px;
 
-      top: 7px;
+      bottom: 4px;
 
-      transform: translateX(-50%);
-
-      width: 175px;
-
-      height: 10px;
+      height: 6px;
 
       border-radius: 50%;
 
       background:
-        rgba(255,205,225,0.55);
+        rgba(205,135,165,0.2);
     }
 
 
-    /* -------------------------
-       CAKE BASE
-    ------------------------- */
+    /* bottom cake layer */
 
     .cake-bottom {
       position: absolute;
 
+      bottom: 18px;
       left: 50%;
-
-      bottom: 25px;
 
       transform: translateX(-50%);
 
-      width: 172px;
-
-      height: 72px;
+      width: 165px;
+      height: 68px;
 
       border-radius:
-        12px
-        12px
-        20px
-        20px;
+        13px
+        13px
+        18px
+        18px;
 
       background:
         linear-gradient(
           90deg,
-          #d99c91 0%,
-          #f6cfc5 9%,
-          #fff2ed 25%,
-          #fffaf5 50%,
-          #ffe9e2 73%,
-          #e5ada2 93%,
-          #c98782 100%
+          #d99b83 0%,
+          #f4c7b4 10%,
+          #ffe7dc 28%,
+          #fff7f1 50%,
+          #ffe4d8 72%,
+          #f1bfaa 90%,
+          #d28e7b 100%
         );
 
       border:
-        2px solid rgba(255,255,255,0.9);
+        2px solid rgba(255,255,255,0.85);
 
       box-shadow:
-        inset 0 -13px 13px rgba(160,70,70,0.09),
-        inset 0 8px 12px rgba(255,255,255,0.75),
-        0 7px 12px rgba(120,50,70,0.13);
-
-      overflow: hidden;
+        inset 0 -12px 10px rgba(160,75,75,0.12),
+        inset 0 5px 9px rgba(255,255,255,0.85),
+        0 7px 10px rgba(120,45,65,0.14);
     }
+
+    /* cake texture */
 
     .cake-bottom::before {
       content: "";
 
       position: absolute;
 
-      left: 0;
+      left: 5px;
+      right: 5px;
 
-      top: 20px;
+      top: 16px;
 
-      width: 100%;
+      height: 8px;
 
-      height: 11px;
+      border-radius: 50%;
 
       background:
         linear-gradient(
           to right,
-          #fff8f8,
+          #fff9f8,
           #ffffff,
-          #fff5f7
+          #fff2f4
         );
 
       box-shadow:
-        0 2px 5px rgba(170,80,100,0.08);
+        0 22px 0 rgba(255,255,255,0.48);
     }
 
     .cake-bottom::after {
@@ -556,215 +512,205 @@
 
       position: absolute;
 
-      left: 10px;
+      width: 100%;
+      height: 14px;
 
-      right: 10px;
+      left: 0;
+      bottom: 0;
 
-      bottom: 10px;
-
-      height: 12px;
-
-      border-radius: 50%;
+      border-radius: 0 0 16px 16px;
 
       background:
-        rgba(255,255,255,0.18);
+        linear-gradient(
+          to bottom,
+          rgba(255,255,255,0),
+          rgba(173,87,87,0.1)
+        );
     }
 
 
-    /* -------------------------
-       FROSTING LAYER
-    ------------------------- */
+    /* upper frosting */
 
     .cake-frosting {
       position: absolute;
 
+      bottom: 73px;
       left: 50%;
-
-      bottom: 82px;
 
       transform: translateX(-50%);
 
-      width: 183px;
-
-      height: 45px;
+      width: 177px;
+      height: 43px;
 
       border-radius: 50%;
 
       background:
         linear-gradient(
           to bottom,
-          #fff6fa 0%,
-          #ffd9e8 35%,
-          #f7a8c5 68%,
-          #e878a4 100%
+          #fffafa 0%,
+          #fff2f7 35%,
+          #ffd5e4 68%,
+          #ef9dbd 100%
         );
 
       box-shadow:
-        inset 0 7px 9px rgba(255,255,255,0.85),
-        inset 0 -6px 8px rgba(195,65,110,0.1),
-        0 6px 10px rgba(160,55,90,0.14);
-
-      z-index: 4;
+        inset 0 5px 9px rgba(255,255,255,0.9),
+        inset 0 -5px 7px rgba(190,80,120,0.1),
+        0 5px 9px rgba(150,50,90,0.13);
     }
 
-    .frost-drip {
+    /* frosting drips */
+
+    .cake-frosting::before {
+      content: "";
+
       position: absolute;
 
-      bottom: -17px;
+      left: 13px;
+      bottom: -20px;
 
-      width: 21px;
-
-      height: 25px;
+      width: 23px;
+      height: 30px;
 
       border-radius:
-        0 0 14px 14px;
+        0
+        0
+        14px
+        14px;
 
       background:
         linear-gradient(
           to bottom,
-          #f7a8c5,
-          #e878a4
+          #ffd8e6,
+          #ee9fbd
         );
 
       box-shadow:
-        inset 3px 0 4px rgba(255,255,255,0.25);
-    }
-
-    .drip1 {
-      left: 20px;
-    }
-
-    .drip2 {
-      left: 62px;
-
-      height: 31px;
-    }
-
-    .drip3 {
-      right: 57px;
-
-      height: 24px;
-    }
-
-    .drip4 {
-      right: 19px;
-
-      height: 29px;
+        39px 5px 0 -2px #f2aec8,
+        81px 1px 0 -3px #efa1bd,
+        119px 6px 0 -2px #f4b2ca;
     }
 
 
-    /* -------------------------
-       CAKE TOP
-    ------------------------- */
+    /* cake top */
 
     .cake-top {
       position: absolute;
 
       left: 50%;
-
-      bottom: 105px;
+      bottom: 96px;
 
       transform: translateX(-50%);
 
-      width: 176px;
-
-      height: 55px;
+      width: 171px;
+      height: 48px;
 
       border-radius: 50%;
 
       background:
         radial-gradient(
-          ellipse at 50% 48%,
+          ellipse at 45% 42%,
           #ffffff 0%,
-          #fffafd 35%,
-          #ffeef5 66%,
-          #f7bfd5 100%
+          #fffafa 35%,
+          #ffeef5 65%,
+          #ffc8db 100%
         );
 
-      box-shadow:
-        inset 0 7px 10px rgba(255,255,255,0.95),
-        inset 0 -4px 8px rgba(210,100,140,0.08),
-        0 4px 8px rgba(140,50,85,0.1);
+      border:
+        1px solid rgba(255,255,255,0.9);
 
-      z-index: 3;
+      box-shadow:
+        inset 0 5px 9px rgba(255,255,255,0.95),
+        inset 0 -4px 8px rgba(220,110,150,0.12),
+        0 5px 8px rgba(150,50,90,0.12);
     }
 
 
-    /* -------------------------
-       CAKE DECORATIONS
-    ------------------------- */
+    /* little decorative berries */
 
-    .cake-decoration {
+    .berry {
       position: absolute;
 
-      z-index: 6;
-
-      width: 10px;
-
-      height: 10px;
+      width: 8px;
+      height: 8px;
 
       border-radius: 50%;
 
       background:
-        #ffffff;
+        radial-gradient(
+          circle at 35% 30%,
+          #fff,
+          #f39cbd 30%,
+          #c94f80 100%
+        );
 
       box-shadow:
-        24px 3px 0 #f29cba,
-        48px -1px 0 #ffffff,
-        72px 4px 0 #ed8eb0,
-        96px 0 0 #ffffff;
+        0 2px 4px rgba(130,40,75,0.2);
 
-      left: 61px;
+      z-index: 5;
+    }
 
-      bottom: 115px;
+    .berry.b1 {
+      left: 45px;
+      bottom: 103px;
+    }
+
+    .berry.b2 {
+      left: 73px;
+      bottom: 91px;
+    }
+
+    .berry.b3 {
+      right: 45px;
+      bottom: 103px;
+    }
+
+    .berry.b4 {
+      right: 72px;
+      bottom: 91px;
     }
 
 
-    /* -------------------------
-       NUMBER 16
-    ------------------------- */
+    /* =========================================================
+       BIG 16
+    ========================================================= */
 
     .age {
       position: absolute;
 
-      z-index: 8;
+      z-index: 10;
 
       left: 50%;
-
-      bottom: 111px;
+      bottom: 104px;
 
       transform: translateX(-50%);
 
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+      font-family: Georgia, "Times New Roman", serif;
 
-      font-size: 35px;
+      font-size: 34px;
 
       font-weight: bold;
 
-      color: #d45788;
+      color: #cf5787;
 
       text-shadow:
-        0 2px 4px rgba(170,60,100,0.18),
-        0 0 10px rgba(255,255,255,0.8);
+        0 1px 0 white,
+        0 3px 5px rgba(150,50,90,0.18);
+
+      letter-spacing: -2px;
     }
 
 
-    /* -------------------------
+    /* =========================================================
        CANDLES
-    ------------------------- */
+    ========================================================= */
 
     .candle {
       position: absolute;
 
-      z-index: 10;
+      bottom: 132px;
 
-      bottom: 150px;
-
-      width: 13px;
-
+      width: 14px;
       height: 45px;
 
       border-radius: 5px;
@@ -772,26 +718,28 @@
       background:
         repeating-linear-gradient(
           -45deg,
-          #fffafd 0px,
-          #fffafd 6px,
-          #f3a2bd 6px,
-          #f3a2bd 11px
+          #fffdfd 0px,
+          #fffdfd 6px,
+          #f0a2bf 6px,
+          #f0a2bf 11px
         );
 
       border:
-        1px solid rgba(190,80,120,0.25);
+        1px solid rgba(170,70,110,0.2);
 
       box-shadow:
-        0 3px 7px rgba(130,50,80,0.16),
-        inset 2px 0 3px rgba(255,255,255,0.7);
+        inset 2px 0 3px rgba(255,255,255,0.8),
+        0 3px 6px rgba(130,50,80,0.18);
+
+      z-index: 8;
     }
 
     .candle.one {
-      left: 85px;
+      left: 91px;
     }
 
     .candle.six {
-      left: 116px;
+      left: 126px;
     }
 
     .candle::before {
@@ -799,35 +747,30 @@
 
       position: absolute;
 
-      top: -8px;
-
+      top: -7px;
       left: 50%;
+
+      width: 3px;
+      height: 8px;
 
       transform: translateX(-50%);
 
-      width: 2px;
-
-      height: 9px;
-
-      background: #463333;
+      background: #4d3636;
 
       border-radius: 50%;
     }
 
 
-    /* -------------------------
-       FLAMES
-    ------------------------- */
+    /* flames */
 
     .flame {
       position: absolute;
 
-      z-index: 12;
+      z-index: 9;
 
-      bottom: 193px;
+      bottom: 174px;
 
       width: 19px;
-
       height: 25px;
 
       border-radius:
@@ -840,41 +783,40 @@
 
       background:
         radial-gradient(
-          circle at 55% 65%,
-          #fffde8 0%,
-          #ffe879 32%,
-          #ffad69 62%,
-          #ed6f96 100%
+          circle at 60% 65%,
+          #fffde5 0%,
+          #ffe77a 28%,
+          #ffad69 58%,
+          #f1789e 100%
         );
 
       filter:
         drop-shadow(
-          0 0 9px rgba(255,180,90,0.65)
+          0 0 10px rgba(255,185,95,0.8)
         );
 
       animation:
         flameFlicker
-        0.75s
+        0.65s
         ease-in-out
         infinite
         alternate;
     }
 
     .flame.one {
-      left: 82px;
+      left: 89px;
     }
 
     .flame.six {
-      left: 113px;
-
-      animation-delay: 0.2s;
+      left: 124px;
+      animation-delay: 0.18s;
     }
 
     @keyframes flameFlicker {
 
       from {
         transform:
-          rotate(41deg)
+          rotate(40deg)
           scale(0.9);
       }
 
@@ -884,6 +826,9 @@
           scale(1.12);
       }
     }
+
+
+    /* cake floating */
 
     @keyframes cakeFloat {
 
@@ -898,9 +843,9 @@
     }
 
 
-    /* =====================================================
+    /* =========================================================
        HERO TEXT
-    ===================================================== */
+    ========================================================= */
 
     h1 {
       font-size:
@@ -910,11 +855,10 @@
           72px
         );
 
-      color: #c64f80;
+      color: #c94f80;
 
       text-shadow:
-        0 0 25px rgba(255,120,180,0.35),
-        0 3px 8px rgba(150,50,90,0.08);
+        0 0 25px rgba(255,120,180,0.3);
 
       margin-bottom: 15px;
     }
@@ -924,50 +868,51 @@
 
       color: #713650;
 
-      line-height: 1.9;
+      line-height: 1.8;
+
+      max-width: 750px;
     }
 
     .scroll {
       margin-top: 55px;
 
-      color: #c64f80;
-
-      font-weight: bold;
+      color: #c94f80;
 
       animation:
         scrollPulse
         2s
         infinite;
+
+      font-weight: bold;
     }
 
     @keyframes scrollPulse {
 
       50% {
         opacity: 0.35;
-
-        transform:
-          translateY(5px);
+        transform: translateY(5px);
       }
     }
 
 
-    /* =====================================================
+    /* =========================================================
        GLASS SECTIONS
-    ===================================================== */
+    ========================================================= */
 
     section {
       position: relative;
 
+      overflow: hidden;
+
       background:
         linear-gradient(
           135deg,
-          rgba(255,255,255,0.52),
-          rgba(255,255,255,0.27)
+          rgba(255,255,255,0.56),
+          rgba(255,240,247,0.34)
         );
 
       border:
-        1px solid
-        rgba(255,255,255,0.78);
+        1px solid rgba(255,255,255,0.8);
 
       backdrop-filter:
         blur(18px);
@@ -982,13 +927,18 @@
       margin: 30px 0;
 
       box-shadow:
-        0 18px 55px
-        rgba(170,65,110,0.13),
+        0 18px 55px rgba(180,70,120,0.13),
+        inset 0 1px 0 rgba(255,255,255,0.8);
 
-        inset 0 1px 0
-        rgba(255,255,255,0.85);
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+    }
 
-      overflow: hidden;
+    section:hover {
+      box-shadow:
+        0 22px 65px rgba(180,70,120,0.17),
+        inset 0 1px 0 rgba(255,255,255,0.9);
     }
 
     section::before {
@@ -997,47 +947,46 @@
       position: absolute;
 
       width: 180px;
-
       height: 180px;
 
       top: -100px;
-
       right: -80px;
 
       border-radius: 50%;
 
       background:
-        rgba(255,255,255,0.18);
+        rgba(255,255,255,0.2);
+
+      filter: blur(4px);
 
       pointer-events: none;
     }
 
     section h2 {
-      position: relative;
-
-      color: #c24d7b;
+      color: #c34f7d;
 
       margin-bottom: 20px;
 
       font-size: 28px;
 
-      text-shadow:
-        0 2px 8px rgba(180,60,100,0.08);
+      position: relative;
+      z-index: 1;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        LOVE LETTER
-    ===================================================== */
+    ========================================================= */
 
     .letter {
       position: relative;
+      z-index: 1;
 
       font-size: 19px;
 
       line-height: 2.2;
 
-      color: #633047;
+      color: #663047;
     }
 
     .letter strong {
@@ -1045,9 +994,9 @@
     }
 
 
-    /* =====================================================
+    /* =========================================================
        REASONS
-    ===================================================== */
+    ========================================================= */
 
     .reasons {
       display: grid;
@@ -1058,16 +1007,15 @@
           minmax(220px, 1fr)
         );
 
-      gap: 16px;
+      gap: 15px;
+
+      position: relative;
+      z-index: 1;
     }
 
     .reason {
       background:
-        rgba(255,160,200,0.22);
-
-      border:
-        1px solid
-        rgba(255,255,255,0.65);
+        rgba(255,170,205,0.25);
 
       border-radius: 20px;
 
@@ -1077,11 +1025,13 @@
 
       line-height: 1.8;
 
+      border:
+        1px solid rgba(255,180,210,0.5);
+
       color: #743550;
 
       box-shadow:
-        0 7px 20px
-        rgba(170,70,110,0.07);
+        inset 0 1px 0 rgba(255,255,255,0.55);
 
       transition:
         transform 0.35s ease,
@@ -1091,95 +1041,69 @@
 
     .reason:hover {
       transform:
-        translateY(-6px);
+        translateY(-6px)
+        scale(1.015);
 
       background:
-        rgba(255,185,215,0.36);
+        rgba(255,180,215,0.38);
 
       box-shadow:
-        0 13px 28px
-        rgba(180,70,120,0.14);
+        0 12px 27px rgba(190,70,120,0.14);
     }
 
 
-    /* =====================================================
+    /* =========================================================
        PHOTOS
-    ===================================================== */
+    ========================================================= */
 
     .photos {
-      display: grid;
+      display: flex;
 
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(190px, 1fr)
-        );
+      flex-wrap: wrap;
 
-      gap: 27px;
+      justify-content: center;
+
+      align-items: flex-start;
+
+      gap: 30px;
 
       width: 100%;
 
-      align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
     .photo-card {
       position: relative;
+
+      width: fit-content;
+      height: fit-content;
 
       padding: 11px;
 
       background:
         linear-gradient(
           145deg,
-          rgba(255,255,255,0.96),
-          rgba(255,244,249,0.92)
+          rgba(255,255,255,0.95),
+          rgba(255,246,250,0.92)
         );
 
       border:
-        2px solid
-        rgba(241,157,190,0.75);
+        2px solid #f1abc6;
 
-      border-radius: 20px;
+      border-radius: 19px;
 
       box-shadow:
-        0 8px 24px
-        rgba(130,50,85,0.13),
-
-        0 0 0 4px
-        rgba(255,255,255,0.4);
+        0 8px 23px rgba(150,60,100,0.13),
+        0 0 0 4px rgba(255,255,255,0.55);
 
       transition:
-        transform 0.42s
-        cubic-bezier(.2,.8,.2,1),
-        box-shadow 0.42s ease;
-
-      cursor: pointer;
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.45s ease;
 
       overflow: visible;
-    }
 
-    .photo-card:nth-child(odd) {
-      transform: rotate(-1.2deg);
-    }
-
-    .photo-card:nth-child(even) {
-      transform: rotate(1.2deg);
-    }
-
-    .photo-card:hover {
-      transform:
-        translateY(-10px)
-        scale(1.035)
-        rotate(0deg);
-
-      box-shadow:
-        0 18px 38px
-        rgba(135,50,90,0.2),
-
-        0 0 0 5px
-        rgba(255,255,255,0.65),
-
-        0 0 25px
-        rgba(245,130,175,0.25);
+      cursor: pointer;
     }
 
     .photo-card::before {
@@ -1190,10 +1114,9 @@
       inset: 5px;
 
       border:
-        1px solid
-        rgba(255,255,255,0.9);
+        1px solid rgba(238,140,180,0.35);
 
-      border-radius: 15px;
+      border-radius: 14px;
 
       pointer-events: none;
 
@@ -1205,22 +1128,26 @@
 
       position: absolute;
 
-      right: -9px;
-
-      top: -13px;
+      right: -10px;
+      top: -12px;
 
       width: 27px;
-
       height: 27px;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       background:
-        #ffffff;
+        linear-gradient(
+          145deg,
+          #fff,
+          #fff2f7
+        );
+
+      border:
+        1px solid #f0b2ca;
 
       border-radius: 50%;
 
@@ -1229,159 +1156,174 @@
       font-size: 14px;
 
       box-shadow:
-        0 4px 10px
-        rgba(150,60,100,0.15);
+        0 4px 9px rgba(160,60,100,0.14);
 
       z-index: 3;
+    }
+
+    .photo-card:hover {
+      transform:
+        translateY(-10px)
+        scale(1.035)
+        rotate(0deg);
+
+      box-shadow:
+        0 18px 38px rgba(150,60,100,0.2),
+        0 0 0 5px rgba(255,255,255,0.7),
+        0 0 25px rgba(245,130,175,0.2);
+    }
+
+    .photo-card:nth-child(odd) {
+      transform: rotate(-1.3deg);
+    }
+
+    .photo-card:nth-child(even) {
+      transform: rotate(1.3deg);
+    }
+
+    .photo-card:nth-child(odd):hover,
+    .photo-card:nth-child(even):hover {
+      transform:
+        translateY(-10px)
+        scale(1.035)
+        rotate(0deg);
     }
 
     .photo-card img {
       display: block;
 
-      width: 100% !important;
+      width: auto !important;
+      height: auto !important;
 
-      height: 250px !important;
+      max-width: 230px !important;
+      max-height: 290px !important;
 
-      object-fit: cover;
+      object-fit: contain;
 
-      border-radius: 12px;
+      border-radius: 11px;
+
+      margin: 0;
 
       box-shadow:
-        0 4px 10px
-        rgba(130,50,80,0.12);
+        0 4px 10px rgba(150,60,100,0.12);
     }
 
 
-    /* =====================================================
+    /* =========================================================
        VOICE MESSAGE
-    ===================================================== */
+    ========================================================= */
 
     .voice {
+      position: relative;
+      z-index: 1;
+
       background:
         rgba(255,255,255,0.3);
 
-      padding: 22px;
+      padding: 23px;
 
       border-radius: 20px;
+
+      margin-top: 15px;
 
       color: #743550;
 
       border:
-        1px solid
-        rgba(255,190,215,0.4);
+        1px solid rgba(255,190,215,0.45);
 
       box-shadow:
-        inset 0 1px 0
-        rgba(255,255,255,0.7);
+        inset 0 1px 0 rgba(255,255,255,0.7);
     }
 
     .voice-title {
-      display: flex;
-
-      align-items: center;
-
-      gap: 10px;
+      font-weight: bold;
 
       font-size: 18px;
 
-      font-weight: bold;
+      margin-bottom: 8px;
     }
 
-    .sound-wave {
+    .audio-visual {
+      height: 45px;
+
       display: flex;
 
       align-items: center;
 
+      justify-content: center;
+
       gap: 4px;
 
-      margin-top: 14px;
-
-      height: 27px;
+      margin: 10px 0;
     }
 
-    .sound-wave span {
+    .audio-bar {
       width: 4px;
 
-      height: 10px;
-
-      border-radius: 10px;
+      border-radius: 5px;
 
       background:
-        #dc709a;
+        linear-gradient(
+          to top,
+          #d85c8d,
+          #f3a7c2
+        );
 
       animation:
-        soundWave
+        audioWave
         1s
         ease-in-out
-        infinite;
+        infinite alternate;
     }
 
-    .sound-wave span:nth-child(2) {
-      animation-delay: .1s;
-      height: 18px;
-    }
+    .audio-bar:nth-child(1) { height: 12px; animation-delay: .1s; }
+    .audio-bar:nth-child(2) { height: 25px; animation-delay: .25s; }
+    .audio-bar:nth-child(3) { height: 38px; animation-delay: .4s; }
+    .audio-bar:nth-child(4) { height: 20px; animation-delay: .15s; }
+    .audio-bar:nth-child(5) { height: 32px; animation-delay: .3s; }
+    .audio-bar:nth-child(6) { height: 16px; animation-delay: .5s; }
+    .audio-bar:nth-child(7) { height: 28px; animation-delay: .2s; }
+    .audio-bar:nth-child(8) { height: 40px; animation-delay: .35s; }
+    .audio-bar:nth-child(9) { height: 22px; animation-delay: .45s; }
+    .audio-bar:nth-child(10) { height: 13px; animation-delay: .15s; }
+    .audio-bar:nth-child(11) { height: 29px; animation-delay: .4s; }
 
-    .sound-wave span:nth-child(3) {
-      animation-delay: .2s;
-      height: 25px;
-    }
+    @keyframes audioWave {
 
-    .sound-wave span:nth-child(4) {
-      animation-delay: .3s;
-      height: 15px;
-    }
+      from {
+        transform: scaleY(0.55);
+        opacity: 0.65;
+      }
 
-    .sound-wave span:nth-child(5) {
-      animation-delay: .4s;
-      height: 21px;
-    }
-
-    .sound-wave span:nth-child(6) {
-      animation-delay: .5s;
-      height: 11px;
-    }
-
-    @keyframes soundWave {
-
-      50% {
-        transform:
-          scaleY(0.45);
-
-        opacity: 0.5;
+      to {
+        transform: scaleY(1);
+        opacity: 1;
       }
     }
 
     audio {
       width: 100%;
 
-      margin-top: 12px;
+      margin-top: 8px;
 
       accent-color: #d95b8b;
     }
 
 
-    /* =====================================================
-       FINAL
-    ===================================================== */
+    /* =========================================================
+       FINAL MESSAGE
+    ========================================================= */
 
     .final {
       text-align: center;
 
-      padding:
-        70px 25px;
+      padding: 70px 25px;
     }
 
     .final h2 {
-      font-size:
-        clamp(
-          27px,
-          5vw,
-          39px
-        );
+      font-size: 36px;
 
       color: #bd4778;
-
-      line-height: 1.5;
     }
 
     .final p {
@@ -1401,9 +1343,9 @@
     }
 
 
-    /* =====================================================
+    /* =========================================================
        FOOTER
-    ===================================================== */
+    ========================================================= */
 
     footer {
       text-align: center;
@@ -1414,73 +1356,29 @@
     }
 
 
-    /* =====================================================
+    /* =========================================================
        MOBILE
-    ===================================================== */
+    ========================================================= */
 
     @media (max-width: 600px) {
 
       .container {
         width: 91%;
-
-        padding-top: 35px;
+        padding: 30px 0;
       }
 
       section {
-        padding:
-          28px 20px;
-
+        padding: 25px 20px;
         border-radius: 23px;
-      }
-
-      .hero {
-        padding-top: 80px;
-      }
-
-      .birthday-arch {
-        top: -45px;
-
-        height: 135px;
-      }
-
-      .birthday-text {
-        font-size: 18px;
-
-        letter-spacing: 1.5px;
-      }
-
-      .subtitle {
-        font-size: 17px;
       }
 
       .letter {
         font-size: 17px;
-
         line-height: 2;
       }
 
-      .cake-wrapper {
-        transform:
-          scale(0.88);
-
-        margin-bottom: 5px;
-      }
-
-      .photos {
-        grid-template-columns:
-          1fr;
-
-        justify-items: center;
-      }
-
-      .photo-card {
-        width: min(100%, 300px);
-      }
-
-      .photo-card img {
-        height: auto !important;
-
-        max-height: 360px;
+      .subtitle {
+        font-size: 17px;
       }
 
       .final h2 {
@@ -1490,12 +1388,46 @@
       .final p {
         font-size: 18px;
       }
+
+      .birthday-arch {
+        top: -45px;
+        height: 140px;
+        padding-bottom: 15px;
+      }
+
+      .birthday-text {
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+
+      .hero {
+        padding-top: 90px;
+      }
+
+      .cake {
+        transform: scale(0.85);
+        margin-bottom: 10px;
+      }
+
+      .photos {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .photo-card {
+        max-width: 100%;
+      }
+
+      .photo-card img {
+        max-width: 245px !important;
+        max-height: 300px !important;
+      }
     }
 
 
-    /* =====================================================
-       REDUCE MOTION FOR ACCESSIBILITY
-    ===================================================== */
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -1503,10 +1435,9 @@
       *::before,
       *::after {
         animation-duration: 0.01ms !important;
-
         animation-iteration-count: 1 !important;
-
         scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
       }
     }
 
@@ -1518,50 +1449,51 @@
 <body>
 
 
-  <!-- =====================================================
-       SEMI-TRANSPARENT MUSIC VIBE
-  ===================================================== -->
+  <!-- =======================================================
+       SUBTLE MUSIC VIBE
+  ======================================================= -->
 
   <div class="music-vibe">
 
-    <div class="music-note" style="left:4%; animation-delay:0s;">♪</div>
-    <div class="music-note" style="left:10%; animation-delay:4s;">♫</div>
-    <div class="music-note" style="left:18%; animation-delay:1s;">♪</div>
-    <div class="music-note" style="left:27%; animation-delay:6s;">♩</div>
-    <div class="music-note" style="left:36%; animation-delay:2s;">♫</div>
-    <div class="music-note" style="left:46%; animation-delay:7s;">♪</div>
-    <div class="music-note" style="left:56%; animation-delay:3s;">♬</div>
-    <div class="music-note" style="left:66%; animation-delay:8s;">♪</div>
-    <div class="music-note" style="left:75%; animation-delay:2.5s;">♫</div>
-    <div class="music-note" style="left:84%; animation-delay:5s;">♩</div>
-    <div class="music-note" style="left:93%; animation-delay:7.5s;">♪</div>
+    <div class="music-note">♪</div>
+    <div class="music-note">♫</div>
+    <div class="music-note">♪</div>
+    <div class="music-note">♬</div>
+    <div class="music-note">♫</div>
+    <div class="music-note">♪</div>
+    <div class="music-note">♩</div>
 
   </div>
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        FLOATING HEARTS
-  ===================================================== -->
+  ======================================================= -->
 
   <div class="hearts">
 
     <div class="heart" style="left:3%; animation-delay:0s;">♥</div>
-    <div class="heart" style="left:12%; animation-delay:4s;">♥</div>
-    <div class="heart" style="left:21%; animation-delay:1s;">♥</div>
-    <div class="heart" style="left:31%; animation-delay:6s;">♥</div>
-    <div class="heart" style="left:42%; animation-delay:2s;">♥</div>
-    <div class="heart" style="left:53%; animation-delay:7s;">♥</div>
-    <div class="heart" style="left:64%; animation-delay:3s;">♥</div>
-    <div class="heart" style="left:75%; animation-delay:8s;">♥</div>
-    <div class="heart" style="left:86%; animation-delay:5s;">♥</div>
-    <div class="heart" style="left:95%; animation-delay:2.5s;">♥</div>
+    <div class="heart" style="left:8%; animation-delay:4s;">♥</div>
+    <div class="heart" style="left:14%; animation-delay:1s;">♥</div>
+    <div class="heart" style="left:20%; animation-delay:6s;">♥</div>
+    <div class="heart" style="left:27%; animation-delay:2s;">♥</div>
+    <div class="heart" style="left:34%; animation-delay:7s;">♥</div>
+    <div class="heart" style="left:41%; animation-delay:3s;">♥</div>
+    <div class="heart" style="left:48%; animation-delay:8s;">♥</div>
+    <div class="heart" style="left:55%; animation-delay:1.5s;">♥</div>
+    <div class="heart" style="left:62%; animation-delay:5s;">♥</div>
+    <div class="heart" style="left:69%; animation-delay:2.5s;">♥</div>
+    <div class="heart" style="left:76%; animation-delay:6.5s;">♥</div>
+    <div class="heart" style="left:83%; animation-delay:3.5s;">♥</div>
+    <div class="heart" style="left:89%; animation-delay:7.5s;">♥</div>
+    <div class="heart" style="left:95%; animation-delay:4.5s;">♥</div>
 
   </div>
 
 
-  <!-- =====================================================
-       HAPPY BIRTHDAY HEADER
-  ===================================================== -->
+  <!-- =======================================================
+       BIRTHDAY HEADER
+  ======================================================= -->
 
   <div class="birthday-arch">
 
@@ -1582,67 +1514,32 @@
     <div class="hero">
 
 
-      <!-- REALISTIC CAKE -->
+      <!-- REALISTIC-STYLE 16 CAKE -->
 
-      <div class="cake-wrapper">
+      <div class="cake">
 
-        <div class="cake-shadow"></div>
+        <div class="flame one"></div>
+        <div class="flame six"></div>
 
-        <div class="cake">
+        <div class="candle one"></div>
+        <div class="candle six"></div>
 
+        <div class="berry b1"></div>
+        <div class="berry b2"></div>
+        <div class="berry b3"></div>
+        <div class="berry b4"></div>
 
-          <!-- FLAMES -->
-
-          <div class="flame one"></div>
-          <div class="flame six"></div>
-
-
-          <!-- CANDLES -->
-
-          <div class="candle one"></div>
-          <div class="candle six"></div>
-
-
-          <!-- CAKE NUMBER -->
-
-          <div class="age">
-            16
-          </div>
-
-
-          <!-- DECORATIONS -->
-
-          <div class="cake-decoration"></div>
-
-
-          <!-- TOP -->
-
-          <div class="cake-top"></div>
-
-
-          <!-- FROSTING -->
-
-          <div class="cake-frosting">
-
-            <div class="frost-drip drip1"></div>
-            <div class="frost-drip drip2"></div>
-            <div class="frost-drip drip3"></div>
-            <div class="frost-drip drip4"></div>
-
-          </div>
-
-
-          <!-- CAKE BODY -->
-
-          <div class="cake-bottom"></div>
-
-
-          <!-- PLATE -->
-
-          <div class="cake-plate"></div>
-
-
+        <div class="age">
+          16
         </div>
+
+        <div class="cake-top"></div>
+
+        <div class="cake-frosting"></div>
+
+        <div class="cake-bottom"></div>
+
+        <div class="cake-plate"></div>
 
       </div>
 
@@ -1796,8 +1693,6 @@
       <div class="photos">
 
 
-        <!-- PHOTO 1 -->
-
         <div class="photo-card">
           <img
             src="photo1.jpeg"
@@ -1806,8 +1701,6 @@
           >
         </div>
 
-
-        <!-- PHOTO 2 -->
 
         <div class="photo-card">
           <img
@@ -1818,8 +1711,6 @@
         </div>
 
 
-        <!-- PHOTO 3 -->
-
         <div class="photo-card">
           <img
             src="photo3.jpeg"
@@ -1828,8 +1719,6 @@
           >
         </div>
 
-
-        <!-- PHOTO 4 -->
 
         <div class="photo-card">
           <img
@@ -1840,8 +1729,6 @@
         </div>
 
 
-        <!-- PHOTO 5 -->
-
         <div class="photo-card">
           <img
             src="photo5.jpeg"
@@ -1851,8 +1738,6 @@
         </div>
 
 
-        <!-- PHOTO 6 -->
-
         <div class="photo-card">
           <img
             src="photo6.jpeg"
@@ -1861,8 +1746,6 @@
           >
         </div>
 
-
-        <!-- PHOTO 7 -->
 
         <div class="photo-card">
           <img
@@ -1892,34 +1775,40 @@
       <div class="voice">
 
         <div class="voice-title">
-          🎧 رسالة مخصوص ليكي ❤️
+          رسالة مخصوص ليكي ❤️
+        </div>
+
+        <div>
+          اضغطي تشغيل واسمعيها يا silly 🎀
         </div>
 
 
-        <!-- LITTLE MUSIC VISUAL -->
+        <div class="audio-visual">
 
-        <div class="sound-wave">
-
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
 
         </div>
 
 
-        <!--
-          IMPORTANT:
-          The GitHub file is named Voice3.oga
-          with a CAPITAL V.
+        <!-- IMPORTANT:
+             The GitHub repository contains Voice3.oga
+             with a capital V, so the filename MUST match exactly.
         -->
 
         <audio controls preload="metadata">
 
           <source
-            src="Voice3.oga"
+            src="./Voice3.oga"
             type="audio/ogg"
           >
 
@@ -1964,10 +1853,6 @@
 
     </section>
 
-
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
 
     <footer>
 
