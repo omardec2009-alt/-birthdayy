@@ -27,25 +27,21 @@
           rgba(255,255,255,0.8),
           transparent 22%
         ),
-
         radial-gradient(
           circle at 90% 20%,
           rgba(255,205,225,0.75),
           transparent 28%
         ),
-
         radial-gradient(
           circle at 20% 80%,
           rgba(255,190,215,0.7),
           transparent 25%
         ),
-
         radial-gradient(
           circle at 80% 90%,
           rgba(255,225,235,0.8),
           transparent 30%
         ),
-
         linear-gradient(
           135deg,
           #ffe5ef,
@@ -60,7 +56,7 @@
 
 
     /* =====================================
-       HAPPY BIRTHDAY HALF CIRCLE
+       HAPPY BIRTHDAY TEXT
     ===================================== */
 
     .birthday-arch {
@@ -74,23 +70,19 @@
       width: min(700px, 90vw);
       height: 210px;
 
-      background: rgba(255, 255, 255, 0.30);
+      /* No background */
+      background: transparent;
 
-      border: 1px solid rgba(255,255,255,0.55);
+      border: none;
 
-      border-radius: 0 0 350px 350px;
-
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-
-      box-shadow:
-        0 10px 35px rgba(190, 70, 120, 0.10),
-        inset 0 1px 0 rgba(255,255,255,0.6);
+      box-shadow: none;
 
       z-index: 2;
 
       display: flex;
+
       align-items: flex-end;
+
       justify-content: center;
 
       padding-bottom: 22px;
@@ -99,17 +91,19 @@
     }
 
     .birthday-text {
-      color: rgba(255, 255, 255, 0.90);
+      color: rgba(255, 255, 255, 0.42);
 
-      font-size: clamp(20px, 4vw, 38px);
+      font-size:
+        clamp(20px, 4vw, 38px);
 
       font-weight: bold;
 
       letter-spacing: 3px;
 
       text-shadow:
-        0 2px 8px rgba(170, 60, 100, 0.25),
-        0 0 15px rgba(255,255,255,0.35);
+        0 2px 8px rgba(170, 60, 100, 0.12);
+
+      opacity: 0.75;
     }
 
 
@@ -119,6 +113,7 @@
 
     .hearts {
       position: fixed;
+
       inset: 0;
 
       pointer-events: none;
@@ -144,7 +139,8 @@
 
       filter:
         drop-shadow(
-          0 3px 5px rgba(190, 60, 110, 0.2)
+          0 3px 5px
+          rgba(190, 60, 110, 0.2)
         );
     }
 
@@ -224,7 +220,8 @@
 
       filter:
         drop-shadow(
-          0 5px 8px rgba(160, 50, 90, 0.15)
+          0 5px 8px
+          rgba(160, 50, 90, 0.15)
         );
 
       animation:
@@ -291,8 +288,7 @@
 
     @keyframes flowerFloat {
 
-      0%,
-      100% {
+      0%, 100% {
         transform:
           translateY(0)
           rotate(-10deg);
@@ -345,7 +341,7 @@
 
 
     /* =====================================
-       WHITE CAKE
+       WHITE CAKE WITH PINK TOPPING
     ===================================== */
 
     .cake {
@@ -361,21 +357,25 @@
 
       filter:
         drop-shadow(
-          0 8px 12px rgba(170, 60, 100, 0.15)
+          0 8px 12px
+          rgba(170, 60, 100, 0.15)
         );
     }
 
-    /* Cake plate */
+    /* White plate */
 
     .cake-plate {
       position: absolute;
 
       bottom: 0;
+
       left: 50%;
 
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%);
 
       width: 100px;
+
       height: 12px;
 
       background: #ffffff;
@@ -383,59 +383,79 @@
       border-radius: 50%;
 
       box-shadow:
-        0 4px 8px rgba(170,60,100,0.15);
+        0 4px 8px
+        rgba(170,60,100,0.15);
     }
 
-    /* Bottom cake layer */
+
+    /* White cake */
 
     .cake-bottom {
       position: absolute;
 
       bottom: 9px;
+
       left: 50%;
 
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%);
 
       width: 75px;
+
       height: 38px;
 
       background:
         linear-gradient(
           to bottom,
           #ffffff,
-          #f8edf2
+          #fff7fa
         );
 
-      border-radius: 8px 8px 12px 12px;
+      border-radius:
+        8px 8px 12px 12px;
 
-      border: 2px solid rgba(255,255,255,0.9);
+      border:
+        2px solid
+        rgba(255,255,255,0.95);
 
       box-shadow:
-        inset 0 -6px 0 rgba(235,190,210,0.25);
+        inset 0 -6px 0
+        rgba(235,190,210,0.20);
     }
 
-    /* Cake frosting */
+
+    /* Pink frosting */
 
     .cake-frosting {
       position: absolute;
 
       bottom: 38px;
+
       left: 50%;
 
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%);
 
-      width: 80px;
+      width: 82px;
+
       height: 22px;
 
-      background: #ffffff;
+      background:
+        linear-gradient(
+          to bottom,
+          #ff9fc3,
+          #f47fa9
+        );
 
       border-radius: 50%;
 
       box-shadow:
-        0 4px 5px rgba(180,80,120,0.12);
+        0 4px 6px
+        rgba(190,70,120,0.15);
     }
 
-    /* Frosting drip */
+
+    /* Pink frosting drip */
 
     .cake-frosting::after {
       content: "";
@@ -443,16 +463,19 @@
       position: absolute;
 
       left: 10px;
+
       bottom: -8px;
 
       width: 12px;
+
       height: 14px;
 
-      background: #ffffff;
+      background: #f47fa9;
 
       border-radius:
         0 0 10px 10px;
     }
+
 
     /* Candle */
 
@@ -463,24 +486,24 @@
 
       bottom: 58px;
 
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%);
 
       width: 9px;
+
       height: 25px;
 
       background:
         linear-gradient(
           to right,
           #ffffff,
-          #f5dce7,
+          #f8dce8,
           #ffffff
         );
 
       border-radius: 3px;
-
-      box-shadow:
-        0 2px 5px rgba(150,60,100,0.15);
     }
+
 
     /* Flame */
 
@@ -495,6 +518,7 @@
         translateX(-50%);
 
       width: 13px;
+
       height: 18px;
 
       background:
@@ -505,15 +529,16 @@
           #ff9fba 80%
         );
 
-      border-radius:
-        50% 50% 50% 50%;
+      border-radius: 50%;
 
       animation:
-        flame 0.8s ease-in-out infinite alternate;
+        flame 0.8s ease-in-out
+        infinite alternate;
 
       filter:
         drop-shadow(
-          0 0 8px rgba(255,190,100,0.7)
+          0 0 8px
+          rgba(255,190,100,0.7)
         );
     }
 
@@ -535,8 +560,7 @@
 
     @keyframes bounce {
 
-      0%,
-      100% {
+      0%, 100% {
         transform:
           translateY(0);
       }
@@ -559,7 +583,8 @@
       color: #c94f80;
 
       text-shadow:
-        0 0 25px rgba(255, 120, 180, 0.35);
+        0 0 25px
+        rgba(255, 120, 180, 0.35);
 
       margin-bottom: 15px;
     }
@@ -600,7 +625,8 @@
         rgba(255, 255, 255, 0.42);
 
       border:
-        1px solid rgba(255, 255, 255, 0.7);
+        1px solid
+        rgba(255, 255, 255, 0.7);
 
       backdrop-filter:
         blur(14px);
@@ -615,7 +641,8 @@
       margin: 30px 0;
 
       box-shadow:
-        0 15px 50px rgba(180, 70, 120, 0.13),
+        0 15px 50px
+        rgba(180, 70, 120, 0.13),
 
         inset 0 1px 0
         rgba(255,255,255,0.6);
@@ -681,8 +708,7 @@
 
       color: #743550;
 
-      transition:
-        0.3s ease;
+      transition: 0.3s ease;
     }
 
     .reason:hover {
@@ -711,42 +737,44 @@
 
       align-items: flex-start;
 
-      gap: 25px;
+      gap: 20px;
 
       width: 100%;
     }
+
+
+    /* Each photo keeps its own natural shape */
 
     .photo-card {
       background:
         rgba(255, 255, 255, 0.55);
 
-      padding: 10px;
+      padding: 8px;
 
-      border-radius: 20px;
+      border-radius: 18px;
 
       box-shadow:
         0 10px 25px
         rgba(180, 70, 120, 0.15);
 
-      transition:
-        0.3s ease;
+      transition: 0.3s ease;
 
       width: fit-content;
 
       max-width: 100%;
-
-      overflow: hidden;
     }
 
     .photo-card:hover {
       transform:
-        translateY(-6px)
-        rotate(1deg);
+        translateY(-5px);
 
       box-shadow:
         0 15px 35px
         rgba(180, 70, 120, 0.22);
     }
+
+
+    /* Natural image dimensions */
 
     .photo-card img {
       display: block;
@@ -757,40 +785,11 @@
 
       max-width: 100%;
 
-      border-radius: 15px;
-
-      image-rendering: auto;
-
-      -webkit-font-smoothing:
-        antialiased;
-
-      backface-visibility:
-        hidden;
+      border-radius: 12px;
     }
 
 
-    /* =====================================
-       PHOTO 2 - SIDEWAYS
-    ===================================== */
-
-    .sideways-photo {
-      transform:
-        rotate(90deg);
-
-      margin:
-        80px 55px;
-    }
-
-    .sideways-photo:hover {
-      transform:
-        rotate(90deg)
-        translateY(-6px);
-    }
-
-
-    /* =====================================
-       THIRD PHOTO PLACEHOLDER
-    ===================================== */
+    /* Third photo placeholder */
 
     .photo-placeholder {
       min-width: 220px;
@@ -799,7 +798,7 @@
 
       padding: 30px;
 
-      border-radius: 20px;
+      border-radius: 18px;
 
       background:
         linear-gradient(
@@ -822,8 +821,7 @@
         2px dashed
         rgba(195, 79, 125, 0.4);
 
-      transition:
-        0.3s ease;
+      transition: 0.3s ease;
     }
 
     .photo-placeholder:hover {
@@ -918,7 +916,8 @@
       }
 
       section {
-        padding: 25px 20px;
+        padding:
+          25px 20px;
       }
 
       .letter {
@@ -945,7 +944,7 @@
       }
 
 
-      /* Birthday arch */
+      /* Birthday text */
 
       .birthday-arch {
         width: 105vw;
@@ -953,9 +952,6 @@
         height: 160px;
 
         top: -75px;
-
-        border-radius:
-          0 0 50% 50%;
 
         padding-bottom: 18px;
       }
@@ -980,8 +976,6 @@
         flex-direction: column;
 
         align-items: center;
-
-        gap: 30px;
       }
 
       .photo-card {
@@ -998,21 +992,6 @@
         max-width: 100%;
       }
 
-
-      /*
-        On mobile, keep the sideways
-        photo sideways but prevent it
-        from causing horizontal overflow.
-      */
-
-      .sideways-photo {
-        max-width: 85vw;
-
-        margin:
-          70px auto;
-      }
-
-
       .photo-placeholder {
         width: 100%;
       }
@@ -1027,7 +1006,7 @@
 
 
 <!-- =====================================
-     HAPPY BIRTHDAY ARCH
+     HAPPY BIRTHDAY TEXT
 ===================================== -->
 
 <div class="birthday-arch">
@@ -1045,80 +1024,35 @@
 
 <div class="hearts">
 
-  <div class="heart"
-       style="left:3%; animation-delay:0s;">
-    ♥
-  </div>
+  <div class="heart" style="left:3%; animation-delay:0s;">♥</div>
 
-  <div class="heart"
-       style="left:8%; animation-delay:4s;">
-    ♥
-  </div>
+  <div class="heart" style="left:8%; animation-delay:4s;">♥</div>
 
-  <div class="heart"
-       style="left:14%; animation-delay:1s;">
-    ♥
-  </div>
+  <div class="heart" style="left:14%; animation-delay:1s;">♥</div>
 
-  <div class="heart"
-       style="left:20%; animation-delay:6s;">
-    ♥
-  </div>
+  <div class="heart" style="left:20%; animation-delay:6s;">♥</div>
 
-  <div class="heart"
-       style="left:27%; animation-delay:2s;">
-    ♥
-  </div>
+  <div class="heart" style="left:27%; animation-delay:2s;">♥</div>
 
-  <div class="heart"
-       style="left:34%; animation-delay:7s;">
-    ♥
-  </div>
+  <div class="heart" style="left:34%; animation-delay:7s;">♥</div>
 
-  <div class="heart"
-       style="left:41%; animation-delay:3s;">
-    ♥
-  </div>
+  <div class="heart" style="left:41%; animation-delay:3s;">♥</div>
 
-  <div class="heart"
-       style="left:48%; animation-delay:8s;">
-    ♥
-  </div>
+  <div class="heart" style="left:48%; animation-delay:8s;">♥</div>
 
-  <div class="heart"
-       style="left:55%; animation-delay:1.5s;">
-    ♥
-  </div>
+  <div class="heart" style="left:55%; animation-delay:1.5s;">♥</div>
 
-  <div class="heart"
-       style="left:62%; animation-delay:5s;">
-    ♥
-  </div>
+  <div class="heart" style="left:62%; animation-delay:5s;">♥</div>
 
-  <div class="heart"
-       style="left:69%; animation-delay:2.5s;">
-    ♥
-  </div>
+  <div class="heart" style="left:69%; animation-delay:2.5s;">♥</div>
 
-  <div class="heart"
-       style="left:76%; animation-delay:6.5s;">
-    ♥
-  </div>
+  <div class="heart" style="left:76%; animation-delay:6.5s;">♥</div>
 
-  <div class="heart"
-       style="left:83%; animation-delay:3.5s;">
-    ♥
-  </div>
+  <div class="heart" style="left:83%; animation-delay:3.5s;">♥</div>
 
-  <div class="heart"
-       style="left:89%; animation-delay:7.5s;">
-    ♥
-  </div>
+  <div class="heart" style="left:89%; animation-delay:7.5s;">♥</div>
 
-  <div class="heart"
-       style="left:95%; animation-delay:4.5s;">
-    ♥
-  </div>
+  <div class="heart" style="left:95%; animation-delay:4.5s;">♥</div>
 
 </div>
 
@@ -1129,29 +1063,17 @@
 
 <div class="carnations">
 
-  <div class="carnation">
-    🌸
-  </div>
+  <div class="carnation">🌸</div>
 
-  <div class="carnation">
-    🌸
-  </div>
+  <div class="carnation">🌸</div>
 
-  <div class="carnation">
-    🌸
-  </div>
+  <div class="carnation">🌸</div>
 
-  <div class="carnation">
-    🌸
-  </div>
+  <div class="carnation">🌸</div>
 
-  <div class="carnation">
-    🌸
-  </div>
+  <div class="carnation">🌸</div>
 
-  <div class="carnation">
-    🌸
-  </div>
+  <div class="carnation">🌸</div>
 
 </div>
 
@@ -1204,7 +1126,6 @@
       ↓ SCROLL DOWN SILLY ↓
 
     </div>
-
 
   </div>
 
@@ -1295,39 +1216,32 @@
 
     <div class="reasons">
 
-
       <div class="reason">
         UR CUTIE GIGGLE WHEN UR SHY❤️
       </div>
-
 
       <div class="reason">
         Ur accent duhh 🥹
       </div>
 
-
       <div class="reason">
         fulffy...........
       </div>
-
 
       <div class="reason">
         of course ur prettyness cuteness
         adorabolness and loyalty✨
       </div>
 
-
       <div class="reason">
         UR GIFTSSSS 🤍
       </div>
-
 
       <div class="reason">
         AND DEF MUCH MUCH MORE BUT IT WILL
         BE PAIN IF I WRITE A CODE FOR EACH ONE
         SICHHHH ❤️
       </div>
-
 
     </div>
 
@@ -1340,7 +1254,6 @@
 
   <section>
 
-
     <h2>
       📸 Some of my fav memories with u :D
     </h2>
@@ -1349,9 +1262,7 @@
     <div class="photos">
 
 
-      <!-- ================================
-           PHOTO 1
-      ================================= -->
+      <!-- PHOTO 1 -->
 
       <div class="photo-card">
 
@@ -1363,11 +1274,9 @@
       </div>
 
 
-      <!-- ================================
-           PHOTO 2 - SIDEWAYS
-      ================================= -->
+      <!-- PHOTO 2 -->
 
-      <div class="photo-card sideways-photo">
+      <div class="photo-card">
 
         <img
           src="photo2.jpeg"
@@ -1377,9 +1286,7 @@
       </div>
 
 
-      <!-- ================================
-           PHOTO 3
-      ================================= -->
+      <!-- PHOTO 3 -->
 
       <div class="photo-placeholder">
 
@@ -1403,7 +1310,6 @@
 
   <section>
 
-
     <h2>
       🎙️ رسالة بصوتي
     </h2>
@@ -1411,20 +1317,9 @@
 
     <div class="voice">
 
-
       <div>
         رسالة مخصوص ليكي ❤️
       </div>
-
-
-      <!--
-        بعدين هنضيف تسجيلك هنا:
-
-        <audio
-          controls
-          src="audio/message.mp3">
-        </audio>
-      -->
 
 
       <p
@@ -1433,11 +1328,8 @@
           color:#9b5573;
         "
       >
-
         🎙️ التسجيل بتاعك هيكون هنا
-
       </p>
-
 
     </div>
 
@@ -1449,7 +1341,6 @@
   ===================================== -->
 
   <section class="final">
-
 
     <h2>
 
@@ -1466,9 +1357,7 @@
 
 
     <p>
-
       ❤️ بحبك يا حوراء
-
     </p>
 
 
@@ -1480,13 +1369,8 @@
 
     </div>
 
-
   </section>
 
-
-  <!-- =====================================
-       FOOTER
-  ===================================== -->
 
   <footer>
 
