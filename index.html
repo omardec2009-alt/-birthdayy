@@ -26,10 +26,10 @@
       color: #6d304d;
 
       background:
-        radial-gradient(circle at 12% 10%, rgba(255,255,255,0.95), transparent 25%),
-        radial-gradient(circle at 90% 18%, rgba(255,220,235,0.9), transparent 30%),
-        radial-gradient(circle at 15% 85%, rgba(255,195,220,0.8), transparent 28%),
-        radial-gradient(circle at 85% 88%, rgba(255,240,246,0.9), transparent 30%),
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.95), transparent 24%),
+        radial-gradient(circle at 90% 15%, rgba(255,220,235,0.75), transparent 28%),
+        radial-gradient(circle at 15% 85%, rgba(255,195,220,0.65), transparent 28%),
+        radial-gradient(circle at 85% 80%, rgba(255,240,246,0.85), transparent 30%),
         linear-gradient(135deg, #ffeaf2 0%, #ffd4e3 45%, #f6b8d0 100%);
 
       background-attachment: fixed;
@@ -43,21 +43,20 @@
       z-index: -2;
 
       background:
-        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.3), transparent 20%),
-        radial-gradient(circle at 70% 65%, rgba(255,140,190,0.13), transparent 25%),
-        radial-gradient(circle at 50% 100%, rgba(255,255,255,0.2), transparent 30%);
+        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.28), transparent 20%),
+        radial-gradient(circle at 70% 65%, rgba(255,140,190,0.13), transparent 25%);
 
-      animation: ambientGlow 12s ease-in-out infinite alternate;
+      animation: ambientGlow 10s ease-in-out infinite alternate;
     }
 
     @keyframes ambientGlow {
       from {
-        transform: scale(1) translate(0, 0);
-        opacity: 0.65;
+        transform: scale(1);
+        opacity: 0.7;
       }
 
       to {
-        transform: scale(1.1) translate(1%, -1%);
+        transform: scale(1.08);
         opacity: 1;
       }
     }
@@ -65,6 +64,7 @@
 
     /* =========================================================
        CALM MUSIC-LIKE BACKGROUND
+       No actual music — only gentle visual movement.
     ========================================================= */
 
     .music-vibe {
@@ -73,170 +73,80 @@
       pointer-events: none;
       z-index: 0;
       overflow: hidden;
-      opacity: 0.45;
-    }
-
-    .music-orb {
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(255,255,255,0.34) 0%,
-          rgba(255,190,220,0.16) 35%,
-          transparent 70%
-        );
-
-      filter: blur(12px);
-      animation: orbDrift 16s ease-in-out infinite alternate;
-    }
-
-    .orb1 {
-      left: -80px;
-      top: 12%;
-    }
-
-    .orb2 {
-      right: -100px;
-      top: 35%;
-      width: 320px;
-      height: 320px;
-      animation-delay: -5s;
-      animation-duration: 19s;
-    }
-
-    .orb3 {
-      left: 28%;
-      bottom: -130px;
-      width: 360px;
-      height: 360px;
-      animation-delay: -8s;
-      animation-duration: 21s;
-    }
-
-    @keyframes orbDrift {
-      0% {
-        transform: translate3d(-20px, 20px, 0) scale(0.9);
-      }
-
-      50% {
-        transform: translate3d(40px, -35px, 0) scale(1.08);
-      }
-
-      100% {
-        transform: translate3d(-15px, -60px, 0) scale(0.96);
-      }
-    }
-
-    .sound-wave {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-
-      width: 90vw;
-      max-width: 900px;
-      height: 180px;
-
-      transform: translate(-50%, -50%);
-      opacity: 0.17;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-
-      filter: blur(0.2px);
-    }
-
-    .sound-bar {
-      width: 4px;
-      min-height: 20px;
-      border-radius: 50px;
-
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(255,255,255,0.9),
-          rgba(214,91,142,0.65),
-          rgba(255,255,255,0.8)
-        );
-
-      animation: gentleWave 3.5s ease-in-out infinite;
-    }
-
-    .sound-bar:nth-child(1) { height: 34px; animation-delay: -1.2s; }
-    .sound-bar:nth-child(2) { height: 55px; animation-delay: -0.8s; }
-    .sound-bar:nth-child(3) { height: 78px; animation-delay: -1.7s; }
-    .sound-bar:nth-child(4) { height: 110px; animation-delay: -0.4s; }
-    .sound-bar:nth-child(5) { height: 70px; animation-delay: -2s; }
-    .sound-bar:nth-child(6) { height: 125px; animation-delay: -1s; }
-    .sound-bar:nth-child(7) { height: 88px; animation-delay: -2.3s; }
-    .sound-bar:nth-child(8) { height: 135px; animation-delay: -0.6s; }
-    .sound-bar:nth-child(9) { height: 92px; animation-delay: -1.4s; }
-    .sound-bar:nth-child(10) { height: 115px; animation-delay: -2.1s; }
-    .sound-bar:nth-child(11) { height: 73px; animation-delay: -0.9s; }
-    .sound-bar:nth-child(12) { height: 125px; animation-delay: -1.8s; }
-    .sound-bar:nth-child(13) { height: 85px; animation-delay: -0.3s; }
-    .sound-bar:nth-child(14) { height: 58px; animation-delay: -1.5s; }
-    .sound-bar:nth-child(15) { height: 35px; animation-delay: -2.4s; }
-
-    @keyframes gentleWave {
-      0%, 100% {
-        transform: scaleY(0.45);
-        opacity: 0.45;
-      }
-
-      50% {
-        transform: scaleY(1);
-        opacity: 0.95;
-      }
+      opacity: 0.34;
     }
 
     .music-note {
       position: absolute;
-      color: rgba(255,255,255,0.58);
-      font-size: 23px;
-      text-shadow: 0 0 15px rgba(214,75,130,0.3);
+      bottom: -60px;
+
+      color: rgba(255,255,255,0.72);
+
+      font-size: 25px;
+
+      text-shadow:
+        0 0 12px rgba(214,75,130,0.22),
+        0 0 25px rgba(255,255,255,0.5);
+
       animation: musicFloat linear infinite;
     }
 
-    .music-note:nth-child(17) {
-      left: 8%;
+    .music-note:nth-child(1) {
+      left: 5%;
       animation-duration: 15s;
+      animation-delay: -2s;
     }
 
-    .music-note:nth-child(18) {
-      left: 25%;
-      animation-duration: 19s;
-      animation-delay: -5s;
+    .music-note:nth-child(2) {
+      left: 18%;
+      animation-duration: 18s;
+      animation-delay: -7s;
+      font-size: 19px;
     }
 
-    .music-note:nth-child(19) {
-      left: 45%;
-      animation-duration: 16s;
-      animation-delay: -9s;
+    .music-note:nth-child(3) {
+      left: 31%;
+      animation-duration: 14s;
+      animation-delay: -4s;
+      font-size: 29px;
     }
 
-    .music-note:nth-child(20) {
-      left: 67%;
-      animation-duration: 21s;
-      animation-delay: -3s;
-    }
-
-    .music-note:nth-child(21) {
-      left: 87%;
-      animation-duration: 17s;
+    .music-note:nth-child(4) {
+      left: 46%;
+      animation-duration: 20s;
       animation-delay: -11s;
+      font-size: 21px;
+    }
+
+    .music-note:nth-child(5) {
+      left: 62%;
+      animation-duration: 16s;
+      animation-delay: -5s;
+      font-size: 27px;
+    }
+
+    .music-note:nth-child(6) {
+      left: 76%;
+      animation-duration: 19s;
+      animation-delay: -9s;
+      font-size: 20px;
+    }
+
+    .music-note:nth-child(7) {
+      left: 90%;
+      animation-duration: 15s;
+      animation-delay: -13s;
+      font-size: 28px;
     }
 
     @keyframes musicFloat {
       0% {
-        bottom: -60px;
+        bottom: -70px;
         opacity: 0;
-        transform: translateX(0) rotate(-10deg) scale(0.7);
+        transform:
+          translateX(0)
+          rotate(-10deg)
+          scale(0.7);
       }
 
       15% {
@@ -244,13 +154,76 @@
       }
 
       50% {
-        transform: translateX(35px) rotate(10deg) scale(1);
+        transform:
+          translateX(35px)
+          rotate(10deg)
+          scale(1);
       }
 
       100% {
         bottom: 110%;
         opacity: 0;
-        transform: translateX(-35px) rotate(-10deg) scale(0.8);
+        transform:
+          translateX(-35px)
+          rotate(-10deg)
+          scale(0.8);
+      }
+    }
+
+
+    /* =========================================================
+       SOFT ORBS / VIBE
+    ========================================================= */
+
+    .ambient-orbs {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(35px);
+      opacity: 0.25;
+      animation: orbMove 14s ease-in-out infinite alternate;
+    }
+
+    .orb.one {
+      width: 180px;
+      height: 180px;
+      background: #ffffff;
+      left: 5%;
+      top: 30%;
+    }
+
+    .orb.two {
+      width: 240px;
+      height: 240px;
+      background: #f49fc3;
+      right: 2%;
+      top: 55%;
+      animation-delay: -5s;
+    }
+
+    .orb.three {
+      width: 150px;
+      height: 150px;
+      background: #fff8fb;
+      left: 45%;
+      bottom: 5%;
+      animation-delay: -8s;
+    }
+
+    @keyframes orbMove {
+      from {
+        transform: translate(0, 0) scale(1);
+      }
+
+      to {
+        transform: translate(35px, -25px) scale(1.15);
       }
     }
 
@@ -270,7 +243,9 @@
     .heart {
       position: absolute;
       bottom: -60px;
-      color: rgba(220,80,130,0.35);
+
+      color: rgba(220,80,130,0.25);
+
       font-size: 20px;
 
       animation:
@@ -279,11 +254,14 @@
         linear
         infinite;
 
-      filter: drop-shadow(0 3px 6px rgba(190,60,110,0.12));
+      filter:
+        drop-shadow(
+          0 3px 6px rgba(190,60,110,0.12)
+        );
     }
 
     .heart:nth-child(2n) {
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.45);
       font-size: 27px;
     }
 
@@ -293,20 +271,34 @@
 
     @keyframes floatHeart {
       0% {
-        transform: translateY(0) translateX(0) rotate(0deg) scale(0.7);
+        transform:
+          translateY(0)
+          translateX(0)
+          rotate(0deg)
+          scale(0.7);
+
         opacity: 0;
       }
 
       15% {
-        opacity: 0.65;
+        opacity: 0.55;
       }
 
       50% {
-        transform: translateY(-55vh) translateX(35px) rotate(180deg) scale(1);
+        transform:
+          translateY(-55vh)
+          translateX(35px)
+          rotate(180deg)
+          scale(1);
       }
 
       100% {
-        transform: translateY(-115vh) translateX(-35px) rotate(360deg) scale(0.8);
+        transform:
+          translateY(-115vh)
+          translateX(-35px)
+          rotate(360deg)
+          scale(0.8);
+
         opacity: 0;
       }
     }
@@ -318,8 +310,10 @@
 
     .birthday-arch {
       position: absolute;
+
       top: -45px;
       left: 50%;
+
       transform: translateX(-50%);
 
       width: 100%;
@@ -330,34 +324,39 @@
       justify-content: center;
 
       padding-bottom: 22px;
+
       z-index: 3;
+
       pointer-events: none;
     }
 
     .birthday-text {
-      color: rgba(255,255,255,0.78);
+      color: rgba(255,255,255,0.86);
+
       font-size: clamp(20px, 4vw, 38px);
+
       font-weight: bold;
+
       letter-spacing: 3px;
 
       text-shadow:
         0 2px 8px rgba(170,60,100,0.16),
         0 0 20px rgba(255,255,255,0.6);
 
-      animation: titleGlow 4s ease-in-out infinite alternate;
+      animation: birthdayGlow 3s ease-in-out infinite alternate;
     }
 
-    @keyframes titleGlow {
+    @keyframes birthdayGlow {
       from {
         text-shadow:
           0 2px 8px rgba(170,60,100,0.16),
-          0 0 15px rgba(255,255,255,0.45);
+          0 0 15px rgba(255,255,255,0.4);
       }
 
       to {
         text-shadow:
-          0 2px 10px rgba(170,60,100,0.2),
-          0 0 30px rgba(255,255,255,0.9);
+          0 2px 12px rgba(170,60,100,0.2),
+          0 0 28px rgba(255,255,255,0.9);
       }
     }
 
@@ -369,8 +368,11 @@
     .container {
       position: relative;
       z-index: 1;
+
       width: min(950px, 92%);
+
       margin: auto;
+
       padding: 55px 0;
     }
 
@@ -383,23 +385,29 @@
       min-height: 92vh;
 
       display: flex;
+
       flex-direction: column;
+
       justify-content: center;
+
       align-items: center;
 
       text-align: center;
+
       padding-top: 65px;
     }
 
 
     /* =========================================================
-       REALISTIC CAKE
+       CAKE
     ========================================================= */
 
     .cake {
       position: relative;
+
       width: 230px;
       height: 215px;
+
       margin-bottom: 35px;
 
       animation:
@@ -416,12 +424,15 @@
 
     .cake-plate {
       position: absolute;
+
       bottom: 3px;
       left: 50%;
+
       transform: translateX(-50%);
 
       width: 215px;
       height: 25px;
+
       border-radius: 50%;
 
       background:
@@ -439,25 +450,38 @@
 
     .cake-plate::after {
       content: "";
+
       position: absolute;
+
       left: 15px;
       right: 15px;
+
       bottom: 4px;
+
       height: 6px;
+
       border-radius: 50%;
-      background: rgba(205,135,165,0.2);
+
+      background:
+        rgba(205,135,165,0.2);
     }
 
     .cake-bottom {
       position: absolute;
+
       bottom: 18px;
       left: 50%;
+
       transform: translateX(-50%);
 
       width: 165px;
       height: 68px;
 
-      border-radius: 13px 13px 18px 18px;
+      border-radius:
+        13px
+        13px
+        18px
+        18px;
 
       background:
         linear-gradient(
@@ -471,7 +495,8 @@
           #d28e7b 100%
         );
 
-      border: 2px solid rgba(255,255,255,0.85);
+      border:
+        2px solid rgba(255,255,255,0.85);
 
       box-shadow:
         inset 0 -12px 10px rgba(160,75,75,0.12),
@@ -481,11 +506,16 @@
 
     .cake-bottom::before {
       content: "";
+
       position: absolute;
+
       left: 5px;
       right: 5px;
+
       top: 16px;
+
       height: 8px;
+
       border-radius: 50%;
 
       background:
@@ -502,9 +532,12 @@
 
     .cake-bottom::after {
       content: "";
+
       position: absolute;
+
       width: 100%;
       height: 14px;
+
       left: 0;
       bottom: 0;
 
@@ -520,12 +553,15 @@
 
     .cake-frosting {
       position: absolute;
+
       bottom: 73px;
       left: 50%;
+
       transform: translateX(-50%);
 
       width: 177px;
       height: 43px;
+
       border-radius: 50%;
 
       background:
@@ -545,14 +581,20 @@
 
     .cake-frosting::before {
       content: "";
+
       position: absolute;
+
       left: 13px;
       bottom: -20px;
 
       width: 23px;
       height: 30px;
 
-      border-radius: 0 0 14px 14px;
+      border-radius:
+        0
+        0
+        14px
+        14px;
 
       background:
         linear-gradient(
@@ -569,12 +611,15 @@
 
     .cake-top {
       position: absolute;
+
       left: 50%;
       bottom: 96px;
+
       transform: translateX(-50%);
 
       width: 171px;
       height: 48px;
+
       border-radius: 50%;
 
       background:
@@ -586,7 +631,8 @@
           #ffc8db 100%
         );
 
-      border: 1px solid rgba(255,255,255,0.9);
+      border:
+        1px solid rgba(255,255,255,0.9);
 
       box-shadow:
         inset 0 5px 9px rgba(255,255,255,0.95),
@@ -596,8 +642,10 @@
 
     .berry {
       position: absolute;
+
       width: 8px;
       height: 8px;
+
       border-radius: 50%;
 
       background:
@@ -636,14 +684,20 @@
 
     .age {
       position: absolute;
+
       z-index: 10;
+
       left: 50%;
       bottom: 104px;
+
       transform: translateX(-50%);
 
       font-family: Georgia, "Times New Roman", serif;
+
       font-size: 34px;
+
       font-weight: bold;
+
       color: #cf5787;
 
       text-shadow:
@@ -655,10 +709,12 @@
 
     .candle {
       position: absolute;
+
       bottom: 132px;
 
       width: 14px;
       height: 45px;
+
       border-radius: 5px;
 
       background:
@@ -670,7 +726,8 @@
           #f0a2bf 11px
         );
 
-      border: 1px solid rgba(170,70,110,0.2);
+      border:
+        1px solid rgba(170,70,110,0.2);
 
       box-shadow:
         inset 2px 0 3px rgba(255,255,255,0.8),
@@ -689,7 +746,9 @@
 
     .candle::before {
       content: "";
+
       position: absolute;
+
       top: -7px;
       left: 50%;
 
@@ -699,18 +758,26 @@
       transform: translateX(-50%);
 
       background: #4d3636;
+
       border-radius: 50%;
     }
 
     .flame {
       position: absolute;
+
       z-index: 9;
+
       bottom: 174px;
 
       width: 19px;
       height: 25px;
 
-      border-radius: 50% 50% 50% 0;
+      border-radius:
+        50%
+        50%
+        50%
+        0;
+
       transform: rotate(45deg);
 
       background:
@@ -746,16 +813,21 @@
 
     @keyframes flameFlicker {
       from {
-        transform: rotate(40deg) scale(0.9);
+        transform:
+          rotate(40deg)
+          scale(0.9);
       }
 
       to {
-        transform: rotate(49deg) scale(1.12);
+        transform:
+          rotate(49deg)
+          scale(1.12);
       }
     }
 
     @keyframes cakeFloat {
-      0%, 100% {
+      0%,
+      100% {
         transform: translateY(0);
       }
 
@@ -770,7 +842,13 @@
     ========================================================= */
 
     h1 {
-      font-size: clamp(38px, 8vw, 72px);
+      font-size:
+        clamp(
+          38px,
+          8vw,
+          72px
+        );
+
       color: #c94f80;
 
       text-shadow:
@@ -781,13 +859,17 @@
 
     .subtitle {
       font-size: 20px;
+
       color: #713650;
+
       line-height: 1.8;
+
       max-width: 750px;
     }
 
     .scroll {
       margin-top: 55px;
+
       color: #c94f80;
 
       animation:
@@ -812,23 +894,29 @@
 
     section {
       position: relative;
+
       overflow: hidden;
 
       background:
         linear-gradient(
           135deg,
-          rgba(255,255,255,0.56),
-          rgba(255,240,247,0.34)
+          rgba(255,255,255,0.54),
+          rgba(255,240,247,0.30)
         );
 
       border:
         1px solid rgba(255,255,255,0.8);
 
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter:
+        blur(18px);
+
+      -webkit-backdrop-filter:
+        blur(18px);
 
       border-radius: 28px;
+
       padding: 38px;
+
       margin: 30px 0;
 
       box-shadow:
@@ -848,6 +936,7 @@
 
     section::before {
       content: "";
+
       position: absolute;
 
       width: 180px;
@@ -857,15 +946,20 @@
       right: -80px;
 
       border-radius: 50%;
-      background: rgba(255,255,255,0.2);
+
+      background:
+        rgba(255,255,255,0.2);
 
       filter: blur(4px);
+
       pointer-events: none;
     }
 
     section h2 {
       color: #c34f7d;
+
       margin-bottom: 20px;
+
       font-size: 28px;
 
       position: relative;
@@ -882,7 +976,9 @@
       z-index: 1;
 
       font-size: 19px;
+
       line-height: 2.2;
+
       color: #663047;
     }
 
@@ -897,7 +993,13 @@
 
     .reasons {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(220px, 1fr)
+        );
+
       gap: 15px;
 
       position: relative;
@@ -905,12 +1007,15 @@
     }
 
     .reason {
-      background: rgba(255,170,205,0.25);
+      background:
+        rgba(255,170,205,0.25);
 
       border-radius: 20px;
+
       padding: 21px;
 
       text-align: center;
+
       line-height: 1.8;
 
       border:
@@ -946,10 +1051,15 @@
 
     .photos {
       display: flex;
+
       flex-wrap: wrap;
+
       justify-content: center;
+
       align-items: flex-start;
+
       gap: 30px;
+
       width: 100%;
 
       position: relative;
@@ -985,6 +1095,7 @@
         box-shadow 0.45s ease;
 
       overflow: visible;
+
       cursor: pointer;
     }
 
@@ -992,13 +1103,16 @@
       content: "";
 
       position: absolute;
+
       inset: 5px;
 
       border:
         1px solid rgba(238,140,180,0.35);
 
       border-radius: 14px;
+
       pointer-events: none;
+
       z-index: 1;
     }
 
@@ -1006,6 +1120,7 @@
       content: "♥";
 
       position: absolute;
+
       right: -10px;
       top: -12px;
 
@@ -1013,6 +1128,7 @@
       height: 27px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
@@ -1027,7 +1143,9 @@
         1px solid #f0b2ca;
 
       border-radius: 50%;
+
       color: #e875a2;
+
       font-size: 14px;
 
       box-shadow:
@@ -1076,6 +1194,7 @@
       object-fit: contain;
 
       border-radius: 11px;
+
       margin: 0;
 
       box-shadow:
@@ -1091,10 +1210,13 @@
       position: relative;
       z-index: 1;
 
-      background: rgba(255,255,255,0.3);
+      background:
+        rgba(255,255,255,0.3);
 
       padding: 23px;
+
       border-radius: 20px;
+
       margin-top: 15px;
 
       color: #743550;
@@ -1108,7 +1230,9 @@
 
     .voice-title {
       font-weight: bold;
+
       font-size: 18px;
+
       margin-bottom: 8px;
     }
 
@@ -1116,15 +1240,19 @@
       height: 45px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 4px;
+
       margin: 10px 0;
     }
 
     .audio-bar {
       width: 4px;
+
       border-radius: 5px;
 
       background:
@@ -1138,8 +1266,7 @@
         audioWave
         1s
         ease-in-out
-        infinite
-        alternate;
+        infinite alternate;
     }
 
     .audio-bar:nth-child(1) { height: 12px; animation-delay: .1s; }
@@ -1168,712 +1295,539 @@
 
     audio {
       width: 100%;
+
       margin-top: 8px;
+
       accent-color: #d95b8b;
     }
 
 
     /* =========================================================
-       LULU CAT SECTION
+       LULU QUESTION
     ========================================================= */
 
     .lulu-section {
       text-align: center;
-      padding: 50px 25px 35px;
+      padding: 48px 25px;
     }
 
     .lulu-question {
-      font-size: 25px;
-      color: #bd4778;
-      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
     }
 
-    .lulu-subtitle {
-      color: #805067;
-      font-size: 16px;
+    .lulu-question h2 {
+      font-size: clamp(25px, 5vw, 36px);
+      margin-bottom: 12px;
+    }
+
+    .lulu-question p {
+      color: #7a3b57;
+      font-size: 18px;
       margin-bottom: 25px;
     }
 
     .lulu-buttons {
       display: flex;
       justify-content: center;
-      gap: 13px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
     .lulu-btn {
       border: none;
-      padding: 13px 27px;
+      padding: 13px 30px;
+
       border-radius: 999px;
 
+      font-size: 17px;
       font-family: inherit;
-      font-size: 16px;
       font-weight: bold;
 
       cursor: pointer;
 
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
-    }
-
-    .yes-btn {
       color: white;
 
       background:
         linear-gradient(
           135deg,
-          #dc6794,
-          #c84d7d
+          #e979a5,
+          #c94f80
         );
 
       box-shadow:
-        0 8px 20px rgba(190,65,115,0.25);
-    }
+        0 8px 20px rgba(190,70,120,0.2);
 
-    .no-btn {
-      color: #b54b76;
-
-      background:
-        rgba(255,255,255,0.75);
-
-      border:
-        1px solid rgba(224,126,163,0.35);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .lulu-btn:hover {
-      transform: translateY(-3px) scale(1.04);
+      transform: translateY(-4px) scale(1.04);
+
+      box-shadow:
+        0 12px 27px rgba(190,70,120,0.28);
     }
 
-    .lulu-btn:active {
-      transform: scale(0.96);
-    }
+    .lulu-btn.no {
+      background:
+        rgba(255,255,255,0.65);
 
-    .lulu-message {
-      display: none;
+      color: #bd5a80;
 
-      margin-top: 30px;
-
-      color: #a63e6b;
-      font-size: 19px;
-      line-height: 1.8;
-
-      animation:
-        luluMessageIn
-        0.8s
-        ease both;
-    }
-
-    .lulu-message.show {
-      display: block;
-    }
-
-    @keyframes luluMessageIn {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      border:
+        1px solid rgba(220,130,165,0.45);
     }
 
 
     /* =========================================================
-       INTERACTABLE WHITE CAT
+       LULU CAT
     ========================================================= */
 
-    .lulu {
+    .lulu-reveal {
       display: none;
-
       position: relative;
-
-      width: 210px;
-      height: 230px;
-
-      margin: 25px auto 5px;
-
-      cursor: pointer;
-
-      animation:
-        catAppear
-        0.8s
-        cubic-bezier(.2,.8,.2,1)
-        both;
+      z-index: 2;
+      margin-top: 35px;
+      animation: luluAppear 1s cubic-bezier(.2,.8,.2,1) forwards;
     }
 
-    .lulu.show {
+    .lulu-reveal.show {
       display: block;
     }
 
-    @keyframes catAppear {
+    @keyframes luluAppear {
       from {
         opacity: 0;
-        transform:
-          translateY(70px)
-          scale(0.65);
+        transform: translateY(25px) scale(0.85);
       }
 
       to {
         opacity: 1;
-        transform:
-          translateY(0)
-          scale(1);
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .lulu-message {
+      color: #b54674;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .cat-wrap {
+      position: relative;
+
+      width: 230px;
+      height: 220px;
+
+      margin: 0 auto;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.3s ease;
+    }
+
+    .cat-wrap:hover {
+      transform: translateY(-7px);
+    }
+
+    .cat-wrap.pet {
+      animation: catPet 0.55s ease;
+    }
+
+    @keyframes catPet {
+      0%, 100% {
+        transform: translateY(-7px) rotate(0deg);
+      }
+
+      30% {
+        transform: translateY(-10px) rotate(-4deg);
+      }
+
+      70% {
+        transform: translateY(-10px) rotate(4deg);
       }
     }
 
     .cat-shadow {
       position: absolute;
 
-      left: 50%;
-      bottom: 2px;
+      width: 145px;
+      height: 25px;
 
-      width: 130px;
-      height: 23px;
+      bottom: 3px;
+      left: 50%;
 
       transform: translateX(-50%);
 
       border-radius: 50%;
 
-      background:
-        rgba(151,72,105,0.13);
+      background: rgba(125,70,95,0.13);
 
-      filter: blur(7px);
-
-      animation:
-        catShadow
-        2.5s
-        ease-in-out
-        infinite;
-    }
-
-    @keyframes catShadow {
-      0%, 100% {
-        transform: translateX(-50%) scaleX(0.9);
-        opacity: 0.55;
-      }
-
-      50% {
-        transform: translateX(-50%) scaleX(1.05);
-        opacity: 0.3;
-      }
+      filter: blur(5px);
     }
 
     .cat-body {
       position: absolute;
 
-      left: 50%;
-      bottom: 17px;
-
-      width: 116px;
+      width: 105px;
       height: 105px;
+
+      left: 50%;
+      bottom: 25px;
 
       transform: translateX(-50%);
 
-      border-radius:
-        52% 52% 45% 45%;
-
       background:
         linear-gradient(
-          145deg,
+          135deg,
           #ffffff 0%,
-          #fffafd 55%,
-          #f3eaf0 100%
+          #fffafa 55%,
+          #eee7eb 100%
         );
 
+      border-radius:
+        50%
+        50%
+        42%
+        42%;
+
       box-shadow:
-        inset -9px -8px 16px rgba(192,170,183,0.18),
-        inset 7px 6px 13px rgba(255,255,255,0.95),
-        0 12px 22px rgba(135,69,100,0.16);
-
-      animation:
-        catBreath
-        3s
-        ease-in-out
-        infinite;
-    }
-
-    @keyframes catBreath {
-      0%, 100% {
-        transform: translateX(-50%) scale(1);
-      }
-
-      50% {
-        transform: translateX(-50%) scale(1.018);
-      }
+        inset -10px -8px 15px rgba(160,130,145,0.13),
+        0 10px 20px rgba(110,65,90,0.12);
     }
 
     .cat-head {
       position: absolute;
 
-      left: 50%;
-      top: 31px;
+      width: 115px;
+      height: 105px;
 
-      width: 116px;
-      height: 101px;
+      left: 50%;
+      top: 30px;
 
       transform: translateX(-50%);
 
-      border-radius:
-        50% 50% 46% 46%;
-
       background:
         linear-gradient(
-          145deg,
+          135deg,
           #ffffff 0%,
-          #fffafd 60%,
-          #eee6ed 100%
+          #fffafa 58%,
+          #eee9ed 100%
         );
 
-      box-shadow:
-        inset -8px -7px 14px rgba(186,164,179,0.17),
-        inset 7px 5px 13px rgba(255,255,255,0.95),
-        0 8px 17px rgba(135,69,100,0.15);
+      border-radius: 50% 50% 47% 47%;
 
-      z-index: 5;
+      box-shadow:
+        inset -8px -7px 12px rgba(160,130,145,0.12),
+        0 8px 16px rgba(110,65,90,0.12);
     }
 
-    .cat-ear {
+    .ear {
       position: absolute;
+
+      width: 43px;
+      height: 48px;
 
       top: 13px;
 
-      width: 48px;
-      height: 57px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #ffffff,
-          #f5edf2
-        );
-
-      z-index: 3;
+      background: #fff;
 
       box-shadow:
-        0 4px 9px rgba(135,69,100,0.1);
+        inset -4px -4px 7px rgba(160,130,145,0.12);
     }
 
-    .cat-ear.left {
-      left: 38px;
+    .ear.left {
+      left: 45px;
 
-      transform:
-        rotate(-27deg)
-        skewY(-8deg);
+      transform: rotate(-28deg);
 
-      border-radius:
-        9px
-        30px
-        8px
-        30px;
+      border-radius: 5px 30px 8px 28px;
     }
 
-    .cat-ear.right {
-      right: 38px;
+    .ear.right {
+      right: 45px;
 
-      transform:
-        rotate(27deg)
-        skewY(8deg);
+      transform: rotate(28deg);
 
-      border-radius:
-        30px
-        9px
-        30px
-        8px;
+      border-radius: 30px 5px 28px 8px;
     }
 
-    .cat-ear::after {
+    .ear::after {
       content: "";
 
       position: absolute;
 
-      inset: 11px;
+      inset: 9px;
 
-      background:
-        linear-gradient(
-          145deg,
-          #ffd9e7,
-          #f7b8cf
-        );
+      background: #f7b6cd;
 
-      border-radius:
-        9px
-        24px
-        7px
-        24px;
-
-      opacity: 0.7;
+      opacity: 0.55;
     }
 
-    .cat-face {
-      position: absolute;
-      inset: 0;
-      z-index: 8;
+    .ear.left::after {
+      border-radius: 5px 20px 5px 18px;
+    }
+
+    .ear.right::after {
+      border-radius: 20px 5px 18px 5px;
     }
 
     .cat-eye {
       position: absolute;
 
-      top: 44px;
+      top: 66px;
 
-      width: 14px;
-      height: 18px;
-
-      background:
-        radial-gradient(
-          circle at 50% 42%,
-          #ffffff 0 8%,
-          #6e5260 10% 100%
-        );
+      width: 11px;
+      height: 15px;
 
       border-radius: 50%;
 
-      box-shadow:
-        0 1px 3px rgba(80,40,60,0.18);
+      background: #493442;
 
-      animation:
-        catBlink
-        4.5s
-        infinite;
+      box-shadow:
+        0 0 0 3px rgba(255,255,255,0.4);
+    }
+
+    .cat-eye::after {
+      content: "";
+
+      position: absolute;
+
+      width: 4px;
+      height: 5px;
+
+      top: 2px;
+      left: 2px;
+
+      border-radius: 50%;
+
+      background: white;
     }
 
     .cat-eye.left {
-      left: 28px;
+      left: 35px;
     }
 
     .cat-eye.right {
-      right: 28px;
-    }
-
-    @keyframes catBlink {
-      0%, 45%, 48%, 100% {
-        transform: scaleY(1);
-      }
-
-      46%, 47% {
-        transform: scaleY(0.08);
-      }
+      right: 35px;
     }
 
     .cat-nose {
       position: absolute;
 
+      top: 84px;
       left: 50%;
-      top: 66px;
-
-      width: 9px;
-      height: 7px;
 
       transform: translateX(-50%);
 
-      background: #e995b4;
+      width: 10px;
+      height: 7px;
 
-      border-radius:
-        50% 50% 60% 60%;
+      background: #e68aaa;
 
-      z-index: 10;
+      border-radius: 50% 50% 55% 55%;
     }
 
     .cat-mouth {
       position: absolute;
 
+      top: 91px;
       left: 50%;
-      top: 72px;
-
-      width: 22px;
-      height: 12px;
 
       transform: translateX(-50%);
 
-      z-index: 10;
-    }
+      color: #65404e;
 
-    .cat-mouth::before,
-    .cat-mouth::after {
-      content: "";
-
-      position: absolute;
-
-      top: 0;
-
-      width: 11px;
-      height: 7px;
-
-      border-bottom:
-        2px solid #916274;
-
-      border-radius: 0 0 50% 50%;
-    }
-
-    .cat-mouth::before {
-      left: 0;
-      transform: rotate(12deg);
-    }
-
-    .cat-mouth::after {
-      right: 0;
-      transform: rotate(-12deg);
+      font-size: 14px;
     }
 
     .whiskers {
       position: absolute;
 
-      top: 68px;
+      top: 87px;
 
       width: 45px;
-      height: 20px;
+      height: 25px;
     }
 
     .whiskers.left {
-      left: -31px;
+      left: -5px;
     }
 
     .whiskers.right {
-      right: -31px;
+      right: -5px;
+      transform: scaleX(-1);
     }
 
-    .whiskers span {
+    .whiskers::before,
+    .whiskers::after {
+      content: "";
+
       position: absolute;
 
-      width: 40px;
+      left: 0;
+
+      width: 42px;
       height: 1px;
 
-      background: rgba(111,77,93,0.4);
+      background: rgba(90,60,70,0.35);
+
+      transform-origin: left;
     }
 
-    .whiskers.left span:nth-child(1) {
-      top: 3px;
-      right: 0;
+    .whiskers::before {
+      top: 5px;
       transform: rotate(-8deg);
     }
 
-    .whiskers.left span:nth-child(2) {
-      top: 10px;
-      right: 2px;
-      transform: rotate(5deg);
-    }
-
-    .whiskers.left span:nth-child(3) {
-      top: 17px;
-      right: 0;
-      transform: rotate(16deg);
-    }
-
-    .whiskers.right span:nth-child(1) {
-      top: 3px;
-      left: 0;
+    .whiskers::after {
+      top: 14px;
       transform: rotate(8deg);
-    }
-
-    .whiskers.right span:nth-child(2) {
-      top: 10px;
-      left: 2px;
-      transform: rotate(-5deg);
-    }
-
-    .whiskers.right span:nth-child(3) {
-      top: 17px;
-      left: 0;
-      transform: rotate(-16deg);
     }
 
     .cat-paw {
       position: absolute;
 
-      bottom: 17px;
+      width: 43px;
+      height: 45px;
 
-      width: 39px;
-      height: 55px;
+      bottom: 27px;
 
-      border-radius:
-        50% 50% 43% 43%;
+      background: #fff;
 
-      background:
-        linear-gradient(
-          145deg,
-          #ffffff,
-          #eee7ed
-        );
+      border-radius: 50%;
 
       box-shadow:
-        inset -5px -5px 9px rgba(174,150,164,0.14);
-
-      z-index: 10;
-
-      transition:
-        transform 0.3s ease;
+        inset -5px -4px 8px rgba(160,130,145,0.12);
     }
 
     .cat-paw.left {
-      left: 25px;
-      transform: rotate(17deg);
+      left: 51px;
+      transform: rotate(18deg);
     }
 
     .cat-paw.right {
-      right: 25px;
-      transform: rotate(-17deg);
-    }
-
-    .lulu:hover .cat-paw.left {
-      transform:
-        rotate(17deg)
-        translateY(-7px);
-    }
-
-    .lulu:hover .cat-paw.right {
-      transform:
-        rotate(-17deg)
-        translateY(-7px);
+      right: 51px;
+      transform: rotate(-18deg);
     }
 
     .cat-tail {
       position: absolute;
 
-      right: 25px;
-      bottom: 54px;
+      width: 72px;
+      height: 82px;
 
-      width: 76px;
-      height: 85px;
+      right: 37px;
+      bottom: 48px;
 
       border:
-        14px solid #f7f1f5;
+        14px solid #f8f5f7;
 
       border-left-color: transparent;
       border-bottom-color: transparent;
 
       border-radius: 50%;
 
-      transform: rotate(22deg);
+      transform: rotate(35deg);
 
       filter:
         drop-shadow(
-          3px 4px 3px rgba(130,70,100,0.12)
+          3px 4px 4px rgba(100,60,80,0.12)
         );
-
-      z-index: 1;
-
-      animation:
-        tailWag
-        2.8s
-        ease-in-out
-        infinite;
-    }
-
-    @keyframes tailWag {
-      0%, 100% {
-        transform: rotate(22deg);
-      }
-
-      50% {
-        transform: rotate(8deg);
-      }
     }
 
     .cat-bow {
       position: absolute;
 
+      bottom: 55px;
       left: 50%;
-      top: 103px;
 
       transform: translateX(-50%);
 
-      z-index: 12;
+      z-index: 5;
     }
 
     .bow-piece {
       display: inline-block;
 
-      width: 27px;
+      width: 25px;
       height: 19px;
 
-      background:
-        linear-gradient(
-          145deg,
-          #f28daf,
-          #ce5b86
-        );
+      background: #e779a5;
 
       box-shadow:
-        0 3px 5px rgba(150,50,90,0.17);
+        inset 3px 2px 4px rgba(255,255,255,0.4);
+
     }
 
-    .bow-left {
-      border-radius:
-        18px
-        5px
-        5px
-        18px;
-
-      transform: rotate(15deg);
+    .bow-piece.left {
+      border-radius: 15px 3px 12px 12px;
+      transform: rotate(18deg);
     }
 
-    .bow-right {
-      border-radius:
-        5px
-        18px
-        18px
-        5px;
-
-      transform: rotate(-15deg);
+    .bow-piece.right {
+      border-radius: 3px 15px 12px 12px;
+      transform: rotate(-18deg);
     }
 
     .bow-center {
       display: inline-block;
 
-      width: 12px;
-      height: 12px;
-
-      margin: 0 -3px;
+      width: 11px;
+      height: 11px;
 
       border-radius: 50%;
 
-      background: #f7a5c0;
+      background: #c84f7d;
 
-      vertical-align: 3px;
+      margin: 0 -2px;
     }
 
     .cat-heart {
       position: absolute;
 
-      top: -5px;
-      right: -10px;
+      color: #e779a5;
 
-      font-size: 25px;
-      color: #e36e9b;
+      font-size: 20px;
 
-      opacity: 0;
-
-      animation:
-        heartPop
-        2.5s
-        ease-in-out
-        infinite;
+      animation: tinyHeart 1.8s ease-in-out infinite;
     }
 
-    @keyframes heartPop {
-      0%, 65%, 100% {
-        opacity: 0;
-        transform: translateY(8px) scale(0.5);
+    .cat-heart.one {
+      left: 25px;
+      top: 45px;
+    }
+
+    .cat-heart.two {
+      right: 20px;
+      top: 25px;
+      animation-delay: .6s;
+    }
+
+    @keyframes tinyHeart {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.55;
       }
 
-      75% {
+      50% {
+        transform: translateY(-8px) scale(1.15);
         opacity: 1;
-        transform: translateY(-3px) scale(1);
-      }
-
-      90% {
-        opacity: 0;
-        transform: translateY(-15px) scale(0.75);
       }
     }
 
-    .cat-caption {
-      color: #a94670;
-      font-size: 15px;
-      margin-top: 5px;
+    .cat-reaction {
+      min-height: 28px;
+
+      color: #8e4863;
+
+      font-size: 17px;
+
+      margin-top: 8px;
     }
 
 
@@ -1883,23 +1837,29 @@
 
     .final {
       text-align: center;
+
       padding: 70px 25px;
     }
 
     .final h2 {
       font-size: 36px;
+
       color: #bd4778;
     }
 
     .final p {
       font-size: 21px;
+
       line-height: 2;
+
       color: #713650;
     }
 
     .signature {
       margin-top: 30px;
+
       color: #c34f7d;
+
       font-size: 24px;
     }
 
@@ -1910,7 +1870,9 @@
 
     footer {
       text-align: center;
+
       padding: 30px;
+
       color: #9b5573;
     }
 
@@ -1982,36 +1944,13 @@
         max-height: 300px !important;
       }
 
-      .sound-wave {
-        width: 115vw;
-        gap: 4px;
-        opacity: 0.12;
-      }
-
-      .lulu {
+      .cat-wrap {
         transform: scale(0.9);
-        margin-top: 15px;
-        margin-bottom: -10px;
+        margin-top: -5px;
       }
 
-      .lulu.show {
-        animation:
-          catAppearMobile
-          0.8s
-          cubic-bezier(.2,.8,.2,1)
-          both;
-      }
-
-      @keyframes catAppearMobile {
-        from {
-          opacity: 0;
-          transform: translateY(70px) scale(0.55);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(0.9);
-        }
+      .cat-wrap:hover {
+        transform: scale(0.9) translateY(-7px);
       }
     }
 
@@ -2041,41 +1980,27 @@
 
 
   <!-- =======================================================
-       CALM MUSIC-LIKE VIBE
+       CALM VISUAL MUSIC VIBE
+       No actual music.
   ======================================================= -->
 
   <div class="music-vibe">
-
-    <div class="music-orb orb1"></div>
-    <div class="music-orb orb2"></div>
-    <div class="music-orb orb3"></div>
-
-    <div class="sound-wave">
-
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-      <div class="sound-bar"></div>
-
-    </div>
 
     <div class="music-note">♪</div>
     <div class="music-note">♫</div>
     <div class="music-note">♪</div>
     <div class="music-note">♬</div>
     <div class="music-note">♫</div>
+    <div class="music-note">♪</div>
+    <div class="music-note">♩</div>
 
+  </div>
+
+
+  <div class="ambient-orbs">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
   </div>
 
 
@@ -2089,4 +2014,619 @@
     <div class="heart" style="left:8%; animation-delay:4s;">♥</div>
     <div class="heart" style="left:14%; animation-delay:1s;">♥</div>
     <div class="heart" style="left:20%; animation-delay:6s;">♥</div>
-    <div
+    <div class="heart" style="left:27%; animation-delay:2s;">♥</div>
+    <div class="heart" style="left:34%; animation-delay:7s;">♥</div>
+    <div class="heart" style="left:41%; animation-delay:3s;">♥</div>
+    <div class="heart" style="left:48%; animation-delay:8s;">♥</div>
+    <div class="heart" style="left:55%; animation-delay:1.5s;">♥</div>
+    <div class="heart" style="left:62%; animation-delay:5s;">♥</div>
+    <div class="heart" style="left:69%; animation-delay:2.5s;">♥</div>
+    <div class="heart" style="left:76%; animation-delay:6.5s;">♥</div>
+    <div class="heart" style="left:83%; animation-delay:3.5s;">♥</div>
+    <div class="heart" style="left:89%; animation-delay:7.5s;">♥</div>
+    <div class="heart" style="left:95%; animation-delay:4.5s;">♥</div>
+
+  </div>
+
+
+  <!-- =======================================================
+       BIRTHDAY HEADER
+  ======================================================= -->
+
+  <div class="birthday-arch">
+
+    <div class="birthday-text">
+      HAPPY 16TH BIRTHDAY! ❤️
+    </div>
+
+  </div>
+
+
+  <div class="container">
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <div class="hero">
+
+
+      <div class="cake">
+
+        <div class="flame one"></div>
+        <div class="flame six"></div>
+
+        <div class="candle one"></div>
+        <div class="candle six"></div>
+
+        <div class="berry b1"></div>
+        <div class="berry b2"></div>
+        <div class="berry b3"></div>
+        <div class="berry b4"></div>
+
+        <div class="age">
+          16
+        </div>
+
+        <div class="cake-top"></div>
+
+        <div class="cake-frosting"></div>
+
+        <div class="cake-bottom"></div>
+
+        <div class="cake-plate"></div>
+
+      </div>
+
+
+      <h1>
+        كل سنة وإنتي طيبة يا حوراء ❤️
+      </h1>
+
+
+      <p class="subtitle">
+
+        I suppose today is the birthday of the love of my life :)<br>
+
+        soooo...I just wanted to make it a little special hehe....
+
+      </p>
+
+
+      <div class="scroll">
+        ↓ SCROLL DOWN SILLY ↓
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         LOVE LETTER
+    ===================================================== -->
+
+    <section>
+
+      <h2>
+        💌 hehe a little msg for my prettiest baby
+      </h2>
+
+
+      <div class="letter">
+
+        كل سنة وإنتي طيبة يا أجمل حد في حياتي❤️
+
+        <br><br>
+
+        بجد مش عارف أبدأ منين بس كان نفسي أعملك حاجة مخصوص
+        حتى لو إحنا بعيد عن بعض.
+
+        <br><br>
+
+        يا حوراء انا بحبك و بعشقك و بموت فيكي يا حبيبتي انت اغلى حد ليا
+
+        <br><br>
+
+        وجودك في حياتي فرق معايا أكتر مما تتخيلي
+        وكل لحظة بنتكلم فيها وكل ذكرى بينا
+        ليها مكان خاص عندي.
+
+        <br><br>
+
+        أتمنى السنة الجديدة من عمرك تكون مليانة حاجات حلوة،
+        وتحققي فيها كل حاجة نفسك فيها
+        وتفضلي دايمًا مبسوطة ونكمل سوى ان شاء الله.
+
+        <br><br>
+
+        Enough Arabic for u dont u think? 🙄 ANYWAYSSS Ehe sorry for not being able
+        to buy u something irl but I hope this is enough for now- maybe it didnt come
+        up to ur expectations but I tried my best and was also kinda stuck between this
+        and studying and spending time with u sighhh...had to give u less attention sometimes....
+        checking pinterest less not texting first much..but js know every second of this I really
+        was thinking of u I am sorry for the little beefs sorry if I didnt repay u as much for
+        everything u did to me but I promise I loved love and will always love u more than anything
+        else and treat u as good as I can- I loved ur lil giggle when we called for the first time
+        ur shy tone when u sent ur first voice message and didnt know what to say "Nothing nothing🎀"
+        and ur silly reaction when u noticed ur improvement and tried on these glasses hehehehehe
+        wont forget ur reation when u saw spice for the first time 👀
+        and most importantly wont ever forget how u were always loyal to me and always tried to
+        please me when even u were at ur worst- ugh every night I think of what to do to please u
+        and all I could do was work on this in secret until ur birthday!!! u thought I forgot that msg
+        hehehe well it was gonna be only a msg I really tried alot- and threw them all... my handwriting
+        sucks my designs wont ever be as good as u and wont be as special so I wanted to do it in a way I can do
+        sighhh am such a yapper...... BUT U LOVE THAT ABT ME DONT U- ANYWAYS CONTINUE THE DAMN MSG I WORKED HARD FOR THIS
+        HMPH.
+
+        <br><br>
+
+        <strong>
+
+          وكل سنة وإنتي في حياتي يا روحي ❤️
+
+          I hope we stay together forever my little pumpkin u mean the world to me &lt;3
+
+        </strong>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         THINGS I LIKE
+    ===================================================== -->
+
+    <section>
+
+      <h2>
+        Things I like abt u hmmmmmmmmmmm
+      </h2>
+
+
+      <div class="reasons">
+
+        <div class="reason">
+          UR CUTIE GIGGLE WHEN UR SHY❤️
+        </div>
+
+        <div class="reason">
+          Ur accent duhh 🥹
+        </div>
+
+        <div class="reason">
+          fulffy...........
+        </div>
+
+        <div class="reason">
+          of course ur prettyness cuteness adorabolness and loyalty✨
+        </div>
+
+        <div class="reason">
+          UR GIFTSSSS 🤍
+        </div>
+
+        <div class="reason">
+          AND DEF MUCH MUCH MORE BUT IT WILL BE PAIN IF I WRITE A CODE FOR EACH ONE SICHHHH ❤️
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MEMORIES
+    ===================================================== -->
+
+    <section>
+
+      <h2>
+        📸 Some of my fav memories with u :D
+      </h2>
+
+
+      <div class="photos">
+
+
+        <div class="photo-card">
+          <img
+            src="photo1.jpeg"
+            alt="Memory 1"
+            loading="lazy"
+          >
+        </div>
+
+
+        <div class="photo-card">
+          <img
+            src="photo2.jpeg"
+            alt="Memory 2"
+            loading="lazy"
+          >
+        </div>
+
+
+        <div class="photo-card">
+          <img
+            src="photo3.jpeg"
+            alt="Memory 3"
+            loading="lazy"
+          >
+        </div>
+
+
+        <div class="photo-card">
+          <img
+            src="photo4.jpeg"
+            alt="Memory 4"
+            loading="lazy"
+          >
+        </div>
+
+
+        <div class="photo-card">
+          <img
+            src="photo5.jpeg"
+            alt="Memory 5"
+            loading="lazy"
+          >
+        </div>
+
+
+        <div class="photo-card">
+          <img
+            src="photo6.jpeg"
+            alt="Memory 6"
+            loading="lazy"
+          >
+        </div>
+
+
+        <div class="photo-card">
+          <img
+            src="photo7.jpeg"
+            alt="Memory 7"
+            loading="lazy"
+          >
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VOICE MESSAGE
+    ===================================================== -->
+
+    <section>
+
+      <h2>
+        🎙️ رسالة بصوتي
+      </h2>
+
+
+      <div class="voice">
+
+        <div class="voice-title">
+          رسالة مخصوص ليكي ❤️
+        </div>
+
+        <div>
+          اضغطي تشغيل واسمعيها يا silly 🎀
+        </div>
+
+
+        <div class="audio-visual">
+
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+          <div class="audio-bar"></div>
+
+        </div>
+
+
+        <audio controls preload="metadata">
+
+          <source
+            src="./Voice3.oga"
+            type="audio/ogg"
+          >
+
+          Your browser does not support the audio element.
+
+        </audio>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LULU
+    ===================================================== -->
+
+    <section class="lulu-section">
+
+      <div class="lulu-question">
+
+        <h2>
+          🐾 Do u miss Lulu?
+        </h2>
+
+        <p>
+          "her cat basically" 🎀
+        </p>
+
+        <div class="lulu-buttons">
+
+          <button
+            class="lulu-btn"
+            id="yesBtn"
+            type="button"
+          >
+            YESSS 🥹❤️
+          </button>
+
+          <button
+            class="lulu-btn no"
+            id="noBtn"
+            type="button"
+          >
+            no... 🙄
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="lulu-reveal"
+        id="luluReveal"
+      >
+
+        <div class="lulu-message">
+          I KNEW ITTT 😭❤️ LULU MISSED U TOO!!
+        </div>
+
+
+        <div
+          class="cat-wrap"
+          id="luluCat"
+          title="Click Lulu 🐾"
+        >
+
+          <div class="cat-heart one">♥</div>
+          <div class="cat-heart two">♥</div>
+
+          <div class="cat-shadow"></div>
+
+          <div class="cat-tail"></div>
+
+          <div class="cat-body"></div>
+
+          <div class="cat-head">
+
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+
+            <div class="cat-eye left"></div>
+            <div class="cat-eye right"></div>
+
+            <div class="cat-nose"></div>
+
+            <div class="cat-mouth">⌣</div>
+
+            <div class="whiskers left"></div>
+            <div class="whiskers right"></div>
+
+          </div>
+
+          <div class="cat-paw left"></div>
+          <div class="cat-paw right"></div>
+
+          <div class="cat-bow">
+            <span class="bow-piece left"></span>
+            <span class="bow-center"></span>
+            <span class="bow-piece right"></span>
+          </div>
+
+        </div>
+
+
+        <div
+          class="cat-reaction"
+          id="catReaction"
+        >
+          click Lulu 🐾
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINAL MESSAGE
+    ===================================================== -->
+
+    <section class="final">
+
+      <h2>
+
+        The moon looks pretty but not quite as attractive as u...
+        in my eyes u will always shine brighter than any moon 🌙
+
+      </h2>
+
+
+      <br>
+
+
+      <p>
+        ❤️ بحبك يا حوراء
+      </p>
+
+
+      <div class="signature">
+
+        Forever and always:<br>
+
+        Omori ❤️ عمر
+
+      </div>
+
+    </section>
+
+
+    <footer>
+
+      Made just for you my silly baby 🌸❤️
+
+    </footer>
+
+
+  </div>
+
+
+  <!-- =======================================================
+       LULU INTERACTION
+  ======================================================= -->
+
+  <script>
+
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const luluReveal = document.getElementById("luluReveal");
+    const luluCat = document.getElementById("luluCat");
+    const catReaction = document.getElementById("catReaction");
+
+    yesBtn.addEventListener("click", function () {
+
+      luluReveal.classList.add("show");
+
+      yesBtn.textContent = "YAYYYYY 🥹❤️";
+
+      setTimeout(function () {
+        luluReveal.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }, 150);
+
+    });
+
+
+    noBtn.addEventListener("click", function () {
+
+      const messages = [
+        "LIARRRR 🙄",
+        "u sure about that? 👀",
+        "LULU IS SAD NOW 😭",
+        "THINK AGAIN SILLY 😭",
+        "that answer is suspicious... 🤨",
+        "I KNOW U MISS HER HMPH"
+      ];
+
+      const randomMessage =
+        messages[Math.floor(Math.random() * messages.length)];
+
+      noBtn.textContent = randomMessage;
+
+      noBtn.style.transform =
+        "translate(" +
+        (Math.random() * 30 - 15) +
+        "px, " +
+        (Math.random() * 20 - 10) +
+        "px)";
+
+    });
+
+
+    luluCat.addEventListener("click", function () {
+
+      luluCat.classList.remove("pet");
+
+      void luluCat.offsetWidth;
+
+      luluCat.classList.add("pet");
+
+      const reactions = [
+        "Lulu is purringgg 🥹🤍",
+        "she missed u so muchhh 🐾❤️",
+        "LULU HAS BEEN PETTED 🎀",
+        "she's happy now hehe 🥹",
+        "tiny white floof approved ❤️",
+        "Lulu says hiiii silly 🐱"
+      ];
+
+      catReaction.textContent =
+        reactions[Math.floor(Math.random() * reactions.length)];
+
+      createCatHeart();
+
+    });
+
+
+    function createCatHeart() {
+
+      const heart = document.createElement("div");
+
+      heart.textContent = "♥";
+
+      heart.style.position = "fixed";
+      heart.style.left =
+        (window.innerWidth / 2 + Math.random() * 100 - 50) + "px";
+      heart.style.top =
+        (window.innerHeight / 2 + 50) + "px";
+
+      heart.style.color = "#e779a5";
+      heart.style.fontSize = "20px";
+      heart.style.pointerEvents = "none";
+      heart.style.zIndex = "9999";
+
+      document.body.appendChild(heart);
+
+      heart.animate(
+        [
+          {
+            transform: "translateY(0) scale(0.7)",
+            opacity: 0
+          },
+          {
+            transform: "translateY(-70px) scale(1.2)",
+            opacity: 1
+          },
+          {
+            transform: "translateY(-130px) scale(0.8)",
+            opacity: 0
+          }
+        ],
+        {
+          duration: 1400,
+          easing: "ease-out"
+        }
+      );
+
+      setTimeout(function () {
+        heart.remove();
+      }, 1450);
+
+    }
+
+  </script>
+
+</body>
+
+</html>
