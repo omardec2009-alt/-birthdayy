@@ -472,8 +472,7 @@
     /* =====================================
        CAKE
        
-       WHITE CAKE
-       PINK FROSTING
+       WHITE CAKE WITH PINK FROSTING
     ===================================== */
 
     .cake {
@@ -501,8 +500,6 @@
         );
     }
 
-
-    /* Plate */
 
     .cake-plate {
 
@@ -533,8 +530,6 @@
         );
     }
 
-
-    /* White cake body */
 
     .cake-bottom {
 
@@ -586,8 +581,6 @@
     }
 
 
-    /* Pink frosting */
-
     .cake-frosting {
 
       position: absolute;
@@ -624,8 +617,6 @@
     }
 
 
-    /* Frosting drip */
-
     .cake-frosting::after {
 
       content: "";
@@ -649,8 +640,6 @@
         10px;
     }
 
-
-    /* Candle */
 
     .candle {
 
@@ -679,8 +668,6 @@
       border-radius: 3px;
     }
 
-
-    /* Flame */
 
     .flame {
 
@@ -997,8 +984,9 @@
        PHOTOS
        
        ORIGINAL PROPORTIONS
-       NO ARTIFICIAL FRAME
+       DOWNSIZED ONLY
        NO CROPPING
+       NO ROTATION
     ===================================== */
 
     .photos {
@@ -1053,13 +1041,13 @@
     }
 
 
-    /*
-      The image decides its own dimensions.
-
-      Nothing forces it to be square.
-      Nothing crops it.
-      Nothing rotates it.
-    */
+    /* =====================================
+       PHOTO SIZE
+       
+       ONLY CHANGE IS HERE:
+       MAX 350px WIDE
+       MAX 400px HIGH
+    ===================================== */
 
     .photo-card img {
 
@@ -1069,7 +1057,9 @@
 
       height: auto;
 
-      max-width: 100%;
+      max-width: 350px;
+
+      max-height: 400px;
 
       object-fit: contain;
 
@@ -1342,7 +1332,9 @@
 
         height: auto;
 
-        max-width: 100%;
+        max-width: 350px;
+
+        max-height: 400px;
       }
 
 
